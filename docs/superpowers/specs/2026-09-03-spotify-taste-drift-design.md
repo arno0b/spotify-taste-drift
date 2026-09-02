@@ -1,0 +1,371 @@
+# Spotify Taste Drift Tracker — Design
+
+- **Date:** 2026-09-03
+- **Status:** Approved design, pending spec review
+- **Author:** Sakif + Claude
+
+## 1. Overview
+
+A personal, single-user system that snapshots my Spotify top artists and top
+tracks every day, stores them immutably, and renders a static dashboard showing
+how my taste moves over time.
+
+The project exists because Spotify's `top-artists` / `top-tracks` endpoints only
+ever return *today's* answer. There is no history endpoint and no way to
+backfill. The dataset does not exist until we start capturing it, and every day
+we do not capture is permanently lost.
+
+That single fact drives every decision below.
+
+## 2. Goals
+
+- Capture top artists and top tracks daily, across all three Spotify time
+  ranges, without gaps.
+- Preserve captured data losslessly so future analyses can be run over the full
+  history.
+- Render a static dashboard that makes taste movement legible.
+- Require zero ongoing manual effort after setup.
+
+## 3. Non-goals
+
+Explicitly out of scope. These are excluded by decision, not oversight:
+
+- **Audio features / audio analysis** (danceability, valence, energy, tempo).
+  Spotify revoked these endpoints for new apps in November 2024. Not available,
+  not worked around.
+- **Recommendations, related-artists, featured/category playlists.** Same
+  deprecation.
+- **Liked-songs library diffing.** Considered and declined; can be added later
+  without redesign.
+- **Recently-played polling / play counts.** Considered and declined; this is a
+  separate project.
+- **Multi-user support.** Single user, dev-mode Spotify app.
+- **Any database.** Files in git are the store.
+
+## 4. Decisions log
+
+| Decision | Choice | Reason |
+|---|---|---|
+| Where it runs | GitHub Actions cron | Free, no machine to keep powered on, and commits give version history for free |
+| Output surface | Static dashboard on GitHub Pages, public repo | Drift data only becomes legible as charts; public repo gets Pages free |
+| Capture scope | Top artists + top tracks only | Tight scope, ships fast, extensible later |
+| Pipeline shape | Layered, raw-is-sacred | Analysis can be rewritten and replayed over all history |
+| Auth flow | Classic Authorization Code (client secret) | PKCE rotates the refresh token on every refresh, which breaks a stateless runner |
+| Cadence | Daily, not weekly | Scheduled Actions get delayed or dropped; a dropped daily run is a non-event, a dropped weekly run is a lost data point |
+
+## 5. Architecture
+
+Three layers. Each is a pure function of the layer above it. Everything below
+`data/raw/` can be deleted and rebuilt identically.
+
+```
+data/raw/          immutable, append-only, never edited
+      |
+      v  build_derived.py   (full rebuild every run)
+data/derived/      tidy tables
+      |
+      v  build_metrics.py   (full rebuild every run)
+site/data.json     precomputed dashboard metrics
+```
+
+Full rebuild rather than incremental update is deliberate: it costs under a
+second for years of small files, and it means a corrected or improved metric is
+retroactively applied to all history.
+
+### Repo layout
+
+```
+spotify project/
+├── .github/workflows/snapshot.yml    # daily cron
+├── tools/
+│   ├── mint_refresh_token.py         # one-time, local, browser consent
+│   ├── spotify_auth.py               # refresh_token -> access_token
+│   ├── snapshot_top_items.py         # capture -> data/raw/
+│   ├── build_derived.py              # raw     -> data/derived/
+│   └── build_metrics.py              # derived -> site/data.json
+├── workflows/
+│   ├── capture_snapshot.md
+│   └── rebuild_dashboard.md
+├── tests/
+│   ├── fixtures/                     # hand-written snapshot dirs
+│   ├── test_build_derived.py
+│   └── test_build_metrics.py
+├── site/
+│   ├── index.html  app.js  style.css
+│   └── data.json                     # generated, committed
+├── data/
+│   ├── raw/<YYYY-MM-DD>/*.json       # immutable
+│   └── derived/snapshots.csv, artist_genres.csv
+├── .env.example
+├── requirements.txt
+└── docs/superpowers/specs/
+```
+
+Follows the WAT convention from `CLAUDE.md`: deterministic Python in `tools/`,
+markdown SOPs in `workflows/`, secrets only in `.env`.
+
+## 6. Data flow
+
+Daily at 06:00 UTC:
+
+1. **Auth** — `spotify_auth.py` exchanges `SPOTIFY_REFRESH_TOKEN` plus
+   client id/secret for a one-hour access token.
+2. **Capture** — `snapshot_top_items.py` makes 6 calls:
+   `{artists, tracks} x {short_term, medium_term, long_term}`, `limit=50`.
+   Each response is written verbatim to
+   `data/raw/<date>/top_<kind>_<time_range>.json`, plus a `meta.json`.
+3. **Derive** — `build_derived.py` walks all of `data/raw/` and rebuilds
+   `snapshots.csv` and `artist_genres.csv` from scratch.
+4. **Metrics** — `build_metrics.py` reads the derived tables and writes
+   `site/data.json`.
+5. **Commit and deploy** — commit any changes, push, publish the site.
+
+### Idempotency
+
+If `data/raw/<today>/` already exists, capture exits 0 without writing. Manual
+re-runs, double-fired crons, and retries cannot corrupt or duplicate a day.
+
+## 7. Data contracts
+
+### `data/raw/<YYYY-MM-DD>/meta.json`
+
+```json
+{
+  "captured_at": "2026-09-03T06:00:12Z",
+  "script_version": "1.0.0",
+  "calls": {
+    "top_artists_short_term": {"status": 200, "count": 50},
+    "top_tracks_long_term":   {"status": 500, "count": 0}
+  },
+  "partial": true
+}
+```
+
+`partial` is true when any of the 6 calls failed.
+
+### `data/derived/snapshots.csv`
+
+One row per entity per time range per day.
+
+| column | type | notes |
+|---|---|---|
+| `snapshot_date` | date | `YYYY-MM-DD`, UTC |
+| `captured_at` | datetime | ISO 8601 UTC |
+| `time_range` | enum | `short_term` / `medium_term` / `long_term` |
+| `kind` | enum | `artist` / `track` |
+| `rank` | int | 1 to 50 |
+| `spotify_id` | string | |
+| `name` | string | |
+| `popularity` | int | 0 to 100 |
+| `primary_artist_id` | string | tracks only; empty for artists |
+| `album_id` | string | tracks only; empty for artists |
+| `duration_ms` | int | tracks only; empty for artists |
+
+### `data/derived/artist_genres.csv`
+
+Long form, so genre membership is tracked *as of each snapshot* rather than
+last-known-value.
+
+| column | type |
+|---|---|
+| `snapshot_date` | date |
+| `time_range` | enum |
+| `artist_id` | string |
+| `genre` | string |
+
+Spotify attaches genres to artists only, never to tracks. All genre analysis is
+therefore artist-based. No metric in this spec requires track-level genres.
+
+## 8. Metric definitions
+
+Precise definitions so the implementation is unambiguous. "Consecutive
+snapshots" always means consecutive *available* snapshot dates, not consecutive
+calendar days — this makes every metric gap-tolerant.
+
+### 8.1 Rank timeline
+
+For each `(time_range, kind)`, the series of `(snapshot_date, spotify_id, rank)`.
+Absence from a snapshot means outside the top 50, not rank 51.
+
+### 8.2 Entry / exit events
+
+Between consecutive snapshots `d_prev` and `d`:
+
+- **entered** — present in `d`, absent in `d_prev`
+- **exited** — present in `d_prev`, absent in `d`
+- **re-entered** — entered, *and* present in any snapshot before `d_prev`
+
+Every entity in the first-ever snapshot is flagged `initial: true` and excluded
+from entry counts, so day one does not register as 50 entries.
+
+### 8.3 Short-vs-long divergence
+
+For a given date and kind, with `A` = `short_term` ids and `B` = `long_term` ids:
+
+```
+overlap = |A intersect B| / min(|A|, |B|)
+```
+
+Range 0 to 1. High means settled taste, low means an exploration phase. `min()`
+rather than a hardcoded 50 so short result sets are handled correctly.
+
+### 8.4 Genre mix over time
+
+For each `(date, time_range)`, an artist at rank `r` carries weight `w = 1/r`.
+That weight is split equally across the artist's genres; an artist with `g`
+genres contributes `w/g` to each. Artists with zero genres contribute their full
+weight to `unclassified`. Shares are normalised to sum to 1.
+
+Inverse rank rather than flat count, otherwise the tail of the top 50 drowns out
+the top 5. The weighting function is a named constant so it can be tuned without
+touching the rest of the pipeline.
+
+The 12 genres with the highest mean share across all history get their own band;
+everything else is bucketed as `other`.
+
+### 8.5 Mainstream-ness
+
+Mean and median `popularity` of the 50 entities, per `(date, kind, time_range)`.
+
+### 8.6 New-artist survival
+
+A cohort is the set of artists whose first-ever appearance in `short_term`
+artists is on date `d0`. For each week `w` after `d0`, the fraction of that
+cohort still present. **Requires at least 8 weeks of history to display.**
+
+### 8.7 Rotation half-life
+
+For `short_term` artists, a completed spell is an entry followed by a later
+exit; its length is the number of days between those two snapshot dates. Report
+the median across all completed spells. **Requires at least 10 completed spells
+to display.**
+
+### Insufficient-data gating
+
+Metrics 8.6 and 8.7 render an explicit "insufficient data — needs N more weeks"
+placeholder until their thresholds are met. They are built in milestone 3 but
+will show nothing meaningful for the first couple of months, which is expected.
+
+Note also that `long_term` is approximately a trailing year, not lifetime.
+
+## 9. Dashboard
+
+Single static page. Vanilla JS plus Observable Plot loaded from CDN at a pinned
+exact version — one charting dependency, no build step, no bundler.
+
+Sections in order:
+
+1. Headline numbers — divergence, mean popularity, entries and exits this week
+2. Rank timeline (bump chart), selectable by time range and kind
+3. Entry / exit feed, most recent first
+4. Genre mix (stacked area)
+5. Divergence over time (line)
+6. Mainstream-ness over time (line)
+7. New-artist survival curve — gated
+8. Rotation half-life — gated
+
+## 10. Auth setup
+
+One-time, manual, local:
+
+1. Register an app at developer.spotify.com. Dev mode is sufficient for a single
+   user; no quota extension request needed.
+2. Set the redirect URI to `http://127.0.0.1:8888/callback`. Spotify rejects
+   `localhost` and requires the loopback IP literal.
+3. Run `python tools/mint_refresh_token.py`. It starts a local server, opens a
+   browser for consent, and prints the refresh token.
+4. Store `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `SPOTIFY_REFRESH_TOKEN`
+   as GitHub repo secrets, and in a gitignored `.env` for local runs.
+
+Single scope: `user-top-read`. Nothing else is requested.
+
+## 11. Error handling
+
+Governing rule: **a silent failure is a permanent data gap.** Nothing fails
+quietly.
+
+| Condition | Behaviour |
+|---|---|
+| Token refresh fails | Non-zero exit, Action fails, GitHub emails |
+| HTTP 429 | Respect `Retry-After`, 3 retries with exponential backoff |
+| Partial capture | Write what succeeded, set `partial: true`, **still fail the job loudly**; derive layer tolerates partial days |
+| Empty top-50 | Valid data. Record it, do not error |
+| Malformed JSON in raw | Derive layer skips the file and continues, so one bad file cannot permanently block the build — but it records the skip in `data.json`, and the dashboard renders a data-quality banner naming the affected dates. Loud, without being fatal. |
+
+## 12. Testing
+
+`build_derived.py` and `build_metrics.py` are pure functions over files. They
+are where every real bug will live, and they get TDD coverage against
+hand-written fixture snapshot directories.
+
+Fixture cases that must be covered:
+
+- a partial day (some calls failed)
+- a multi-day gap in snapshots
+- an entity that exits and later re-enters
+- two entities with equal popularity (tie handling)
+- the first-ever snapshot (no entry events emitted)
+- an artist with zero genres
+- a day with fewer than 50 results
+
+The Spotify client is tested against recorded fixtures. **No live API calls in
+CI.** The dashboard gets a smoke test that it loads and renders; no deeper
+frontend testing.
+
+## 13. Risks and watch-items
+
+- **60-day workflow disable.** GitHub auto-disables scheduled workflows after 60
+  days of repo inactivity, and pushes made with the default `GITHUB_TOKEN` are
+  unreliable as "activity". Mitigation: commit on every run — `meta.json` always
+  changes, so there is always a diff. If it still gets disabled, switch the push
+  to a personal access token so commits count as user activity. Watch this at
+  the 60-day mark.
+- **Further Spotify deprecations.** The November 2024 cuts show these endpoints
+  are not guaranteed. The raw layer means anything already captured survives an
+  endpoint disappearing.
+- **Refresh token revocation.** Changing the Spotify password or removing the
+  app's authorisation invalidates the token. Symptom is a failing daily job;
+  remedy is re-running `mint_refresh_token.py`.
+- **Cron drift.** Actions schedules are best-effort. Daily cadence absorbs this.
+- **Pages on a private repo.** GitHub Pages from a private repo requires a paid
+  plan. See open decision below.
+
+## 14. Repo visibility
+
+**Decided 2026-09-03: public repo.** This enables GitHub Pages on a free
+account, which is the chosen output surface.
+
+Consequences, accepted knowingly:
+
+- The captured listening history is public. Anyone can read which artists and
+  tracks are in my top 50 and how that has changed. There is nothing here beyond
+  music taste — no email, no playlists, no play timestamps.
+- Actions secrets remain safe in a public repo. GitHub does not expose secrets
+  to workflows triggered by pull requests from forks, and the daily job runs
+  only on `schedule` and `workflow_dispatch`.
+- The `.gitignore` must keep `.env` out of the repo permanently. In a public
+  repo a single committed secret is a disclosed secret, so `mint_refresh_token.py`
+  writes only to stdout and never to a tracked file.
+- The three secrets live in GitHub repo secrets, never in the tree.
+
+If this is reconsidered later, moving to a private repo costs nothing in code —
+the dashboard is static files and can be served locally with
+`python -m http.server` from `site/` — but published Pages would need a paid
+plan, and the git history would remain public unless the repo is recreated.
+
+## 15. Milestones
+
+**M1 — Capture, shipped first and fast.** Auth, `snapshot_top_items.py`, the
+daily Action, raw commits. No analysis at all. This is urgent in a way the rest
+is not: every day before M1 lands is a data point that can never be recovered.
+
+**M2 — Derive layer.** `build_derived.py` plus its tests.
+
+**M3 — Metrics.** `build_metrics.py` plus its tests, including the gated
+long-horizon metrics.
+
+**M4 — Dashboard.** Static site, wired to `data.json`, published per the section
+14 decision.
+
+**M5 — Unlock.** Once enough history exists, verify the gated metrics render and
+tune the genre weighting against real data.
