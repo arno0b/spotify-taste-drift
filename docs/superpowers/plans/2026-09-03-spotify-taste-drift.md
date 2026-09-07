@@ -6,13 +6,13 @@
 
 **Architecture:** Three layers, each a pure function of the one above it — `data/raw/` (immutable API responses) → `data/derived/` (tidy CSVs) → `site/data.json` (dashboard metrics). A GitHub Actions cron captures daily, rebuilds everything downstream from raw, commits, and deploys Pages. Full rebuild rather than incremental update, so an improved metric replays across all history.
 
-**Tech Stack:** Python 3.12, `requests`, `pytest`. Vanilla JS plus Observable Plot from CDN. GitHub Actions. No database, no bundler, no frontend framework.
+**Tech Stack:** Python 3.13, `requests`, `pytest`. Vanilla JS plus Observable Plot from CDN. GitHub Actions. No database, no bundler, no frontend framework.
 
 **Spec:** [`docs/superpowers/specs/2026-09-03-spotify-taste-drift-design.md`](../specs/2026-09-03-spotify-taste-drift-design.md)
 
 ## Global Constraints
 
-- **Python 3.12.** Same version locally and in the Action.
+- **Python 3.13.** Same version locally and in the Action.
 - **Runtime dependencies: `requests` only.** Dev adds `pytest`. Nothing else without a decision.
 - **No live Spotify API calls in tests or CI.** Every test uses a fake session or fixture files.
 - **This is a PUBLIC repo.** Secrets live only in GitHub Actions secrets and a gitignored `.env`. `mint_refresh_token.py` writes to stdout only, never to a tracked file.
@@ -50,16 +50,25 @@ Establishes the package layout and test harness so every later task has somewher
 Create `tests/test_smoke.py`:
 
 ```python
-def test_tools_package_is_importable():
+def test_tools_is_a_real_package_not_a_namespace_package():
+    # A bare directory named "tools" imports fine as an implicit namespace
+    # package, so asserting on import alone proves nothing. __file__ is None
+    # for a namespace package and set for a real one.
     import tools
 
-    assert tools.__name__ == "tools"
+    assert tools.__file__ is not None
 ```
 
 - [ ] **Step 2: Run it to confirm it fails**
 
 Run: `python -m pytest tests/test_smoke.py -v`
-Expected: FAIL — `ModuleNotFoundError: No module named 'tools'`
+Expected: FAIL — `AssertionError: assert None is not None`, reporting
+`<module 'tools' (namespace)>`.
+
+Note the assertion is on `__file__`, not on the import succeeding. Since Python
+3.3 any directory on the path imports as an implicit namespace package, so
+`import tools` succeeds even with no `__init__.py` and a test asserting only on
+importability passes before the package exists.
 
 - [ ] **Step 3: Create the package and config files**
 
@@ -78,7 +87,7 @@ testpaths = ["tests"]
 Create `requirements.txt`:
 
 ```
-requests==2.32.3
+requests==2.32.5
 ```
 
 Create `.env.example`:
@@ -976,7 +985,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - run: pip install -r requirements.txt
 
@@ -2767,7 +2776,7 @@ Also add a test job so the suite runs on every push. Insert this as the first jo
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.13"
       - run: pip install -r requirements.txt pytest
       - run: python -m pytest -v
 ```
