@@ -21,3 +21,6 @@ Thumbs.db
 
 # NOTE: data/ is deliberately NOT ignored. The captured snapshots are the
 # point of this repo — git history is the drift record.
+
+# Visual brainstorming scratch — not part of the project
+.superpowers/

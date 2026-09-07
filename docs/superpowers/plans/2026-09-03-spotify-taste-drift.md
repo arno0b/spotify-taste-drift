@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Capture Spotify top artists and tracks daily into an immutable store, and publish a static dashboard showing how taste moves over time.
+**Goal:** Capture Spotify top artists and tracks daily into an immutable store, publish a static dashboard — written as a data essay — showing how taste moves over time, and let a visitor run the same analysis on their own account entirely in their browser.
 
 **Architecture:** Three layers, each a pure function of the one above it — `data/raw/` (immutable API responses) → `data/derived/` (tidy CSVs) → `site/data.json` (dashboard metrics). A GitHub Actions cron captures daily, rebuilds everything downstream from raw, commits, and deploys Pages. Full rebuild rather than incremental update, so an improved metric replays across all history.
 
@@ -22,6 +22,10 @@
 - **Time range values:** `short_term`, `medium_term`, `long_term`. **Kind values:** `artist`, `track` (singular) in all derived data. Note the Spotify API path uses the plural `artists` / `tracks`; convert at the boundary in Task 4.
 - **Gating thresholds:** survival curve needs ≥ 8 weeks of history; rotation half-life needs ≥ 10 completed spells.
 - **Genre weighting:** `w = 1/rank`, split equally across an artist's genres. Defined once as `RANK_WEIGHT` in `tools/build_metrics.py`.
+- **Never draw a shape that is not real data.** No illustrative curves, sample trends, or placeholder shapes anywhere in the UI, even labelled as examples. An unready figure keeps its slot as an empty framed area with a caption giving the date it arrives. This is the page's whole credibility.
+- **Editorial design system:** serif (`--serif`) for the lede and figure captions, sans (`--sans`) for labels and UI chrome. Warm off-white ground, near-black text, one green accent, all as CSS custom properties in `site/style.css` with a `prefers-color-scheme: dark` override. Charts render on the page ground — no card borders, no shadows.
+- **The self-serve page uses PKCE and never stores a refresh token.** No client secret ships. The client ID is public by design.
+- **Nothing the self-serve page reads leaves the browser.** No analytics, no telemetry, no third-party requests beyond `accounts.spotify.com`, `api.spotify.com`, and the pinned Plot CDN.
 
 ---
 
@@ -2258,7 +2262,7 @@ git commit -m "feat: add gated survival and half-life metrics, assemble data.jso
 
 ### Task 9: Dashboard
 
-Static page rendering `data.json`. No build step, no framework.
+Static page rendering `data.json` as a data essay. No build step, no framework.
 
 **Files:**
 - Create: `site/index.html`
@@ -2269,6 +2273,16 @@ Static page rendering `data.json`. No build step, no framework.
 **Interfaces:**
 - Consumes: `site/data.json` exactly as specified in Task 8
 - Produces: a static site rooted at `site/`
+
+**Design decisions this task implements** (spec §9.1–9.4):
+- Editorial: serif for the lede and captions, sans for labels; warm off-white
+  ground, near-black text, one green accent; charts on the page ground with no
+  card borders. Figures in an article, not widgets on a grid.
+- Order: generated lede, byline, stat tiles, then numbered captioned figures.
+- Figure 1 draws all 50 lines; only the current top 10 carry weight and a
+  right-edge name label. The rest are faint context.
+- **Never draw a shape that is not real data.** An unready figure keeps its slot
+  as an empty framed area with a caption giving the date it arrives.
 
 - [ ] **Step 1: Confirm the CDN URL resolves before depending on it**
 
@@ -2292,62 +2306,75 @@ Create `site/index.html`:
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Taste Drift</h1>
-    <p id="subtitle">Loading…</p>
-  </header>
+  <article>
+    <p class="kicker">Taste Drift</p>
+    <hr class="rule-thick">
 
-  <div id="quality" class="banner" hidden></div>
+    <h1 class="lede" id="lede">Reading the data…</h1>
+    <p class="byline" id="byline"></p>
 
-  <section id="headline" class="tiles"></section>
+    <div id="quality" class="banner" hidden></div>
 
-  <section>
-    <h2>Rank over time</h2>
-    <div class="controls">
-      <label>Kind
-        <select id="kind"><option value="artist">Artists</option><option value="track">Tracks</option></select>
-      </label>
-      <label>Range
-        <select id="range">
-          <option value="short_term">Last 4 weeks</option>
-          <option value="medium_term">Last 6 months</option>
-          <option value="long_term">Last year</option>
-        </select>
-      </label>
-    </div>
-    <div id="timeline" class="chart"></div>
-  </section>
+    <section class="tiles" id="headline"></section>
 
-  <section>
-    <h2>Genre mix</h2>
-    <div id="genres" class="chart"></div>
-  </section>
+    <p class="aside">
+      Curious about your own? <a href="try/">Run it on your account</a> —
+      your data stays in your browser. Access is by invitation; see the page for why.
+    </p>
 
-  <section>
-    <h2>Short vs long divergence</h2>
-    <p class="note">1.0 means your recent listening matches your long-term taste. Lower means you are exploring.</p>
-    <div id="divergence" class="chart"></div>
-  </section>
+    <figure>
+      <figcaption class="fignum">Figure 1 · Rank over time</figcaption>
+      <div class="controls">
+        <label>Kind
+          <select id="kind"><option value="artist">Artists</option><option value="track">Tracks</option></select>
+        </label>
+        <label>Range
+          <select id="range">
+            <option value="short_term">Last 4 weeks</option>
+            <option value="medium_term">Last 6 months</option>
+            <option value="long_term">Last year</option>
+          </select>
+        </label>
+      </div>
+      <div id="timeline" class="chart"></div>
+      <figcaption class="cap">Every line is one artist. The current top ten are drawn in full and named; the rest stay faint. Hover or tap a line to bring it forward.</figcaption>
+    </figure>
 
-  <section>
-    <h2>Mainstream-ness</h2>
-    <div id="popularity" class="chart"></div>
-  </section>
+    <figure>
+      <figcaption class="fignum">Figure 2 · Genre mix</figcaption>
+      <div id="genres" class="chart"></div>
+      <figcaption class="cap">Share of listening by genre, weighted so a rank-1 artist counts for more than a rank-50 one.</figcaption>
+    </figure>
 
-  <section>
-    <h2>New artist survival</h2>
-    <div id="survival" class="chart"></div>
-  </section>
+    <figure>
+      <figcaption class="fignum">Figure 3 · Short versus long</figcaption>
+      <div id="divergence" class="chart"></div>
+      <figcaption class="cap">How much of this month's listening was already in the long-term rotation. 1.0 means settled; lower means exploring.</figcaption>
+    </figure>
 
-  <section>
-    <h2>Rotation half-life</h2>
-    <div id="halflife" class="chart"></div>
-  </section>
+    <figure>
+      <figcaption class="fignum">Figure 4 · Mainstream-ness</figcaption>
+      <div id="popularity" class="chart"></div>
+      <figcaption class="cap">Mean Spotify popularity of the top fifty. Rising means drifting toward the centre.</figcaption>
+    </figure>
 
-  <section>
-    <h2>Recent changes</h2>
-    <ul id="events" class="events"></ul>
-  </section>
+    <figure>
+      <figcaption class="fignum">Figure 5 · New artist survival</figcaption>
+      <div id="survival" class="chart"></div>
+      <figcaption class="cap" id="survival-cap">Of the artists here at the start, how many are still here.</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 6 · Rotation half-life</figcaption>
+      <div id="halflife" class="chart"></div>
+      <figcaption class="cap" id="halflife-cap">How long a typical artist survives in the top fifty.</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Recent changes</figcaption>
+      <ul id="events" class="events"></ul>
+    </figure>
+  </article>
 
   <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js"></script>
   <script src="app.js"></script>
@@ -2362,59 +2389,95 @@ Create `site/style.css`:
   color-scheme: light dark;
   --bg: #fbfbfa;
   --fg: #1a1a19;
-  --muted: #6b6b68;
-  --line: #e3e3e0;
+  --muted: #6f6f68;
+  --faint: #a8a8a0;
+  --line: #d8d8d4;
   --accent: #2f6f4f;
   --warn: #8a5a1a;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #16171a; --fg: #ececea; --muted: #9a9a97; --line: #2c2e33; --accent: #7fc3a0; --warn: #d7a45c; }
+  :root {
+    --bg: #16171a; --fg: #ececea; --muted: #9a9a97; --faint: #55575c;
+    --line: #2c2e33; --accent: #7fc3a0; --warn: #d7a45c;
+  }
 }
 * { box-sizing: border-box; }
-body {
-  margin: 0 auto; padding: 2rem 1.25rem 5rem; max-width: 60rem;
-  background: var(--bg); color: var(--fg);
-  font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-header { border-bottom: 1px solid var(--line); padding-bottom: 1rem; margin-bottom: 2rem; }
-h1 { font-size: 1.6rem; margin: 0 0 .25rem; letter-spacing: -0.01em; }
-h2 { font-size: 1.05rem; margin: 2.5rem 0 .75rem; font-weight: 600; }
-#subtitle, .note { color: var(--muted); margin: 0 0 .5rem; font-size: .875rem; }
-.banner {
-  border: 1px solid var(--warn); border-radius: 6px; padding: .75rem 1rem;
-  margin-bottom: 1.5rem; color: var(--warn); font-size: .875rem;
-}
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .75rem; }
-.tile { border: 1px solid var(--line); border-radius: 8px; padding: .85rem 1rem; }
-.tile .value { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; }
-.tile .label { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; }
-.controls { display: flex; gap: 1rem; margin-bottom: .75rem; font-size: .875rem; }
-.chart { overflow-x: auto; min-height: 2rem; }
-.pending { color: var(--muted); font-style: italic; font-size: .875rem; }
-.events { list-style: none; padding: 0; font-size: .875rem; }
-.events li { border-bottom: 1px solid var(--line); padding: .4rem 0; display: flex; gap: .75rem; }
-.events time { color: var(--muted); min-width: 6rem; }
-.entered { color: var(--accent); }
-.exited { color: var(--muted); }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.6 var(--sans); }
+article { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 6rem; }
+
+.kicker { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.rule-thick { border: none; border-top: 2px solid var(--fg); margin: .7rem 0 1.1rem; }
+.lede { font-family: var(--serif); font-size: 1.85rem; line-height: 1.28; letter-spacing: -0.015em; font-weight: 400; margin: 0 0 .5rem; }
+.byline { color: var(--muted); font-size: .82rem; margin: 0 0 1.5rem; }
+
+.banner { border: 1px solid var(--warn); border-radius: 4px; padding: .7rem .9rem; margin-bottom: 1.5rem; color: var(--warn); font-size: .82rem; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); gap: .6rem; margin-bottom: 1.75rem; }
+.tile { border: 1px solid var(--line); border-radius: 3px; padding: .7rem .8rem; }
+.tile .value { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
+.tile .label { color: var(--muted); font-size: .64rem; text-transform: uppercase; letter-spacing: .1em; }
+
+.aside { border-left: 2px solid var(--accent); padding: .55rem .9rem; font-size: .84rem; color: var(--muted); margin: 0 0 2.5rem; }
+.aside a { color: var(--accent); }
+
+/* Figures sit on the page ground — no cards, no shadows. */
+figure { margin: 3rem 0 0; }
+.fignum { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+.cap { font-family: var(--serif); font-size: .86rem; line-height: 1.5; color: var(--muted); margin-top: .6rem; }
+.chart { overflow-x: auto; }
+.controls { display: flex; gap: 1rem; margin-bottom: .6rem; font-size: .8rem; color: var(--muted); }
+
+/* An unready figure keeps its slot. Framed, empty, never faked. */
+.awaiting { border: 1px dashed var(--line); border-radius: 3px; min-height: 6rem; }
+.awaiting-note { color: var(--warn); font-family: var(--serif); font-size: .86rem; margin-top: .6rem; }
+
+.events { list-style: none; padding: 0; margin: 0; font-size: .85rem; }
+.events li { border-bottom: 1px solid var(--line); padding: .45rem 0; display: flex; gap: .8rem; }
+.events time { color: var(--muted); min-width: 5.5rem; font-variant-numeric: tabular-nums; }
+.events .exited { color: var(--muted); }
+.events .entered { color: var(--accent); }
 ```
 
 Create `site/app.js`:
 
 ```js
 const $ = (id) => document.getElementById(id);
+const TOP_N = 10; // lines that get weight and a name label in Figure 1
 
 function tile(label, value) {
   return `<div class="tile"><div class="value">${value}</div><div class="label">${label}</div></div>`;
 }
 
-function pending(node, message) {
-  node.innerHTML = `<p class="pending">${message}</p>`;
+// An unready figure keeps its slot as an empty frame. We never draw a shape
+// that is not real data, so there is deliberately nothing inside it.
+function awaiting(node, note) {
+  node.innerHTML = `<div class="awaiting"></div><p class="awaiting-note">${note}</p>`;
+}
+
+function arrivalDate(unitsShort, unitDays) {
+  const when = new Date(Date.now() + unitsShort * unitDays * 86400000);
+  return when.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
+}
+
+function writeLede(data) {
+  const overlap = data.headline.divergence_artists;
+  if (overlap === null) {
+    $("lede").textContent = "Not enough listening recorded yet to say anything true.";
+    return;
+  }
+  const percent = Math.round(overlap * 100);
+  $("lede").textContent =
+    `${percent} percent of what I'm playing right now was already in my long-term rotation.`;
 }
 
 function render(data) {
+  writeLede(data);
+
   const dates = data.snapshot_dates;
-  $("subtitle").textContent = dates.length
-    ? `${dates.length} snapshots, ${dates[0]} to ${dates[dates.length - 1]}`
+  $("byline").textContent = dates.length
+    ? `${dates.length} daily snapshot${dates.length === 1 ? "" : "s"} · ${dates[0]} to ${dates[dates.length - 1]}`
     : "No snapshots yet.";
 
   const skipped = data.data_quality.skipped_files;
@@ -2454,21 +2517,38 @@ function render(data) {
 function drawTimeline(data) {
   const node = $("timeline");
   const rows = (data.rank_timeline[$("kind").value] || {})[$("range").value] || [];
-  if (!rows.length) return pending(node, "No data for this selection yet.");
+  if (!rows.length) return awaiting(node, "No data for this selection yet.");
+
+  // All fifty are drawn. Only the current top ten carry weight and a label —
+  // a rank chart exists to show artists trading places, so the rest stay as
+  // faint context rather than being filtered out.
+  const lastDate = data.snapshot_dates[data.snapshot_dates.length - 1];
+  const current = rows.filter((d) => d.date === lastDate);
+  const featured = new Set(current.filter((d) => d.rank <= TOP_N).map((d) => d.id));
+  const isFeatured = (d) => featured.has(d.id);
 
   node.replaceChildren(
     Plot.plot({
-      height: 460,
-      marginLeft: 40,
-      marginRight: 140,
-      y: { reverse: true, label: "rank", domain: [1, 50] },
+      height: 480,
+      marginLeft: 34,
+      marginRight: 132,
+      style: { background: "transparent", fontFamily: "var(--sans)" },
+      y: { reverse: true, label: "rank", domain: [1, 50], ticks: [1, 10, 25, 50] },
       x: { label: null, type: "utc" },
       marks: [
-        Plot.line(rows, { x: (d) => new Date(d.date), y: "rank", z: "id", strokeOpacity: 0.55 }),
-        Plot.text(
-          rows.filter((d) => d.date === data.snapshot_dates[data.snapshot_dates.length - 1]),
-          { x: (d) => new Date(d.date), y: "rank", text: "name", dx: 6, textAnchor: "start", fontSize: 10 }
-        ),
+        Plot.line(rows.filter((d) => !isFeatured(d)), {
+          x: (d) => new Date(d.date), y: "rank", z: "id",
+          stroke: "var(--faint)", strokeWidth: 1, strokeOpacity: 0.5,
+        }),
+        Plot.line(rows.filter(isFeatured), {
+          x: (d) => new Date(d.date), y: "rank", z: "id",
+          stroke: "var(--fg)", strokeWidth: 1.8,
+        }),
+        Plot.text(current.filter((d) => d.rank <= TOP_N), {
+          x: (d) => new Date(d.date), y: "rank", text: "name",
+          dx: 7, textAnchor: "start", fontSize: 11, fill: "var(--fg)",
+        }),
+        Plot.tip(rows, Plot.pointer({ x: (d) => new Date(d.date), y: "rank", title: (d) => `${d.name} · #${d.rank}` })),
       ],
     })
   );
@@ -2477,9 +2557,8 @@ function drawTimeline(data) {
 function drawGenres(rows) {
   const node = $("genres");
   const shortTerm = rows.filter((r) => r.time_range === "short_term");
-  if (!shortTerm.length) return pending(node, "No genre data yet.");
+  if (!shortTerm.length) return awaiting(node, "No genre data yet.");
 
-  // Keep the 12 genres with the highest mean share; bucket the rest as "other".
   const totals = new Map();
   for (const row of shortTerm) totals.set(row.genre, (totals.get(row.genre) || 0) + row.share);
   const top = new Set([...totals.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12).map((e) => e[0]));
@@ -2497,8 +2576,8 @@ function drawGenres(rows) {
 
   node.replaceChildren(
     Plot.plot({
-      height: 320,
-      marginRight: 110,
+      height: 300, marginRight: 110,
+      style: { background: "transparent" },
       y: { label: "share", percent: true },
       x: { label: null, type: "utc" },
       color: { legend: true },
@@ -2508,16 +2587,16 @@ function drawGenres(rows) {
 }
 
 function drawLine(node, rows, field, domain) {
-  if (!rows.length) return pending(node, "Not enough data yet.");
+  if (!rows.length) return awaiting(node, "Not enough data yet.");
   node.replaceChildren(
     Plot.plot({
-      height: 220,
+      height: 200,
+      style: { background: "transparent" },
       y: { domain, label: field },
       x: { label: null, type: "utc" },
       marks: [
-        Plot.ruleY(domain.slice(0, 1)),
-        Plot.line(rows, { x: (d) => new Date(d.date), y: field }),
-        Plot.dot(rows, { x: (d) => new Date(d.date), y: field, r: 2 }),
+        Plot.ruleY(domain.slice(0, 1), { stroke: "var(--line)" }),
+        Plot.line(rows, { x: (d) => new Date(d.date), y: field, stroke: "var(--accent)", strokeWidth: 1.8 }),
       ],
     })
   );
@@ -2526,15 +2605,19 @@ function drawLine(node, rows, field, domain) {
 function drawSurvival(survival) {
   const node = $("survival");
   if (!survival.available) {
-    const remaining = survival.weeks_needed - survival.weeks_have;
-    return pending(node, `Insufficient data — needs ${remaining} more week(s) of history.`);
+    const weeks = survival.weeks_needed - survival.weeks_have;
+    return awaiting(
+      node,
+      `Needs ${weeks} more week${weeks === 1 ? "" : "s"} of history. First appears ${arrivalDate(weeks, 7)}.`
+    );
   }
   node.replaceChildren(
     Plot.plot({
-      height: 240,
+      height: 220,
+      style: { background: "transparent" },
       y: { domain: [0, 1], label: "still in top 50", percent: true },
       x: { label: "weeks since first appearance" },
-      marks: [Plot.line(survival.curve, { x: "week", y: "fraction" })],
+      marks: [Plot.line(survival.curve, { x: "week", y: "fraction", stroke: "var(--accent)", strokeWidth: 1.8 })],
     })
   );
 }
@@ -2542,17 +2625,21 @@ function drawSurvival(survival) {
 function drawHalfLife(halfLife) {
   const node = $("halflife");
   if (!halfLife.available) {
-    const remaining = halfLife.spells_needed - halfLife.spells_have;
-    return pending(node, `Insufficient data — needs ${remaining} more completed spell(s).`);
+    const spells = halfLife.spells_needed - halfLife.spells_have;
+    return awaiting(node, `Needs ${spells} more completed spell${spells === 1 ? "" : "s"} before this can be measured.`);
   }
   node.innerHTML =
-    `<p><strong>${halfLife.median_days} days</strong> is how long a typical artist ` +
-    `survives in your top 50, across ${halfLife.spells_have} completed spells.</p>`;
+    `<p class="lede" style="font-size:1.3rem">${halfLife.median_days} days</p>`;
+  $("halflife-cap").textContent =
+    `How long a typical artist survives in the top fifty, across ${halfLife.spells_have} completed spells.`;
 }
 
 function drawEvents(events) {
-  const recent = events.filter((e) => e.kind === "artist" && e.time_range === "short_term").reverse().slice(0, 50);
-  if (!recent.length) return pending($("events"), "No changes recorded yet.");
+  const recent = events
+    .filter((e) => e.kind === "artist" && e.time_range === "short_term")
+    .reverse()
+    .slice(0, 50);
+  if (!recent.length) return awaiting($("events"), "No changes recorded yet.");
   $("events").innerHTML = recent
     .map((event) => {
       const cls = event.event === "exited" ? "exited" : "entered";
@@ -2569,7 +2656,8 @@ fetch("data.json")
   })
   .then(render)
   .catch((error) => {
-    $("subtitle").textContent = `Could not load data.json — ${error.message}`;
+    $("lede").textContent = "Could not load the data.";
+    $("byline").textContent = error.message;
   });
 ```
 
@@ -2581,12 +2669,15 @@ python -m http.server 8000 --directory site
 ```
 
 Open http://127.0.0.1:8000 and confirm:
-- the subtitle shows a snapshot count and date range
-- four headline tiles render with numbers, not `—`
-- the rank timeline draws lines and the two dropdowns change it
-- the genre chart renders a stacked area
-- survival and half-life both show "Insufficient data — needs N more…"
+- the lede reads as a sentence with a real percentage in it, not a placeholder
+- the byline shows a snapshot count and date range
+- four tiles render with numbers, not `—`
+- Figure 1 draws faint lines plus darker labelled ones; the dropdowns change it
+- Figures 5 and 6 show an empty dashed frame with a note naming a real future date — **and no drawn shape inside**
+- captions render in the serif face, labels in sans
 - the browser console has no errors
+
+Then check dark mode by toggling your OS theme. The page must remain readable, and the faint context lines in Figure 1 must still be distinguishable from the background.
 
 Stop the server with Ctrl+C.
 
@@ -2594,10 +2685,8 @@ Stop the server with Ctrl+C.
 
 ```bash
 git add site/index.html site/app.js site/style.css
-git commit -m "feat: add static taste drift dashboard"
+git commit -m "feat: add editorial taste drift dashboard"
 ```
-
----
 
 ### Task 10: Publish to Pages and wire the full pipeline into CI
 
@@ -2778,10 +2867,369 @@ git push
 
 ---
 
-## Milestone 5: Unlock (not a task — a calendar note)
+### Task 11: Self-serve page
+
+Lets a visitor run the analysis on their own account, entirely in their browser. Completes milestone 5.
+
+**Files:**
+- Create: `site/try/index.html`
+- Create: `site/try/try.js`
+- Modify: `README.md` (allowlist section)
+- Test: manual, per steps below
+
+**Interfaces:**
+- Consumes: `site/style.css` (shared, referenced as `../style.css`)
+- Produces: a self-contained PKCE client at `site/try/`
+
+**Constraints this task implements** (spec §9.5 and §14):
+- **PKCE, no client secret.** Nothing extractable ships. The refresh-token
+  rotation that ruled PKCE out for the cron does not apply: this page never
+  stores a refresh token, it uses the one-hour access token and discards it.
+- **No data leaves the browser.** There is no server to send it to. The page
+  says so plainly.
+- **`localStorage` accumulation is optional and local.** It lives in that one
+  browser, does not sync, and is lost if site data is cleared. Say that too.
+- **The 25-user cap must be handled as a first-class state**, not an error. A
+  visitor who is not on the allowlist gets a clear explanation, never a broken
+  login.
+
+- [ ] **Step 1: Add the redirect URIs in the Spotify dashboard**
+
+This is manual. In your app's settings add both:
+
+- `https://arno0b.github.io/spotify-taste-drift/try/` — production
+- `http://127.0.0.1:8000/try/` — local testing (loopback IP, not `localhost`)
+
+Keep the existing `http://127.0.0.1:8888/callback` for the cron's token minting. Note your Client ID — it goes in `try.js` and is public by design for a PKCE client.
+
+- [ ] **Step 2: Write the page**
+
+Create `site/try/index.html`:
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taste Drift · Your account</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <article>
+    <p class="kicker"><a href="../">Taste Drift</a> · Your account</p>
+    <hr class="rule-thick">
+
+    <h1 class="lede" id="lede">How settled is your listening?</h1>
+    <p class="byline">
+      Compares your last four weeks against your last year. Runs entirely in this
+      browser — nothing is sent anywhere, because there is nowhere to send it.
+    </p>
+
+    <section id="gate">
+      <p><button class="tile" id="login" style="cursor:pointer">Sign in with Spotify</button></p>
+      <p class="cap">
+        Read-only. The single permission requested is <code>user-top-read</code>.
+        Access is by invitation while the app is in development mode — Spotify caps
+        that at 25 people, added by hand. If you get an error, you are not on the
+        list yet; ask and I will add your Spotify account email.
+      </p>
+    </section>
+
+    <section id="result" hidden>
+      <div class="tiles" id="tiles"></div>
+      <figure>
+        <figcaption class="fignum">Your history, in this browser</figcaption>
+        <div id="history" class="chart"></div>
+        <figcaption class="cap" id="history-cap"></figcaption>
+      </figure>
+      <p class="aside">
+        Snapshots are saved in this browser only. They do not sync to your other
+        devices and are lost if you clear site data.
+        <a href="#" id="forget">Forget everything</a>
+      </p>
+    </section>
+
+    <div id="error" class="banner" hidden></div>
+  </article>
+
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js"></script>
+  <script src="try.js"></script>
+</body>
+</html>
+```
+
+Create `site/try/try.js`:
+
+```js
+// Public by design: a PKCE client has no secret, and the client ID is visible
+// in every authorize URL anyway. Replace with your own app's ID.
+const CLIENT_ID = "REPLACE_WITH_YOUR_SPOTIFY_CLIENT_ID";
+const REDIRECT_URI = `${location.origin}${location.pathname}`;
+const SCOPE = "user-top-read";
+const STORE_KEY = "taste-drift-snapshots-v1";
+
+const $ = (id) => document.getElementById(id);
+
+// --- PKCE ------------------------------------------------------------------
+
+function randomVerifier() {
+  const bytes = crypto.getRandomValues(new Uint8Array(64));
+  return base64url(bytes);
+}
+
+function base64url(bytes) {
+  return btoa(String.fromCharCode(...new Uint8Array(bytes)))
+    .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+async function challengeFor(verifier) {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier));
+  return base64url(digest);
+}
+
+async function beginLogin() {
+  const verifier = randomVerifier();
+  sessionStorage.setItem("pkce_verifier", verifier);
+  const params = new URLSearchParams({
+    client_id: CLIENT_ID,
+    response_type: "code",
+    redirect_uri: REDIRECT_URI,
+    scope: SCOPE,
+    code_challenge_method: "S256",
+    code_challenge: await challengeFor(verifier),
+  });
+  location.href = `https://accounts.spotify.com/authorize?${params}`;
+}
+
+async function exchangeCode(code) {
+  const verifier = sessionStorage.getItem("pkce_verifier");
+  if (!verifier) throw new Error("Login session expired. Try signing in again.");
+
+  const response = await fetch("https://accounts.spotify.com/api/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "authorization_code",
+      code,
+      redirect_uri: REDIRECT_URI,
+      client_id: CLIENT_ID,
+      code_verifier: verifier,
+    }),
+  });
+  if (!response.ok) throw new Error(`Token exchange failed (${response.status}).`);
+  sessionStorage.removeItem("pkce_verifier");
+  return (await response.json()).access_token;
+}
+
+// --- Spotify ---------------------------------------------------------------
+
+async function fetchTop(token, kind, timeRange) {
+  const response = await fetch(
+    `https://api.spotify.com/v1/me/top/${kind}?time_range=${timeRange}&limit=50`,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+  if (!response.ok) throw new Error(`Spotify returned ${response.status} for ${kind}/${timeRange}.`);
+  return (await response.json()).items;
+}
+
+// --- Analysis --------------------------------------------------------------
+
+// Same definition as the cron's build_metrics.divergence: overlap over the
+// smaller set, so short result sets are handled correctly.
+function overlapOf(shortItems, longItems) {
+  const shortIds = new Set(shortItems.map((item) => item.id));
+  const longIds = new Set(longItems.map((item) => item.id));
+  const shared = [...shortIds].filter((id) => longIds.has(id)).length;
+  const smaller = Math.min(shortIds.size, longIds.size);
+  return smaller ? shared / smaller : null;
+}
+
+function meanPopularity(items) {
+  if (!items.length) return null;
+  return items.reduce((sum, item) => sum + item.popularity, 0) / items.length;
+}
+
+// --- Local store -----------------------------------------------------------
+
+function loadSnapshots() {
+  try {
+    return JSON.parse(localStorage.getItem(STORE_KEY) || "[]");
+  } catch {
+    return []; // corrupt or blocked storage is not worth failing over
+  }
+}
+
+function saveSnapshot(entry) {
+  const all = loadSnapshots();
+  const today = entry.date;
+  const kept = all.filter((snapshot) => snapshot.date !== today); // one per day
+  kept.push(entry);
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(kept));
+  } catch {
+    // Private browsing or blocked storage. The visit still works; only the
+    // accumulating history is lost, and the caption already warns about that.
+  }
+  return kept;
+}
+
+// --- Render ----------------------------------------------------------------
+
+function tile(label, value) {
+  return `<div class="tile"><div class="value">${value}</div><div class="label">${label}</div></div>`;
+}
+
+function showError(message) {
+  $("error").hidden = false;
+  $("error").textContent = message;
+}
+
+function renderResult(overlap, popularity, snapshots) {
+  $("gate").hidden = true;
+  $("result").hidden = false;
+
+  const percent = overlap === null ? null : Math.round(overlap * 100);
+  $("lede").textContent = percent === null
+    ? "Spotify has not computed enough listening for your account yet."
+    : `${percent} percent of what you're playing right now was already in your long-term rotation.`;
+
+  $("tiles").innerHTML = [
+    tile("Divergence", overlap === null ? "—" : overlap.toFixed(2)),
+    tile("Mean popularity", popularity === null ? "—" : popularity.toFixed(1)),
+    tile("Snapshots here", snapshots.length),
+  ].join("");
+
+  const caption = $("history-cap");
+  if (snapshots.length < 2) {
+    $("history").innerHTML = `<div class="awaiting"></div>`;
+    caption.textContent =
+      "Come back another day and this fills in. One point is not a trend, so nothing is drawn yet.";
+    return;
+  }
+  caption.textContent = `${snapshots.length} visits recorded in this browser.`;
+  $("history").replaceChildren(
+    Plot.plot({
+      height: 200,
+      style: { background: "transparent" },
+      y: { domain: [0, 1], label: "divergence" },
+      x: { label: null, type: "utc" },
+      marks: [
+        Plot.line(snapshots, { x: (d) => new Date(d.date), y: "overlap", stroke: "var(--accent)", strokeWidth: 1.8 }),
+        Plot.dot(snapshots, { x: (d) => new Date(d.date), y: "overlap", r: 2.5, fill: "var(--accent)" }),
+      ],
+    })
+  );
+}
+
+// --- Entry point -----------------------------------------------------------
+
+async function main() {
+  $("login").onclick = () => beginLogin().catch((error) => showError(error.message));
+  $("forget").onclick = (event) => {
+    event.preventDefault();
+    localStorage.removeItem(STORE_KEY);
+    location.href = REDIRECT_URI;
+  };
+
+  const params = new URLSearchParams(location.search);
+
+  // Spotify redirects here with ?error= when the account is not on the app's
+  // allowlist. That is the expected path for most visitors, so it gets a real
+  // explanation rather than an error dump.
+  if (params.get("error")) {
+    showError(
+      "Spotify would not authorise this account. While the app is in development " +
+      "mode Spotify allows at most 25 people, each added by hand. Ask me to add " +
+      "your Spotify account email and try again."
+    );
+    history.replaceState({}, "", REDIRECT_URI);
+    return;
+  }
+
+  const code = params.get("code");
+  if (!code) return; // first visit, show the sign-in gate
+
+  history.replaceState({}, "", REDIRECT_URI);
+  try {
+    const token = await exchangeCode(code);
+    const [shortItems, longItems] = await Promise.all([
+      fetchTop(token, "artists", "short_term"),
+      fetchTop(token, "artists", "long_term"),
+    ]);
+
+    const overlap = overlapOf(shortItems, longItems);
+    const popularity = meanPopularity(shortItems);
+    const snapshots = saveSnapshot({
+      date: new Date().toISOString().slice(0, 10),
+      overlap,
+      popularity,
+      short: shortItems.map((item) => item.id),
+      long: longItems.map((item) => item.id),
+    });
+
+    renderResult(overlap, popularity, snapshots);
+  } catch (error) {
+    showError(error.message);
+  }
+}
+
+main();
+```
+
+- [ ] **Step 3: Set your client ID and test locally**
+
+Replace `REPLACE_WITH_YOUR_SPOTIFY_CLIENT_ID` in `site/try/try.js` with the Client ID from Task 3.
+
+Run:
+```bash
+python -m http.server 8000 --directory site
+```
+
+Open http://127.0.0.1:8000/try/ and confirm:
+- the sign-in button redirects to Spotify's consent screen
+- after consenting you land back with a lede stating a real percentage
+- three tiles render, and the history figure shows an empty frame with the "come back another day" caption on a first visit
+- reloading and signing in again shows `Snapshots here: 1`, not 2 — same-day visits replace rather than accumulate
+- "Forget everything" clears it and returns to the sign-in gate
+- the browser console shows no errors, and the Network tab shows requests only to `accounts.spotify.com` and `api.spotify.com`
+
+Then test the allowlist state, which is the one most visitors will hit. Either sign in with a Spotify account you have *not* added to the app, or append `?error=access_denied` to the URL manually. Expected: the invitation explanation, not a stack trace.
+
+- [ ] **Step 4: Document the allowlist in the README**
+
+Append to `README.md`:
+
+```markdown
+## Running it on your own account
+
+There is a self-serve page at `/try/` that computes your short-vs-long
+divergence in your browser. It sends nothing anywhere — there is no server.
+
+**Access is by invitation.** Spotify caps apps in development mode at 25 users,
+each added by hand using their Spotify account email. If you would like to be
+added, ask. If you sign in without being on the list, Spotify rejects it and the
+page explains why.
+```
+
+- [ ] **Step 5: Deploy and verify in production**
+
+```bash
+git add site/try/index.html site/try/try.js README.md
+git commit -m "feat: add client-side self-serve page"
+git push
+gh workflow run "Daily snapshot"
+```
+
+After the run completes, open `https://arno0b.github.io/spotify-taste-drift/try/` and repeat the Step 3 checks against the live redirect URI. The production origin must match the redirect URI registered in Step 1 exactly, trailing slash included.
+
+**Milestone 5 complete.**
+
+## Milestone 6: Unlock (not a task — a calendar note)
 
 Roughly 8 weeks after Task 5 lands, revisit:
 
-- Confirm the survival curve and half-life have flipped to `available: true` and render sensibly.
+- Confirm the survival curve and half-life have flipped to `available: true` and render sensibly, and that their empty frames are gone.
+- Add **Figure 7, then versus now** — a slope chart between two dates, deferred from Task 9 because it needs about a month of history before it says anything. It reads the same `rank_timeline` data, so it is a rendering addition only.
 - Tune `RANK_WEIGHT` in `tools/build_metrics.py` against real data. `1/rank` is a defensible starting point, not a measured one — if the genre chart is dominated by the top 3 artists, try `1/sqrt(rank)` or `51 - rank`.
 - Check the Action is still enabled. GitHub disables scheduled workflows after 60 days of repo inactivity; if it has stopped, re-enable in the Actions tab and switch the push to a personal access token.

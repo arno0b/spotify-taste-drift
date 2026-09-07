@@ -6,9 +6,10 @@
 
 ## 1. Overview
 
-A personal, single-user system that snapshots my Spotify top artists and top
-tracks every day, stores them immutably, and renders a static dashboard showing
-how my taste moves over time.
+A personal system that snapshots my Spotify top artists and top tracks every
+day, stores them immutably, and renders a static dashboard — written as a data
+essay — showing how my taste moves over time. A second page lets a visitor run
+the same analysis on their own account, entirely in their browser.
 
 The project exists because Spotify's `top-artists` / `top-tracks` endpoints only
 ever return *today's* answer. There is no history endpoint and no way to
@@ -39,7 +40,9 @@ Explicitly out of scope. These are excluded by decision, not oversight:
   without redesign.
 - **Recently-played polling / play counts.** Considered and declined; this is a
   separate project.
-- **Multi-user support.** Single user, dev-mode Spotify app.
+- **Server-side multi-user.** No accounts, no server, and above all no custody
+  of anyone else's Spotify refresh tokens. Visitors can run the tool on their
+  own account, but entirely client-side — see §9.5.
 - **Any database.** Files in git are the store.
 
 ## 4. Decisions log
@@ -52,6 +55,11 @@ Explicitly out of scope. These are excluded by decision, not oversight:
 | Pipeline shape | Layered, raw-is-sacred | Analysis can be rewritten and replayed over all history |
 | Auth flow | Classic Authorization Code (client secret) | PKCE rotates the refresh token on every refresh, which breaks a stateless runner |
 | Cadence | Daily, not weekly | Scheduled Actions get delayed or dropped; a dropped daily run is a non-event, a dropped weekly run is a lost data point |
+| Audience | Public dashboard plus a client-side self-serve page | Visitors can run it on themselves without a server or any custody of their credentials |
+| Visual direction | Editorial / data essay | The content is an argument from data; also avoids the dark-and-green pastiche every other Spotify-stats project lands on |
+| Page structure | Generated lede, then stat tiles, then captioned figures | The lede is the one element that stays interesting while the charts are still thin |
+| Sparse state | Empty framed figure with a computed arrival date | Never draw a shape that is not real data; the thin early weeks become part of the story |
+| Rank figure | Emphasis and context, all 50 drawn | Shows everything honestly, degrades gracefully in week one, and keeps artists comparable against each other |
 
 ## 5. Architecture
 
@@ -91,7 +99,8 @@ spotify project/
 │   ├── test_build_derived.py
 │   └── test_build_metrics.py
 ├── site/
-│   ├── index.html  app.js  style.css
+│   ├── index.html  app.js  style.css # the dashboard
+│   ├── try/index.html  try/try.js    # self-serve, PKCE, client-side only
 │   └── data.json                     # generated, committed
 ├── data/
 │   ├── raw/<YYYY-MM-DD>/*.json       # immutable
@@ -248,30 +257,102 @@ will show nothing meaningful for the first couple of months, which is expected.
 
 Note also that `long_term` is approximately a trailing year, not lifetime.
 
-## 9. Dashboard
+## 9. Dashboard and self-serve page
 
-Single static page. Vanilla JS plus Observable Plot loaded from CDN at a pinned
+Two static pages. Vanilla JS plus Observable Plot loaded from CDN at a pinned
 exact version — one charting dependency, no build step, no bundler.
 
-Sections in order:
+### 9.1 Visual direction
 
-1. Headline numbers — divergence, mean popularity, entries and exits this week
-2. Rank timeline (bump chart), selectable by time range and kind
-3. Entry / exit feed, most recent first
-4. Genre mix (stacked area)
-5. Divergence over time (line)
-6. Mainstream-ness over time (line)
-7. New-artist survival curve — gated
-8. Rotation half-life — gated
+Editorial: the page reads as a data essay, not an instrument panel.
+
+- Serif for the lede and figure captions, sans for labels and UI chrome.
+- Warm off-white ground, near-black text, a single green accent.
+- Charts sit directly on the page ground with no card borders or drop shadows.
+  They are figures in an article, not widgets on a grid.
+- Narrow measure for the text column; figures may exceed it.
+- Every figure is numbered and captioned. The caption says what the reader is
+  looking at, not what the chart type is.
+
+### 9.2 Page structure
+
+In order:
+
+1. **Lede** — one sentence generated from the current data, restated on every
+   rebuild. For example: "Forty-two percent of what I played this month, I was
+   already playing a year ago." Derived from the divergence metric, which is
+   available from a single day's capture, so the lede is never empty.
+2. **Byline** — snapshot count and date range.
+3. **Stat tiles** — divergence, mean popularity, entries 7d, exits 7d. Below
+   the lede, not above it.
+4. **Figures**, each numbered and captioned.
+
+### 9.3 Figures
+
+| # | Figure | Notes |
+|---|---|---|
+| 1 | Rank over time | All 50 lines drawn. Only the current top 10 carry weight and a right-edge name label; the rest remain faint context. Hover or tap brings one artist forward. Selectable by kind and time range. |
+| 2 | Genre mix | Stacked area, rank-weighted per §8.4 |
+| 3 | Short-vs-long divergence | Line, 0 to 1 |
+| 4 | Mainstream-ness | Line, mean popularity |
+| 5 | New-artist survival | Gated, ≥ 8 weeks |
+| 6 | Rotation half-life | Gated, ≥ 10 completed spells |
+| 7 | Then versus now | Slope chart between two dates. Deferred: needs roughly a month of history before it says anything, and reads the same data as Figure 1. |
+| 8 | Recent changes | Entry / exit feed, most recent first |
+
+Figure 1 draws all fifty rather than only the top ten because a rank chart's
+purpose is showing artists trade places, which a filtered chart cannot do.
+
+### 9.4 Sparse state
+
+The first weeks have little data, and the page must look deliberate rather than
+broken. Two rules:
+
+- **Never draw a shape that is not real data.** No illustrative curves, no
+  sample shapes, no placeholder trends — even labelled as examples. The page's
+  entire claim is that every mark is a real observation.
+- **A figure that is not ready keeps its slot**, drawn as an empty framed area,
+  with a caption stating what it needs and the date it arrives: "Needs eight
+  weeks of history. First appears 2 November 2026." The date is computed from
+  the metric's own `weeks_have` / `spells_have` counters, never hardcoded.
+
+Note that only Figures 5 and 6 are genuinely gated. The lede, all four tiles,
+and Figures 1–4 work from a single day's capture, so week one is thin, not
+blank.
+
+### 9.5 Self-serve page
+
+A second page letting a visitor run the analysis on their own account.
+
+- **Auth: PKCE, in the browser.** No client secret, so nothing is shipped that
+  could be extracted. The refresh-token rotation that ruled PKCE out for the
+  cron (§4) is irrelevant here: this page never stores a refresh token, it uses
+  the one-hour access token for the visit and discards it.
+- **No data leaves the browser.** Analysis runs client-side; nothing is sent to
+  any server, because there is no server. Say this on the page, plainly.
+- **Instant result.** Short-vs-long divergence is computable from a single
+  visit, since it compares two lists fetched in the same session. That is the
+  visitor's immediate payoff.
+- **Accumulation is optional and local.** Snapshots persist to `localStorage`,
+  so a visitor who returns builds their own history. It lives in that browser
+  only — cleared site data loses it, and it never syncs anywhere. The page must
+  say so rather than implying durability it cannot provide.
+- Same Spotify client ID as the cron, with the Pages origin added as a second
+  redirect URI.
+
+**The 25-user cap is the hard constraint here.** See §14.
 
 ## 10. Auth setup
 
 One-time, manual, local:
 
-1. Register an app at developer.spotify.com. Dev mode is sufficient for a single
-   user; no quota extension request needed.
-2. Set the redirect URI to `http://127.0.0.1:8888/callback`. Spotify rejects
-   `localhost` and requires the loopback IP literal.
+1. Register an app at developer.spotify.com. Dev mode is sufficient; see §14 for
+   the user cap it imposes on the self-serve page.
+2. Set two redirect URIs:
+   - `http://127.0.0.1:8888/callback` — for minting the cron's refresh token.
+     Spotify rejects `localhost` and requires the loopback IP literal.
+   - `https://arno0b.github.io/spotify-taste-drift/try/` — for the self-serve
+     page's PKCE flow.
 3. Run `python tools/mint_refresh_token.py`. It starts a local server, opens a
    browser for consent, and prints the refresh token.
 4. Store `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `SPOTIFY_REFRESH_TOKEN`
@@ -348,6 +429,29 @@ Consequences, accepted knowingly:
   writes only to stdout and never to a tracked file.
 - The three secrets live in GitHub repo secrets, never in the tree.
 
+### The 25-user cap
+
+A Spotify app in development mode serves at most **25 users**, each added by
+hand in the developer dashboard using their Spotify account email. Anyone not on
+that list gets an auth error, not a degraded experience.
+
+Consequences for the self-serve page (§9.5):
+
+- It works for roughly 25 named people, not the public. Design for friends, not
+  for traffic.
+- The failure is indistinguishable from a bug unless handled. The page must
+  detect the auth rejection and say plainly that access is by invitation and how
+  to ask for it — never leave a visitor staring at a broken login.
+- Lifting the cap means applying for extended quota mode. Spotify's review is
+  aimed at real organisations and solo projects are frequently rejected. Treat
+  approval as unlikely and do not design around getting it.
+
+Verify the current cap and application terms against Spotify's developer docs
+before building the self-serve page — this is the constraint most likely to have
+changed.
+
+### Reconsidering visibility
+
 If this is reconsidered later, moving to a private repo costs nothing in code —
 the dashboard is static files and can be served locally with
 `python -m http.server` from `site/` — but published Pages would need a paid
@@ -364,8 +468,10 @@ is not: every day before M1 lands is a data point that can never be recovered.
 **M3 — Metrics.** `build_metrics.py` plus its tests, including the gated
 long-horizon metrics.
 
-**M4 — Dashboard.** Static site, wired to `data.json`, published per the section
-14 decision.
+**M4 — Dashboard.** Static site, wired to `data.json`, published to Pages.
 
-**M5 — Unlock.** Once enough history exists, verify the gated metrics render and
-tune the genre weighting against real data.
+**M5 — Self-serve page.** PKCE login, instant divergence, optional local
+accumulation, and an honest not-on-the-allowlist state.
+
+**M6 — Unlock.** Once enough history exists, verify the gated metrics render,
+add Figure 7 (then versus now), and tune the genre weighting against real data.
