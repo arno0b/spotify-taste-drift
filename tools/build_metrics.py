@@ -6,6 +6,8 @@ applies to all history rather than only to days captured after the change.
 """
 
 import csv
+import datetime as dt
+import json
 import statistics
 from collections import defaultdict
 from pathlib import Path
@@ -188,3 +190,171 @@ def genre_mix(genre_rows, snapshot_rows):
             )
     results.sort(key=lambda r: (r["date"], r["time_range"], r["genre"]))
     return results
+
+
+SURVIVAL_MIN_WEEKS = 8
+HALFLIFE_MIN_SPELLS = 10
+
+
+def _short_term_artist_presence(snapshot_rows):
+    """{date: {artist_id}} for short_term artists only, plus sorted dates."""
+    by_date = defaultdict(set)
+    for row in snapshot_rows:
+        if row["kind"] == "artist" and row["time_range"] == "short_term":
+            by_date[row["snapshot_date"]].add(row["spotify_id"])
+    return by_date, sorted(by_date)
+
+
+def new_artist_survival(snapshot_rows):
+    """Retention curve for the first cohort of artists to appear."""
+    by_date, dates = _short_term_artist_presence(snapshot_rows)
+    weeks_span = _weeks_between(dates[0], dates[-1]) if len(dates) > 1 else 0
+
+    if weeks_span < SURVIVAL_MIN_WEEKS:
+        return {
+            "available": False,
+            "weeks_needed": SURVIVAL_MIN_WEEKS,
+            "weeks_have": weeks_span,
+            "curve": [],
+        }
+
+    cohort = by_date[dates[0]]
+    if not cohort:
+        return {
+            "available": False,
+            "weeks_needed": SURVIVAL_MIN_WEEKS,
+            "weeks_have": weeks_span,
+            "curve": [],
+        }
+
+    curve = [
+        {
+            "week": _weeks_between(dates[0], date),
+            "fraction": len(cohort & by_date[date]) / len(cohort),
+        }
+        for date in dates
+    ]
+    return {
+        "available": True,
+        "weeks_needed": SURVIVAL_MIN_WEEKS,
+        "weeks_have": weeks_span,
+        "curve": curve,
+    }
+
+
+def rotation_half_life(snapshot_rows):
+    """Median days a short_term artist survives, over completed spells only."""
+    by_date, dates = _short_term_artist_presence(snapshot_rows)
+
+    spells = []
+    active = {}  # artist_id -> the date we observed them enter
+    previous = set()
+    for index, date in enumerate(dates):
+        present = by_date[date]
+        if index == 0:
+            # The first snapshot is a starting state, not an observed entry.
+            # We do not know when those artists arrived, so they can never
+            # produce a spell — counting them would bias the median downward.
+            previous = present
+            continue
+        for artist_id in present - previous:
+            active[artist_id] = date
+        for artist_id in previous - present:
+            if artist_id in active:
+                spells.append(_days_between(active.pop(artist_id), date))
+        previous = present
+
+    if len(spells) < HALFLIFE_MIN_SPELLS:
+        return {
+            "available": False,
+            "spells_needed": HALFLIFE_MIN_SPELLS,
+            "spells_have": len(spells),
+            "median_days": None,
+        }
+    return {
+        "available": True,
+        "spells_needed": HALFLIFE_MIN_SPELLS,
+        "spells_have": len(spells),
+        "median_days": statistics.median(spells),
+    }
+
+
+def _days_between(start, end):
+    return (dt.date.fromisoformat(end) - dt.date.fromisoformat(start)).days
+
+
+def _weeks_between(start, end):
+    return _days_between(start, end) // 7
+
+
+def build(snapshot_rows, genre_rows, skipped, generated_at):
+    """Assemble the full dashboard payload."""
+    dates = sorted({row["snapshot_date"] for row in snapshot_rows})
+    events = entry_exit_events(snapshot_rows)
+    divergences = divergence(snapshot_rows)
+    popularity = mainstreamness(snapshot_rows)
+
+    return {
+        "generated_at": generated_at,
+        "snapshot_dates": dates,
+        "data_quality": {"skipped_files": skipped, "snapshot_count": len(dates)},
+        "headline": _headline(dates, events, divergences, popularity),
+        "rank_timeline": rank_timeline(snapshot_rows),
+        "events": events,
+        "divergence": divergences,
+        "mainstreamness": popularity,
+        "genre_mix": genre_mix(genre_rows, snapshot_rows),
+        "survival": new_artist_survival(snapshot_rows),
+        "half_life": rotation_half_life(snapshot_rows),
+    }
+
+
+def _headline(dates, events, divergences, popularity):
+    latest_divergence = [d for d in divergences if d["kind"] == "artist"]
+    latest_popularity = [
+        p for p in popularity if p["kind"] == "artist" and p["time_range"] == "short_term"
+    ]
+    cutoff = _cutoff_date(dates)
+    recent = [e for e in events if e["snapshot_date"] > cutoff and e["kind"] == "artist"]
+
+    return {
+        "divergence_artists": latest_divergence[-1]["overlap"] if latest_divergence else None,
+        "mean_popularity": latest_popularity[-1]["mean"] if latest_popularity else None,
+        "entries_7d": sum(1 for e in recent if e["event"] in ("entered", "re_entered")),
+        "exits_7d": sum(1 for e in recent if e["event"] == "exited"),
+    }
+
+
+def _cutoff_date(dates):
+    if not dates:
+        return ""
+    return (dt.date.fromisoformat(dates[-1]) - dt.timedelta(days=7)).isoformat()
+
+
+def main():
+    snapshot_rows, genre_rows = load_rows(DERIVED_ROOT)
+    _, _, skipped = _skipped_from_raw()
+    generated_at = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    payload = build(snapshot_rows, genre_rows, skipped, generated_at)
+    SITE_ROOT.mkdir(parents=True, exist_ok=True)
+    (SITE_ROOT / "data.json").write_text(
+        json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    print(f"Wrote site/data.json — {len(payload['snapshot_dates'])} snapshots")
+    if skipped:
+        print(f"WARNING: {len(skipped)} unreadable raw files, see data_quality in data.json")
+    return 0
+
+
+def _skipped_from_raw():
+    # build_derived is the only thing that reads raw, so ask it what it skipped.
+    from tools.build_derived import RAW_ROOT, build_rows
+
+    return build_rows(RAW_ROOT)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
