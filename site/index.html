@@ -42,7 +42,13 @@
     </figure>
 
     <figure>
-      <figcaption class="fignum">Figure 2 · Short versus long</figcaption>
+      <figcaption class="fignum">Figure 2 · Genre mix</figcaption>
+      <div id="genres" class="chart"></div>
+      <figcaption class="cap" id="genres-cap"></figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 3 · Short versus long</figcaption>
       <div id="divergence" class="chart"></div>
       <figcaption class="cap">
         How much of the last four weeks was already in the long-term rotation.
@@ -51,13 +57,19 @@
     </figure>
 
     <figure>
-      <figcaption class="fignum">Figure 3 · New artist survival</figcaption>
+      <figcaption class="fignum">Figure 4 · Reach</figcaption>
+      <div id="reach" class="chart"></div>
+      <figcaption class="cap" id="reach-cap"></figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 5 · New artist survival</figcaption>
       <div id="survival" class="chart"></div>
       <figcaption class="cap">Of the artists here at the start, how many are still here.</figcaption>
     </figure>
 
     <figure>
-      <figcaption class="fignum">Figure 4 · Rotation half-life</figcaption>
+      <figcaption class="fignum">Figure 6 · Rotation half-life</figcaption>
       <div id="halflife" class="chart"></div>
       <figcaption class="cap" id="halflife-cap">How long a typical artist survives in the top fifty.</figcaption>
     </figure>
@@ -75,8 +87,11 @@
         nothing here existed before capture started.
       </p>
       <p>
-        There is no genre or popularity analysis: Spotify withdrew both fields
-        from these endpoints, and there is no route to them.
+        Spotify withdrew genres and popularity from these endpoints, so genre
+        and reach come from
+        <a href="https://musicbrainz.org">MusicBrainz</a> and
+        <a href="https://www.deezer.com">Deezer</a> instead, matched by exact
+        identity rather than by artist name.
       </p>
     </footer>
   </article>

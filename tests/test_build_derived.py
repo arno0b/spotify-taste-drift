@@ -1,7 +1,7 @@
 import csv
 import json
 
-from tools.build_derived import build_rows, write_csvs
+from tools.build_derived import build_rows, load_enrichment, write_csvs
 
 
 def write_day(root, date, *, artists=None, tracks=None, partial=False, malformed=None):
@@ -69,24 +69,59 @@ def test_artist_rows_leave_track_only_columns_empty(tmp_path):
     assert row["duration_ms"] == ""
 
 
-def test_emits_one_genre_row_per_artist_genre(tmp_path):
-    write_day(
-        tmp_path, "2026-09-03", artists=[artist("a1", "First", genres=["shoegaze", "dream pop"])]
-    )
+def enrichment(**by_id):
+    """Shape returned by tools/enrich_artists.py."""
+    return {
+        artist_id: {"status": "ok", "genres": list(genres), "deezer_fans": fans}
+        for artist_id, (genres, fans) in by_id.items()
+    }
 
-    _, genre_rows, _ = build_rows(tmp_path)
+
+def test_genres_come_from_enrichment_not_from_spotify(tmp_path):
+    # Spotify withdrew `genres`; the payload never carries them any more.
+    write_day(tmp_path, "2026-09-03", artists=[artist("a1", "First")])
+
+    _, genre_rows, _ = build_rows(
+        tmp_path, enrichment(a1=(["shoegaze", "dream pop"], 1000))
+    )
 
     assert sorted(r["genre"] for r in genre_rows) == ["dream pop", "shoegaze"]
     assert genre_rows[0]["artist_id"] == "a1"
     assert genre_rows[0]["snapshot_date"] == "2026-09-03"
 
 
-def test_artist_with_no_genres_emits_no_genre_rows(tmp_path):
-    write_day(tmp_path, "2026-09-03", artists=[artist("a1", "First", genres=[])])
+def test_enrichment_applies_retroactively_to_older_snapshots(tmp_path):
+    # The whole point of keying on Spotify ID: a day captured before the
+    # enrichment existed still gets genres once the artist is resolved.
+    write_day(tmp_path, "2026-09-01", artists=[artist("a1", "First")])
+    write_day(tmp_path, "2026-09-05", artists=[artist("a1", "First")])
 
-    _, genre_rows, _ = build_rows(tmp_path)
+    _, genre_rows, _ = build_rows(tmp_path, enrichment(a1=(["ambient"], 5)))
+
+    assert sorted({r["snapshot_date"] for r in genre_rows}) == ["2026-09-01", "2026-09-05"]
+
+
+def test_deezer_fans_land_on_artist_rows(tmp_path):
+    write_day(tmp_path, "2026-09-03", artists=[artist("a1", "First")], tracks=[track("t1", "Song")])
+
+    snapshot_rows, _, _ = build_rows(tmp_path, enrichment(a1=(["ambient"], 562912)))
+
+    by_kind = {r["kind"]: r for r in snapshot_rows}
+    assert by_kind["artist"]["deezer_fans"] == 562912
+    assert by_kind["track"]["deezer_fans"] == ""  # tracks have no reach figure
+
+
+def test_unresolved_artist_yields_no_genres_and_empty_reach(tmp_path):
+    write_day(tmp_path, "2026-09-03", artists=[artist("a1", "First")])
+
+    snapshot_rows, genre_rows, _ = build_rows(tmp_path, {})
 
     assert genre_rows == []
+    assert snapshot_rows[0]["deezer_fans"] == ""
+
+
+def test_missing_enrichment_file_is_not_an_error(tmp_path):
+    assert load_enrichment(tmp_path / "nope.json") == {}
 
 
 def test_partial_day_contributes_the_files_that_exist(tmp_path):

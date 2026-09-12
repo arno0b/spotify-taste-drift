@@ -1,7 +1,10 @@
 from tools.build_metrics import (
     divergence,
     entry_exit_events,
+    genre_coverage,
+    genre_mix,
     rank_timeline,
+    reach,
 )
 
 
@@ -121,3 +124,104 @@ def test_rank_timeline_is_nested_by_kind_then_time_range():
     assert timeline["artist"]["short_term"] == [
         {"date": "2026-09-01", "id": "a1", "name": "Alpha", "rank": 3}
     ]
+
+
+# --- genre mix (from enrichment, not Spotify) -------------------------------
+
+def genre_row(date, artist_id, genre, time_range="short_term"):
+    return {
+        "snapshot_date": date,
+        "time_range": time_range,
+        "artist_id": artist_id,
+        "genre": genre,
+    }
+
+
+def test_genre_shares_sum_to_one():
+    snapshot_rows = [row("2026-09-01", "a1", 1), row("2026-09-01", "a2", 2)]
+    genre_rows = [genre_row("2026-09-01", "a1", "rock"), genre_row("2026-09-01", "a2", "jazz")]
+
+    assert round(sum(s["share"] for s in genre_mix(genre_rows, snapshot_rows)), 9) == 1.0
+
+
+def test_rank_one_outweighs_rank_two_by_the_inverse_rank_rule():
+    snapshot_rows = [row("2026-09-01", "a1", 1), row("2026-09-01", "a2", 2)]
+    genre_rows = [genre_row("2026-09-01", "a1", "rock"), genre_row("2026-09-01", "a2", "jazz")]
+
+    shares = {s["genre"]: s["share"] for s in genre_mix(genre_rows, snapshot_rows)}
+
+    assert round(shares["rock"], 6) == round(2 / 3, 6)   # weights 1/1 and 1/2
+    assert round(shares["jazz"], 6) == round(1 / 3, 6)
+
+
+def test_an_artists_weight_is_split_evenly_across_its_genres():
+    snapshot_rows = [row("2026-09-01", "a1", 1)]
+    genre_rows = [genre_row("2026-09-01", "a1", "rock"), genre_row("2026-09-01", "a1", "jazz")]
+
+    shares = {s["genre"]: s["share"] for s in genre_mix(genre_rows, snapshot_rows)}
+
+    assert shares["rock"] == 0.5
+    assert shares["jazz"] == 0.5
+
+
+def test_nothing_resolved_emits_no_figure_at_all():
+    assert genre_mix([], [row("2026-09-01", "a1", 1)]) == []
+
+
+def test_unresolved_artists_are_excluded_rather_than_bucketed():
+    # An unresolved artist is a gap in knowledge, not a genre. Including it as
+    # a band would conflate "unknown music" with "we failed to identify it".
+    snapshot_rows = [row("2026-09-01", "a1", 1), row("2026-09-01", "a2", 2)]
+    genre_rows = [genre_row("2026-09-01", "a1", "rock")]
+
+    shares = {s["genre"]: s["share"] for s in genre_mix(genre_rows, snapshot_rows)}
+
+    assert shares == {"rock": 1.0}
+    assert "unclassified" not in shares
+
+
+def test_coverage_reports_the_gap_the_genre_chart_hides():
+    snapshot_rows = [row("2026-09-01", "a1", 1), row("2026-09-01", "a2", 2)]
+    genre_rows = [genre_row("2026-09-01", "a1", "rock")]
+
+    cov = genre_coverage(genre_rows, snapshot_rows)[0]
+
+    assert cov["resolved"] == 1
+    assert cov["total"] == 2
+    # Rank-weighted: rank 1 carries 1/1 of 1.5 total weight, so 2/3 not 1/2.
+    assert round(cov["share"], 6) == round(2 / 3, 6)
+
+
+def test_genre_mix_ignores_tracks():
+    assert genre_mix([], [row("2026-09-01", "t1", 1, kind="track")]) == []
+
+
+# --- reach ------------------------------------------------------------------
+
+def fan_row(date, id_, rank, fans, time_range="short_term"):
+    r = row(date, id_, rank, time_range=time_range)
+    r["deezer_fans"] = fans
+    return r
+
+
+def test_reach_uses_the_median_so_one_giant_artist_cannot_skew_it():
+    rows = [
+        fan_row("2026-09-01", "a1", 1, 1_000),
+        fan_row("2026-09-01", "a2", 2, 2_000),
+        fan_row("2026-09-01", "a3", 3, 14_000_000),
+    ]
+
+    result = reach(rows)[0]
+
+    assert result["median_fans"] == 2_000
+    assert result["artists_measured"] == 3
+
+
+def test_reach_skips_artists_with_no_fan_count():
+    rows = [fan_row("2026-09-01", "a1", 1, 500), fan_row("2026-09-01", "a2", 2, None)]
+
+    assert reach(rows)[0]["artists_measured"] == 1
+
+
+def test_reach_is_empty_when_nothing_is_enriched():
+    assert reach([row("2026-09-01", "a1", 1)]) == []
