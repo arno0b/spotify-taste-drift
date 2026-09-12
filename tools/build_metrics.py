@@ -9,8 +9,13 @@ import csv
 import datetime as dt
 import json
 import statistics
+import sys
 from collections import defaultdict
 from pathlib import Path
+
+# Same reason as the other entry points: allow `python tools/build_metrics.py`
+# from the repo root. build_derived is imported lazily in _skipped_from_raw().
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 DERIVED_ROOT = Path("data/derived")
 SITE_ROOT = Path("site")

@@ -15,6 +15,7 @@ written to disk is one careless `git add -A` away from being disclosed.
 import base64
 import http.server
 import os
+import pathlib
 import secrets
 import sys
 import threading
@@ -23,7 +24,12 @@ import webbrowser
 
 import requests
 
-from tools.spotify_auth import TOKEN_URL, SpotifyAuthError
+# Make `python tools/mint_refresh_token.py` work from the repo root, per the
+# project convention in CLAUDE.md. Running a script directly puts only tools/
+# on sys.path, so the repo root has to be added before the package import.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+
+from tools.spotify_auth import TOKEN_URL, SpotifyAuthError  # noqa: E402
 
 AUTHORIZE_URL = "https://accounts.spotify.com/authorize"
 REDIRECT_URI = "http://127.0.0.1:8888/callback"

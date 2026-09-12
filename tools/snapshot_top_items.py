@@ -14,7 +14,12 @@ from pathlib import Path
 
 import requests
 
-from tools.spotify_auth import get_access_token, load_credentials
+# Make `python tools/snapshot_top_items.py` work from the repo root, per the
+# project convention in CLAUDE.md. Running a script directly puts only tools/
+# on sys.path, so the repo root has to be added before the package import.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from tools.spotify_auth import get_access_token, load_credentials  # noqa: E402
 
 KINDS = ("artists", "tracks")  # plural: matches the API path
 TIME_RANGES = ("short_term", "medium_term", "long_term")
