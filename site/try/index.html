@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taste Drift · Your account</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <article>
+    <p class="kicker"><a href="../">Taste Drift</a> · your account</p>
+    <hr class="rule-thick">
+
+    <h1 class="lede" id="lede">How settled is your listening?</h1>
+    <p class="byline">
+      Compares your last four weeks against your last year. Runs entirely in this
+      browser — nothing is sent anywhere, because there is nowhere to send it.
+    </p>
+
+    <div id="error" class="banner" hidden></div>
+
+    <section id="gate">
+      <p><button class="btn" id="login">Sign in with Spotify</button></p>
+      <p class="cap">
+        Read-only. The single permission requested is <code>user-top-read</code>,
+        which sees your top artists and nothing else — not your playlists, not your
+        email, not your listening history.
+      </p>
+      <p class="cap">
+        <strong>Access is by invitation.</strong> While this app is in Spotify's
+        development mode they cap it at 25 people, each added by hand. If signing in
+        fails, that is why — you are not on the list yet. Ask and I will add the
+        email on your Spotify account.
+      </p>
+    </section>
+
+    <section id="result" hidden>
+      <div class="tiles" id="tiles"></div>
+
+      <figure>
+        <figcaption class="fignum">Your history, in this browser</figcaption>
+        <div id="history" class="chart"></div>
+        <figcaption class="cap" id="history-cap"></figcaption>
+      </figure>
+
+      <p class="aside">
+        Snapshots are saved in this browser only. They do not sync to your other
+        devices, nobody else can see them, and they are lost if you clear site data.
+        <a href="#" id="forget">Forget everything</a>
+      </p>
+    </section>
+
+    <footer class="colophon">
+      <p>
+        No server, no account, no analytics. The only network requests this page
+        makes are to <code>accounts.spotify.com</code>, <code>api.spotify.com</code>,
+        and a CDN for the charting library.
+      </p>
+      <p>
+        <a href="https://github.com/arno0b/spotify-taste-drift/blob/main/site/try/try.js">Read the source</a>
+        if you would rather verify that than take my word for it.
+      </p>
+    </footer>
+  </article>
+
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js"></script>
+  <script src="try.js"></script>
+</body>
+</html>

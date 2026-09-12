@@ -65,3 +65,10 @@ figure { margin: 3rem 0 0; }
 
 .colophon { margin-top: 4rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 .colophon p { margin: 0 0 .5rem; }
+
+.btn {
+  font: inherit; cursor: pointer; color: var(--bg); background: var(--accent);
+  border: none; border-radius: 3px; padding: .6rem 1.1rem; letter-spacing: .01em;
+}
+.btn:hover { filter: brightness(1.08); }
+code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transparent); padding: .05em .3em; border-radius: 2px; }
