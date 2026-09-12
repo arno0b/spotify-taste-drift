@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taste Drift</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <article>
+    <p class="kicker">Taste Drift</p>
+    <hr class="rule-thick">
+
+    <h1 class="lede" id="lede">Reading the data…</h1>
+    <p class="byline" id="byline"></p>
+
+    <div id="quality" class="banner" hidden></div>
+
+    <section class="tiles" id="headline"></section>
+
+    <p class="aside">
+      Curious about your own? <a href="try/">Run it on your account</a> —
+      it works entirely in your browser and sends nothing anywhere.
+    </p>
+
+    <figure>
+      <figcaption class="fignum">Figure 1 · Rank over time</figcaption>
+      <div class="controls">
+        <label>Kind
+          <select id="kind"><option value="artist">Artists</option><option value="track">Tracks</option></select>
+        </label>
+        <label>Range
+          <select id="range">
+            <option value="short_term">Last 4 weeks</option>
+            <option value="medium_term">Last 6 months</option>
+            <option value="long_term">Last year</option>
+          </select>
+        </label>
+      </div>
+      <div id="timeline" class="chart"></div>
+      <figcaption class="cap" id="timeline-cap"></figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 2 · Short versus long</figcaption>
+      <div id="divergence" class="chart"></div>
+      <figcaption class="cap">
+        How much of the last four weeks was already in the long-term rotation.
+        1.0 means settled; lower means exploring.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 3 · New artist survival</figcaption>
+      <div id="survival" class="chart"></div>
+      <figcaption class="cap">Of the artists here at the start, how many are still here.</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 4 · Rotation half-life</figcaption>
+      <div id="halflife" class="chart"></div>
+      <figcaption class="cap" id="halflife-cap">How long a typical artist survives in the top fifty.</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Recent changes</figcaption>
+      <ul id="events" class="events"></ul>
+    </figure>
+
+    <footer class="colophon">
+      <p>
+        Snapshots are captured daily and committed to
+        <a href="https://github.com/arno0b/spotify-taste-drift">the repository</a>.
+        Spotify's top-item endpoints have no history and cannot be backfilled, so
+        nothing here existed before capture started.
+      </p>
+      <p>
+        There is no genre or popularity analysis: Spotify withdrew both fields
+        from these endpoints, and there is no route to them.
+      </p>
+    </footer>
+  </article>
+
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
