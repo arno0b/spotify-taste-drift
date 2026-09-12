@@ -36,13 +36,12 @@ Explicitly out of scope. These are excluded by decision, not oversight:
   not worked around.
 - **Recommendations, related-artists, featured/category playlists.** Same
   deprecation.
-- **Genre mix and mainstream-ness.** Removed 2026-09-13 after the first real
-  capture. Spotify no longer returns `genres` or `popularity` on the
-  `/me/top/*` endpoints — the keys are absent, not empty — and a
-  development-mode app receives 403 on `/v1/artists` and `/v1/tracks`, so there
-  is no route to either field. Unlike the analysis layer, this cannot be
-  recovered later: the raw payloads do not contain the data, so even restored
-  access would not backfill past snapshots.
+- **Spotify as a source of genres or popularity.** Spotify no longer returns
+  `genres` or `popularity` on `/me/top/*` — the keys are absent, not empty — and
+  a development-mode app receives 403 on `/v1/artists` and `/v1/tracks`.
+  Both fields are instead recovered from MusicBrainz and Deezer; see §16. The
+  earlier conclusion that they were permanently lost was wrong: it assumed
+  Spotify was the only source.
 - **Liked-songs library diffing.** Considered and declined; can be added later
   without redesign.
 - **Recently-played polling / play counts.** Considered and declined; this is a
@@ -225,10 +224,29 @@ overlap = |A intersect B| / min(|A|, |B|)
 Range 0 to 1. High means settled taste, low means an exploration phase. `min()`
 rather than a hardcoded 50 so short result sets are handled correctly.
 
-### 8.4–8.5 Genre mix and mainstream-ness — REMOVED
+### 8.4 Genre mix over time
 
-Both depended on fields Spotify no longer returns. See §3. Section numbering is
-left as-is so the metric numbers in the code and dashboard stay stable.
+For each `(date, time_range)`, an artist at rank `r` carries weight `w = 1/r`,
+split equally across its genres. Shares are normalised to sum to 1.
+
+Genres come from the enrichment cache (§16), not from Spotify.
+
+**Unresolved artists are excluded from the shares entirely**, not bucketed as
+"unclassified". An artist we could not identify is a gap in our knowledge, not a
+genre someone listens to; folding it in as a band would conflate "42 percent
+unknown music" with "we identified 58 percent of it". Coverage is published
+separately as `genre_coverage` and stated in the figure's caption.
+
+### 8.5 Reach
+
+Median Deezer fan count of the artists in a list, per `(date, time_range)`.
+
+Replaces the old mainstream-ness metric, which measured Spotify's withdrawn
+0–100 popularity score. It is deliberately named differently because it measures
+a different thing on a different platform.
+
+Median rather than mean: fan counts span five orders of magnitude, so a single
+very large artist would drag a mean far above anything typical of the list.
 
 ### 8.6 New-artist survival
 
@@ -286,13 +304,13 @@ In order:
 | # | Figure | Notes |
 |---|---|---|
 | 1 | Rank over time | All 50 lines drawn. Only the current top 10 carry weight and a right-edge name label; the rest remain faint context. Hover or tap brings one artist forward. Selectable by kind and time range. |
-| 2 | Short-vs-long divergence | Line, 0 to 1 |
-| 3 | New-artist survival | Gated, ≥ 8 weeks |
-| 4 | Rotation half-life | Gated, ≥ 10 completed spells |
-| 5 | Then versus now | Slope chart between two dates. Deferred: needs roughly a month of history before it says anything, and reads the same data as Figure 1. |
-| 6 | Recent changes | Entry / exit feed, most recent first |
-
-Genre mix and mainstream-ness were removed; see §3.
+| 2 | Genre mix | Stacked area over time; bars when there is only one snapshot. Caption states coverage. |
+| 3 | Short-vs-long divergence | Line, 0 to 1 |
+| 4 | Reach | Median Deezer fans, log scale |
+| 5 | New-artist survival | Gated, ≥ 8 weeks |
+| 6 | Rotation half-life | Gated, ≥ 10 completed spells |
+| — | Then versus now | Slope chart between two dates. Deferred to M6: needs roughly a month of history, and reads the same data as Figure 1. |
+| — | Recent changes | Entry / exit feed, most recent first |
 
 Figure 1 draws all fifty rather than only the top ten because a rank chart's
 purpose is showing artists trade places, which a filtered chart cannot do.
@@ -310,8 +328,8 @@ broken. Two rules:
   weeks of history. First appears 2 November 2026." The date is computed from
   the metric's own `weeks_have` / `spells_have` counters, never hardcoded.
 
-Note that only Figures 3 and 4 are genuinely gated. The lede, all three tiles,
-and Figures 1–2 work from a single day's capture, so week one is thin, not
+Note that only Figures 5 and 6 are genuinely gated. The lede, all three tiles,
+and Figures 1–4 work from a single day's capture, so week one is thin, not
 blank.
 
 ### 9.5 Self-serve page
@@ -469,3 +487,45 @@ accumulation, and an honest not-on-the-allowlist state.
 
 **M6 — Unlock.** Once enough history exists, verify the gated metrics render,
 add Figure 7 (then versus now), and tune the genre weighting against real data.
+
+
+## 16. Enrichment: genres and reach
+
+Spotify withdrew both fields, but it is not the only source for either.
+
+```
+Spotify artist ID
+  -> MusicBrainz /url lookup on the open.spotify.com URL   (exact identity)
+  -> MusicBrainz artist: genres, plus linked Deezer URL
+  -> Deezer /artist/<id>: fan count                        (reach)
+```
+
+**Identity is matched by URL relationship, never by artist name.** Name matching
+was tested and returns wrong artists that look plausible: "Joji" matched an
+unrelated act with 122 fans rather than 562,912, and "Øneheart" matched "One
+Heart". This is not a tunable heuristic — it is a correctness requirement.
+
+Results are cached in `data/enrichment/artists.json`, keyed by Spotify artist ID.
+Two properties follow:
+
+- **Retroactive.** The raw layer has always stored artist IDs, so resolving an
+  artist fills in genres for every snapshot that ever contained them — including
+  snapshots captured before enrichment existed. This is the raw-is-sacred design
+  paying off exactly as intended.
+- **Cheap after the first run.** Only unseen artists are looked up. The first run
+  resolved 83 artists in about ten minutes; a typical day adds none or one.
+
+MusicBrainz is a free community service that asks for at most one request per
+second. The tool paces itself, retries 503 with backoff, sends a meaningful
+User-Agent, and checkpoints to disk every 20 lookups. Do not parallelise it.
+
+**Coverage is partial and is reported rather than hidden.** The first run
+resolved 71 of 83 artists; misses are anonymous lo-fi and production-library
+acts and regional artists that MusicBrainz genuinely does not catalogue. Misses
+are retried after 30 days, since MusicBrainz is community-edited and grows.
+
+The enrichment step in the Action is `continue-on-error`: unlike a missed
+capture, a missed enrichment costs nothing permanent, because it can always be
+run again against data already on disk.
+
+See `workflows/enrich_artists.md`.

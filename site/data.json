@@ -16,7 +16,1970 @@
     }
   ],
   "events": [],
-  "generated_at": "2026-09-12T17:23:25Z",
+  "generated_at": "2026-09-12T17:42:22Z",
+  "genre_coverage": [
+    {
+      "date": "2026-09-12",
+      "resolved": 41,
+      "share": 0.8717588475509257,
+      "time_range": "long_term",
+      "total": 50
+    },
+    {
+      "date": "2026-09-12",
+      "resolved": 36,
+      "share": 0.7385531494546026,
+      "time_range": "medium_term",
+      "total": 50
+    },
+    {
+      "date": "2026-09-12",
+      "resolved": 25,
+      "share": 0.575066876589739,
+      "time_range": "short_term",
+      "total": 44
+    }
+  ],
+  "genre_mix": [
+    {
+      "date": "2026-09-12",
+      "genre": "alternative dance",
+      "share": 0.0018595343100798105,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative hip hop",
+      "share": 0.002616324470391887,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative pop",
+      "share": 0.003513510713498719,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative r&b",
+      "share": 0.04088908266102767,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative rock",
+      "share": 0.01783187291177401,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ambient",
+      "share": 0.04411764887635408,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ambient pop",
+      "share": 0.03186968969821612,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "art pop",
+      "share": 0.013147322141881043,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "art rock",
+      "share": 0.00084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ballad",
+      "share": 0.014310489439703254,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "baroque pop",
+      "share": 0.0015035956165312223,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bassline",
+      "share": 0.0002039660140685832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bedroom pop",
+      "share": 0.002083346776970326,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "blue-eyed soul",
+      "share": 0.00037771484086774666,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "boom bap",
+      "share": 0.010497682636957854,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bossa nova",
+      "share": 0.0014569001004898798,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "breakbeat",
+      "share": 0.0002039660140685832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "breaks",
+      "share": 0.0002039660140685832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "britpop",
+      "share": 0.0016663890038282941,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bubblegum pop",
+      "share": 0.002655807474851343,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chamber pop",
+      "share": 0.0006537372245787922,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chillout",
+      "share": 0.0084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chillwave",
+      "share": 0.017025682306049308,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chipmunk soul",
+      "share": 0.0004336012203838928,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "christian hip hop",
+      "share": 0.0004336012203838928,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "classical",
+      "share": 0.002072825346225439,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "conscious hip hop",
+      "share": 0.0014295290234531467,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "contemporary r&b",
+      "share": 0.03286008852627064,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "country",
+      "share": 0.0006537372245787922,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance",
+      "share": 0.0027034894336690593,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance-pop",
+      "share": 0.015174356486468088,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance-rock",
+      "share": 0.00037771484086774666,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dancehall",
+      "share": 0.00141643065325405,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dark ambient",
+      "share": 0.0037493752586136614,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "deep house",
+      "share": 0.0004336012203838928,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "disco",
+      "share": 0.001199893817137837,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "downtempo",
+      "share": 0.014750296499393186,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dream pop",
+      "share": 0.05172513346636499,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dreamwave",
+      "share": 0.001888574204338733,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "drift phonk",
+      "share": 0.0084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "drum and bass",
+      "share": 0.002655807474851343,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "easy listening",
+      "share": 0.002655807474851343,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "edm",
+      "share": 0.0006537372245787922,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronic",
+      "share": 0.023289209154469435,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronica",
+      "share": 0.0017075616305998055,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electropop",
+      "share": 0.000637567234452476,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "experimental hip hop",
+      "share": 0.0014742441493052355,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "filmi",
+      "share": 0.030401438411306436,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "folk pop",
+      "share": 0.0018475182433748477,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "future bass",
+      "share": 0.002287232262100522,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "future garage",
+      "share": 0.002655807474851343,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "gangsta rap",
+      "share": 0.0009959278030692539,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "garage rock",
+      "share": 0.00084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "garage rock revival",
+      "share": 0.00084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "grunge",
+      "share": 0.0007082153266270249,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hardcore hip hop",
+      "share": 0.0017414176205713854,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hardwave",
+      "share": 0.0084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hip hop",
+      "share": 0.017697524696795357,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hip hop soul",
+      "share": 0.003983711212277015,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "house",
+      "share": 0.011431708559508667,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hypnagogic pop",
+      "share": 0.012140834170748998,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indian pop",
+      "share": 0.00910562562806175,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indie pop",
+      "share": 0.06223976815351495,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indie rock",
+      "share": 0.03949470829988504,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indietronica",
+      "share": 0.0024143704316830395,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "instrumental",
+      "share": 0.011868421978816613,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "instrumental hip hop",
+      "share": 0.022491651878221986,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jangle pop",
+      "share": 0.0018475182433748477,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz",
+      "share": 0.004613462447823587,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz pop",
+      "share": 0.003239819803886586,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz rap",
+      "share": 0.0009959278030692539,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jungle",
+      "share": 0.002655807474851343,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "latin",
+      "share": 0.0002039660140685832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "leftfield",
+      "share": 0.0016555682960112273,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lo-fi",
+      "share": 0.025131612134023675,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lo-fi hip hop",
+      "share": 0.022491651878221986,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "melodic house",
+      "share": 0.0006537372245787922,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "melodic techno",
+      "share": 0.0006537372245787922,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "neo soul",
+      "share": 0.003983711212277015,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "neo-psychedelia",
+      "share": 0.004258118729722316,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "phonk",
+      "share": 0.01026912223609186,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "phonk house",
+      "share": 0.0017705383165675622,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "piano rock",
+      "share": 0.0016663890038282941,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop",
+      "share": 0.07009623817390338,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop rap",
+      "share": 0.0039238770965036454,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop rock",
+      "share": 0.002248069858764624,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop soul",
+      "share": 0.00037771484086774666,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-britpop",
+      "share": 0.0016663890038282941,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-grunge",
+      "share": 0.0007082153266270249,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-punk revival",
+      "share": 0.00084985839195243,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "power pop",
+      "share": 0.0007082153266270249,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic",
+      "share": 0.0016555682960112273,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic pop",
+      "share": 0.006749876251379569,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic rock",
+      "share": 0.00326422882363547,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic soul",
+      "share": 0.0009843919597904594,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "quiet storm",
+      "share": 0.0017829197033967061,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "r&b",
+      "share": 0.02210360395111661,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "rock",
+      "share": 0.005737734257066351,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "shoegaze",
+      "share": 0.03296864451539599,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "singer-songwriter",
+      "share": 0.01121626295313042,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "slowcore",
+      "share": 0.03252342692279491,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "smooth jazz",
+      "share": 0.0021606345442644528,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "smooth soul",
+      "share": 0.0021606345442644528,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "soft rock",
+      "share": 0.00037771484086774666,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "sophisti-pop",
+      "share": 0.003259589361444319,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "soul",
+      "share": 0.006144345756541468,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "southern hip hop",
+      "share": 0.0017861327464234742,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "space rock",
+      "share": 0.0016555682960112273,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "synth-pop",
+      "share": 0.016873334644958,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "synthwave",
+      "share": 0.005039224439461524,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "tech house",
+      "share": 0.0002039660140685832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trap",
+      "share": 0.006552118651718583,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trip hop",
+      "share": 0.013263852841449455,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "uk garage",
+      "share": 0.0028597734889199266,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "vocal jazz",
+      "share": 0.0014569001004898798,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "wave",
+      "share": 0.01026912223609186,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "west coast hip hop",
+      "share": 0.0017041431296962787,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "witch house",
+      "share": 0.001888574204338733,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "world fusion",
+      "share": 0.002072825346225439,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative dance",
+      "share": 0.0033554330626853015,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative hip hop",
+      "share": 0.0029887083701299437,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative pop",
+      "share": 0.0025748709855766064,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative r&b",
+      "share": 0.07674367490540347,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative rock",
+      "share": 0.020088773440254618,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ambient",
+      "share": 0.02758632639325779,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ambient pop",
+      "share": 0.014228025703287227,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "art pop",
+      "share": 0.052485106921189774,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "art rock",
+      "share": 0.002182756465459791,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ballad",
+      "share": 0.054793719731663124,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "baroque pop",
+      "share": 0.0015846291384738489,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bassline",
+      "share": 0.0003086581974070801,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "big band",
+      "share": 0.0007269124214297176,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "boogie",
+      "share": 0.00044782997391652247,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "boom bap",
+      "share": 0.0026869798434991346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "breakbeat",
+      "share": 0.0003086581974070801,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "breaks",
+      "share": 0.0003086581974070801,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "britpop",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bubblegum pop",
+      "share": 0.0011755536815308716,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chamber pop",
+      "share": 0.0012595377500011138,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chillwave",
+      "share": 0.0026869798434991346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "christmas music",
+      "share": 0.0007269124214297176,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "classic rock",
+      "share": 0.0013932488077402921,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "conscious hip hop",
+      "share": 0.0004001884873296584,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "contemporary r&b",
+      "share": 0.03294916040163239,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "country",
+      "share": 0.00033070521150758585,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "crossover prog",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance",
+      "share": 0.0027413057971271103,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance-pop",
+      "share": 0.014377581312589954,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dancehall",
+      "share": 0.0022798616853932055,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dark ambient",
+      "share": 0.015047087123595157,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "disco",
+      "share": 0.001156676658653261,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "downtempo",
+      "share": 0.006595314161316058,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dream pop",
+      "share": 0.016786190406917943,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "drum and bass",
+      "share": 0.0011755536815308716,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "easy listening",
+      "share": 0.0045851398890182195,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "edm",
+      "share": 0.00033070521150758585,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronic",
+      "share": 0.05893933440385462,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronic rock",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronica",
+      "share": 0.0028221198743744575,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electropop",
+      "share": 0.0003086581974070801,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "experimental",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "experimental rock",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "filmi",
+      "share": 0.020773289546379865,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "folk",
+      "share": 0.004361474528578306,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "folk pop",
+      "share": 0.0041797464232208766,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "future bass",
+      "share": 0.0010395518962443243,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "future garage",
+      "share": 0.0011755536815308716,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "gangsta rap",
+      "share": 0.0004001884873296584,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "garage rock",
+      "share": 0.001253923926966263,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "garage rock revival",
+      "share": 0.001253923926966263,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "grunge",
+      "share": 0.0015047087123595156,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hard rock",
+      "share": 0.0013932488077402921,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hardcore hip hop",
+      "share": 0.0011778157288591237,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hip hop",
+      "share": 0.010668574009644381,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hip hop soul",
+      "share": 0.0013434899217495673,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "house",
+      "share": 0.0019848176258035074,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hypnagogic pop",
+      "share": 0.010747919373996538,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "idm",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indian pop",
+      "share": 0.010236113689520513,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indie pop",
+      "share": 0.0442307561697378,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indie rock",
+      "share": 0.025292097325536413,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indietronica",
+      "share": 0.00441710442856218,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "instrumental",
+      "share": 0.0026869798434991346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "instrumental hip hop",
+      "share": 0.05284393692214965,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jangle pop",
+      "share": 0.0041797464232208766,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz",
+      "share": 0.0050354352265763,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz pop",
+      "share": 0.003908334317816923,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz rap",
+      "share": 0.0004001884873296584,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jungle",
+      "share": 0.0011755536815308716,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "latin",
+      "share": 0.0003086581974070801,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "leftfield",
+      "share": 0.0024134799526689976,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lo-fi",
+      "share": 0.014354129163955903,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lo-fi hip hop",
+      "share": 0.06000921650481401,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lounge",
+      "share": 0.0007269124214297176,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "melodic house",
+      "share": 0.00033070521150758585,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "melodic techno",
+      "share": 0.00033070521150758585,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "neo soul",
+      "share": 0.0013434899217495673,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "neo-psychedelia",
+      "share": 0.003238155196011778,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "new jack swing",
+      "share": 0.00044782997391652247,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "new wave",
+      "share": 0.002153202702871361,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "phonk",
+      "share": 0.0011399308426966028,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "phonk house",
+      "share": 0.0011399308426966028,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop",
+      "share": 0.05689524545472061,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop rap",
+      "share": 0.0031303544151351616,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop rock",
+      "share": 0.0029096908741949637,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop soul",
+      "share": 0.00044782997391652247,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-britpop",
+      "share": 0.0009288325384935281,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-grunge",
+      "share": 0.002433541250853044,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-punk revival",
+      "share": 0.0020138778220973315,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "power pop",
+      "share": 0.0015047087123595156,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic",
+      "share": 0.0016535260575379293,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic pop",
+      "share": 0.008492693556632309,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic rock",
+      "share": 0.003982241921903847,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "punk rock",
+      "share": 0.0013932488077402921,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "quiet storm",
+      "share": 0.003908334317816923,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "r&b",
+      "share": 0.020367290330405744,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "rock",
+      "share": 0.007373603452012194,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "shoegaze",
+      "share": 0.01253923926966263,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "singer-songwriter",
+      "share": 0.007495984794171945,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "slowcore",
+      "share": 0.012869944481170216,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "smooth jazz",
+      "share": 0.003908334317816923,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "smooth soul",
+      "share": 0.003908334317816923,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "sophisti-pop",
+      "share": 0.003908334317816923,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "soul",
+      "share": 0.005699654213483013,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "southern hip hop",
+      "share": 0.0007776272415294654,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "space rock",
+      "share": 0.0016535260575379293,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "swing",
+      "share": 0.0007269124214297176,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "synth-pop",
+      "share": 0.013470057524072617,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "synthwave",
+      "share": 0.0011399308426966028,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "tech house",
+      "share": 0.0003086581974070801,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "techno",
+      "share": 0.004361474528578306,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "traditional pop",
+      "share": 0.0007269124214297176,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trap",
+      "share": 0.004461818692829908,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trap soul",
+      "share": 0.0020062782831460207,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trip hop",
+      "share": 0.05470465480538211,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "uk garage",
+      "share": 0.0014842118789379518,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "vocal jazz",
+      "share": 0.0007269124214297176,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "wave",
+      "share": 0.0011399308426966028,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "west coast hip hop",
+      "share": 0.001904897199689174,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "acoustic rock",
+      "share": 0.001988380048837797,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative dance",
+      "share": 0.0031561588076790426,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative hip hop",
+      "share": 0.004734238211518564,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative pop",
+      "share": 0.0018092445134192529,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative r&b",
+      "share": 0.057492301917153474,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "alternative rock",
+      "share": 0.05955097823034411,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ambient",
+      "share": 0.009941900244188985,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ambient pop",
+      "share": 0.010946132592086863,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "aor",
+      "share": 0.001988380048837797,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "arena rock",
+      "share": 0.001988380048837797,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "art pop",
+      "share": 0.02516481969024417,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "art rock",
+      "share": 0.00441862233075066,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "ballad",
+      "share": 0.022898123819274675,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "baroque pop",
+      "share": 0.005223634496272035,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "bedroom pop",
+      "share": 0.013712965854053773,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "blue-eyed soul",
+      "share": 0.0016569833740314975,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "britpop",
+      "share": 0.0012624635230716172,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "chamber pop",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "classic rock",
+      "share": 0.001988380048837797,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "classical",
+      "share": 0.004276086126532896,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "contemporary r&b",
+      "share": 0.043877780514937965,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "country",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance",
+      "share": 0.005223634496272035,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dance-pop",
+      "share": 0.03337637939120588,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dancehall",
+      "share": 0.004734238211518564,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "deep house",
+      "share": 0.010748000263988092,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "downtempo",
+      "share": 0.005164623503474798,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "dream pop",
+      "share": 0.018952925309675874,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "edm",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronic",
+      "share": 0.022147156662412584,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "electronica",
+      "share": 0.005223634496272035,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "filmi",
+      "share": 0.03879657308552243,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "folk pop",
+      "share": 0.00662793349612599,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "future bass",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "garage rock",
+      "share": 0.00441862233075066,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "garage rock revival",
+      "share": 0.00441862233075066,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hard rock",
+      "share": 0.001988380048837797,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hip hop",
+      "share": 0.008521628780733415,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hip hop soul",
+      "share": 0.002259522782770224,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "house",
+      "share": 0.005223634496272035,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "hypnagogic pop",
+      "share": 0.028405429269111385,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indian pop",
+      "share": 0.01169635322845763,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indie pop",
+      "share": 0.071875970043894,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indie rock",
+      "share": 0.03426029552691923,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "indietronica",
+      "share": 0.0041603911555769205,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "instrumental hip hop",
+      "share": 0.0220931116537533,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jangle pop",
+      "share": 0.00662793349612599,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz",
+      "share": 0.005164623503474798,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "jazz pop",
+      "share": 0.005164623503474798,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "leftfield",
+      "share": 0.0041603911555769205,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lo-fi",
+      "share": 0.0037873905692148513,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "lo-fi hip hop",
+      "share": 0.0220931116537533,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "melodic house",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "melodic techno",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "neo soul",
+      "share": 0.002259522782770224,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "neo-psychedelia",
+      "share": 0.008379793303951078,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "new wave",
+      "share": 0.0010042323478978775,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "piano rock",
+      "share": 0.0012624635230716172,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop",
+      "share": 0.0708000068140034,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop rock",
+      "share": 0.004255075919807291,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "pop soul",
+      "share": 0.0016569833740314975,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-britpop",
+      "share": 0.0012624635230716172,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "post-punk revival",
+      "share": 0.005422854678648537,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic",
+      "share": 0.0031561588076790426,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic pop",
+      "share": 0.015007726800077068,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "psychedelic rock",
+      "share": 0.007574781138429703,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "quiet storm",
+      "share": 0.005164623503474798,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "r&b",
+      "share": 0.04117515255101604,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "rock",
+      "share": 0.011630636875860493,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "shoegaze",
+      "share": 0.009941900244188985,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "singer-songwriter",
+      "share": 0.012501365393979004,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "slowcore",
+      "share": 0.01074691240971036,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "smooth jazz",
+      "share": 0.005164623503474798,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "smooth soul",
+      "share": 0.005164623503474798,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "soft rock",
+      "share": 0.0036453634228692947,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "sophisti-pop",
+      "share": 0.006821606877506295,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "soul",
+      "share": 0.009081129660276518,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "space rock",
+      "share": 0.0031561588076790426,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "surf rock",
+      "share": 0.004519045565540448,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "synth-pop",
+      "share": 0.03256582042468831,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trap",
+      "share": 0.0008050121655213754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trap soul",
+      "share": 0.003313966748062995,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "trip hop",
+      "share": 0.028062747322749475,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-12",
+      "genre": "world fusion",
+      "share": 0.004276086126532896,
+      "time_range": "short_term"
+    }
+  ],
   "half_life": {
     "available": false,
     "median_days": null,
@@ -1810,6 +3773,26 @@
       ]
     }
   },
+  "reach": [
+    {
+      "artists_measured": 46,
+      "date": "2026-09-12",
+      "median_fans": 144598.5,
+      "time_range": "long_term"
+    },
+    {
+      "artists_measured": 39,
+      "date": "2026-09-12",
+      "median_fans": 445012,
+      "time_range": "medium_term"
+    },
+    {
+      "artists_measured": 29,
+      "date": "2026-09-12",
+      "median_fans": 445012,
+      "time_range": "short_term"
+    }
+  ],
   "snapshot_dates": [
     "2026-09-12"
   ],

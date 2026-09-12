@@ -45,8 +45,19 @@ jobs:
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
         run: python tools/snapshot_top_items.py
 
+      - name: Enrich new artists
+        # always(): a partial capture still produced artists worth resolving.
+        # continue-on-error: MusicBrainz and Deezer are free community services.
+        # If either is down, yesterday's cache is still on disk and the pipeline
+        # carries on with what it has. Enrichment is an improvement, not a
+        # dependency — losing a day of it costs nothing permanent, unlike a
+        # missed capture.
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 25
+        run: python tools/enrich_artists.py
+
       - name: Rebuild derived tables and metrics
-        # always(): a partial capture still produced data worth rebuilding from.
         if: always()
         run: |
           python tools/build_derived.py

@@ -22,11 +22,15 @@ SITE_ROOT = Path("site")
 
 TIME_RANGES = ("short_term", "medium_term", "long_term")
 
-# Spotify withdrew `genres` and `popularity` from the /me/top/* endpoints, and
-# a development-mode app gets 403 on /v1/artists and /v1/tracks, so there is no
-# route to either field. The genre-mix and mainstream-ness metrics that once
-# lived here were removed rather than left gated: a gate that can never open is
-# a promise the page cannot keep. Everything below needs only IDs and ranks.
+# Spotify withdrew `genres` and `popularity` from /me/top/*, and a
+# development-mode app is 403 on /v1/artists. Both are recovered instead from
+# MusicBrainz and Deezer by tools/enrich_artists.py — see its docstring. Genre
+# mix is computed from that; reach replaces mainstream-ness, measured in Deezer
+# fans rather than Spotify's opaque 0-100 score.
+#
+# Inverse rank. Without it the 45 artists in the tail outweigh the top 5, and
+# the genre chart stops reflecting what you actually listen to.
+RANK_WEIGHT = lambda rank: 1.0 / rank  # noqa: E731
 
 
 def load_rows(derived_root):
@@ -36,6 +40,8 @@ def load_rows(derived_root):
     for row in snapshot_rows:
         row["rank"] = int(row["rank"])
         row["popularity"] = int(row["popularity"]) if row["popularity"] != "" else None
+        fans = row.get("deezer_fans", "")
+        row["deezer_fans"] = int(fans) if fans not in ("", None) else None
     return snapshot_rows, _read_csv(derived_root / "artist_genres.csv")
 
 
@@ -138,6 +144,107 @@ def divergence(snapshot_rows):
     return results
 
 
+def genre_mix(genre_rows, snapshot_rows):
+    """Rank-weighted genre shares per date and time range, normalised to 1.
+
+    Shares are computed over *resolved* artists only. An unresolved artist is a
+    gap in our knowledge, not a genre someone listens to, so folding it in as a
+    band would conflate "42% unknown music" with "we identified 58% of it".
+    Coverage is reported separately by genre_coverage().
+    """
+    genres_by_artist = defaultdict(lambda: defaultdict(list))
+    for row in genre_rows:
+        genres_by_artist[(row["snapshot_date"], row["time_range"])][row["artist_id"]].append(
+            row["genre"]
+        )
+
+    weights = defaultdict(lambda: defaultdict(float))
+    for row in snapshot_rows:
+        if row["kind"] != "artist":
+            continue
+        key = (row["snapshot_date"], row["time_range"])
+        genres = genres_by_artist[key].get(row["spotify_id"])
+        if not genres:
+            continue  # unresolved: counted by genre_coverage, not here
+        weight = RANK_WEIGHT(row["rank"])
+        for genre in genres:
+            weights[key][genre] += weight / len(genres)
+
+    results = []
+    for (date, time_range), by_genre in weights.items():
+        total = sum(by_genre.values())
+        if not total:
+            continue
+        for genre, weight in by_genre.items():
+            results.append(
+                {"date": date, "time_range": time_range, "genre": genre, "share": weight / total}
+            )
+    results.sort(key=lambda r: (r["date"], r["time_range"], r["genre"]))
+    return results
+
+
+def genre_coverage(genre_rows, snapshot_rows):
+    """What fraction of each list we could resolve, by rank weight and by count.
+
+    Published so the genre chart can state its own reliability instead of
+    quietly implying it describes everything.
+    """
+    resolved = defaultdict(set)
+    for row in genre_rows:
+        resolved[(row["snapshot_date"], row["time_range"])].add(row["artist_id"])
+
+    totals = defaultdict(lambda: {"weight": 0.0, "resolved_weight": 0.0, "n": 0, "resolved_n": 0})
+    for row in snapshot_rows:
+        if row["kind"] != "artist":
+            continue
+        key = (row["snapshot_date"], row["time_range"])
+        weight = RANK_WEIGHT(row["rank"])
+        bucket = totals[key]
+        bucket["weight"] += weight
+        bucket["n"] += 1
+        if row["spotify_id"] in resolved[key]:
+            bucket["resolved_weight"] += weight
+            bucket["resolved_n"] += 1
+
+    results = [
+        {
+            "date": date,
+            "time_range": time_range,
+            "share": bucket["resolved_weight"] / bucket["weight"] if bucket["weight"] else 0.0,
+            "resolved": bucket["resolved_n"],
+            "total": bucket["n"],
+        }
+        for (date, time_range), bucket in totals.items()
+    ]
+    results.sort(key=lambda r: (r["date"], r["time_range"]))
+    return results
+
+
+def reach(snapshot_rows):
+    """Median Deezer fan count of the top artists, per date and time range.
+
+    Median, not mean: fan counts span five orders of magnitude, so one huge
+    artist would drag a mean far above anything typical of the list.
+    """
+    grouped = defaultdict(list)
+    for row in snapshot_rows:
+        if row["kind"] == "artist" and row.get("deezer_fans"):
+            grouped[(row["snapshot_date"], row["time_range"])].append(row["deezer_fans"])
+
+    results = [
+        {
+            "date": date,
+            "time_range": time_range,
+            "median_fans": statistics.median(values),
+            "artists_measured": len(values),
+        }
+        for (date, time_range), values in grouped.items()
+        if values
+    ]
+    results.sort(key=lambda r: (r["date"], r["time_range"]))
+    return results
+
+
 SURVIVAL_MIN_WEEKS = 8
 HALFLIFE_MIN_SPELLS = 10
 
@@ -236,9 +343,8 @@ def _weeks_between(start, end):
 def build(snapshot_rows, genre_rows, skipped, generated_at):
     """Assemble the full dashboard payload.
 
-    genre_rows is accepted and ignored. The derived layer still emits the table
-    (always empty now) so the file contract does not change; see the note at the
-    top of this module.
+    genre_rows come from the enrichment cache via the derived layer, not from
+    Spotify; see the note at the top of this module.
     """
     dates = sorted({row["snapshot_date"] for row in snapshot_rows})
     events = entry_exit_events(snapshot_rows)
@@ -252,6 +358,9 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
         "rank_timeline": rank_timeline(snapshot_rows),
         "events": events,
         "divergence": divergences,
+        "genre_mix": genre_mix(genre_rows, snapshot_rows),
+        "genre_coverage": genre_coverage(genre_rows, snapshot_rows),
+        "reach": reach(snapshot_rows),
         "survival": new_artist_survival(snapshot_rows),
         "half_life": rotation_half_life(snapshot_rows),
     }

@@ -59,7 +59,9 @@ function render(data) {
   $("kind").onchange = () => drawTimeline(data);
   $("range").onchange = () => drawTimeline(data);
 
+  drawGenres(data.genre_mix, data.genre_coverage);
   drawDivergence(data.divergence.filter((d) => d.kind === "artist"));
+  drawReach(data.reach);
   drawSurvival(data.survival);
   drawHalfLife(data.half_life);
   drawEvents(data.events);
@@ -125,6 +127,114 @@ function drawTimeline(data) {
           x: (d) => new Date(d.date), y: "rank",
           title: (d) => `${d.name} · #${d.rank}`,
         })),
+      ],
+    })
+  );
+}
+
+const TOP_GENRES = 12;
+
+function drawGenres(rows, coverage) {
+  const node = $("genres");
+  const caption = $("genres-cap");
+  const shortTerm = rows.filter((r) => r.time_range === "short_term");
+  const cov = (coverage || []).filter((c) => c.time_range === "short_term").pop();
+
+  // Coverage is stated rather than implied. The chart describes the artists we
+  // could identify, which is not the same as all of them.
+  const covNote = cov
+    ? ` Covers ${Math.round(cov.share * 100)} percent of the list by rank weight ` +
+      `(${cov.resolved} of ${cov.total} artists identified); the rest are not in MusicBrainz.`
+    : "";
+
+  if (!shortTerm.length) {
+    caption.textContent = "";
+    return awaiting(node, "No artists resolved yet — run tools/enrich_artists.py.");
+  }
+
+  // Keep the strongest genres; the tail is a long list of near-zero shares.
+  const totals = new Map();
+  for (const r of shortTerm) totals.set(r.genre, (totals.get(r.genre) || 0) + r.share);
+  const top = new Set(
+    [...totals.entries()].sort((a, b) => b[1] - a[1]).slice(0, TOP_GENRES).map((e) => e[0])
+  );
+
+  const folded = new Map();
+  for (const r of shortTerm) {
+    const genre = top.has(r.genre) ? r.genre : "other";
+    const key = `${r.date}|${genre}`;
+    folded.set(key, (folded.get(key) || 0) + r.share);
+  }
+  const series = [...folded.entries()].map(([key, share]) => {
+    const [date, genre] = key.split("|");
+    return { date, genre, share };
+  });
+
+  const dates = [...new Set(series.map((d) => d.date))];
+  if (dates.length < 2) {
+    // One snapshot: a stacked area over a single date draws nothing. Bars are
+    // the honest rendering of a single moment.
+    caption.textContent =
+      `Share of listening by genre, weighted so a rank-1 artist counts for more ` +
+      `than a rank-50 one.${covNote}`;
+    node.replaceChildren(
+      Plot.plot({
+        height: 320,
+        marginLeft: 130,
+        style: { background: "transparent" },
+        x: { label: "share", percent: true },
+        y: { label: null, domain: series.sort((a, b) => b.share - a.share).map((d) => d.genre) },
+        marks: [Plot.barX(series, { x: "share", y: "genre", fill: "var(--accent)" })],
+      })
+    );
+    return;
+  }
+
+  caption.textContent =
+    `Share of listening by genre over time, rank-weighted.${covNote}`;
+  node.replaceChildren(
+    Plot.plot({
+      height: 320,
+      marginRight: 110,
+      style: { background: "transparent" },
+      y: { label: "share", percent: true },
+      x: { label: null, type: "utc" },
+      color: { legend: true },
+      marks: [Plot.areaY(series, { x: (d) => new Date(d.date), y: "share", fill: "genre" })],
+    })
+  );
+}
+
+function drawReach(rows) {
+  const node = $("reach");
+  const caption = $("reach-cap");
+  const shortTerm = (rows || []).filter((r) => r.time_range === "short_term");
+  if (!shortTerm.length) {
+    caption.textContent = "";
+    return awaiting(node, "No reach data yet — run tools/enrich_artists.py.");
+  }
+
+  const latest = shortTerm[shortTerm.length - 1];
+  caption.textContent =
+    `Median Deezer fan count of the artists in the last four weeks — a stand-in ` +
+    `for Spotify's withdrawn popularity score. Median, not mean, because fan ` +
+    `counts span five orders of magnitude. Based on ${latest.artists_measured} artists.`;
+
+  node.replaceChildren(
+    Plot.plot({
+      height: 200,
+      style: { background: "transparent" },
+      // Log scale: fan counts run from hundreds to tens of millions.
+      y: { type: "log", label: "median fans", grid: true },
+      x: { label: null, type: "utc" },
+      marks: [
+        Plot.line(shortTerm, {
+          x: (d) => new Date(d.date), y: "median_fans",
+          stroke: "var(--accent)", strokeWidth: 1.8,
+        }),
+        Plot.dot(shortTerm, {
+          x: (d) => new Date(d.date), y: "median_fans", r: 2.5, fill: "var(--accent)",
+        }),
       ],
     })
   );

@@ -11,6 +11,7 @@ from pathlib import Path
 
 RAW_ROOT = Path("data/raw")
 DERIVED_ROOT = Path("data/derived")
+ENRICHMENT_PATH = Path("data/enrichment/artists.json")
 
 TIME_RANGES = ("short_term", "medium_term", "long_term")
 API_KIND_TO_KIND = {"artists": "artist", "tracks": "track"}
@@ -27,13 +28,32 @@ SNAPSHOT_COLUMNS = [
     "primary_artist_id",
     "album_id",
     "duration_ms",
+    "deezer_fans",
 ]
 GENRE_COLUMNS = ["snapshot_date", "time_range", "artist_id", "genre"]
 
 
-def build_rows(raw_root):
-    """Walk every captured day. Returns (snapshot_rows, genre_rows, skipped)."""
+def load_enrichment(path=ENRICHMENT_PATH):
+    """{spotify_id: {genres, deezer_fans, ...}} from tools/enrich_artists.py."""
+    path = Path(path)
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return {}
+
+
+def build_rows(raw_root, enrichment=None):
+    """Walk every captured day. Returns (snapshot_rows, genre_rows, skipped).
+
+    Genres and reach come from `enrichment`, not from Spotify — Spotify
+    withdrew both fields. Because enrichment is keyed by Spotify artist ID, it
+    applies to every snapshot ever captured, including ones taken before the
+    enrichment existed.
+    """
     raw_root = Path(raw_root)
+    enrichment = {} if enrichment is None else enrichment
     snapshot_rows, genre_rows, skipped = [], [], []
 
     day_dirs = sorted(
@@ -61,11 +81,14 @@ def build_rows(raw_root):
                     continue
 
                 for index, item in enumerate(payload.get("items", []), start=1):
+                    entry = enrichment.get(item.get("id", "")) or {}
                     snapshot_rows.append(
-                        _item_row(item, index, kind, time_range, snapshot_date, captured_at)
+                        _item_row(
+                            item, index, kind, time_range, snapshot_date, captured_at, entry
+                        )
                     )
                     if kind == "artist":
-                        for genre in item.get("genres", []):
+                        for genre in entry.get("genres") or []:
                             genre_rows.append(
                                 {
                                     "snapshot_date": snapshot_date,
@@ -90,7 +113,7 @@ def _read_captured_at(day_dir, snapshot_date):
     return f"{snapshot_date}T00:00:00Z"
 
 
-def _item_row(item, rank, kind, time_range, snapshot_date, captured_at):
+def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=None):
     row = {
         "snapshot_date": snapshot_date,
         "captured_at": captured_at,
@@ -103,6 +126,9 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at):
         "primary_artist_id": "",
         "album_id": "",
         "duration_ms": "",
+        # Deezer fan count, reached via MusicBrainz. Spotify's own popularity
+        # field is gone, and this is a same-shaped substitute from elsewhere.
+        "deezer_fans": (entry or {}).get("deezer_fans") or "",
     }
     if kind == "track":
         artists = item.get("artists") or [{}]
@@ -128,7 +154,7 @@ def _write_csv(path, columns, rows):
 
 
 def main():
-    snapshot_rows, genre_rows, skipped = build_rows(RAW_ROOT)
+    snapshot_rows, genre_rows, skipped = build_rows(RAW_ROOT, load_enrichment())
     write_csvs(snapshot_rows, genre_rows, DERIVED_ROOT)
     print(f"{len(snapshot_rows)} snapshot rows, {len(genre_rows)} genre rows")
     for entry in skipped:
