@@ -21,7 +21,7 @@
 - **A silent failure is a permanent data gap.** Capture failures exit non-zero. Never swallow an exception to keep the job green.
 - **Time range values:** `short_term`, `medium_term`, `long_term`. **Kind values:** `artist`, `track` (singular) in all derived data. Note the Spotify API path uses the plural `artists` / `tracks`; convert at the boundary in Task 4.
 - **Gating thresholds:** survival curve needs ≥ 8 weeks of history; rotation half-life needs ≥ 10 completed spells.
-- **Genre weighting:** `w = 1/rank`, split equally across an artist's genres. Defined once as `RANK_WEIGHT` in `tools/build_metrics.py`.
+- **No genre or popularity metrics.** Spotify withdrew `genres` and `popularity` from `/me/top/*` and returns 403 on `/v1/artists` and `/v1/tracks` for development-mode apps. Genre mix and mainstream-ness were removed on 2026-09-13 after the first real capture proved it. Do not reintroduce them.
 - **Never draw a shape that is not real data.** No illustrative curves, sample trends, or placeholder shapes anywhere in the UI, even labelled as examples. An unready figure keeps its slot as an empty framed area with a caption giving the date it arrives. This is the page's whole credibility.
 - **Editorial design system:** serif (`--serif`) for the lede and figure captions, sans (`--sans`) for labels and UI chrome. Warm off-white ground, near-black text, one green accent, all as CSS custom properties in `site/style.css` with a `prefers-color-scheme: dark` override. Charts render on the page ground — no card borders, no shadows.
 - **The self-serve page uses PKCE and never stores a refresh token.** No client secret ships. The client ID is public by design.

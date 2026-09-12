@@ -21,11 +21,12 @@ DERIVED_ROOT = Path("data/derived")
 SITE_ROOT = Path("site")
 
 TIME_RANGES = ("short_term", "medium_term", "long_term")
-UNCLASSIFIED = "unclassified"
 
-# Inverse rank. Without it the 45 artists in the tail outweigh the top 5, and
-# the genre chart stops reflecting what you actually listen to.
-RANK_WEIGHT = lambda rank: 1.0 / rank  # noqa: E731
+# Spotify withdrew `genres` and `popularity` from the /me/top/* endpoints, and
+# a development-mode app gets 403 on /v1/artists and /v1/tracks, so there is no
+# route to either field. The genre-mix and mainstream-ness metrics that once
+# lived here were removed rather than left gated: a gate that can never open is
+# a promise the page cannot keep. Everything below needs only IDs and ranks.
 
 
 def load_rows(derived_root):
@@ -137,66 +138,6 @@ def divergence(snapshot_rows):
     return results
 
 
-def mainstreamness(snapshot_rows):
-    """Mean and median popularity per date, kind and time range."""
-    grouped = defaultdict(list)
-    for row in snapshot_rows:
-        if row.get("popularity") is not None:
-            grouped[(row["snapshot_date"], row["kind"], row["time_range"])].append(
-                row["popularity"]
-            )
-
-    results = [
-        {
-            "date": date,
-            "kind": kind,
-            "time_range": time_range,
-            "mean": statistics.fmean(values),
-            "median": statistics.median(values),
-        }
-        for (date, kind, time_range), values in grouped.items()
-        if values
-    ]
-    results.sort(key=lambda r: (r["date"], r["kind"], r["time_range"]))
-    return results
-
-
-def genre_mix(genre_rows, snapshot_rows):
-    """Rank-weighted genre shares per date and time range, normalised to 1."""
-    genres_by_artist = defaultdict(lambda: defaultdict(list))
-    for row in genre_rows:
-        genres_by_artist[(row["snapshot_date"], row["time_range"])][row["artist_id"]].append(
-            row["genre"]
-        )
-
-    weights = defaultdict(lambda: defaultdict(float))
-    for row in snapshot_rows:
-        if row["kind"] != "artist":
-            continue
-        key = (row["snapshot_date"], row["time_range"])
-        weight = RANK_WEIGHT(row["rank"])
-        genres = genres_by_artist[key].get(row["spotify_id"]) or [UNCLASSIFIED]
-        for genre in genres:
-            weights[key][genre] += weight / len(genres)
-
-    results = []
-    for (date, time_range), by_genre in weights.items():
-        total = sum(by_genre.values())
-        if not total:
-            continue
-        for genre, weight in by_genre.items():
-            results.append(
-                {
-                    "date": date,
-                    "time_range": time_range,
-                    "genre": genre,
-                    "share": weight / total,
-                }
-            )
-    results.sort(key=lambda r: (r["date"], r["time_range"], r["genre"]))
-    return results
-
-
 SURVIVAL_MIN_WEEKS = 8
 HALFLIFE_MIN_SPELLS = 10
 
@@ -293,38 +234,36 @@ def _weeks_between(start, end):
 
 
 def build(snapshot_rows, genre_rows, skipped, generated_at):
-    """Assemble the full dashboard payload."""
+    """Assemble the full dashboard payload.
+
+    genre_rows is accepted and ignored. The derived layer still emits the table
+    (always empty now) so the file contract does not change; see the note at the
+    top of this module.
+    """
     dates = sorted({row["snapshot_date"] for row in snapshot_rows})
     events = entry_exit_events(snapshot_rows)
     divergences = divergence(snapshot_rows)
-    popularity = mainstreamness(snapshot_rows)
 
     return {
         "generated_at": generated_at,
         "snapshot_dates": dates,
         "data_quality": {"skipped_files": skipped, "snapshot_count": len(dates)},
-        "headline": _headline(dates, events, divergences, popularity),
+        "headline": _headline(dates, events, divergences),
         "rank_timeline": rank_timeline(snapshot_rows),
         "events": events,
         "divergence": divergences,
-        "mainstreamness": popularity,
-        "genre_mix": genre_mix(genre_rows, snapshot_rows),
         "survival": new_artist_survival(snapshot_rows),
         "half_life": rotation_half_life(snapshot_rows),
     }
 
 
-def _headline(dates, events, divergences, popularity):
+def _headline(dates, events, divergences):
     latest_divergence = [d for d in divergences if d["kind"] == "artist"]
-    latest_popularity = [
-        p for p in popularity if p["kind"] == "artist" and p["time_range"] == "short_term"
-    ]
     cutoff = _cutoff_date(dates)
     recent = [e for e in events if e["snapshot_date"] > cutoff and e["kind"] == "artist"]
 
     return {
         "divergence_artists": latest_divergence[-1]["overlap"] if latest_divergence else None,
-        "mean_popularity": latest_popularity[-1]["mean"] if latest_popularity else None,
         "entries_7d": sum(1 for e in recent if e["event"] in ("entered", "re_entered")),
         "exits_7d": sum(1 for e in recent if e["event"] == "exited"),
     }

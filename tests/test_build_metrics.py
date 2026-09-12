@@ -1,8 +1,6 @@
 from tools.build_metrics import (
     divergence,
     entry_exit_events,
-    genre_mix,
-    mainstreamness,
     rank_timeline,
 )
 
@@ -16,15 +14,6 @@ def row(date, id_, rank, *, kind="artist", time_range="short_term", popularity=5
         "spotify_id": id_,
         "name": name or id_.upper(),
         "popularity": popularity,
-    }
-
-
-def genre_row(date, artist_id, genre, time_range="short_term"):
-    return {
-        "snapshot_date": date,
-        "time_range": time_range,
-        "artist_id": artist_id,
-        "genre": genre,
     }
 
 
@@ -120,70 +109,6 @@ def test_divergence_skipped_when_a_time_range_is_missing_entirely():
     rows = [row("2026-09-01", "a1", 1, time_range="short_term")]
 
     assert divergence(rows) == []
-
-
-# --- mainstreamness ---------------------------------------------------------
-
-def test_mainstreamness_reports_mean_and_median_popularity():
-    rows = [
-        row("2026-09-01", "a1", 1, popularity=10),
-        row("2026-09-01", "a2", 2, popularity=20),
-        row("2026-09-01", "a3", 3, popularity=60),
-    ]
-
-    result = mainstreamness(rows)[0]
-
-    assert result["mean"] == 30.0
-    assert result["median"] == 20.0
-
-
-# --- genre mix --------------------------------------------------------------
-
-def test_genre_shares_sum_to_one():
-    snapshot_rows = [row("2026-09-01", "a1", 1), row("2026-09-01", "a2", 2)]
-    genre_rows = [genre_row("2026-09-01", "a1", "rock"), genre_row("2026-09-01", "a2", "jazz")]
-
-    shares = genre_mix(genre_rows, snapshot_rows)
-
-    assert round(sum(s["share"] for s in shares), 9) == 1.0
-
-
-def test_rank_one_outweighs_rank_two_by_the_inverse_rank_rule():
-    snapshot_rows = [row("2026-09-01", "a1", 1), row("2026-09-01", "a2", 2)]
-    genre_rows = [genre_row("2026-09-01", "a1", "rock"), genre_row("2026-09-01", "a2", "jazz")]
-
-    shares = {s["genre"]: s["share"] for s in genre_mix(genre_rows, snapshot_rows)}
-
-    # weights 1/1 and 1/2 -> 2/3 and 1/3
-    assert round(shares["rock"], 6) == round(2 / 3, 6)
-    assert round(shares["jazz"], 6) == round(1 / 3, 6)
-
-
-def test_an_artists_weight_is_split_evenly_across_its_genres():
-    snapshot_rows = [row("2026-09-01", "a1", 1)]
-    genre_rows = [
-        genre_row("2026-09-01", "a1", "rock"),
-        genre_row("2026-09-01", "a1", "jazz"),
-    ]
-
-    shares = {s["genre"]: s["share"] for s in genre_mix(genre_rows, snapshot_rows)}
-
-    assert shares["rock"] == 0.5
-    assert shares["jazz"] == 0.5
-
-
-def test_artist_with_no_genres_is_counted_as_unclassified():
-    snapshot_rows = [row("2026-09-01", "a1", 1)]
-
-    shares = {s["genre"]: s["share"] for s in genre_mix([], snapshot_rows)}
-
-    assert shares["unclassified"] == 1.0
-
-
-def test_genre_mix_ignores_tracks():
-    snapshot_rows = [row("2026-09-01", "t1", 1, kind="track")]
-
-    assert genre_mix([], snapshot_rows) == []
 
 
 # --- rank timeline ----------------------------------------------------------

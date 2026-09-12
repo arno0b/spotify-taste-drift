@@ -103,11 +103,15 @@ def test_build_emits_every_key_the_dashboard_reads():
         "rank_timeline",
         "events",
         "divergence",
-        "mainstreamness",
-        "genre_mix",
         "survival",
         "half_life",
     }
+    # No "genre_mix" or "mainstreamness": Spotify withdrew `genres` and
+    # `popularity` from /me/top/*, and a development-mode app is 403 on
+    # /v1/artists and /v1/tracks, so neither field is reachable at all.
+    assert "genre_mix" not in payload
+    assert "mainstreamness" not in payload
+    assert "mean_popularity" not in payload["headline"]
     assert payload["generated_at"] == "2026-09-01T06:00:00Z"
     assert payload["snapshot_dates"] == ["2026-09-01"]
 
