@@ -36,6 +36,13 @@ Explicitly out of scope. These are excluded by decision, not oversight:
   not worked around.
 - **Recommendations, related-artists, featured/category playlists.** Same
   deprecation.
+- **Genre mix and mainstream-ness.** Removed 2026-09-13 after the first real
+  capture. Spotify no longer returns `genres` or `popularity` on the
+  `/me/top/*` endpoints — the keys are absent, not empty — and a
+  development-mode app receives 403 on `/v1/artists` and `/v1/tracks`, so there
+  is no route to either field. Unlike the analysis layer, this cannot be
+  recovered later: the raw payloads do not contain the data, so even restored
+  access would not backfill past snapshots.
 - **Liked-songs library diffing.** Considered and declined; can be added later
   without redesign.
 - **Recently-played polling / play counts.** Considered and declined; this is a
@@ -165,7 +172,7 @@ One row per entity per time range per day.
 | `rank` | int | 1 to 50 |
 | `spotify_id` | string | |
 | `name` | string | |
-| `popularity` | int | 0 to 100 |
+| `popularity` | int | Always empty since 2026-09-13 — Spotify withdrew the field. Column retained so the CSV contract is stable. |
 | `primary_artist_id` | string | tracks only; empty for artists |
 | `album_id` | string | tracks only; empty for artists |
 | `duration_ms` | int | tracks only; empty for artists |
@@ -218,23 +225,10 @@ overlap = |A intersect B| / min(|A|, |B|)
 Range 0 to 1. High means settled taste, low means an exploration phase. `min()`
 rather than a hardcoded 50 so short result sets are handled correctly.
 
-### 8.4 Genre mix over time
+### 8.4–8.5 Genre mix and mainstream-ness — REMOVED
 
-For each `(date, time_range)`, an artist at rank `r` carries weight `w = 1/r`.
-That weight is split equally across the artist's genres; an artist with `g`
-genres contributes `w/g` to each. Artists with zero genres contribute their full
-weight to `unclassified`. Shares are normalised to sum to 1.
-
-Inverse rank rather than flat count, otherwise the tail of the top 50 drowns out
-the top 5. The weighting function is a named constant so it can be tuned without
-touching the rest of the pipeline.
-
-The 12 genres with the highest mean share across all history get their own band;
-everything else is bucketed as `other`.
-
-### 8.5 Mainstream-ness
-
-Mean and median `popularity` of the 50 entities, per `(date, kind, time_range)`.
+Both depended on fields Spotify no longer returns. See §3. Section numbering is
+left as-is so the metric numbers in the code and dashboard stay stable.
 
 ### 8.6 New-artist survival
 
@@ -283,8 +277,8 @@ In order:
    already playing a year ago." Derived from the divergence metric, which is
    available from a single day's capture, so the lede is never empty.
 2. **Byline** — snapshot count and date range.
-3. **Stat tiles** — divergence, mean popularity, entries 7d, exits 7d. Below
-   the lede, not above it.
+3. **Stat tiles** — divergence, entries 7d, exits 7d. Below the lede, not
+   above it.
 4. **Figures**, each numbered and captioned.
 
 ### 9.3 Figures
@@ -292,13 +286,13 @@ In order:
 | # | Figure | Notes |
 |---|---|---|
 | 1 | Rank over time | All 50 lines drawn. Only the current top 10 carry weight and a right-edge name label; the rest remain faint context. Hover or tap brings one artist forward. Selectable by kind and time range. |
-| 2 | Genre mix | Stacked area, rank-weighted per §8.4 |
-| 3 | Short-vs-long divergence | Line, 0 to 1 |
-| 4 | Mainstream-ness | Line, mean popularity |
-| 5 | New-artist survival | Gated, ≥ 8 weeks |
-| 6 | Rotation half-life | Gated, ≥ 10 completed spells |
-| 7 | Then versus now | Slope chart between two dates. Deferred: needs roughly a month of history before it says anything, and reads the same data as Figure 1. |
-| 8 | Recent changes | Entry / exit feed, most recent first |
+| 2 | Short-vs-long divergence | Line, 0 to 1 |
+| 3 | New-artist survival | Gated, ≥ 8 weeks |
+| 4 | Rotation half-life | Gated, ≥ 10 completed spells |
+| 5 | Then versus now | Slope chart between two dates. Deferred: needs roughly a month of history before it says anything, and reads the same data as Figure 1. |
+| 6 | Recent changes | Entry / exit feed, most recent first |
+
+Genre mix and mainstream-ness were removed; see §3.
 
 Figure 1 draws all fifty rather than only the top ten because a rank chart's
 purpose is showing artists trade places, which a filtered chart cannot do.
@@ -316,8 +310,8 @@ broken. Two rules:
   weeks of history. First appears 2 November 2026." The date is computed from
   the metric's own `weeks_have` / `spells_have` counters, never hardcoded.
 
-Note that only Figures 5 and 6 are genuinely gated. The lede, all four tiles,
-and Figures 1–4 work from a single day's capture, so week one is thin, not
+Note that only Figures 3 and 4 are genuinely gated. The lede, all three tiles,
+and Figures 1–2 work from a single day's capture, so week one is thin, not
 blank.
 
 ### 9.5 Self-serve page
