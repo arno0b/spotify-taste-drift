@@ -34,9 +34,9 @@ going forward.
 ## Note on the public repo
 
 The captured data is public by design — this repo publishes to GitHub Pages.
-It contains music taste only: top artists, top tracks, ranks, genres,
-popularity. No email, no playlists, no play timestamps. Credentials live in
-GitHub Actions secrets and never enter the tree.
+It contains music taste only: top artists, top tracks and their ranks. No email,
+no playlists, no play timestamps. Credentials live in `.env` and GitHub Actions
+secrets and never enter the tree.
 
 ## Running it on your own account
 
