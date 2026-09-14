@@ -490,6 +490,15 @@
     "name": "The Marías",
     "status": "ok"
   },
+  "37LGjqM0je1KNrLRD3MZ47": {
+    "deezer_fans": null,
+    "deezer_id": null,
+    "fetched_at": "2026-09-14T11:30:34Z",
+    "genres": [],
+    "mbid": null,
+    "name": "Indalo",
+    "status": "not_found"
+  },
   "3AA28KZvwAUcZuOKwyblJQ": {
     "deezer_fans": 3014766,
     "deezer_id": "14",
@@ -807,6 +816,22 @@
     ],
     "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
     "name": "Radiohead",
+    "status": "ok"
+  },
+  "4dpARuHxo51G3z768sgnrY": {
+    "deezer_fans": 15467816,
+    "deezer_id": "75798",
+    "fetched_at": "2026-09-14T11:30:34Z",
+    "genres": [
+      "blue-eyed soul",
+      "neo soul",
+      "pop",
+      "pop soul",
+      "r&b",
+      "soul"
+    ],
+    "mbid": "cc2c9c3c-b7bc-4b8b-84d8-4fbd8779e493",
+    "name": "Adele",
     "status": "ok"
   },
   "4gdMJYnopf2nEUcanAwstx": {
