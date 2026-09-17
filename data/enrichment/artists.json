@@ -490,6 +490,26 @@
     "name": "The Marías",
     "status": "ok"
   },
+  "36QJpDe2go2KgaRleHCDTp": {
+    "deezer_fans": 5538981,
+    "deezer_id": "848",
+    "fetched_at": "2026-09-17T10:49:15Z",
+    "genres": [
+      "arena rock",
+      "blues rock",
+      "classic rock",
+      "folk rock",
+      "hard rock",
+      "heavy metal",
+      "pop",
+      "progressive rock",
+      "rock",
+      "rock and roll"
+    ],
+    "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+    "name": "Led Zeppelin",
+    "status": "ok"
+  },
   "37LGjqM0je1KNrLRD3MZ47": {
     "deezer_fans": null,
     "deezer_id": null,
@@ -1170,6 +1190,39 @@
     "name": "PinkPantheress",
     "status": "ok"
   },
+  "7CajNmpbOovFoOoasH2HaY": {
+    "deezer_fans": 12321788,
+    "deezer_id": "12178",
+    "fetched_at": "2026-09-17T10:49:15Z",
+    "genres": [
+      "acid house",
+      "club",
+      "complextro",
+      "contemporary r&b",
+      "dance",
+      "dance-pop",
+      "disco",
+      "edm",
+      "electro house",
+      "electro-disco",
+      "electronic",
+      "electropop",
+      "festival progressive house",
+      "funktronica",
+      "hip house",
+      "house",
+      "melodic house",
+      "melodic techno",
+      "nu disco",
+      "pop",
+      "progressive house",
+      "synth-pop",
+      "uk garage"
+    ],
+    "mbid": "8dd98bdc-80ec-4e93-8509-2f46bafc09a7",
+    "name": "Calvin Harris",
+    "status": "ok"
+  },
   "7Ln80lUS6He07XvHI8qqHH": {
     "deezer_fans": 4956340,
     "deezer_id": "1182",
@@ -1194,6 +1247,15 @@
     "mbid": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
     "name": "Arctic Monkeys",
     "status": "ok"
+  },
+  "7fhlWsdi6oTTxj8d3uYIAn": {
+    "deezer_fans": null,
+    "deezer_id": null,
+    "fetched_at": "2026-09-17T10:49:15Z",
+    "genres": [],
+    "mbid": null,
+    "name": "Kaaktaal",
+    "status": "not_found"
   },
   "7gW0r5CkdEUMm42w9XpyZO": {
     "deezer_fans": 245985,
