@@ -164,6 +164,32 @@
     "name": "Cozy Room",
     "status": "not_found"
   },
+  "0hEurMDQu99nJRq8pTxO14": {
+    "deezer_fans": 1037775,
+    "deezer_id": "598",
+    "fetched_at": "2026-09-18T10:24:44Z",
+    "genres": [
+      "acoustic rock",
+      "alternative rock",
+      "americana",
+      "blue-eyed soul",
+      "blues",
+      "blues rock",
+      "country",
+      "country rock",
+      "folk rock",
+      "indie rock",
+      "pop",
+      "pop rock",
+      "rock",
+      "singer-songwriter",
+      "soft rock",
+      "soul"
+    ],
+    "mbid": "144ef525-85e9-40c3-8335-02c32d0861f3",
+    "name": "John Mayer",
+    "status": "ok"
+  },
   "0klU31gyC6EZqKgLvVANCy": {
     "deezer_fans": 1078,
     "deezer_id": "13603653",
