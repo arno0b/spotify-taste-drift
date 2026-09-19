@@ -1,7 +1,7 @@
 {
   "data_quality": {
     "skipped_files": [],
-    "snapshot_count": 7
+    "snapshot_count": 8
   },
   "divergence": [
     {
@@ -73,6 +73,16 @@
       "date": "2026-09-18",
       "kind": "track",
       "overlap": 0.26
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "artist",
+      "overlap": 0.54
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "track",
+      "overlap": 0.24
     }
   ],
   "events": [
@@ -603,9 +613,41 @@
       "snapshot_date": "2026-09-18",
       "spotify_id": "7CL1T9G9yTPz0LtVMBUHbm",
       "time_range": "short_term"
+    },
+    {
+      "event": "entered",
+      "kind": "artist",
+      "name": "John Mayer",
+      "snapshot_date": "2026-09-19",
+      "spotify_id": "0hEurMDQu99nJRq8pTxO14",
+      "time_range": "medium_term"
+    },
+    {
+      "event": "exited",
+      "kind": "artist",
+      "name": "Drake",
+      "snapshot_date": "2026-09-19",
+      "spotify_id": "3TVXtAsR1Inumwj472S9r4",
+      "time_range": "medium_term"
+    },
+    {
+      "event": "re_entered",
+      "kind": "track",
+      "name": "Midnight City",
+      "snapshot_date": "2026-09-19",
+      "spotify_id": "1eyzqe2QqGZUmfcPZtrIyt",
+      "time_range": "short_term"
+    },
+    {
+      "event": "exited",
+      "kind": "track",
+      "name": "Apocalypse",
+      "snapshot_date": "2026-09-19",
+      "spotify_id": "1oAwsWBovWRIp7qLMGPIet",
+      "time_range": "short_term"
     }
   ],
-  "generated_at": "2026-09-18T10:24:47Z",
+  "generated_at": "2026-09-19T10:09:05Z",
   "genre_coverage": [
     {
       "date": "2026-09-12",
@@ -751,6 +793,27 @@
       "date": "2026-09-18",
       "resolved": 29,
       "share": 0.6808293910360436,
+      "time_range": "short_term",
+      "total": 50
+    },
+    {
+      "date": "2026-09-19",
+      "resolved": 41,
+      "share": 0.8738875496648056,
+      "time_range": "long_term",
+      "total": 50
+    },
+    {
+      "date": "2026-09-19",
+      "resolved": 35,
+      "share": 0.7289996970677048,
+      "time_range": "medium_term",
+      "total": 50
+    },
+    {
+      "date": "2026-09-19",
+      "resolved": 29,
+      "share": 0.6929928344911825,
       "time_range": "short_term",
       "total": 50
     }
@@ -14819,6 +14882,2178 @@
       "genre": "world fusion",
       "share": 0.0029410534082535806,
       "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "acoustic rock",
+      "share": 0.00033116727439382564,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative dance",
+      "share": 0.0018166890481032725,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative hip hop",
+      "share": 0.002348040910211909,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative pop",
+      "share": 0.003542331908481089,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative r&b",
+      "share": 0.041367537597395816,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative rock",
+      "share": 0.01585037137130567,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ambient",
+      "share": 0.04390331866249574,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ambient pop",
+      "share": 0.03179205834180726,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "americana",
+      "share": 0.00033116727439382564,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "arena rock",
+      "share": 0.0005411414185839535,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "art pop",
+      "share": 0.012819475756819907,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "art rock",
+      "share": 0.0008477882224481938,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ballad",
+      "share": 0.014203911069572011,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "baroque pop",
+      "share": 0.0014999330089468044,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bedroom pop",
+      "share": 0.0020915827856452145,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blue-eyed soul",
+      "share": 0.0007165255573248228,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blues",
+      "share": 0.00033116727439382564,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blues rock",
+      "share": 0.0008723086929777791,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "boom bap",
+      "share": 0.010488914752149744,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bossa nova",
+      "share": 0.0014129803707469894,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "britpop",
+      "share": 0.0015699781897188772,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bubblegum pop",
+      "share": 0.0028901871219824786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chamber pop",
+      "share": 0.0006521447864986106,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chillout",
+      "share": 0.008477882224481937,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chillwave",
+      "share": 0.016736157134047448,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chipmunk soul",
+      "share": 0.00043254501145316003,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "christian hip hop",
+      "share": 0.00043254501145316003,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "classic rock",
+      "share": 0.0005411414185839535,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "classical",
+      "share": 0.0021194705561204843,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "conscious hip hop",
+      "share": 0.0013676055509180796,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "contemporary r&b",
+      "share": 0.0333666648016283,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "country",
+      "share": 0.0009833120608924364,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "country rock",
+      "share": 0.00033116727439382564,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance",
+      "share": 0.002434993548411724,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance-pop",
+      "share": 0.015386805725601959,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance-rock",
+      "share": 0.00038535828293099713,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dancehall",
+      "share": 0.0014129803707469896,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dark ambient",
+      "share": 0.0036333780962065445,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "deep house",
+      "share": 0.00043254501145316003,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "disco",
+      "share": 0.0009350605394649195,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "downtempo",
+      "share": 0.014770322456452455,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dream pop",
+      "share": 0.051685248970737424,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dreamwave",
+      "share": 0.001956434359495832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "drift phonk",
+      "share": 0.008477882224481937,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "drum and bass",
+      "share": 0.0028901871219824786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "easy listening",
+      "share": 0.002569055219539981,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "edm",
+      "share": 0.0006521447864986106,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronic",
+      "share": 0.02365284526380949,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronica",
+      "share": 0.0014999330089468044,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electropop",
+      "share": 0.00043254501145316003,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "experimental hip hop",
+      "share": 0.00043254501145316003,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "filmi",
+      "share": 0.03037907797106027,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk pop",
+      "share": 0.0018430178748873776,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk rock",
+      "share": 0.0008723086929777791,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "future bass",
+      "share": 0.0020197503374166904,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "future garage",
+      "share": 0.0028901871219824786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "gangsta rap",
+      "share": 0.0009350605394649195,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "garage rock",
+      "share": 0.0008477882224481938,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "garage rock revival",
+      "share": 0.0008477882224481938,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "grunge",
+      "share": 0.000687395856039076,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hard rock",
+      "share": 0.0005411414185839535,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hardcore hip hop",
+      "share": 0.001659665857796709,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hardwave",
+      "share": 0.008477882224481937,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "heavy metal",
+      "share": 0.0005411414185839535,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip hop",
+      "share": 0.016333037346461386,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip hop soul",
+      "share": 0.0045417226202581805,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "house",
+      "share": 0.011345420784346822,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hypnagogic pop",
+      "share": 0.012111260320688481,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indian pop",
+      "share": 0.009083445240516361,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indie pop",
+      "share": 0.05996655058223871,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indie rock",
+      "share": 0.03967590678033395,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indietronica",
+      "share": 0.002558194782022975,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "instrumental",
+      "share": 0.011856315110937155,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "instrumental hip hop",
+      "share": 0.02245366789153958,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jangle pop",
+      "share": 0.0018430178748873776,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz",
+      "share": 0.004511975883593662,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz pop",
+      "share": 0.0031915570611977455,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz rap",
+      "share": 0.0009350605394649195,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jungle",
+      "share": 0.0028901871219824786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "leftfield",
+      "share": 0.0018166890481032725,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "lo-fi",
+      "share": 0.02506135552039595,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "lo-fi hip hop",
+      "share": 0.02245366789153958,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "melodic house",
+      "share": 0.0006521447864986106,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "melodic techno",
+      "share": 0.0006521447864986106,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "neo soul",
+      "share": 0.0045417226202581805,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "neo-psychedelia",
+      "share": 0.004452052712114621,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "phonk",
+      "share": 0.010244107687915673,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "phonk house",
+      "share": 0.0017662254634337369,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "piano rock",
+      "share": 0.0015699781897188772,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop",
+      "share": 0.07136048743100669,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop rap",
+      "share": 0.002779606725288945,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop rock",
+      "share": 0.0022865037470437,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop soul",
+      "share": 0.00038535828293099713,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-britpop",
+      "share": 0.0015699781897188772,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-grunge",
+      "share": 0.000687395856039076,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-punk revival",
+      "share": 0.0008477882224481938,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "power pop",
+      "share": 0.000687395856039076,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "progressive rock",
+      "share": 0.0005411414185839535,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic",
+      "share": 0.0018166890481032725,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic pop",
+      "share": 0.006857297796437827,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic rock",
+      "share": 0.003405983004471169,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic soul",
+      "share": 0.0009561521305806696,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "quiet storm",
+      "share": 0.001778576690450756,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "r&b",
+      "share": 0.022577940656538658,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "rock",
+      "share": 0.006446304795785809,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "rock and roll",
+      "share": 0.0005411414185839535,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "shoegaze",
+      "share": 0.03292748899687181,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "singer-songwriter",
+      "share": 0.011479737672155786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "slowcore",
+      "share": 0.03244420312830587,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "smooth jazz",
+      "share": 0.0021639349733817534,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "smooth soul",
+      "share": 0.0021639349733817534,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "soft rock",
+      "share": 0.0007165255573248228,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "sophisti-pop",
+      "share": 0.0032993656284462983,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "soul",
+      "share": 0.007036824868033758,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "southern hip hop",
+      "share": 0.0007246053183317894,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "space rock",
+      "share": 0.0018166890481032725,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "synth-pop",
+      "share": 0.016840535858868255,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "synthwave",
+      "share": 0.004689633127048198,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trap",
+      "share": 0.005197976975221293,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trip hop",
+      "share": 0.013028074257551786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "uk garage",
+      "share": 0.0028901871219824786,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "vocal jazz",
+      "share": 0.0014129803707469894,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "wave",
+      "share": 0.010244107687915673,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "west coast hip hop",
+      "share": 0.0016224563955039956,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "witch house",
+      "share": 0.001956434359495832,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "world fusion",
+      "share": 0.0021194705561204843,
+      "time_range": "long_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "acoustic rock",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative dance",
+      "share": 0.003356160748118552,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative hip hop",
+      "share": 0.0030344471023085384,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative pop",
+      "share": 0.002324907520028104,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative r&b",
+      "share": 0.07809293818547375,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative rock",
+      "share": 0.02229255660725524,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ambient",
+      "share": 0.02689822109349567,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ambient pop",
+      "share": 0.011105830726335343,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "americana",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "art pop",
+      "share": 0.05297201325817544,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "art rock",
+      "share": 0.0022465250862069314,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ballad",
+      "share": 0.054752436363206605,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "baroque pop",
+      "share": 0.0016636354881373674,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bassline",
+      "share": 0.00027100937547893143,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bedroom pop",
+      "share": 0.00781757813881533,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blue-eyed soul",
+      "share": 0.0018477911964472596,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blues",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blues rock",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "boom bap",
+      "share": 0.0031546541570044682,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "breakbeat",
+      "share": 0.00027100937547893143,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "breaks",
+      "share": 0.00027100937547893143,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "britpop",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bubblegum pop",
+      "share": 0.0010586303729645757,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chamber pop",
+      "share": 0.0012000668195549847,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chillout",
+      "share": 0.00043246176938127346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chillwave",
+      "share": 0.0031546541570044682,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "classic rock",
+      "share": 0.001270356447557491,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "conscious hip hop",
+      "share": 0.00045369873127053246,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "contemporary r&b",
+      "share": 0.03303167724354141,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "country",
+      "share": 0.000886023359632479,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "country rock",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "crossover prog",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance",
+      "share": 0.002388343594886831,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance-pop",
+      "share": 0.017370434170173366,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dancehall",
+      "share": 0.0023097389955590744,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dark ambient",
+      "share": 0.016938085967433212,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "disco",
+      "share": 0.0007247081067494638,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "downtempo",
+      "share": 0.007114206720820024,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dream pop",
+      "share": 0.01382881080260458,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "drift phonk",
+      "share": 0.00043246176938127346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "drum and bass",
+      "share": 0.0010586303729645757,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "easy listening",
+      "share": 0.0036295898501642596,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "edm",
+      "share": 0.00030858861074271036,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronic",
+      "share": 0.05809180114507218,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronic rock",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronica",
+      "share": 0.002826123072428573,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electropop",
+      "share": 0.00027100937547893143,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "experimental",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "experimental rock",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "filmi",
+      "share": 0.017934443965517518,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk",
+      "share": 0.004065140632183971,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk pop",
+      "share": 0.004619477991118149,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk rock",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "future bass",
+      "share": 0.0010332967174921741,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "future garage",
+      "share": 0.0010586303729645757,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "gangsta rap",
+      "share": 0.00045369873127053246,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "garage rock",
+      "share": 0.001355046877394657,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "garage rock revival",
+      "share": 0.001355046877394657,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "grunge",
+      "share": 0.0014518359400657037,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hard rock",
+      "share": 0.001270356447557491,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hardcore hip hop",
+      "share": 0.00045369873127053246,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hardwave",
+      "share": 0.00043246176938127346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip hop",
+      "share": 0.009818691109477267,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip hop soul",
+      "share": 0.0014115071639527676,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "house",
+      "share": 0.0025497959887891735,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hypnagogic pop",
+      "share": 0.014518359400657039,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "idm",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indian pop",
+      "share": 0.006627946682908648,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indie pop",
+      "share": 0.03937448353041368,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indie rock",
+      "share": 0.023176786691270053,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indietronica",
+      "share": 0.004339801820866098,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "instrumental",
+      "share": 0.0031546541570044682,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "instrumental hip hop",
+      "share": 0.053968912059304104,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jangle pop",
+      "share": 0.004619477991118149,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz",
+      "share": 0.004413251295086088,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz pop",
+      "share": 0.003959552563815556,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz rap",
+      "share": 0.00045369873127053246,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jungle",
+      "share": 0.0010586303729645757,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "latin",
+      "share": 0.00027100937547893143,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "leftfield",
+      "share": 0.0025014740859240167,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "lo-fi",
+      "share": 0.011195591671214521,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "lo-fi hip hop",
+      "share": 0.06019106608815712,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "melodic house",
+      "share": 0.00030858861074271036,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "melodic techno",
+      "share": 0.00030858861074271036,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "neo soul",
+      "share": 0.0026818636115102583,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "neo-psychedelia",
+      "share": 0.003478430413219497,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "new wave",
+      "share": 0.001957035608399378,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "phonk",
+      "share": 0.00043246176938127346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop",
+      "share": 0.05838663593969327,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop rap",
+      "share": 0.0019055346713362363,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop rock",
+      "share": 0.002805479732768078,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop soul",
+      "share": 0.001270356447557491,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-britpop",
+      "share": 0.0008914782088122743,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-grunge",
+      "share": 0.002343314148877978,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-punk revival",
+      "share": 0.0020417260382365444,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "power pop",
+      "share": 0.0014518359400657037,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic",
+      "share": 0.0018147949250821298,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic pop",
+      "share": 0.009044757930467454,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic rock",
+      "share": 0.004116691328606594,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "punk rock",
+      "share": 0.001270356447557491,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "quiet storm",
+      "share": 0.003959552563815556,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "r&b",
+      "share": 0.025241584865185095,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "rock",
+      "share": 0.007940545134023667,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "shoegaze",
+      "share": 0.009527673356681182,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "singer-songwriter",
+      "share": 0.007513970042541127,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "slowcore",
+      "share": 0.009836261967423893,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "smooth jazz",
+      "share": 0.003959552563815556,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "smooth soul",
+      "share": 0.003959552563815556,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "soft rock",
+      "share": 0.0005774347488897686,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "sophisti-pop",
+      "share": 0.003959552563815556,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "soul",
+      "share": 0.007218850924215581,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "space rock",
+      "share": 0.0018147949250821298,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "synth-pop",
+      "share": 0.017290842862059987,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "tech house",
+      "share": 0.00027100937547893143,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "techno",
+      "share": 0.004065140632183971,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trap",
+      "share": 0.002485132657557878,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trap soul",
+      "share": 0.0017934443965517519,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trip hop",
+      "share": 0.055353408452336834,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "uk garage",
+      "share": 0.0013296397484435071,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "wave",
+      "share": 0.00043246176938127346,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "west coast hip hop",
+      "share": 0.0019055346713362363,
+      "time_range": "medium_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "acid house",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "acoustic rock",
+      "share": 0.00352052421422312,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative dance",
+      "share": 0.002290906718993004,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative hip hop",
+      "share": 0.003979608179133067,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative pop",
+      "share": 0.001490557897293525,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative r&b",
+      "share": 0.07040305339288455,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "alternative rock",
+      "share": 0.06031170911736389,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ambient",
+      "share": 0.007310687617962968,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ambient pop",
+      "share": 0.007349992390102554,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "americana",
+      "share": 0.0022272704212431983,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "aor",
+      "share": 0.0012932537929799216,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "arena rock",
+      "share": 0.0012932537929799216,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "art pop",
+      "share": 0.015702664394750123,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "art rock",
+      "share": 0.0008223767709205655,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "ballad",
+      "share": 0.014185999298379754,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "baroque pop",
+      "share": 0.001644753541841131,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "bedroom pop",
+      "share": 0.01105954967789726,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blue-eyed soul",
+      "share": 0.0033409056318647974,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blues",
+      "share": 0.0022272704212431983,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "blues rock",
+      "share": 0.0022272704212431983,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "boom bap",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "britpop",
+      "share": 0.0008484839699974088,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chamber pop",
+      "share": 0.0008223767709205655,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chillout",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "chillwave",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "classic rock",
+      "share": 0.0012932537929799216,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "classical",
+      "share": 0.002889431897829014,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "club",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "complextro",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "conscious hip hop",
+      "share": 0.0008352264079661993,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "contemporary r&b",
+      "share": 0.06532593324529806,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "country",
+      "share": 0.0030496471921637636,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "country rock",
+      "share": 0.0022272704212431983,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance",
+      "share": 0.002796903804213477,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dance-pop",
+      "share": 0.049386873049281285,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dancehall",
+      "share": 0.003144381771166868,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "deep house",
+      "share": 0.007458766061837687,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "disco",
+      "share": 0.001152150262372346,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "downtempo",
+      "share": 0.006460275275306475,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "dream pop",
+      "share": 0.012726221195452393,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "drift phonk",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "edm",
+      "share": 0.0011393006253267123,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electro house",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electro-disco",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronic",
+      "share": 0.014850030231421205,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electronica",
+      "share": 0.001644753541841131,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "electropop",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "festival progressive house",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "filmi",
+      "share": 0.05714774892661068,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk pop",
+      "share": 0.002672724505491838,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "folk rock",
+      "share": 0.0022272704212431983,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "funktronica",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "future bass",
+      "share": 0.0016576031788867649,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "gangsta rap",
+      "share": 0.0008352264079661993,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "garage rock",
+      "share": 0.0008223767709205655,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "garage rock revival",
+      "share": 0.0008223767709205655,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hard rock",
+      "share": 0.0012932537929799216,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hardcore hip hop",
+      "share": 0.0008352264079661993,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hardwave",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip hop",
+      "share": 0.006691127005178264,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip hop soul",
+      "share": 0.0019090889324941697,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hip house",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "house",
+      "share": 0.0034257801584468505,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "hypnagogic pop",
+      "share": 0.04581813437986008,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indian pop",
+      "share": 0.008440182648921593,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indie pop",
+      "share": 0.06638222624816353,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indie rock",
+      "share": 0.018268290049483545,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "indietronica",
+      "share": 0.0029590878453659634,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "instrumental",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "instrumental hip hop",
+      "share": 0.013992498881692562,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jangle pop",
+      "share": 0.002672724505491838,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz",
+      "share": 0.006666625329039302,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz pop",
+      "share": 0.005831398921073102,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "jazz rap",
+      "share": 0.0008352264079661993,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "leftfield",
+      "share": 0.0029590878453659634,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "lo-fi",
+      "share": 0.0027115188260451954,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "lo-fi hip hop",
+      "share": 0.013992498881692562,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "melodic house",
+      "share": 0.0011393006253267123,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "melodic techno",
+      "share": 0.0011393006253267123,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "neo soul",
+      "share": 0.0019090889324941697,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "neo-psychedelia",
+      "share": 0.003935660260834135,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "new wave",
+      "share": 0.0006681811263729595,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "nu disco",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "phonk",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "piano rock",
+      "share": 0.0008484839699974088,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop",
+      "share": 0.082579005985827,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop rap",
+      "share": 0.0008352264079661993,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop rock",
+      "share": 0.005037189310593488,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "pop soul",
+      "share": 0.0011136352106215991,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-britpop",
+      "share": 0.0008484839699974088,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "post-punk revival",
+      "share": 0.001490557897293525,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "progressive house",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic",
+      "share": 0.002290906718993004,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic pop",
+      "share": 0.006608384766325972,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "psychedelic rock",
+      "share": 0.0031132834899135695,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "quiet storm",
+      "share": 0.005831398921073102,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "r&b",
+      "share": 0.06194884885932717,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "rock",
+      "share": 0.008304668445054664,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "shoegaze",
+      "share": 0.006681811263729595,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "singer-songwriter",
+      "share": 0.011489829841085358,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "slowcore",
+      "share": 0.0075041880346501605,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "smooth jazz",
+      "share": 0.005831398921073102,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "smooth soul",
+      "share": 0.005831398921073102,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "soft rock",
+      "share": 0.004634159424844719,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "sophisti-pop",
+      "share": 0.0069450341316947,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "soul",
+      "share": 0.01108139348543207,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "space rock",
+      "share": 0.002290906718993004,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "synth-pop",
+      "share": 0.04909414607963218,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trap",
+      "share": 0.0016576031788867649,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trap soul",
+      "share": 0.00213817960439347,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "trip hop",
+      "share": 0.020017398219452854,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "uk garage",
+      "share": 0.0003169238544061468,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "wave",
+      "share": 0.0006288763542333736,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "west coast hip hop",
+      "share": 0.0008352264079661993,
+      "time_range": "short_term"
+    },
+    {
+      "date": "2026-09-19",
+      "genre": "world fusion",
+      "share": 0.002889431897829014,
+      "time_range": "short_term"
     }
   ],
   "half_life": {
@@ -14829,8 +17064,8 @@
   },
   "headline": {
     "divergence_artists": 0.54,
-    "entries_7d": 16,
-    "exits_7d": 10
+    "entries_7d": 17,
+    "exits_7d": 11
   },
   "rank_timeline": {
     "artist": {
@@ -16931,6 +19166,306 @@
         },
         {
           "date": "2026-09-18",
+          "id": "3yKoHgjtyenCOIRaD2Gghu",
+          "name": "Cafe Music BGM channel",
+          "rank": 50
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1QAJqy2dA3ihHBFIHRphZj",
+          "name": "Cigarettes After Sex",
+          "rank": 1
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0dgJbQ0bKPyUXco8hEXN7X",
+          "name": "Øneheart",
+          "rank": 2
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+          "name": "The Weeknd",
+          "rank": 3
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3MZsBdqDrRTJihTHQrO6Dq",
+          "name": "Joji",
+          "rank": 4
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6hIXwlI4wny3zYuB6cDBBk",
+          "name": "Murtaza Qizilbash",
+          "rank": 5
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5y8tKLUfMvliMe8IKamR32",
+          "name": "d4vd",
+          "rank": 6
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7tYKF4w9nC0nq9CsPZTHyP",
+          "name": "SZA",
+          "rank": 7
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6znPk9JRNmg6uyB6h8nJu3",
+          "name": "Kaavish",
+          "rank": 8
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1wRPtKGflJrBx9BmLsSwlU",
+          "name": "Pritam",
+          "rank": 9
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5INjqkS1o8h1imAzPqGZBb",
+          "name": "Tame Impala",
+          "rank": 10
+        },
+        {
+          "date": "2026-09-19",
+          "id": "78rUTD7y6Cy67W1RVzYs7t",
+          "name": "PinkPantheress",
+          "rank": 11
+        },
+        {
+          "date": "2026-09-19",
+          "id": "77SW9BnxLY8rJ0RciFqkHh",
+          "name": "The Neighbourhood",
+          "rank": 12
+        },
+        {
+          "date": "2026-09-19",
+          "id": "47zz7sob9NUcODy0BTDvKx",
+          "name": "Sade",
+          "rank": 13
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4gdMJYnopf2nEUcanAwstx",
+          "name": "Anuv Jain",
+          "rank": 14
+        },
+        {
+          "date": "2026-09-19",
+          "id": "00FQb4jTyendYWaN8pK0wa",
+          "name": "Lana Del Rey",
+          "rank": 15
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5mWQT8CLTa4mAQAJdFjHb1",
+          "name": "Abdul Hannan",
+          "rank": 16
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
+          "name": "Kendrick Lamar",
+          "rank": 17
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4gzpq5DPGxSnKTe4SA8HAU",
+          "name": "Coldplay",
+          "rank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "id": "05etL4pzWd6TSv1x5WrlG3",
+          "name": "Faheem Abdullah",
+          "rank": 19
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7Ln80lUS6He07XvHI8qqHH",
+          "name": "Arctic Monkeys",
+          "rank": 20
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6ft7JnxMyZhp7N52qzHymY",
+          "name": "Vansire",
+          "rank": 21
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0Y6dVaC9DZtPNH4591M42W",
+          "name": "TV Girl",
+          "rank": 22
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+          "name": "Mac DeMarco",
+          "rank": 23
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4KRllJ2dEeoqvxOQLOgOsI",
+          "name": "VØJ",
+          "rank": 24
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4MrQDA45Gd0llLrwFUzimG",
+          "name": "Flawed Mangoes",
+          "rank": 25
+        },
+        {
+          "date": "2026-09-19",
+          "id": "06O23tLg0or676h8EEzH7W",
+          "name": "Pastel Ghost",
+          "rank": 26
+        },
+        {
+          "date": "2026-09-19",
+          "id": "700c9Qz2z6HZKTumeliKAw",
+          "name": "LONOWN",
+          "rank": 27
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3zmfs9cQwzJl575W1ZYXeT",
+          "name": "Men I Trust",
+          "rank": 28
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2exebQUDoIoT0dXA8BcN1P",
+          "name": "Home",
+          "rank": 29
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2jku7tDXc6XoB6MO2hFuqg",
+          "name": "Tory Lanez",
+          "rank": 30
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6YJ4EgQzDfJnIHRbqIHAdD",
+          "name": "Idealism",
+          "rank": 31
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0wf0kncEWHLMGqYqXgZql8",
+          "name": "Level Five",
+          "rank": 32
+        },
+        {
+          "date": "2026-09-19",
+          "id": "17XXKfRBMCWvLrqGoNkJXm",
+          "name": "Engelbert Humperdinck",
+          "rank": 33
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4RRmL81NhhouCKGo8I6GaU",
+          "name": "ADTurnUp",
+          "rank": 34
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1cGyguqPQY22oUd4fKglFS",
+          "name": "pxlse.",
+          "rank": 35
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7gW0r5CkdEUMm42w9XpyZO",
+          "name": "Laufey",
+          "rank": 36
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5cj0lLjcoR7YOSnhnX0Po5",
+          "name": "Doja Cat",
+          "rank": 37
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2sSGPbdZJkaSE2AbcGOACx",
+          "name": "The Marías",
+          "rank": 38
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3TVXtAsR1Inumwj472S9r4",
+          "name": "Drake",
+          "rank": 39
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1mYsTxnqsietFxj1OgoGbG",
+          "name": "A.R. Rahman",
+          "rank": 40
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3DeHMjvYP73Pycy8va8RKY",
+          "name": "Arnob",
+          "rank": 41
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5K4W6rqBFWDnAN6FQUkS6x",
+          "name": "Kanye West",
+          "rank": 42
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0klU31gyC6EZqKgLvVANCy",
+          "name": "tomcbumpz",
+          "rank": 43
+        },
+        {
+          "date": "2026-09-19",
+          "id": "19ra5tSw0tWufvUp8GotLo",
+          "name": "George Michael",
+          "rank": 44
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3iGhlvzpXc0UHBQ7klAItX",
+          "name": "Mitraz",
+          "rank": 45
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2h93pZq0e7k5yf4dywlkpM",
+          "name": "Frank Ocean",
+          "rank": 46
+        },
+        {
+          "date": "2026-09-19",
+          "id": "36QJpDe2go2KgaRleHCDTp",
+          "name": "Led Zeppelin",
+          "rank": 47
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0hEurMDQu99nJRq8pTxO14",
+          "name": "John Mayer",
+          "rank": 48
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4yvcSjfu4PC0CYQyLy4wSq",
+          "name": "Glass Animals",
+          "rank": 49
+        },
+        {
+          "date": "2026-09-19",
           "id": "3yKoHgjtyenCOIRaD2Gghu",
           "name": "Cafe Music BGM channel",
           "rank": 50
@@ -19036,6 +21571,306 @@
           "id": "3TVXtAsR1Inumwj472S9r4",
           "name": "Drake",
           "rank": 50
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3MZsBdqDrRTJihTHQrO6Dq",
+          "name": "Joji",
+          "rank": 1
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6hIXwlI4wny3zYuB6cDBBk",
+          "name": "Murtaza Qizilbash",
+          "rank": 2
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+          "name": "The Weeknd",
+          "rank": 3
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1QAJqy2dA3ihHBFIHRphZj",
+          "name": "Cigarettes After Sex",
+          "rank": 4
+        },
+        {
+          "date": "2026-09-19",
+          "id": "05etL4pzWd6TSv1x5WrlG3",
+          "name": "Faheem Abdullah",
+          "rank": 5
+        },
+        {
+          "date": "2026-09-19",
+          "id": "700c9Qz2z6HZKTumeliKAw",
+          "name": "LONOWN",
+          "rank": 6
+        },
+        {
+          "date": "2026-09-19",
+          "id": "47zz7sob9NUcODy0BTDvKx",
+          "name": "Sade",
+          "rank": 7
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6znPk9JRNmg6uyB6h8nJu3",
+          "name": "Kaavish",
+          "rank": 8
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1cGyguqPQY22oUd4fKglFS",
+          "name": "pxlse.",
+          "rank": 9
+        },
+        {
+          "date": "2026-09-19",
+          "id": "77SW9BnxLY8rJ0RciFqkHh",
+          "name": "The Neighbourhood",
+          "rank": 10
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+          "name": "Mac DeMarco",
+          "rank": 11
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5INjqkS1o8h1imAzPqGZBb",
+          "name": "Tame Impala",
+          "rank": 12
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5y8tKLUfMvliMe8IKamR32",
+          "name": "d4vd",
+          "rank": 13
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0klU31gyC6EZqKgLvVANCy",
+          "name": "tomcbumpz",
+          "rank": 14
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7Ln80lUS6He07XvHI8qqHH",
+          "name": "Arctic Monkeys",
+          "rank": 15
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5mWQT8CLTa4mAQAJdFjHb1",
+          "name": "Abdul Hannan",
+          "rank": 16
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1wRPtKGflJrBx9BmLsSwlU",
+          "name": "Pritam",
+          "rank": 17
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0wf0kncEWHLMGqYqXgZql8",
+          "name": "Level Five",
+          "rank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4Z8W4fKeB5YxbusRsdQVPb",
+          "name": "Radiohead",
+          "rank": 19
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0Y6dVaC9DZtPNH4591M42W",
+          "name": "TV Girl",
+          "rank": 20
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5cj0lLjcoR7YOSnhnX0Po5",
+          "name": "Doja Cat",
+          "rank": 21
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2jku7tDXc6XoB6MO2hFuqg",
+          "name": "Tory Lanez",
+          "rank": 22
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4gdMJYnopf2nEUcanAwstx",
+          "name": "Anuv Jain",
+          "rank": 23
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2h93pZq0e7k5yf4dywlkpM",
+          "name": "Frank Ocean",
+          "rank": 24
+        },
+        {
+          "date": "2026-09-19",
+          "id": "60jYUgQzKAtnJoXKGk1GNn",
+          "name": "Habib Wahid",
+          "rank": 25
+        },
+        {
+          "date": "2026-09-19",
+          "id": "06eRdiCBgFUhiuFjei0eH2",
+          "name": "Warfaze",
+          "rank": 26
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7tYKF4w9nC0nq9CsPZTHyP",
+          "name": "SZA",
+          "rank": 27
+        },
+        {
+          "date": "2026-09-19",
+          "id": "17XXKfRBMCWvLrqGoNkJXm",
+          "name": "Engelbert Humperdinck",
+          "rank": 28
+        },
+        {
+          "date": "2026-09-19",
+          "id": "37LGjqM0je1KNrLRD3MZ47",
+          "name": "Indalo",
+          "rank": 29
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7lzordPuZEXxwt9aoVZYmG",
+          "name": "Billy Idol",
+          "rank": 30
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3DeHMjvYP73Pycy8va8RKY",
+          "name": "Arnob",
+          "rank": 31
+        },
+        {
+          "date": "2026-09-19",
+          "id": "59oBQlP5xoa5cfPkonNNnT",
+          "name": "Nafeesisboujee",
+          "rank": 32
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0hEurMDQu99nJRq8pTxO14",
+          "name": "John Mayer",
+          "rank": 33
+        },
+        {
+          "date": "2026-09-19",
+          "id": "66CXWjxzNUsdJxJ2JdwvnR",
+          "name": "Ariana Grande",
+          "rank": 34
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5c7JjKTazKNQubk2GjgbJT",
+          "name": "Arekta Rock Band",
+          "rank": 35
+        },
+        {
+          "date": "2026-09-19",
+          "id": "78rUTD7y6Cy67W1RVzYs7t",
+          "name": "PinkPantheress",
+          "rank": 36
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3mIj9lX2MWuHmhNCA7LSCW",
+          "name": "The 1975",
+          "rank": 37
+        },
+        {
+          "date": "2026-09-19",
+          "id": "00FQb4jTyendYWaN8pK0wa",
+          "name": "Lana Del Rey",
+          "rank": 38
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1AbJ2cmwK400LSvdvBL5Jc",
+          "name": "Strawberry Guy",
+          "rank": 39
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4dpARuHxo51G3z768sgnrY",
+          "name": "Adele",
+          "rank": 40
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0xRXCcSX89eobfrshSVdyu",
+          "name": "MEDUZA",
+          "rank": 41
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
+          "name": "Kendrick Lamar",
+          "rank": 42
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5ThqNILsplOvwjj9kx0Hnt",
+          "name": "Artcell",
+          "rank": 43
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2LbjW13j6rNtFgYcPjR2ur",
+          "name": ".diedlonely",
+          "rank": 44
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3AA28KZvwAUcZuOKwyblJQ",
+          "name": "Gorillaz",
+          "rank": 45
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4yvcSjfu4PC0CYQyLy4wSq",
+          "name": "Glass Animals",
+          "rank": 46
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0dgJbQ0bKPyUXco8hEXN7X",
+          "name": "Øneheart",
+          "rank": 47
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2ElQWsoSpwUhYFFdFuHqse",
+          "name": "Lorenzo Ferrara",
+          "rank": 48
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3ctnkEZGtVBTxS7IMin8nC",
+          "name": "Instupendo",
+          "rank": 49
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7fhlWsdi6oTTxj8d3uYIAn",
+          "name": "Kaaktaal",
+          "rank": 50
         }
       ],
       "short_term": [
@@ -20991,6 +23826,306 @@
         },
         {
           "date": "2026-09-18",
+          "id": "462hgoSSVau039BHOvX1sk",
+          "name": "Cozy Bedroom",
+          "rank": 50
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+          "name": "The Weeknd",
+          "rank": 1
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6hIXwlI4wny3zYuB6cDBBk",
+          "name": "Murtaza Qizilbash",
+          "rank": 2
+        },
+        {
+          "date": "2026-09-19",
+          "id": "77SW9BnxLY8rJ0RciFqkHh",
+          "name": "The Neighbourhood",
+          "rank": 3
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3MZsBdqDrRTJihTHQrO6Dq",
+          "name": "Joji",
+          "rank": 4
+        },
+        {
+          "date": "2026-09-19",
+          "id": "47zz7sob9NUcODy0BTDvKx",
+          "name": "Sade",
+          "rank": 5
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1QAJqy2dA3ihHBFIHRphZj",
+          "name": "Cigarettes After Sex",
+          "rank": 6
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1wRPtKGflJrBx9BmLsSwlU",
+          "name": "Pritam",
+          "rank": 7
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6znPk9JRNmg6uyB6h8nJu3",
+          "name": "Kaavish",
+          "rank": 8
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0hEurMDQu99nJRq8pTxO14",
+          "name": "John Mayer",
+          "rank": 9
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5INjqkS1o8h1imAzPqGZBb",
+          "name": "Tame Impala",
+          "rank": 10
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5mWQT8CLTa4mAQAJdFjHb1",
+          "name": "Abdul Hannan",
+          "rank": 11
+        },
+        {
+          "date": "2026-09-19",
+          "id": "37LGjqM0je1KNrLRD3MZ47",
+          "name": "Indalo",
+          "rank": 12
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2h93pZq0e7k5yf4dywlkpM",
+          "name": "Frank Ocean",
+          "rank": 13
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5c7JjKTazKNQubk2GjgbJT",
+          "name": "Arekta Rock Band",
+          "rank": 14
+        },
+        {
+          "date": "2026-09-19",
+          "id": "00FQb4jTyendYWaN8pK0wa",
+          "name": "Lana Del Rey",
+          "rank": 15
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0xRXCcSX89eobfrshSVdyu",
+          "name": "MEDUZA",
+          "rank": 16
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2jku7tDXc6XoB6MO2hFuqg",
+          "name": "Tory Lanez",
+          "rank": 17
+        },
+        {
+          "date": "2026-09-19",
+          "id": "05etL4pzWd6TSv1x5WrlG3",
+          "name": "Faheem Abdullah",
+          "rank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4gdMJYnopf2nEUcanAwstx",
+          "name": "Anuv Jain",
+          "rank": 19
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+          "name": "Mac DeMarco",
+          "rank": 20
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7tYKF4w9nC0nq9CsPZTHyP",
+          "name": "SZA",
+          "rank": 21
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0Y6dVaC9DZtPNH4591M42W",
+          "name": "TV Girl",
+          "rank": 22
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0WBg7b6KiPmfh7lI5vbFKC",
+          "name": "Meghdol",
+          "rank": 23
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
+          "name": "Kendrick Lamar",
+          "rank": 24
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0wf0kncEWHLMGqYqXgZql8",
+          "name": "Level Five",
+          "rank": 25
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7Ln80lUS6He07XvHI8qqHH",
+          "name": "Arctic Monkeys",
+          "rank": 26
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7fhlWsdi6oTTxj8d3uYIAn",
+          "name": "Kaaktaal",
+          "rank": 27
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5io6IfbYy6t9IBtzYdOwN9",
+          "name": "Balam",
+          "rank": 28
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1AbJ2cmwK400LSvdvBL5Jc",
+          "name": "Strawberry Guy",
+          "rank": 29
+        },
+        {
+          "date": "2026-09-19",
+          "id": "66CXWjxzNUsdJxJ2JdwvnR",
+          "name": "Ariana Grande",
+          "rank": 30
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6IRouO5mvvfcyxtPDKMYFN",
+          "name": "Foreigner",
+          "rank": 31
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6LEG9Ld1aLImEFEVHdWNSB",
+          "name": "AP Dhillon",
+          "rank": 32
+        },
+        {
+          "date": "2026-09-19",
+          "id": "700c9Qz2z6HZKTumeliKAw",
+          "name": "LONOWN",
+          "rank": 33
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0dgJbQ0bKPyUXco8hEXN7X",
+          "name": "Øneheart",
+          "rank": 34
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0qjWYusrckF9BpkvWaoKRO",
+          "name": "Cozy Coffee Shop",
+          "rank": 35
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1fa0cOhromAZdq2xRA4vv8",
+          "name": "Simply Red",
+          "rank": 36
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1mYsTxnqsietFxj1OgoGbG",
+          "name": "A.R. Rahman",
+          "rank": 37
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2oSONSC9zQ4UonDKnLqksx",
+          "name": "Atif Aslam",
+          "rank": 38
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3DeHMjvYP73Pycy8va8RKY",
+          "name": "Arnob",
+          "rank": 39
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3mIj9lX2MWuHmhNCA7LSCW",
+          "name": "The 1975",
+          "rank": 40
+        },
+        {
+          "date": "2026-09-19",
+          "id": "465OXuCU8YZNmVG1leLwQ9",
+          "name": "Shashwat Sachdev",
+          "rank": 41
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4gzpq5DPGxSnKTe4SA8HAU",
+          "name": "Coldplay",
+          "rank": 42
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6XwwFnewNgWp81MYMK8zLq",
+          "name": "Edward Maya",
+          "rank": 43
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7CajNmpbOovFoOoasH2HaY",
+          "name": "Calvin Harris",
+          "rank": 44
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0SPHOEwCSzS2yrC6S24usM",
+          "name": "Warm Blanket",
+          "rank": 45
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3hWCBAZoHjCoAXPjejhCwr",
+          "name": "Cozy Wood",
+          "rank": 46
+        },
+        {
+          "date": "2026-09-19",
+          "id": "703kRYCTy8bqt8iWhJrBX8",
+          "name": "Chien Do",
+          "rank": 47
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0eJZnvOfks7OleQxORVuF7",
+          "name": "Cozy Room",
+          "rank": 48
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2b9qemp1Y8NuEbY4RMYHY1",
+          "name": "Jazzy Coffee",
+          "rank": 49
+        },
+        {
+          "date": "2026-09-19",
           "id": "462hgoSSVau039BHOvX1sk",
           "name": "Cozy Bedroom",
           "rank": 50
@@ -23098,6 +26233,306 @@
           "id": "1hlbywc8Jhl1FFqJxAMabE",
           "name": "Ishq",
           "rank": 50
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2PpYJcgJN6PzozUv7rU669",
+          "name": "stellar",
+          "rank": 1
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0X4YYZtZcvqNqYIpMd93IT",
+          "name": "i was only temporary",
+          "rank": 2
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4xF4ZBGPZKxECeDFrqSAG4",
+          "name": "snowfall",
+          "rank": 3
+        },
+        {
+          "date": "2026-09-19",
+          "id": "28pUgp8Cifsnwrv5Mvltyz",
+          "name": "nagashi",
+          "rank": 4
+        },
+        {
+          "date": "2026-09-19",
+          "id": "00RLNHc2jkEjUoCUlFgPVT",
+          "name": "welcome and goodbye",
+          "rank": 5
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6JCkLyhLxufrb10cem9WA6",
+          "name": "彩霞",
+          "rank": 6
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1uvn7eP1I7mIKGvpsqDcoW",
+          "name": "bipolar",
+          "rank": 7
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2mlNgAeIBnL78ZriXgrRHz",
+          "name": "Glimpse of Us",
+          "rank": 8
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6rY5FAWxCdAGllYEOZMbjW",
+          "name": "SLOW DANCING IN THE DARK",
+          "rank": 9
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1A7qPfbcyRVEdcZiwTFhZI",
+          "name": "Memory Reboot",
+          "rank": 10
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1XTijOjVgekZjRXwgJ2VSE",
+          "name": "Bhool",
+          "rank": 11
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1oAwsWBovWRIp7qLMGPIet",
+          "name": "Apocalypse",
+          "rank": 12
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7mDTvYD2ieE4Q28XFziMfJ",
+          "name": "Cry",
+          "rank": 13
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4XTgFBxBHN6var1BzAgE1m",
+          "name": "Jhol",
+          "rank": 14
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0SCLsDJtC7DmOwks1tsszt",
+          "name": "Romantic Homicide",
+          "rank": 15
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7F2nEClWeQ3x5ycA5qtKOI",
+          "name": "a million faces",
+          "rank": 16
+        },
+        {
+          "date": "2026-09-19",
+          "id": "37s1WRi8s1rZysbjvBGrEd",
+          "name": "Divine Failure",
+          "rank": 17
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4sh8w9hWn04EWoCAeIRdQm",
+          "name": "Freaks but Slowed Muffled Echo",
+          "rank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5e0b9LgOfi3aJSKXFcOWRe",
+          "name": "Beanie",
+          "rank": 19
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3hB9lDLyAClYVZivMMl20N",
+          "name": "Co2",
+          "rank": 20
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0JIMT9gzLIIz0esKLyjbKf",
+          "name": "Telephones",
+          "rank": 21
+        },
+        {
+          "date": "2026-09-19",
+          "id": "69KUKhBqyGvtO1jtJwZEcv",
+          "name": "Fainted",
+          "rank": 22
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3GUSidbQwd7xuvU6AQorRh",
+          "name": "Keep on Loving You",
+          "rank": 23
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5LrN7yUQAzvthd4QujgPFr",
+          "name": "Here With Me",
+          "rank": 24
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6RiiSy9GzSwiyDEJDiMuKe",
+          "name": "Something About You",
+          "rank": 25
+        },
+        {
+          "date": "2026-09-19",
+          "id": "70tmdhbUPcVxIxCIpChscl",
+          "name": "next to you",
+          "rank": 26
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5E02BgqYNN9VzafXrYP6Np",
+          "name": "Heavenly",
+          "rank": 27
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0DTSnA1bcVI5niJzoyBPyZ",
+          "name": "Past Won't Leave My Bed",
+          "rank": 28
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2OrucC3HEPmZpkaQ05Nx0V",
+          "name": "novocaine",
+          "rank": 29
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2TQve4B4jpyUqvxDHzNZAu",
+          "name": "Kokuten (Sasuke's Epic Theme from Naruto)",
+          "rank": 30
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0qPoQiQIhgyMaP7X78hxri",
+          "name": "Akhiyaan Gulaab",
+          "rank": 31
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5rK4GDNiHYC3NUPV3ME4J4",
+          "name": "Has To Be",
+          "rank": 32
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4UKjQODokAfEMaTgvTHbVX",
+          "name": "Sila",
+          "rank": 33
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0j3mqDTK4Z6lvrLzFCUUz6",
+          "name": "Good Looking",
+          "rank": 34
+        },
+        {
+          "date": "2026-09-19",
+          "id": "40iDbkPRNNpACrwoCuyRtk",
+          "name": "Interlinked - Slowed",
+          "rank": 35
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3hEfpBHxgieRLz4t3kLNEg",
+          "name": "About You",
+          "rank": 36
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6mHTwIXqZtuQUF1fEkrhFB",
+          "name": "Tum",
+          "rank": 37
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6JB0h4leDJ4Akabtu42Epd",
+          "name": "Tere Pyar Main",
+          "rank": 38
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3VJpl4jrFSqY3Y6mAzqfux",
+          "name": "Har Baar",
+          "rank": 39
+        },
+        {
+          "date": "2026-09-19",
+          "id": "75IQVo8hqI1iwVZyvkN2VT",
+          "name": "Show Me How",
+          "rank": 40
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3p4hRhMcb6ch8OLtATMaLw",
+          "name": "Cry",
+          "rank": 41
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4t9vB7wIKWE5jIhjcztmmd",
+          "name": "Iris",
+          "rank": 42
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4ppTAJUbNXELZcoUaL90wo",
+          "name": "Try Me",
+          "rank": 43
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5TTGoX70AFrTvuEtqHK37S",
+          "name": "No. 1 Party Anthem",
+          "rank": 44
+        },
+        {
+          "date": "2026-09-19",
+          "id": "29KwH2LEjfWEtiC2jCrLVw",
+          "name": "Amore mio aiutami - Main Theme",
+          "rank": 45
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6MRD4fDXBbqa0xodmaFk8Q",
+          "name": "Everybody Wants To Rule The World - Sped Up Version",
+          "rank": 46
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4QzZVJc6qPTtTkPem7qZRo",
+          "name": "The Lamp Is Low",
+          "rank": 47
+        },
+        {
+          "date": "2026-09-19",
+          "id": "612zd3tyOwz52c7c67orZx",
+          "name": "safe again",
+          "rank": 48
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5ZP8LfM7TezqoxF9yp6VzX",
+          "name": "Stop Waiting",
+          "rank": 49
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1hlbywc8Jhl1FFqJxAMabE",
+          "name": "Ishq",
+          "rank": 50
         }
       ],
       "medium_term": [
@@ -25197,6 +28632,306 @@
         },
         {
           "date": "2026-09-18",
+          "id": "3AWDeHLc88XogCaCnZQLVI",
+          "name": "Cry For Me",
+          "rank": 50
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0X4YYZtZcvqNqYIpMd93IT",
+          "name": "i was only temporary",
+          "rank": 1
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2mlNgAeIBnL78ZriXgrRHz",
+          "name": "Glimpse of Us",
+          "rank": 2
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1uvn7eP1I7mIKGvpsqDcoW",
+          "name": "bipolar",
+          "rank": 3
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2PpYJcgJN6PzozUv7rU669",
+          "name": "stellar",
+          "rank": 4
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6rY5FAWxCdAGllYEOZMbjW",
+          "name": "SLOW DANCING IN THE DARK",
+          "rank": 5
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3J44gxX4AcRApFyympWPIB",
+          "name": "Past Won't Leave My Bed",
+          "rank": 6
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4UKjQODokAfEMaTgvTHbVX",
+          "name": "Sila",
+          "rank": 7
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1XTijOjVgekZjRXwgJ2VSE",
+          "name": "Bhool",
+          "rank": 8
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3VJpl4jrFSqY3Y6mAzqfux",
+          "name": "Har Baar",
+          "rank": 9
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2TQve4B4jpyUqvxDHzNZAu",
+          "name": "Kokuten (Sasuke's Epic Theme from Naruto)",
+          "rank": 10
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3p4hRhMcb6ch8OLtATMaLw",
+          "name": "Cry",
+          "rank": 11
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1hlbywc8Jhl1FFqJxAMabE",
+          "name": "Ishq",
+          "rank": 12
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5rK4GDNiHYC3NUPV3ME4J4",
+          "name": "Has To Be",
+          "rank": 13
+        },
+        {
+          "date": "2026-09-19",
+          "id": "65krtHkaYLPr0mEbjL61UP",
+          "name": "Kiss of Life",
+          "rank": 14
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0oUBuOO4g9P4lREqfqR5nq",
+          "name": "A Man Without Love",
+          "rank": 15
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3iy2QuCtCzpWnR6tia39AB",
+          "name": "hate that i made you love me",
+          "rank": 16
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4eFV1LfWlYCVJnPTuSo3db",
+          "name": "LOVE YOU LESS",
+          "rank": 17
+        },
+        {
+          "date": "2026-09-19",
+          "id": "06E5KyqnDTueEbdT22FFvM",
+          "name": "School Rooftop",
+          "rank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "id": "00WLowvlN5cjkYpQV6pjo4",
+          "name": "Die For You",
+          "rank": 19
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0FVuyC9RP5MACjp4lgU3qZ",
+          "name": "I'm God",
+          "rank": 20
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0H9rWqCXi7gv6kDO3N98ZU",
+          "name": "Khwaab",
+          "rank": 21
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0pUVeEgZuNyFzIMKp67RbS",
+          "name": "Eyes Without A Face",
+          "rank": 22
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0JIMT9gzLIIz0esKLyjbKf",
+          "name": "Telephones",
+          "rank": 23
+        },
+        {
+          "date": "2026-09-19",
+          "id": "70YTBH8vOGJNMhy6186yFm",
+          "name": "Heavenly",
+          "rank": 24
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7mrrszs7ZOPEsJhg0q8jvD",
+          "name": "Tairay Naam",
+          "rank": 25
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2xql0pid3EUwW38AsywxhV",
+          "name": "Reflections",
+          "rank": 26
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1GDJhAiO9tqjMuDWFad0IF",
+          "name": "Woh",
+          "rank": 27
+        },
+        {
+          "date": "2026-09-19",
+          "id": "42D9aaKTLw47faFhRCQfHF",
+          "name": "Blah Blah",
+          "rank": 28
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6CKoWCWAqEVWVjpeoJXyNH",
+          "name": "Shape Of My Heart",
+          "rank": 29
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7LvHieZe4yPYpDRF0OPCmk",
+          "name": "Ekanto Golaap",
+          "rank": 30
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7oNZfE9wnu7SP55LwNSiKG",
+          "name": "Hum",
+          "rank": 31
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0bxRSMz5WY1VuMmOhanE4b",
+          "name": "Baptized In Fear",
+          "rank": 32
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1gVN2TuTQh2g9LE1wi6FTY",
+          "name": "Girei",
+          "rank": 33
+        },
+        {
+          "date": "2026-09-19",
+          "id": "030OypEGdW6Nvo1KDWa0Bt",
+          "name": "Catch a Feeling",
+          "rank": 34
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7npPPrZEDmeHMk6mxvIeFa",
+          "name": "My Jinji",
+          "rank": 35
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4BGfzLrK6lgvKDjKSU7wrN",
+          "name": "Sajde",
+          "rank": 36
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5Z8Dj3LtbyCMiwE86rhg2f",
+          "name": "Marea (we’ve lost dancing)",
+          "rank": 37
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2hsaWsa0VNx1ug3uotwMvP",
+          "name": "Saika",
+          "rank": 38
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7JEzAlwHhCD2M1cYE6BeqJ",
+          "name": "Loving Machine",
+          "rank": 39
+        },
+        {
+          "date": "2026-09-19",
+          "id": "16zzrcKYGDkaGNeSjIMa6O",
+          "name": "through - 2022 Remastered",
+          "rank": 40
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6mHTwIXqZtuQUF1fEkrhFB",
+          "name": "Tum",
+          "rank": 41
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4Bsf8Pzli5MQv9zLF9KXqc",
+          "name": "Unakkul Naane",
+          "rank": 42
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0WiMJIxYYEex2AqhRqzV3u",
+          "name": "For the First Time",
+          "rank": 43
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5hjhaH0vwtpftiLtF3veZp",
+          "name": "Ophelia",
+          "rank": 44
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1KIJclzEbNhSVw8tiHPWwE",
+          "name": "Young",
+          "rank": 45
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6JB0h4leDJ4Akabtu42Epd",
+          "name": "Tere Pyar Main",
+          "rank": 46
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2TUFKhKl4EZYAo3D9FXU5E",
+          "name": "Pieces",
+          "rank": 47
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5hc71nKsUgtwQ3z52KEKQk",
+          "name": "Somebody Else",
+          "rank": 48
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1uvyZBs4IZYRebHIB1747m",
+          "name": "Purple Rain",
+          "rank": 49
+        },
+        {
+          "date": "2026-09-19",
           "id": "3AWDeHLc88XogCaCnZQLVI",
           "name": "Cry For Me",
           "rank": 50
@@ -27302,6 +31037,306 @@
           "id": "1CyEFdvmN9PgMyrDLhKpzk",
           "name": "Things Change",
           "rank": 50
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0bxRSMz5WY1VuMmOhanE4b",
+          "name": "Baptized In Fear",
+          "rank": 1
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7LvHieZe4yPYpDRF0OPCmk",
+          "name": "Ekanto Golaap",
+          "rank": 2
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6CKoWCWAqEVWVjpeoJXyNH",
+          "name": "Shape Of My Heart",
+          "rank": 3
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4UKjQODokAfEMaTgvTHbVX",
+          "name": "Sila",
+          "rank": 4
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3VJpl4jrFSqY3Y6mAzqfux",
+          "name": "Har Baar",
+          "rank": 5
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1i5oEx2vFczQ2sCY3c6Kn5",
+          "name": "Love Hurts",
+          "rank": 6
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5hc71nKsUgtwQ3z52KEKQk",
+          "name": "Somebody Else",
+          "rank": 7
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1uvyZBs4IZYRebHIB1747m",
+          "name": "Purple Rain",
+          "rank": 8
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1XTijOjVgekZjRXwgJ2VSE",
+          "name": "Bhool",
+          "rank": 9
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2TQve4B4jpyUqvxDHzNZAu",
+          "name": "Kokuten (Sasuke's Epic Theme from Naruto)",
+          "rank": 10
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2v0AG62ZHtD3I4YmTb3WYM",
+          "name": "Niagara Falls",
+          "rank": 11
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7oNZfE9wnu7SP55LwNSiKG",
+          "name": "Hum",
+          "rank": 12
+        },
+        {
+          "date": "2026-09-19",
+          "id": "40gvh6jP5qxMJuMmF9lG9A",
+          "name": "Baby Came Home 2 / Valentines",
+          "rank": 13
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1uvn7eP1I7mIKGvpsqDcoW",
+          "name": "bipolar",
+          "rank": 14
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0stJVUUSrbEwyFHOp2dRu0",
+          "name": "Open Hearts",
+          "rank": 15
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1GDJhAiO9tqjMuDWFad0IF",
+          "name": "Woh",
+          "rank": 16
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2Y04ZSRKADiBdKHLaF1RtG",
+          "name": "Abar Dekha Holey - Karagarer Version",
+          "rank": 17
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1Snko28yJOihcRVXs9dAo9",
+          "name": "Chamber Of Reflection",
+          "rank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2y8mkajKikV5S1PRCMQ5WL",
+          "name": "KALYANI (with Shreya Ghoshal) - Remix",
+          "rank": 19
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6JB0h4leDJ4Akabtu42Epd",
+          "name": "Tere Pyar Main",
+          "rank": 20
+        },
+        {
+          "date": "2026-09-19",
+          "id": "65krtHkaYLPr0mEbjL61UP",
+          "name": "Kiss of Life",
+          "rank": 21
+        },
+        {
+          "date": "2026-09-19",
+          "id": "70YTBH8vOGJNMhy6186yFm",
+          "name": "Heavenly",
+          "rank": 22
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6rY5FAWxCdAGllYEOZMbjW",
+          "name": "SLOW DANCING IN THE DARK",
+          "rank": 23
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6ux2llhjAuhSLggEaBoaLY",
+          "name": "i think i'm addicted",
+          "rank": 24
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0ZGfGStyu8s02fzpmmOF2l",
+          "name": "Pyaar Mein",
+          "rank": 25
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1FzbOPWCZiNxnLjAhY1jAR",
+          "name": "In And Out Of Love",
+          "rank": 26
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0JIMT9gzLIIz0esKLyjbKf",
+          "name": "Telephones",
+          "rank": 27
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0WiMJIxYYEex2AqhRqzV3u",
+          "name": "For the First Time",
+          "rank": 28
+        },
+        {
+          "date": "2026-09-19",
+          "id": "2PpYJcgJN6PzozUv7rU669",
+          "name": "stellar",
+          "rank": 29
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3jv9Mt5gKA8rwXoELAfKex",
+          "name": "Beparwah",
+          "rank": 30
+        },
+        {
+          "date": "2026-09-19",
+          "id": "3AWDeHLc88XogCaCnZQLVI",
+          "name": "Cry For Me",
+          "rank": 31
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4Fv6wNYUixnYkj3Dgfrls8",
+          "name": "Tumblr Girls (feat. Christoph Andersson)",
+          "rank": 32
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5LmvjYl6SZsea5QGdm4aN7",
+          "name": "Nightdriver",
+          "rank": 33
+        },
+        {
+          "date": "2026-09-19",
+          "id": "07SnvbvFJ1jUzpoBp9N4Cc",
+          "name": "addiction - Slowed",
+          "rank": 34
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6sKxXqDGkKROr3Z3Na32nv",
+          "name": "Stereo Love (Radio Edit)",
+          "rank": 35
+        },
+        {
+          "date": "2026-09-19",
+          "id": "6mHTwIXqZtuQUF1fEkrhFB",
+          "name": "Tum",
+          "rank": 36
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5rK4GDNiHYC3NUPV3ME4J4",
+          "name": "Has To Be",
+          "rank": 37
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4LxDdYU3x9tyDxy3CghqdC",
+          "name": "Sunrise",
+          "rank": 38
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0xIuPDzJSnJywALez8dwKR",
+          "name": "With You",
+          "rank": 39
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4cYllEeJVH7dWKwQxpbk42",
+          "name": "The Abyss (feat. Lana Del Rey)",
+          "rank": 40
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4oahRRZECfGud6eL7Lj7CO",
+          "name": "Opening Night",
+          "rank": 41
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4ppTAJUbNXELZcoUaL90wo",
+          "name": "Try Me",
+          "rank": 42
+        },
+        {
+          "date": "2026-09-19",
+          "id": "0bOU1vG7BIgTRwqe1F44lR",
+          "name": "Maya",
+          "rank": 43
+        },
+        {
+          "date": "2026-09-19",
+          "id": "5QO79kh1waicV47BqGRL3g",
+          "name": "Save Your Tears",
+          "rank": 44
+        },
+        {
+          "date": "2026-09-19",
+          "id": "00WLowvlN5cjkYpQV6pjo4",
+          "name": "Die For You",
+          "rank": 45
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7CL1T9G9yTPz0LtVMBUHbm",
+          "name": "Saya Figan",
+          "rank": 46
+        },
+        {
+          "date": "2026-09-19",
+          "id": "4YWKbpls9OcdXAsTRd7ERR",
+          "name": "Naam Chilo Na",
+          "rank": 47
+        },
+        {
+          "date": "2026-09-19",
+          "id": "7bxaFZ1O3cHkgLKMsdC3xR",
+          "name": "Loser",
+          "rank": 48
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1CyEFdvmN9PgMyrDLhKpzk",
+          "name": "Things Change",
+          "rank": 49
+        },
+        {
+          "date": "2026-09-19",
+          "id": "1eyzqe2QqGZUmfcPZtrIyt",
+          "name": "Midnight City",
+          "rank": 50
         }
       ]
     }
@@ -27432,6 +31467,24 @@
       "date": "2026-09-18",
       "median_fans": 562912,
       "time_range": "short_term"
+    },
+    {
+      "artists_measured": 46,
+      "date": "2026-09-19",
+      "median_fans": 144598.5,
+      "time_range": "long_term"
+    },
+    {
+      "artists_measured": 38,
+      "date": "2026-09-19",
+      "median_fans": 383504.5,
+      "time_range": "medium_term"
+    },
+    {
+      "artists_measured": 33,
+      "date": "2026-09-19",
+      "median_fans": 562912,
+      "time_range": "short_term"
     }
   ],
   "snapshot_dates": [
@@ -27441,12 +31494,13 @@
     "2026-09-15",
     "2026-09-16",
     "2026-09-17",
-    "2026-09-18"
+    "2026-09-18",
+    "2026-09-19"
   ],
   "survival": {
     "available": false,
     "curve": [],
-    "weeks_have": 0,
+    "weeks_have": 1,
     "weeks_needed": 8
   }
 }
