@@ -1,0 +1,31 @@
+{
+  "calls": {
+    "top_artists_long_term": {
+      "count": 50,
+      "status": 200
+    },
+    "top_artists_medium_term": {
+      "count": 50,
+      "status": 200
+    },
+    "top_artists_short_term": {
+      "count": 50,
+      "status": 200
+    },
+    "top_tracks_long_term": {
+      "count": 50,
+      "status": 200
+    },
+    "top_tracks_medium_term": {
+      "count": 50,
+      "status": 200
+    },
+    "top_tracks_short_term": {
+      "count": 50,
+      "status": 200
+    }
+  },
+  "captured_at": "2026-09-20T10:27:05Z",
+  "partial": false,
+  "script_version": "1.0.0"
+}
