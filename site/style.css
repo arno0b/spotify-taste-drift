@@ -46,7 +46,54 @@ figure { margin: 3rem 0 0; }
 .fignum { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
 .cap { font-family: var(--serif); font-size: .86rem; line-height: 1.5; color: var(--muted); margin-top: .6rem; }
 .chart { overflow-x: auto; }
-.controls { display: flex; gap: 1rem; margin-bottom: .6rem; font-size: .8rem; color: var(--muted); }
+/* Controls: the browser default select is a grey lozenge that fights the
+   editorial type. Reset the appearance and draw our own. */
+.controls { display: flex; gap: 1.25rem; margin-bottom: .9rem; flex-wrap: wrap; }
+.controls label {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+}
+.controls select {
+  appearance: none; -webkit-appearance: none;
+  font: inherit; font-size: .82rem; letter-spacing: 0; text-transform: none;
+  color: var(--fg); background-color: transparent;
+  border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+  padding: .2rem 1.35rem .2rem .1rem; cursor: pointer;
+  /* Chevron drawn inline so there is no image request and it recolours with
+     the theme via currentColor-equivalent token substitution. */
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: right .5rem center, right .25rem center;
+  background-size: .26rem .26rem, .26rem .26rem;
+  background-repeat: no-repeat;
+  transition: border-color .15s;
+}
+.controls select:hover { border-bottom-color: var(--accent); }
+.controls select:focus-visible { outline: none; border-bottom-color: var(--accent); box-shadow: 0 1px 0 var(--accent); }
+/* The dropdown list itself is OS-drawn; give it a readable ground in dark mode. */
+.controls select option { background: var(--bg); color: var(--fg); }
+
+/* Movers table: the rank chart became unreadable at 53 overlapping lines, so
+   the primary view is a table. Nothing overlaps and every entry is named. */
+.movers { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.movers thead th {
+  text-align: left; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; padding: 0 .5rem .45rem 0;
+  border-bottom: 1px solid var(--fg);
+}
+.movers td { padding: .32rem .5rem .32rem 0; border-bottom: 1px solid var(--line); }
+.movers tbody tr:hover { background: color-mix(in srgb, var(--line) 30%, transparent); }
+.movers .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.movers thead .num { text-align: right; }
+.movers .pos { color: var(--faint); width: 2.5rem; }
+.movers .name { width: 100%; }
+.movers .trend { width: 76px; line-height: 0; color: var(--muted); }
+.movers tbody tr:hover .trend { color: var(--accent); }
+.movers .up { color: var(--accent); }
+.movers .down { color: var(--warn); }
+.movers .flat, .movers .new { color: var(--faint); }
+.movers .new { font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; }
+.spark { display: block; overflow: visible; }
 
 /* An unready figure keeps its slot. Framed, empty, never faked. */
 .awaiting { border: 1px dashed var(--line); border-radius: 3px; min-height: 6rem; }

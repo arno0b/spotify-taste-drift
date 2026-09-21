@@ -55,9 +55,9 @@ function render(data) {
     tile("Exits, 7d", head.exits_7d),
   ].join("");
 
-  drawTimeline(data);
-  $("kind").onchange = () => drawTimeline(data);
-  $("range").onchange = () => drawTimeline(data);
+  drawMovers(data);
+  $("kind").onchange = () => drawMovers(data);
+  $("range").onchange = () => drawMovers(data);
 
   drawGenres(data.genre_mix, data.genre_coverage);
   drawDivergence(data.divergence.filter((d) => d.kind === "artist"));
@@ -67,7 +67,47 @@ function render(data) {
   drawEvents(data.events);
 }
 
-function drawTimeline(data) {
+// Hand-rolled rather than 50 Plot instances: a sparkline is a polyline, and
+// Plot's per-chart overhead would dominate. Gaps break the line deliberately —
+// an absent day means "outside the top 50", not "interpolate through it".
+function sparkline(byDate, dates, { width = 76, height = 18, max = 50 } = {}) {
+  const x = (i) => (dates.length < 2 ? width / 2 : 1 + (i / (dates.length - 1)) * (width - 2));
+  const y = (rank) => 2 + ((rank - 1) / (max - 1)) * (height - 4);
+
+  const segments = [];
+  let run = [];
+  dates.forEach((date, i) => {
+    const rank = byDate[date];
+    if (rank === undefined) {
+      if (run.length) segments.push(run);
+      run = [];
+      return;
+    }
+    run.push([x(i), y(rank)]);
+  });
+  if (run.length) segments.push(run);
+
+  const shapes = segments
+    .map((points) =>
+      points.length === 1
+        ? `<circle cx="${points[0][0].toFixed(1)}" cy="${points[0][1].toFixed(1)}" r="1.5" fill="currentColor"/>`
+        : `<polyline points="${points.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ")}"` +
+          ` fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>`
+    )
+    .join("");
+
+  return `<svg class="spark" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" aria-hidden="true">${shapes}</svg>`;
+}
+
+function deltaCell(delta) {
+  if (delta === null) return `<span class="new">new</span>`;
+  if (delta === 0) return `<span class="flat">&mdash;</span>`;
+  const up = delta > 0;
+  // delta is (older rank - current rank), so positive means climbed.
+  return `<span class="${up ? "up" : "down"}">${up ? "&uarr;" : "&darr;"}${Math.abs(delta)}</span>`;
+}
+
+function drawMovers(data) {
   const node = $("timeline");
   const caption = $("timeline-cap");
   const rows = (data.rank_timeline[$("kind").value] || {})[$("range").value] || [];
@@ -76,60 +116,65 @@ function drawTimeline(data) {
     return awaiting(node, "No data for this selection yet.");
   }
 
-  const dates = [...new Set(rows.map((d) => d.date))].sort();
-  const lastDate = dates[dates.length - 1];
-  const current = rows.filter((d) => d.date === lastDate).sort((a, b) => a.rank - b.rank);
+  const dates = [...new Set(rows.map((r) => r.date))].sort();
+  const latest = dates[dates.length - 1];
 
-  // One snapshot means no movement to draw. Rather than an empty frame, show
-  // the ranking itself — that is real data, and it is all today can honestly say.
-  if (dates.length < 2) {
-    node.innerHTML =
-      `<ol class="ranking">` +
-      current
-        .slice(0, TOP_N)
-        .map((d) => `<li><span class="pos">${d.rank}</span><span>${d.name}</span></li>`)
-        .join("") +
-      `</ol>`;
-    caption.textContent =
-      `Only one snapshot so far, so there is no movement to plot — this is today's top ` +
-      `${Math.min(TOP_N, current.length)}. Lines appear once a second day is captured.`;
-    return;
+  const series = new Map();
+  for (const r of rows) {
+    if (!series.has(r.id)) series.set(r.id, { name: r.name, byDate: {} });
+    series.get(r.id).byDate[r.date] = r.rank;
   }
 
-  const featured = new Set(current.filter((d) => d.rank <= TOP_N).map((d) => d.id));
-  const isFeatured = (d) => featured.has(d.id);
+  // Compare against the snapshot nearest a week before the latest, so the
+  // column means the same thing whether or not every day was captured.
+  const target = new Date(new Date(latest).getTime() - 7 * 86400000).toISOString().slice(0, 10);
+  const baseline = dates.filter((d) => d <= target).pop() || dates[0];
+  const hasBaseline = baseline !== latest;
 
-  caption.textContent =
-    "Every line is one entry. The current top ten are drawn in full and named; the rest stay faint.";
-
-  node.replaceChildren(
-    Plot.plot({
-      height: 480,
-      marginLeft: 34,
-      marginRight: 132,
-      style: { background: "transparent" },
-      y: { reverse: true, label: "rank", domain: [1, 50], ticks: [1, 10, 25, 50] },
-      x: { label: null, type: "utc" },
-      marks: [
-        Plot.line(rows.filter((d) => !isFeatured(d)), {
-          x: (d) => new Date(d.date), y: "rank", z: "id",
-          stroke: "var(--faint)", strokeWidth: 1, strokeOpacity: 0.5,
-        }),
-        Plot.line(rows.filter(isFeatured), {
-          x: (d) => new Date(d.date), y: "rank", z: "id",
-          stroke: "var(--fg)", strokeWidth: 1.8,
-        }),
-        Plot.text(current.filter((d) => d.rank <= TOP_N), {
-          x: (d) => new Date(d.date), y: "rank", text: "name",
-          dx: 7, textAnchor: "start", fontSize: 11, fill: "var(--fg)",
-        }),
-        Plot.tip(rows, Plot.pointer({
-          x: (d) => new Date(d.date), y: "rank",
-          title: (d) => `${d.name} · #${d.rank}`,
-        })),
-      ],
+  const entries = [...series.entries()]
+    .filter(([, s]) => s.byDate[latest] !== undefined)
+    .map(([id, s]) => {
+      const now = s.byDate[latest];
+      const then = s.byDate[baseline];
+      return {
+        id, name: s.name, now, byDate: s.byDate,
+        delta: !hasBaseline || then === undefined ? null : then - now,
+      };
     })
-  );
+    .sort((a, b) => a.now - b.now);
+
+  const header = hasBaseline
+    ? `<th class="num">vs ${baseline.slice(5)}</th><th>Trend</th>`
+    : `<th>Trend</th>`;
+
+  node.innerHTML =
+    `<table class="movers"><thead><tr><th class="num">#</th><th>Name</th>${header}</tr></thead><tbody>` +
+    entries
+      .map(
+        (e) =>
+          `<tr><td class="num pos">${e.now}</td><td class="name">${e.name}</td>` +
+          (hasBaseline ? `<td class="num">${deltaCell(e.delta)}</td>` : "") +
+          `<td class="trend">${sparkline(e.byDate, dates)}</td></tr>`
+      )
+      .join("") +
+    `</tbody></table>`;
+
+  const moved = entries.filter((e) => e.delta !== null && e.delta !== 0);
+  const biggest = moved.slice().sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
+
+  if (!hasBaseline) {
+    caption.textContent =
+      `Ranking as of ${latest}. Movement appears once there are snapshots a week apart.`;
+  } else {
+    caption.textContent =
+      `Rank on ${latest}, and the change since ${baseline}. ` +
+      `The trend column is each entry's rank across all ${dates.length} snapshots; ` +
+      `a break in the line means it dropped out of the top fifty. ` +
+      (biggest
+        ? `Biggest mover: ${biggest.name}, ${biggest.delta > 0 ? "up" : "down"} ${Math.abs(biggest.delta)}. ` +
+          `${moved.length} of ${entries.length} moved at all.`
+        : `Nothing moved.`);
+  }
 }
 
 const TOP_GENRES = 12;
@@ -142,9 +187,10 @@ function drawGenres(rows, coverage) {
 
   // Coverage is stated rather than implied. The chart describes the artists we
   // could identify, which is not the same as all of them.
+  // State coverage without naming the machinery behind it — a reader does not
+  // care which database an artist was missing from.
   const covNote = cov
-    ? ` Covers ${Math.round(cov.share * 100)} percent of the list by rank weight ` +
-      `(${cov.resolved} of ${cov.total} artists identified); the rest are not in MusicBrainz.`
+    ? ` Based on the ${cov.resolved} of ${cov.total} artists whose genres could be identified.`
     : "";
 
   if (!shortTerm.length) {
@@ -314,7 +360,7 @@ function drawEvents(events) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { render, drawTimeline, writeLede }; // for the node smoke test
+  module.exports = { render, drawMovers, writeLede, sparkline }; // for the node smoke test
 } else {
   fetch("data.json")
     .then((response) => {
