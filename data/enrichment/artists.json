@@ -724,6 +724,25 @@
     "name": "Cafe Music BGM channel",
     "status": "ok"
   },
+  "3yY2gUcIsjMr8hjo51PoJ8": {
+    "deezer_fans": 1503503,
+    "deezer_id": "1297",
+    "fetched_at": "2026-09-21T01:04:15Z",
+    "genres": [
+      "alternative rock",
+      "britpop",
+      "indie pop",
+      "indie rock",
+      "jangle pop",
+      "new wave",
+      "pop",
+      "post-punk",
+      "rock"
+    ],
+    "mbid": "40f5d9e4-2de7-4f2d-ad41-e31a9a9fea27",
+    "name": "The Smiths",
+    "status": "ok"
+  },
   "3zmfs9cQwzJl575W1ZYXeT": {
     "deezer_fans": 75725,
     "deezer_id": "6390014",
