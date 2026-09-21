@@ -121,8 +121,10 @@ def test_rank_timeline_is_nested_by_kind_then_time_range():
 
     timeline = rank_timeline(rows)
 
+    # No "name": it is looked up from the payload's names map, so it is not
+    # repeated on every one of thousands of rows.
     assert timeline["artist"]["short_term"] == [
-        {"date": "2026-09-01", "id": "a1", "name": "Alpha", "rank": 3}
+        {"date": "2026-09-01", "id": "a1", "rank": 3}
     ]
 
 

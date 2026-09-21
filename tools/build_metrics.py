@@ -60,17 +60,26 @@ def _group_by_series(snapshot_rows):
     return grouped
 
 
-def rank_timeline(snapshot_rows):
-    """{kind: {time_range: [{date, id, name, rank}, ...]}}"""
+def rank_timeline(snapshot_rows, window=None):
+    """{kind: {time_range: [{date, id, name, rank}, ...]}}
+
+    `window` keeps only the most recent N snapshot dates. See TIMELINE_WINDOW.
+    """
+    if window:
+        keep = set(sorted({r["snapshot_date"] for r in snapshot_rows})[-window:])
+        snapshot_rows = [r for r in snapshot_rows if r["snapshot_date"] in keep]
+
     timeline = defaultdict(lambda: defaultdict(list))
     for row in sorted(
         snapshot_rows, key=lambda r: (r["kind"], r["time_range"], r["snapshot_date"], r["rank"])
     ):
+        # Name is deliberately omitted and looked up from the `names` map in
+        # the payload: repeating it on every row made rank_timeline over half of
+        # data.json, and it is fetched on every page load.
         timeline[row["kind"]][row["time_range"]].append(
             {
                 "date": row["snapshot_date"],
                 "id": row["spotify_id"],
-                "name": row["name"],
                 "rank": row["rank"],
             }
         )
@@ -245,6 +254,114 @@ def reach(snapshot_rows):
     return results
 
 
+# An entry absent from a 50-item list is treated as sitting just past its end,
+# so "absent over the year" reads as the strongest possible climb rather than
+# being silently dropped from the comparison.
+ABSENT_RANK = 60
+HORIZON_LIST_CAP = 20
+
+# data.json is fetched on every page load, and rank_timeline grows linearly with
+# snapshots: at 10 days it was already 910 KB, which extrapolates to tens of
+# megabytes within a year. The sparklines and the horizon lists only ever show
+# recent dates, and every long-horizon metric is computed here from the full
+# derived history, so trimming what ships to the browser costs the page nothing.
+# data/derived/ keeps everything.
+TIMELINE_WINDOW = 60
+EVENTS_CAP = 400
+
+
+def horizon_shift(snapshot_rows):
+    """Compare short_term against long_term inside each snapshot.
+
+    Spotify returns three time horizons in every capture, so this is genuine
+    drift available from a single day — unlike survival or half-life, which need
+    months of accumulated snapshots before they say anything.
+    """
+    ranks = defaultdict(lambda: defaultdict(dict))  # (date, kind) -> id -> {range: rank}
+    names = {}
+    for row in snapshot_rows:
+        if row["time_range"] not in ("short_term", "long_term"):
+            continue
+        ranks[(row["snapshot_date"], row["kind"])][row["spotify_id"]][row["time_range"]] = row["rank"]
+        names[row["spotify_id"]] = row["name"]
+
+    results = []
+    for (date, kind), entries in ranks.items():
+        short = {i: r["short_term"] for i, r in entries.items() if "short_term" in r}
+        long = {i: r["long_term"] for i, r in entries.items() if "long_term" in r}
+        # Half a comparison is worse than none: it would read as everything
+        # having appeared from nowhere.
+        if not short or not long:
+            continue
+
+        ascending = sorted(
+            (
+                {
+                    "spotify_id": i,
+                    "name": names[i],
+                    "short": rank,
+                    "long": long.get(i),
+                    "gap": long.get(i, ABSENT_RANK) - rank,
+                }
+                for i, rank in short.items()
+            ),
+            key=lambda e: (-e["gap"], e["short"]),
+        )
+        fading = sorted(
+            (
+                {"spotify_id": i, "name": names[i], "long": rank}
+                for i, rank in long.items()
+                if i not in short
+            ),
+            key=lambda e: e["long"],
+        )
+
+        results.append(
+            {
+                "date": date,
+                "kind": kind,
+                "ascending": [e for e in ascending if e["gap"] > 0][:HORIZON_LIST_CAP],
+                "fading": fading[:HORIZON_LIST_CAP],
+                "counts": {
+                    "short_only": len(set(short) - set(long)),
+                    "long_only": len(set(long) - set(short)),
+                    "both": len(set(short) & set(long)),
+                },
+            }
+        )
+    results.sort(key=lambda r: (r["date"], r["kind"]))
+    return results
+
+
+def genre_shift(genre_mix_rows):
+    """Genre share in the last four weeks against the last year, per date.
+
+    Turns the genre figure from a composition chart into a drift one. A genre
+    missing on one side stays None so the page can render a dash: it dropped out
+    entirely, which is not the same as holding a zero share.
+    """
+    by_date = defaultdict(lambda: defaultdict(dict))
+    for row in genre_mix_rows:
+        if row["time_range"] in ("short_term", "long_term"):
+            by_date[row["date"]][row["genre"]][row["time_range"]] = row["share"]
+
+    results = []
+    for date, genres in by_date.items():
+        for genre, shares in genres.items():
+            short, long = shares.get("short_term"), shares.get("long_term")
+            results.append(
+                {
+                    "date": date,
+                    "genre": genre,
+                    "short_share": short,
+                    "long_share": long,
+                    "delta": (short or 0.0) - (long or 0.0),
+                }
+            )
+    results.sort(key=lambda r: (r["date"], -abs(r["delta"]), r["genre"]))
+    return results
+
+
 SURVIVAL_MIN_WEEKS = 8
 HALFLIFE_MIN_SPELLS = 10
 
@@ -340,6 +457,30 @@ def _weeks_between(start, end):
     return _days_between(start, end) // 7
 
 
+def names_of(snapshot_rows, timeline):
+    """{spotify_id: name} for every id that appears in the shipped timeline."""
+    needed = {
+        entry["id"]
+        for ranges in timeline.values()
+        for rows in ranges.values()
+        for entry in rows
+    }
+    return {
+        row["spotify_id"]: row["name"]
+        for row in snapshot_rows
+        if row["spotify_id"] in needed
+    }
+
+
+def _latest_only(rows):
+    """Keep just the newest date. Several figures are single-moment comparisons:
+    shipping their whole history would bloat data.json for nothing rendered."""
+    if not rows:
+        return []
+    newest = max(r["date"] for r in rows)
+    return [r for r in rows if r["date"] == newest]
+
+
 def build(snapshot_rows, genre_rows, skipped, generated_at):
     """Assemble the full dashboard payload.
 
@@ -349,17 +490,24 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
     dates = sorted({row["snapshot_date"] for row in snapshot_rows})
     events = entry_exit_events(snapshot_rows)
     divergences = divergence(snapshot_rows)
+    timeline = rank_timeline(snapshot_rows, TIMELINE_WINDOW)
 
     return {
         "generated_at": generated_at,
         "snapshot_dates": dates,
         "data_quality": {"skipped_files": skipped, "snapshot_count": len(dates)},
         "headline": _headline(dates, events, divergences),
-        "rank_timeline": rank_timeline(snapshot_rows),
-        "events": events,
+        "rank_timeline": timeline,
+        "names": names_of(snapshot_rows, timeline),
+        # Only the tail is rendered, and the feed is the noisiest key by volume.
+        "events": events[-EVENTS_CAP:],
         "divergence": divergences,
-        "genre_mix": genre_mix(genre_rows, snapshot_rows),
-        "genre_coverage": genre_coverage(genre_rows, snapshot_rows),
+        # genre_mix is not shipped: it fed the stacked-area chart, which was
+        # replaced by the genre-shift table. It is still computed here because
+        # genre_shift is derived from it.
+        "genre_coverage": _latest_only(genre_coverage(genre_rows, snapshot_rows)),
+        "genre_shift": _latest_only(genre_shift(genre_mix(genre_rows, snapshot_rows))),
+        "horizon": _latest_only(horizon_shift(snapshot_rows)),
         "reach": reach(snapshot_rows),
         "survival": new_artist_survival(snapshot_rows),
         "half_life": rotation_half_life(snapshot_rows),
@@ -368,11 +516,15 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
 
 def _headline(dates, events, divergences):
     latest_divergence = [d for d in divergences if d["kind"] == "artist"]
+    latest_tracks = [d for d in divergences if d["kind"] == "track"]
     cutoff = _cutoff_date(dates)
     recent = [e for e in events if e["snapshot_date"] > cutoff and e["kind"] == "artist"]
 
     return {
         "divergence_artists": latest_divergence[-1]["overlap"] if latest_divergence else None,
+        # The page's actual claim is the gap between these two: same artists,
+        # different songs.
+        "divergence_tracks": latest_tracks[-1]["overlap"] if latest_tracks else None,
         "entries_7d": sum(1 for e in recent if e["event"] in ("entered", "re_entered")),
         "exits_7d": sum(1 for e in recent if e["event"] == "exited"),
     }

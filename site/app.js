@@ -20,15 +20,36 @@ function arrivalDate(units, unitDays) {
   return when.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
 }
 
+function pct(x) {
+  return `${Math.round(x * 100)}%`;
+}
+
 function writeLede(data) {
-  const overlap = data.headline.divergence_artists;
-  if (overlap === null || overlap === undefined) {
+  const artists = data.headline.divergence_artists;
+  const tracks = data.headline.divergence_tracks;
+
+  if (artists === null || artists === undefined) {
     $("lede").textContent = "Not enough listening recorded yet to say anything true.";
     return;
   }
+
+  // The interesting claim is the gap between the two, not either number. A
+  // large gap means the artists persist while the songs turn over — the
+  // listener is working through catalogues rather than finding new acts.
+  if (tracks !== null && tracks !== undefined && artists - tracks >= 0.15) {
+    $("lede").textContent =
+      `I keep my artists and change the songs: ${pct(artists)} of the artists ` +
+      `I'm playing now are long-term regulars, but only ${pct(tracks)} of the tracks are.`;
+    return;
+  }
+  if (tracks !== null && tracks !== undefined && tracks - artists >= 0.15) {
+    $("lede").textContent =
+      `I keep the songs and change the artists: ${pct(tracks)} of the tracks ` +
+      `I'm playing now are long-term regulars, but only ${pct(artists)} of the artists are.`;
+    return;
+  }
   $("lede").textContent =
-    `${Math.round(overlap * 100)} percent of what I'm playing right now ` +
-    `was already in my long-term rotation.`;
+    `${pct(artists)} of what I'm playing right now was already in my long-term rotation.`;
 }
 
 function render(data) {
@@ -59,7 +80,8 @@ function render(data) {
   $("kind").onchange = () => drawMovers(data);
   $("range").onchange = () => drawMovers(data);
 
-  drawGenres(data.genre_mix, data.genre_coverage);
+  drawHorizon(data.horizon);
+  drawGenreShift(data.genre_shift, data.genre_coverage);
   drawDivergence(data.divergence.filter((d) => d.kind === "artist"));
   drawReach(data.reach);
   drawSurvival(data.survival);
@@ -119,9 +141,10 @@ function drawMovers(data) {
   const dates = [...new Set(rows.map((r) => r.date))].sort();
   const latest = dates[dates.length - 1];
 
+  const names = data.names || {};
   const series = new Map();
   for (const r of rows) {
-    if (!series.has(r.id)) series.set(r.id, { name: r.name, byDate: {} });
+    if (!series.has(r.id)) series.set(r.id, { name: names[r.id] || r.id, byDate: {} });
     series.get(r.id).byDate[r.date] = r.rank;
   }
 
@@ -177,78 +200,91 @@ function drawMovers(data) {
   }
 }
 
-const TOP_GENRES = 12;
+function drawHorizon(horizon) {
+  const node = $("horizon");
+  const caption = $("horizon-cap");
+  const artist = (horizon || []).filter((h) => h.kind === "artist").pop();
+  if (!artist) {
+    caption.textContent = "";
+    return awaiting(node, "Needs a snapshot with both the four-week and yearly lists.");
+  }
 
-function drawGenres(rows, coverage) {
+  const rise = artist.ascending.slice(0, 8);
+  const fall = artist.fading.slice(0, 8);
+
+  const riseRows = rise
+    .map(
+      (e) =>
+        `<tr><td class="num pos">${e.short}</td><td class="name">${e.name}</td>` +
+        `<td class="num">${e.long === null ? `<span class="new">new</span>` : `<span class="faint">#${e.long}</span>`}</td></tr>`
+    )
+    .join("");
+  const fallRows = fall
+    .map(
+      (e) =>
+        `<tr><td class="num pos">#${e.long}</td><td class="name">${e.name}</td>` +
+        `<td class="num"><span class="down">gone</span></td></tr>`
+    )
+    .join("");
+
+  node.innerHTML =
+    `<div class="two-up">` +
+    `<div><p class="colhead up">Ascending</p><table class="movers"><thead><tr>` +
+    `<th class="num">Now</th><th>Artist</th><th class="num">Year</th></tr></thead>` +
+    `<tbody>${riseRows || `<tr><td colspan="3" class="faint">Nothing climbing.</td></tr>`}</tbody></table></div>` +
+    `<div><p class="colhead down">Fading</p><table class="movers"><thead><tr>` +
+    `<th class="num">Year</th><th>Artist</th><th class="num">Now</th></tr></thead>` +
+    `<tbody>${fallRows || `<tr><td colspan="3" class="faint">Nothing fading.</td></tr>`}</tbody></table></div>` +
+    `</div>`;
+
+  const c = artist.counts;
+  caption.textContent =
+    `Your last four weeks against your last year, from the ${artist.date} snapshot. ` +
+    `"Ascending" ranks high now but low or absent over the year; "fading" was a yearly ` +
+    `regular that has dropped out of the last four weeks entirely. ` +
+    `${c.short_only} artists are new to rotation, ${c.long_only} have dropped away, ` +
+    `and ${c.both} are steady.`;
+}
+
+const GENRE_SHIFT_ROWS = 10;
+
+function drawGenreShift(shift, coverage) {
   const node = $("genres");
   const caption = $("genres-cap");
-  const shortTerm = rows.filter((r) => r.time_range === "short_term");
-  const cov = (coverage || []).filter((c) => c.time_range === "short_term").pop();
-
-  // Coverage is stated rather than implied. The chart describes the artists we
-  // could identify, which is not the same as all of them.
-  // State coverage without naming the machinery behind it — a reader does not
-  // care which database an artist was missing from.
-  const covNote = cov
-    ? ` Based on the ${cov.resolved} of ${cov.total} artists whose genres could be identified.`
-    : "";
-
-  if (!shortTerm.length) {
+  const rows = shift || [];
+  if (!rows.length) {
     caption.textContent = "";
-    return awaiting(node, "No artists resolved yet — run tools/enrich_artists.py.");
+    return awaiting(node, "No genres resolved yet — run tools/enrich_artists.py.");
   }
 
-  // Keep the strongest genres; the tail is a long list of near-zero shares.
-  const totals = new Map();
-  for (const r of shortTerm) totals.set(r.genre, (totals.get(r.genre) || 0) + r.share);
-  const top = new Set(
-    [...totals.entries()].sort((a, b) => b[1] - a[1]).slice(0, TOP_GENRES).map((e) => e[0])
-  );
+  // Already sorted by |delta| server-side; take the strongest movers either way.
+  const shown = rows.slice(0, GENRE_SHIFT_ROWS);
+  const share = (v) => (v === null || v === undefined ? `<span class="faint">&mdash;</span>` : pct(v));
+  const delta = (d) => {
+    const points = d * 100;
+    if (Math.abs(points) < 0.05) return `<span class="flat">&mdash;</span>`;
+    const up = points > 0;
+    return `<span class="${up ? "up" : "down"}">${up ? "&uarr;" : "&darr;"}${Math.abs(points).toFixed(1)}</span>`;
+  };
 
-  const folded = new Map();
-  for (const r of shortTerm) {
-    const genre = top.has(r.genre) ? r.genre : "other";
-    const key = `${r.date}|${genre}`;
-    folded.set(key, (folded.get(key) || 0) + r.share);
-  }
-  const series = [...folded.entries()].map(([key, share]) => {
-    const [date, genre] = key.split("|");
-    return { date, genre, share };
-  });
+  node.innerHTML =
+    `<table class="movers"><thead><tr><th>Genre</th><th class="num">Last 4 weeks</th>` +
+    `<th class="num">Over the year</th><th class="num">Shift</th></tr></thead><tbody>` +
+    shown
+      .map(
+        (r) =>
+          `<tr><td class="name">${r.genre}</td><td class="num">${share(r.short_share)}</td>` +
+          `<td class="num">${share(r.long_share)}</td><td class="num">${delta(r.delta)}</td></tr>`
+      )
+      .join("") +
+    `</tbody></table>`;
 
-  const dates = [...new Set(series.map((d) => d.date))];
-  if (dates.length < 2) {
-    // One snapshot: a stacked area over a single date draws nothing. Bars are
-    // the honest rendering of a single moment.
-    caption.textContent =
-      `Share of listening by genre, weighted so a rank-1 artist counts for more ` +
-      `than a rank-50 one.${covNote}`;
-    node.replaceChildren(
-      Plot.plot({
-        height: 320,
-        marginLeft: 130,
-        style: { background: "transparent" },
-        x: { label: "share", percent: true },
-        y: { label: null, domain: series.sort((a, b) => b.share - a.share).map((d) => d.genre) },
-        marks: [Plot.barX(series, { x: "share", y: "genre", fill: "var(--accent)" })],
-      })
-    );
-    return;
-  }
-
+  const cov = (coverage || []).filter((c) => c.time_range === "short_term").pop();
   caption.textContent =
-    `Share of listening by genre over time, rank-weighted.${covNote}`;
-  node.replaceChildren(
-    Plot.plot({
-      height: 320,
-      marginRight: 110,
-      style: { background: "transparent" },
-      y: { label: "share", percent: true },
-      x: { label: null, type: "utc" },
-      color: { legend: true },
-      marks: [Plot.areaY(series, { x: (d) => new Date(d.date), y: "share", fill: "genre" })],
-    })
-  );
+    `Share of listening by genre in the last four weeks against the last year, weighted so ` +
+    `a rank-1 artist counts for more than a rank-50 one. A dash means the genre is absent ` +
+    `from that window entirely, which is not the same as holding a zero share.` +
+    (cov ? ` Based on the ${cov.resolved} of ${cov.total} artists whose genres could be identified.` : "");
 }
 
 function drawReach(rows) {

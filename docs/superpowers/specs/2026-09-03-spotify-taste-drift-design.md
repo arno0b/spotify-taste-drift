@@ -237,6 +237,31 @@ genre someone listens to; folding it in as a band would conflate "42 percent
 unknown music" with "we identified 58 percent of it". Coverage is published
 separately as `genre_coverage` and stated in the figure's caption.
 
+### 8.5a Horizon shift — ascending and fading
+
+Spotify returns three time horizons in **every** capture. Comparing short_term
+against long_term inside a single snapshot is therefore real drift available on
+day one, without waiting for history to accumulate. This was overlooked in the
+original design, which measured drift only across snapshots and left the page
+with almost nothing to show for its first weeks.
+
+- **Ascending** — present in the last four weeks, ranked lower or absent over
+  the year. Ordered by the climb. An entry absent from a 50-item list is treated
+  as sitting at rank 60, so "absent over the year" reads as the strongest climb
+  rather than being dropped from the comparison.
+- **Fading** — in the yearly top 50, absent from the last four weeks entirely.
+- **Counts** — new to rotation, dropped away, steady.
+
+A date missing either horizon is skipped: half a comparison would read as
+everything having appeared from nowhere.
+
+### 8.5b Genre shift
+
+Genre share in the last four weeks against the last year. Converts the genre
+figure from composition into drift. A genre absent from one window stays null so
+the page renders a dash — dropping out entirely is not the same as holding a
+zero share.
+
 ### 8.5 Reach
 
 Median Deezer fan count of the artists in a list, per `(date, time_range)`.
@@ -291,9 +316,11 @@ Editorial: the page reads as a data essay, not an instrument panel.
 In order:
 
 1. **Lede** — one sentence generated from the current data, restated on every
-   rebuild. For example: "Forty-two percent of what I played this month, I was
-   already playing a year ago." Derived from the divergence metric, which is
-   available from a single day's capture, so the lede is never empty.
+   rebuild. It states the *finding*, not the metric: when artist and track
+   divergence differ by 15 points or more, it says so — "I keep my artists and
+   change the songs: 54% of the artists I'm playing now are long-term regulars,
+   but only 24% of the tracks are." Otherwise it falls back to the single
+   divergence figure. Available from one day's capture, so it is never empty.
 2. **Byline** — snapshot count and date range.
 3. **Stat tiles** — divergence, entries 7d, exits 7d. Below the lede, not
    above it.
@@ -303,12 +330,13 @@ In order:
 
 | # | Figure | Notes |
 |---|---|---|
-| 1 | Rank over time | All 50 lines drawn. Only the current top 10 carry weight and a right-edge name label; the rest remain faint context. Hover or tap brings one artist forward. Selectable by kind and time range. |
-| 2 | Genre mix | Stacked area over time; bars when there is only one snapshot. Caption states coverage. |
-| 3 | Short-vs-long divergence | Line, 0 to 1 |
-| 4 | Reach | Median Deezer fans, log scale |
-| 5 | New-artist survival | Gated, ≥ 8 weeks |
-| 6 | Rotation half-life | Gated, ≥ 10 completed spells |
+| 1 | Rank movement | Ranked table: position, name, change against the snapshot nearest a week back, and an inline sparkline. Replaced a 53-line bump chart that drew fifty near-flat strands to convey that four entries had moved. A gap in a sparkline means the entry left the top fifty and is deliberately not interpolated. |
+| 2 | Ascending and fading | Two tables side by side, from §8.5a. The page's main drift figure. |
+| 3 | Genre shift | Table, four weeks against the year, from §8.5b |
+| 4 | Short-vs-long divergence | Line, 0 to 1 |
+| 5 | Reach | Median Deezer fans, log scale |
+| 6 | New-artist survival | Gated, ≥ 8 weeks |
+| 7 | Rotation half-life | Gated, ≥ 10 completed spells |
 | — | Then versus now | Slope chart between two dates. Deferred to M6: needs roughly a month of history, and reads the same data as Figure 1. |
 | — | Recent changes | Entry / exit feed, most recent first |
 
@@ -529,3 +557,22 @@ capture, a missed enrichment costs nothing permanent, because it can always be
 run again against data already on disk.
 
 See `workflows/enrich_artists.md`.
+
+## 17. Payload budget
+
+`data.json` is fetched on every page load and had reached 1.3 MB at ten
+snapshots, on track for tens of megabytes within a year. It is now held to
+roughly 400 KB by shipping only what is rendered:
+
+- `rank_timeline` is capped at the most recent 60 snapshot dates, and artist
+  names are normalised into a separate `names` map rather than repeated on every
+  one of thousands of rows.
+- `horizon`, `genre_shift` and `genre_coverage` ship the latest date only. They
+  are single-moment comparisons; no time series of them is drawn.
+- `genre_mix` is not shipped at all. It fed the stacked-area chart that the
+  genre-shift table replaced, and is now an internal input to `genre_shift`.
+- `events` is capped at the most recent 400.
+
+Every long-horizon metric is computed here from the **full** derived history, so
+trimming the browser payload costs the analysis nothing. `data/derived/` and
+`data/raw/` keep everything.

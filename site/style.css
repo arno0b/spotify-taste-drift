@@ -119,3 +119,15 @@ figure { margin: 3rem 0 0; }
 }
 .btn:hover { filter: brightness(1.08); }
 code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transparent); padding: .05em .3em; border-radius: 2px; }
+
+/* Ascending / fading sit side by side on wide screens and stack on narrow. */
+.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+@media (max-width: 34rem) { .two-up { grid-template-columns: 1fr; gap: 1.25rem; } }
+.colhead {
+  font-size: .64rem; letter-spacing: .1em; text-transform: uppercase;
+  margin: 0 0 .4rem; font-weight: 500;
+}
+.colhead.up { color: var(--accent); }
+.colhead.down { color: var(--warn); }
+.movers .faint { color: var(--faint); }
+.movers td[colspan] { color: var(--faint); font-style: italic; }
