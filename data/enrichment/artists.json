@@ -392,6 +392,15 @@
     "name": "Pritam",
     "status": "ok"
   },
+  "1yevH7mkPMXeSTnA9SwHvq": {
+    "deezer_fans": 6966,
+    "deezer_id": "190888087",
+    "fetched_at": "2026-09-22T10:47:23Z",
+    "genres": [],
+    "mbid": "4bfbb6ea-c498-464d-b7c4-dfdc84745b54",
+    "name": "SEKIMANE",
+    "status": "ok"
+  },
   "2ElQWsoSpwUhYFFdFuHqse": {
     "deezer_fans": null,
     "deezer_id": null,
@@ -1183,6 +1192,15 @@
     "genres": [],
     "mbid": null,
     "name": "Murtaza Qizilbash",
+    "status": "not_found"
+  },
+  "6yiZkjeldEjFFhIaXj3w77": {
+    "deezer_fans": null,
+    "deezer_id": null,
+    "fetched_at": "2026-09-22T10:47:23Z",
+    "genres": [],
+    "mbid": null,
+    "name": "Gordinho Bolado",
     "status": "not_found"
   },
   "6znPk9JRNmg6uyB6h8nJu3": {
