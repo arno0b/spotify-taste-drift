@@ -809,6 +809,31 @@
     "name": "Sade",
     "status": "ok"
   },
+  "4G9NDjRyZFDlJKMRL8hx3S": {
+    "deezer_fans": 167013,
+    "deezer_id": "145468192",
+    "fetched_at": "2026-09-24T10:57:00Z",
+    "genres": [
+      "indie pop",
+      "pop rock"
+    ],
+    "mbid": "502cf908-9921-48bc-bf0e-265c881c0156",
+    "name": "sombr",
+    "status": "ok"
+  },
+  "4Gso3d4CscCijv0lmajZWs": {
+    "deezer_fans": 508365,
+    "deezer_id": "13631667",
+    "fetched_at": "2026-09-24T10:57:00Z",
+    "genres": [
+      "alternative r&b",
+      "hip hop",
+      "trap"
+    ],
+    "mbid": "a0723a3c-4135-438e-85c5-012712144ede",
+    "name": "Don Toliver",
+    "status": "ok"
+  },
   "4KRllJ2dEeoqvxOQLOgOsI": {
     "deezer_fans": 12053,
     "deezer_id": "50864572",
