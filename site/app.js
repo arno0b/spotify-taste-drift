@@ -72,8 +72,9 @@ function render(data) {
   drawVerdict(data.headline);
 
   drawMovers(data);
-  $("kind").onchange = () => drawMovers(data);
-  $("range").onchange = () => drawMovers(data);
+  for (const control of ["kind", "range", "count"]) {
+    $(control).onchange = () => drawMovers(data);
+  }
 
   drawHorizon(data.horizon, data.images);
   drawGenreShift(data.genre_shift, data.genre_coverage);
@@ -179,13 +180,18 @@ function drawMovers(data) {
     })
     .sort((a, b) => a.now - b.now);
 
+  // Fifty rows is a spreadsheet, not a first impression. Ten is enough to see
+  // who is on top; the control lets you open it up to twenty.
+  const limit = Number($("count").value) || 10;
+  const shown = entries.slice(0, limit);
+
   const header = hasBaseline
     ? `<th class="num">vs ${baseline.slice(5)}</th><th>Trend</th>`
     : `<th>Trend</th>`;
 
   node.innerHTML =
     `<table class="movers"><thead><tr><th class="num">#</th><th>Name</th>${header}</tr></thead><tbody>` +
-    entries
+    shown
       .map(
         (e) =>
           `<tr><td class="num pos">${e.now}</td><td class="name">${e.name}</td>` +
@@ -198,17 +204,24 @@ function drawMovers(data) {
   const moved = entries.filter((e) => e.delta !== null && e.delta !== 0);
   const biggest = moved.slice().sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
 
+  // The counts and the biggest mover describe the whole fifty, not just the
+  // rows on screen, and the wording says so — otherwise "3 of 50 moved" next to
+  // ten rows reads as a contradiction.
+  const scope = `Showing your top ${shown.length} of ${entries.length}.`;
+
   if (!hasBaseline) {
     caption.textContent =
-      `Ranking as of ${latest}. Movement appears once there are snapshots a week apart.`;
+      `${scope} Ranking as of ${latest}. Movement appears once there are ` +
+      `snapshots a week apart.`;
   } else {
     caption.textContent =
-      `Rank on ${latest}, and the change since ${baseline}. ` +
+      `${scope} Rank on ${latest}, and the change since ${baseline}. ` +
       `The trend column is each entry's rank across all ${dates.length} snapshots; ` +
       `a break in the line means it dropped out of the top fifty. ` +
       (biggest
-        ? `Biggest mover: ${biggest.name}, ${biggest.delta > 0 ? "up" : "down"} ${Math.abs(biggest.delta)}. ` +
-          `${moved.length} of ${entries.length} moved at all.`
+        ? `Across the full fifty, the biggest mover is ${biggest.name}, ` +
+          `${biggest.delta > 0 ? "up" : "down"} ${Math.abs(biggest.delta)}, ` +
+          `and ${moved.length} moved at all.`
         : `Nothing moved.`);
   }
 }
