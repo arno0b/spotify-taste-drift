@@ -82,7 +82,6 @@ function render(data) {
   drawReach(data.reach);
   drawSurvival(data.survival);
   drawHalfLife(data.half_life);
-  drawEvents(data.events);
 }
 
 // Hand-rolled rather than 50 Plot instances: a sparkline is a polyline, and
@@ -204,24 +203,23 @@ function drawMovers(data) {
   const moved = entries.filter((e) => e.delta !== null && e.delta !== 0);
   const biggest = moved.slice().sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
 
-  // The counts and the biggest mover describe the whole fifty, not just the
-  // rows on screen, and the wording says so — otherwise "3 of 50 moved" next to
-  // ten rows reads as a contradiction.
-  const scope = `Showing your top ${shown.length} of ${entries.length}.`;
-
+  // The counts and the biggest mover describe the whole ranking, not just the
+  // rows on screen, and the wording says so — otherwise a mover count sitting
+  // under ten rows reads as a contradiction. It deliberately avoids phrasing
+  // like "top 10 of 50", which implied the Show control offered 50.
   if (!hasBaseline) {
     caption.textContent =
-      `${scope} Ranking as of ${latest}. Movement appears once there are ` +
+      `Your top ${shown.length} as of ${latest}. Movement appears once there are ` +
       `snapshots a week apart.`;
   } else {
     caption.textContent =
-      `${scope} Rank on ${latest}, and the change since ${baseline}. ` +
+      `Your top ${shown.length} as of ${latest}, with the change since ${baseline}. ` +
       `The trend column is each entry's rank across all ${dates.length} snapshots; ` +
-      `a break in the line means it dropped out of the top fifty. ` +
+      `a break in the line means it dropped out of Spotify's ranking entirely. ` +
       (biggest
-        ? `Across the full fifty, the biggest mover is ${biggest.name}, ` +
-          `${biggest.delta > 0 ? "up" : "down"} ${Math.abs(biggest.delta)}, ` +
-          `and ${moved.length} moved at all.`
+        ? `The biggest mover anywhere in your ranking is ${biggest.name}, ` +
+          `${biggest.delta > 0 ? "up" : "down"} ${Math.abs(biggest.delta)}; ` +
+          `${moved.length} entries moved at all.`
         : `Nothing moved.`);
   }
 }
@@ -302,7 +300,7 @@ function drawGenreShift(shift, coverage) {
   caption.textContent =
     `Genres that have grown in your last four weeks compared with your last year, and ` +
     `the ones that have receded. Hover a tag for the actual shares.` +
-    (cov ? ` Based on the ${cov.resolved} of ${cov.total} artists whose genres could be identified.` : "");
+    (cov ? ` Genres could be identified for ${cov.resolved} of your ${cov.total} artists.` : "");
 }
 
 function drawReach(rows) {
@@ -394,23 +392,6 @@ function drawHalfLife(halfLife) {
   $("halflife-cap").textContent =
     `How long a typical artist survives in the top fifty, across ` +
     `${plural(halfLife.spells_have, "completed spell")}.`;
-}
-
-function drawEvents(events) {
-  const recent = events
-    .filter((e) => e.kind === "artist" && e.time_range === "short_term")
-    .reverse()
-    .slice(0, 50);
-  if (!recent.length) {
-    return awaiting($("events"), "No changes recorded yet — that needs a second snapshot.");
-  }
-  $("events").innerHTML = recent
-    .map((event) => {
-      const cls = event.event === "exited" ? "exited" : "entered";
-      const verb = { entered: "entered", re_entered: "returned to", exited: "left" }[event.event];
-      return `<li><time>${event.snapshot_date}</time><span class="${cls}">${verb}</span><span>${event.name}</span></li>`;
-    })
-    .join("");
 }
 
 if (typeof module !== "undefined" && module.exports) {

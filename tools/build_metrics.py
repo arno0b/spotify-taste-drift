@@ -267,7 +267,6 @@ HORIZON_LIST_CAP = 20
 # derived history, so trimming what ships to the browser costs the page nothing.
 # data/derived/ keeps everything.
 TIMELINE_WINDOW = 60
-EVENTS_CAP = 400
 
 
 def horizon_shift(snapshot_rows):
@@ -546,8 +545,11 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
         "headline": _headline(dates, events, divergences),
         "rank_timeline": timeline,
         "names": names_of(snapshot_rows, timeline),
-        # Only the tail is rendered, and the feed is the noisiest key by volume.
-        "events": events[-EVENTS_CAP:],
+        # The entry/exit feed is not shipped. It was removed from the page:
+        # figure 2 answers "what is coming and going" against a year rather than
+        # against yesterday, where the churn is mostly entries jittering around
+        # rank 50. `events` is still computed here because the weekly arrived
+        # and left counts in the verdict are derived from it.
         "divergence": divergences,
         # genre_mix is not shipped: it fed the stacked-area chart, which was
         # replaced by the genre-shift table. It is still computed here because

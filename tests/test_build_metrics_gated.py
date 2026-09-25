@@ -103,7 +103,6 @@ def test_build_emits_every_key_the_dashboard_reads():
         "rank_timeline",
         "names",
         "images",
-        "events",
         "divergence",
         "genre_coverage",
         "genre_shift",

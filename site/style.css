@@ -104,12 +104,6 @@ figure { margin: 3rem 0 0; }
 .ranking li { display: flex; gap: .9rem; padding: .3rem 0; border-bottom: 1px solid var(--line); }
 .ranking .pos { color: var(--faint); min-width: 1.6rem; text-align: right; font-variant-numeric: tabular-nums; }
 
-.events { list-style: none; padding: 0; margin: 0; font-size: .85rem; }
-.events li { border-bottom: 1px solid var(--line); padding: .45rem 0; display: flex; gap: .8rem; }
-.events time { color: var(--muted); min-width: 5.5rem; font-variant-numeric: tabular-nums; }
-.events .exited { color: var(--muted); }
-.events .entered { color: var(--accent); }
-
 .colophon { margin-top: 4rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 .colophon p { margin: 0 0 .5rem; }
 
