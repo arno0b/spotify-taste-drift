@@ -29,6 +29,7 @@ SNAPSHOT_COLUMNS = [
     "album_id",
     "duration_ms",
     "deezer_fans",
+    "image_url",
 ]
 GENRE_COLUMNS = ["snapshot_date", "time_range", "artist_id", "genre"]
 
@@ -129,6 +130,11 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=No
         # Deezer fan count, reached via MusicBrainz. Spotify's own popularity
         # field is gone, and this is a same-shaped substitute from elsewhere.
         "deezer_fans": (entry or {}).get("deezer_fans") or "",
+        # Artwork is the one rich field Spotify still returns, and it is the
+        # native visual language of the app: a listener recognises a face far
+        # faster than they parse a rank. Artists carry their own image; tracks
+        # carry their album cover.
+        "image_url": _image_url(item, kind),
     }
     if kind == "track":
         artists = item.get("artists") or [{}]
@@ -136,6 +142,19 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=No
         row["album_id"] = (item.get("album") or {}).get("id", "")
         row["duration_ms"] = item.get("duration_ms", "")
     return row
+
+
+# Around 160px: crisp for a ~58px circle on a retina screen without shipping
+# the 640px original.
+_IMAGE_TARGET_WIDTH = 160
+
+
+def _image_url(item, kind):
+    images = item.get("images") if kind == "artist" else (item.get("album") or {}).get("images")
+    if not images:
+        return ""
+    best = min(images, key=lambda i: abs(i.get("width") or 9999 - _IMAGE_TARGET_WIDTH))
+    return best.get("url", "")
 
 
 def write_csvs(snapshot_rows, genre_rows, derived_root):

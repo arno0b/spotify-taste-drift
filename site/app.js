@@ -69,18 +69,13 @@ function render(data) {
       skipped.map((entry) => entry.path).join(", ");
   }
 
-  const head = data.headline;
-  $("headline").innerHTML = [
-    tile("Divergence", head.divergence_artists === null ? "—" : head.divergence_artists.toFixed(2)),
-    tile("Entries, 7d", head.entries_7d),
-    tile("Exits, 7d", head.exits_7d),
-  ].join("");
+  drawVerdict(data.headline);
 
   drawMovers(data);
   $("kind").onchange = () => drawMovers(data);
   $("range").onchange = () => drawMovers(data);
 
-  drawHorizon(data.horizon);
+  drawHorizon(data.horizon, data.images);
   drawGenreShift(data.genre_shift, data.genre_coverage);
   drawDivergence(data.divergence.filter((d) => d.kind === "artist"));
   drawReach(data.reach);
@@ -127,6 +122,24 @@ function deltaCell(delta) {
   const up = delta > 0;
   // delta is (older rank - current rank), so positive means climbed.
   return `<span class="${up ? "up" : "down"}">${up ? "&uarr;" : "&darr;"}${Math.abs(delta)}</span>`;
+}
+
+// Replaces the "Divergence 0.54" tile. A coefficient is not something anyone
+// opens Spotify wanting to read; a position on a named spectrum is.
+function drawVerdict(head) {
+  const node = $("headline");
+  const phase = head.phase;
+  if (!phase) {
+    node.innerHTML = `<p class="pending">Not enough listening recorded yet.</p>`;
+    return;
+  }
+  node.innerHTML =
+    `<p class="verdict">${phase.sentence}</p>` +
+    `<div class="gauge" role="img" aria-label="${phase.sentence}">` +
+    `<i style="left:${phase.position}%"></i></div>` +
+    `<div class="gauge-ends"><span>Comfort zone</span><span>Exploring</span></div>` +
+    `<p class="gauge-sub">` +
+    `${head.entries_7d} arrived and ${head.exits_7d} left in the last week.</p>`;
 }
 
 function drawMovers(data) {
@@ -200,7 +213,22 @@ function drawMovers(data) {
   }
 }
 
-function drawHorizon(horizon) {
+const FACES = 6;
+
+function face(entry, images, faded) {
+  const src = images[entry.spotify_id];
+  const art = src
+    ? `<img src="${src}" alt="" loading="lazy" width="58" height="58">`
+    : `<span class="no-art" aria-hidden="true"></span>`;
+  const link = `https://open.spotify.com/artist/${entry.spotify_id}`;
+  return (
+    `<figure class="face${faded ? " faded" : ""}">` +
+    `<a href="${link}" target="_blank" rel="noopener">${art}</a>` +
+    `<figcaption>${entry.name}</figcaption></figure>`
+  );
+}
+
+function drawHorizon(horizon, images) {
   const node = $("horizon");
   const caption = $("horizon-cap");
   const artist = (horizon || []).filter((h) => h.kind === "artist").pop();
@@ -209,44 +237,29 @@ function drawHorizon(horizon) {
     return awaiting(node, "Needs a snapshot with both the four-week and yearly lists.");
   }
 
-  const rise = artist.ascending.slice(0, 8);
-  const fall = artist.fading.slice(0, 8);
+  const pics = images || {};
+  const rise = artist.ascending.slice(0, FACES);
+  const fall = artist.fading.slice(0, FACES);
 
-  const riseRows = rise
-    .map(
-      (e) =>
-        `<tr><td class="num pos">${e.short}</td><td class="name">${e.name}</td>` +
-        `<td class="num">${e.long === null ? `<span class="new">new</span>` : `<span class="faint">#${e.long}</span>`}</td></tr>`
-    )
-    .join("");
-  const fallRows = fall
-    .map(
-      (e) =>
-        `<tr><td class="num pos">#${e.long}</td><td class="name">${e.name}</td>` +
-        `<td class="num"><span class="down">gone</span></td></tr>`
-    )
-    .join("");
-
+  // Artwork rather than ranks: Spotify's own visual language. A listener
+  // recognises a face far faster than they read "#12 now vs absent last year".
   node.innerHTML =
-    `<div class="two-up">` +
-    `<div><p class="colhead up">Ascending</p><table class="movers"><thead><tr>` +
-    `<th class="num">Now</th><th>Artist</th><th class="num">Year</th></tr></thead>` +
-    `<tbody>${riseRows || `<tr><td colspan="3" class="faint">Nothing climbing.</td></tr>`}</tbody></table></div>` +
-    `<div><p class="colhead down">Fading</p><table class="movers"><thead><tr>` +
-    `<th class="num">Year</th><th>Artist</th><th class="num">Now</th></tr></thead>` +
-    `<tbody>${fallRows || `<tr><td colspan="3" class="faint">Nothing fading.</td></tr>`}</tbody></table></div>` +
-    `</div>`;
+    `<p class="rowhead up">Taking over</p>` +
+    `<div class="faces">${rise.map((e) => face(e, pics, false)).join("") ||
+      `<p class="pending">Nothing climbing.</p>`}</div>` +
+    `<p class="rowhead down">Slipping away</p>` +
+    `<div class="faces">${fall.map((e) => face(e, pics, true)).join("") ||
+      `<p class="pending">Nothing fading.</p>`}</div>`;
 
   const c = artist.counts;
   caption.textContent =
-    `Your last four weeks against your last year, from the ${artist.date} snapshot. ` +
-    `"Ascending" ranks high now but low or absent over the year; "fading" was a yearly ` +
-    `regular that has dropped out of the last four weeks entirely. ` +
-    `${c.short_only} artists are new to rotation, ${c.long_only} have dropped away, ` +
-    `and ${c.both} are steady.`;
+    `Artists taking over are big in your last four weeks but were nowhere near your ` +
+    `top fifty over the year. The faded ones are the reverse — yearly regulars you ` +
+    `have stopped playing. ${c.short_only} have arrived, ${c.long_only} have gone, ` +
+    `and ${c.both} have stayed throughout.`;
 }
 
-const GENRE_SHIFT_ROWS = 10;
+const GENRE_TAGS = 6;
 
 function drawGenreShift(shift, coverage) {
   const node = $("genres");
@@ -257,33 +270,25 @@ function drawGenreShift(shift, coverage) {
     return awaiting(node, "No genres resolved yet — run tools/enrich_artists.py.");
   }
 
-  // Already sorted by |delta| server-side; take the strongest movers either way.
-  const shown = rows.slice(0, GENRE_SHIFT_ROWS);
-  const share = (v) => (v === null || v === undefined ? `<span class="faint">&mdash;</span>` : pct(v));
-  const delta = (d) => {
-    const points = d * 100;
-    if (Math.abs(points) < 0.05) return `<span class="flat">&mdash;</span>`;
-    const up = points > 0;
-    return `<span class="${up ? "up" : "down"}">${up ? "&uarr;" : "&darr;"}${Math.abs(points).toFixed(1)}</span>`;
-  };
+  // Words, not percentages. This is how people describe their own taste:
+  // "I've been on an r&b thing lately, I used to be all ambient."
+  const gained = rows.filter((r) => r.delta > 0).slice(0, GENRE_TAGS);
+  const lost = rows.filter((r) => r.delta < 0).slice(0, GENRE_TAGS);
+  const pill = (r, cls) =>
+    `<span class="pill ${cls}" title="${pct(r.short_share || 0)} now, ${pct(r.long_share || 0)} over the year">${r.genre}</span>`;
 
   node.innerHTML =
-    `<table class="movers"><thead><tr><th>Genre</th><th class="num">Last 4 weeks</th>` +
-    `<th class="num">Over the year</th><th class="num">Shift</th></tr></thead><tbody>` +
-    shown
-      .map(
-        (r) =>
-          `<tr><td class="name">${r.genre}</td><td class="num">${share(r.short_share)}</td>` +
-          `<td class="num">${share(r.long_share)}</td><td class="num">${delta(r.delta)}</td></tr>`
-      )
-      .join("") +
-    `</tbody></table>`;
+    `<p class="rowhead up">Your sound lately</p>` +
+    `<div class="pills">${gained.map((r) => pill(r, "up")).join("") ||
+      `<p class="pending">Nothing gaining.</p>`}</div>` +
+    `<p class="rowhead down">What you have moved on from</p>` +
+    `<div class="pills">${lost.map((r) => pill(r, "down")).join("") ||
+      `<p class="pending">Nothing fading.</p>`}</div>`;
 
   const cov = (coverage || []).filter((c) => c.time_range === "short_term").pop();
   caption.textContent =
-    `Share of listening by genre in the last four weeks against the last year, weighted so ` +
-    `a rank-1 artist counts for more than a rank-50 one. A dash means the genre is absent ` +
-    `from that window entirely, which is not the same as holding a zero share.` +
+    `Genres that have grown in your last four weeks compared with your last year, and ` +
+    `the ones that have receded. Hover a tag for the actual shares.` +
     (cov ? ` Based on the ${cov.resolved} of ${cov.total} artists whose genres could be identified.` : "");
 }
 

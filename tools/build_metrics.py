@@ -457,6 +457,52 @@ def _weeks_between(start, end):
     return _days_between(start, end) // 7
 
 
+# Named bands rather than a bare coefficient. "Divergence 0.54" is not a thing
+# any Spotify listener has ever wanted to read.
+PHASE_BANDS = [
+    (0.75, "comfort", "Almost everything you're playing is an old favourite — you're deep in your comfort zone."),
+    (0.60, "settled", "Mostly old favourites with a few new arrivals — your taste is holding steady."),
+    (0.40, "drifting", "Half old favourites, half new discoveries — you're drifting, not settled."),
+    (0.25, "exploring", "Most of what you're playing is new to you — you're in an exploring phase."),
+    (0.00, "overhaul", "Almost nothing you're playing now was a favourite a year ago — you've overhauled your taste."),
+]
+
+
+def phase_of(overlap):
+    """Turn the divergence figure into a named phase and a sentence.
+
+    `position` is where to put the marker on a comfort-to-exploring spectrum,
+    0 at pure comfort and 100 at pure exploration.
+    """
+    if overlap is None:
+        return None
+    for threshold, name, sentence in PHASE_BANDS:
+        if overlap >= threshold:
+            return {
+                "name": name,
+                "sentence": sentence,
+                "position": round((1 - overlap) * 100),
+                "overlap": overlap,
+            }
+    return None
+
+
+def images_of(snapshot_rows, horizon):
+    """{spotify_id: artwork url} for everything the horizon figure can show."""
+    needed = {
+        entry["spotify_id"]
+        for block in horizon
+        for key in ("ascending", "fading")
+        for entry in block[key]
+    }
+    found = {}
+    for row in snapshot_rows:
+        url = row.get("image_url")
+        if url and row["spotify_id"] in needed:
+            found[row["spotify_id"]] = url
+    return found
+
+
 def names_of(snapshot_rows, timeline):
     """{spotify_id: name} for every id that appears in the shipped timeline."""
     needed = {
@@ -491,6 +537,7 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
     events = entry_exit_events(snapshot_rows)
     divergences = divergence(snapshot_rows)
     timeline = rank_timeline(snapshot_rows, TIMELINE_WINDOW)
+    horizon = _latest_only(horizon_shift(snapshot_rows))
 
     return {
         "generated_at": generated_at,
@@ -507,7 +554,8 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
         # genre_shift is derived from it.
         "genre_coverage": _latest_only(genre_coverage(genre_rows, snapshot_rows)),
         "genre_shift": _latest_only(genre_shift(genre_mix(genre_rows, snapshot_rows))),
-        "horizon": _latest_only(horizon_shift(snapshot_rows)),
+        "horizon": horizon,
+        "images": images_of(snapshot_rows, horizon),
         "reach": reach(snapshot_rows),
         "survival": new_artist_survival(snapshot_rows),
         "half_life": rotation_half_life(snapshot_rows),
@@ -522,6 +570,7 @@ def _headline(dates, events, divergences):
 
     return {
         "divergence_artists": latest_divergence[-1]["overlap"] if latest_divergence else None,
+        "phase": phase_of(latest_divergence[-1]["overlap"] if latest_divergence else None),
         # The page's actual claim is the gap between these two: same artists,
         # different songs.
         "divergence_tracks": latest_tracks[-1]["overlap"] if latest_tracks else None,

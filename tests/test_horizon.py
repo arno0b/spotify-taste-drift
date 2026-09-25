@@ -203,3 +203,62 @@ def test_names_map_covers_every_id_in_the_shipped_timeline():
     ids = {e["id"] for r in timeline["artist"].values() for e in r}
     assert ids <= set(names), "a row would render with an undefined name"
     assert names["a1"] == "A1"
+
+
+# --- listener-facing framing ------------------------------------------------
+
+def test_phase_names_the_band_rather_than_reporting_a_coefficient():
+    from tools.build_metrics import phase_of
+
+    assert phase_of(0.90)["name"] == "comfort"
+    assert phase_of(0.65)["name"] == "settled"
+    assert phase_of(0.50)["name"] == "drifting"
+    assert phase_of(0.30)["name"] == "exploring"
+    assert phase_of(0.05)["name"] == "overhaul"
+
+
+def test_phase_sentence_avoids_jargon():
+    from tools.build_metrics import phase_of
+
+    sentence = phase_of(0.50)["sentence"]
+
+    for jargon in ("divergence", "overlap", "coefficient", "rank"):
+        assert jargon not in sentence.lower()
+
+
+def test_phase_marker_runs_from_comfort_to_exploring():
+    from tools.build_metrics import phase_of
+
+    # Everything an old favourite sits at the comfort end.
+    assert phase_of(1.0)["position"] == 0
+    assert phase_of(0.0)["position"] == 100
+    assert phase_of(0.56)["position"] == 44
+
+
+def test_phase_is_absent_rather_than_guessed_when_there_is_no_data():
+    from tools.build_metrics import phase_of
+
+    assert phase_of(None) is None
+
+
+def test_images_are_emitted_only_for_what_the_horizon_can_show():
+    from tools.build_metrics import images_of
+
+    rows = [
+        dict(row("2026-09-21", "shown", 1), image_url="https://i.scdn.co/a"),
+        dict(row("2026-09-21", "unused", 2), image_url="https://i.scdn.co/b"),
+    ]
+    horizon = [{"ascending": [{"spotify_id": "shown"}], "fading": []}]
+
+    images = images_of(rows, horizon)
+
+    assert images == {"shown": "https://i.scdn.co/a"}
+
+
+def test_an_entry_with_no_artwork_is_simply_absent_from_the_map():
+    from tools.build_metrics import images_of
+
+    rows = [dict(row("2026-09-21", "a", 1), image_url="")]
+    horizon = [{"ascending": [{"spotify_id": "a"}], "fading": []}]
+
+    assert images_of(rows, horizon) == {}
