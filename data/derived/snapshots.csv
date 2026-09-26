@@ -4174,3 +4174,303 @@ snapshot_date,captured_at,time_range,kind,rank,spotify_id,name,popularity,primar
 2026-09-25,2026-09-25T00:58:05Z,short_term,track,48,5hM5arv9KDbCHS0k9uqwjr,Borderline,,5INjqkS1o8h1imAzPqGZBb,31qVWUdRrlb8thMvts0yYL,237800,,https://i.scdn.co/image/ab67616d0000485158267bd34420a00d5cf83a49
 2026-09-25,2026-09-25T00:58:05Z,short_term,track,49,1hlbywc8Jhl1FFqJxAMabE,Ishq,,05etL4pzWd6TSv1x5WrlG3,013jUXOfDFXnDMBetTdsiH,224842,,https://i.scdn.co/image/ab67616d000048510de04fd2c7c3bdc0a1d765f5
 2026-09-25,2026-09-25T00:58:05Z,short_term,track,50,00WLowvlN5cjkYpQV6pjo4,Die For You,,3MZsBdqDrRTJihTHQrO6Dq,39VuC5rYQHAnR6xQwm1WDk,211666,,https://i.scdn.co/image/ab67616d00004851cdd1a8a427b3f81f4f4f4f7d
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,1,1QAJqy2dA3ihHBFIHRphZj,Cigarettes After Sex,,,,,900123,https://i.scdn.co/image/ab6761610000f1782e08fd554de35c3ef1db7fd9
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,2,0dgJbQ0bKPyUXco8hEXN7X,Øneheart,,,,,28777,https://i.scdn.co/image/ab6761610000f178d4c269b485b26d528162212f
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,3,1Xyo4u8uXC1ZmMpatF05PJ,The Weeknd,,,,,14673869,https://i.scdn.co/image/ab6761610000f178c1719ac9e6a75c1c25835018
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,4,3MZsBdqDrRTJihTHQrO6Dq,Joji,,,,,562912,https://i.scdn.co/image/ab6761610000f178b6d7836808e8b99fc8c7aadc
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,5,6hIXwlI4wny3zYuB6cDBBk,Murtaza Qizilbash,,,,,,https://i.scdn.co/image/ab6761610000f17811714d23f3f7d9129b3c6d7a
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,6,7tYKF4w9nC0nq9CsPZTHyP,SZA,,,,,1328164,https://i.scdn.co/image/ab6761610000f178fd0a9fb6c252a3ba44079acf
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,7,6znPk9JRNmg6uyB6h8nJu3,Kaavish,,,,,,https://i.scdn.co/image/ab6761610000f1780e8a26a184a7f6524863e300
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,8,5y8tKLUfMvliMe8IKamR32,d4vd,,,,,142030,https://i.scdn.co/image/ab6761610000f1787dad3e7c38bc881e6d2ae432
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,9,5INjqkS1o8h1imAzPqGZBb,Tame Impala,,,,,1134261,https://i.scdn.co/image/ab6761610000f178e412a782245eb20d9626c601
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,10,1wRPtKGflJrBx9BmLsSwlU,Pritam,,,,,71109,https://i.scdn.co/image/ab6761610000f178cb6926f44f620555ba444fca
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,11,78rUTD7y6Cy67W1RVzYs7t,PinkPantheress,,,,,237467,https://i.scdn.co/image/ab6761610000f1786bf10d74063b45938f5d8656
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,12,77SW9BnxLY8rJ0RciFqkHh,The Neighbourhood,,,,,171,https://i.scdn.co/image/ab6761610000f178df0b5ac84376a0a4b2166816
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,13,47zz7sob9NUcODy0BTDvKx,Sade,,,,,1451755,https://i.scdn.co/image/ab6761610000f17892883b0e094a36d2f43ad284
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,14,3Sz7ZnJQBIHsXLUSo0OQtM,Mac DeMarco,,,,,559366,https://i.scdn.co/image/ab6761610000f178c9aca5b6d4c528caf75e8a1d
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,15,4gdMJYnopf2nEUcanAwstx,Anuv Jain,,,,,4263,https://i.scdn.co/image/ab6761610000f178a837a6cb82dd949d5e1f9b53
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,16,00FQb4jTyendYWaN8pK0wa,Lana Del Rey,,,,,5801333,https://i.scdn.co/image/ab6761610000f178b99cacf8acd5378206767261
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,17,5mWQT8CLTa4mAQAJdFjHb1,Abdul Hannan,,,,,849,https://i.scdn.co/image/ab6761610000f1788fa1c6d494293b6790b9b8dd
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,18,2YZyLoL8N0Wb9xBt1NhZWg,Kendrick Lamar,,,,,6167418,https://i.scdn.co/image/ab6761610000f17839ba6dcd4355c03de0b50918
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,19,4gzpq5DPGxSnKTe4SA8HAU,Coldplay,,,,,18381342,https://i.scdn.co/image/ab6761610000f1781ba8fc5f5c73e7e9313cc6eb
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,20,05etL4pzWd6TSv1x5WrlG3,Faheem Abdullah,,,,,1526,https://i.scdn.co/image/ab6761610000f178c3342f506f238d63c9dee119
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,21,6ft7JnxMyZhp7N52qzHymY,Vansire,,,,,8337,https://i.scdn.co/image/ab6761610000f178f44b9228f7c27e00783d1c8d
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,22,0Y6dVaC9DZtPNH4591M42W,TV Girl,,,,,445012,https://i.scdn.co/image/ab6761610000f178d80695211689a9c8c3fee3b0
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,23,4KRllJ2dEeoqvxOQLOgOsI,VØJ,,,,,12053,https://i.scdn.co/image/ab6761610000f178560279a9a9ca93d0873677fe
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,24,4MrQDA45Gd0llLrwFUzimG,Flawed Mangoes,,,,,14592,https://i.scdn.co/image/ab6761610000f1788492b22a6e5102ab571909e7
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,25,2exebQUDoIoT0dXA8BcN1P,Home,,,,,9745,https://i.scdn.co/image/ab6761610000f1789c1eb9531e1176c4a3a25925
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,26,06O23tLg0or676h8EEzH7W,Pastel Ghost,,,,,56417,https://i.scdn.co/image/ab6761610000f1788a20e785e4bdc296ebd54d68
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,27,700c9Qz2z6HZKTumeliKAw,LONOWN,,,,,9933,https://i.scdn.co/image/ab6761610000f1788430afc9d75e1b6e8caa4b22
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,28,7Ln80lUS6He07XvHI8qqHH,Arctic Monkeys,,,,,4956340,https://i.scdn.co/image/ab6761610000f1787da39dea0a72f581535fb11f
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,29,3zmfs9cQwzJl575W1ZYXeT,Men I Trust,,,,,75725,https://i.scdn.co/image/ab6761610000f178fd30ebd7e80dad6b2383aab0
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,30,2jku7tDXc6XoB6MO2hFuqg,Tory Lanez,,,,,764818,https://i.scdn.co/image/ab6761610000f1780bb76de09defd5d14e735176
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,31,0wf0kncEWHLMGqYqXgZql8,Level Five,,,,,,https://i.scdn.co/image/ab6761610000f17830722ea8c7c8f0cbc976ec4c
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,32,6YJ4EgQzDfJnIHRbqIHAdD,Idealism,,,,,7202,https://i.scdn.co/image/ab6761610000f178413acb13054e12dd1a766aae
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,33,3DeHMjvYP73Pycy8va8RKY,Arnob,,,,,,https://i.scdn.co/image/ab6761610000f1787e509af8bbc3833a2b116f6f
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,34,5cj0lLjcoR7YOSnhnX0Po5,Doja Cat,,,,,38,https://i.scdn.co/image/ab6761610000f1788a0644455ebfa7d3976f5101
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,35,17XXKfRBMCWvLrqGoNkJXm,Engelbert Humperdinck,,,,,46537,https://i.scdn.co/image/ab6761610000f1780f3aa6415854de11e7d9c532
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,36,4RRmL81NhhouCKGo8I6GaU,ADTurnUp,,,,,3003,https://i.scdn.co/image/ab6761610000f17890186f82ecb8e39b529b6c0e
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,37,1cGyguqPQY22oUd4fKglFS,pxlse.,,,,,134,https://i.scdn.co/image/ab6761610000f178d0384d2dff61809cf24ba4b7
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,38,7gW0r5CkdEUMm42w9XpyZO,Laufey,,,,,245985,https://i.scdn.co/image/ab6761610000f178c751deb23ed62e7cadfb669a
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,39,2sSGPbdZJkaSE2AbcGOACx,The Marías,,,,,147167,https://i.scdn.co/image/ab6761610000f178af586afa2b397f1288683a76
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,40,3TVXtAsR1Inumwj472S9r4,Drake,,,,,24078532,https://i.scdn.co/image/ab6761610000f1784293385d324db8558179afd9
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,41,1mYsTxnqsietFxj1OgoGbG,A.R. Rahman,,,,,6381,https://i.scdn.co/image/ab6761610000f178b19af0ea736c6228d6eb539c
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,42,5K4W6rqBFWDnAN6FQUkS6x,Kanye West,,,,,4543215,https://i.scdn.co/image/ab6761610000f1786e835a500e791bf9c27a422a
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,43,0klU31gyC6EZqKgLvVANCy,tomcbumpz,,,,,1078,https://i.scdn.co/image/ab6761610000f17874448e8f5746a5362a2e1f7a
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,44,19ra5tSw0tWufvUp8GotLo,George Michael,,,,,1497406,https://i.scdn.co/image/ab6761610000f178a45d8843ba426dcecab75f7e
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,45,3iGhlvzpXc0UHBQ7klAItX,Mitraz,,,,,1419,https://i.scdn.co/image/ab6761610000f178e96a339b04840c8fb801ccb4
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,46,2h93pZq0e7k5yf4dywlkpM,Frank Ocean,,,,,1260874,https://i.scdn.co/image/ab6761610000f178ee3123e593174208f9754fab
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,47,36QJpDe2go2KgaRleHCDTp,Led Zeppelin,,,,,5538981,https://i.scdn.co/image/16eb3cdae0d824b520ac17710e943a99d3ef6602
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,48,4yvcSjfu4PC0CYQyLy4wSq,Glass Animals,,,,,321997,https://i.scdn.co/image/ab6761610000f178eb2cc96b0ed023c5e3675b6f
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,49,0hEurMDQu99nJRq8pTxO14,John Mayer,,,,,1037775,https://i.scdn.co/image/ab6761610000f178e926dd683e1700a6d65bd835
+2026-09-26,2026-09-26T10:38:49Z,long_term,artist,50,3yKoHgjtyenCOIRaD2Gghu,Cafe Music BGM channel,,,,,10759,https://i.scdn.co/image/ab6761610000f178c9d9f79c6a9a14c98ef467f4
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,1,2PpYJcgJN6PzozUv7rU669,stellar,,2LbjW13j6rNtFgYcPjR2ur,4gF0aKdd26DsLMbDcLdJdc,99672,,https://i.scdn.co/image/ab67616d0000485164cf51cfaf81d9b874c79cae
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,2,0X4YYZtZcvqNqYIpMd93IT,i was only temporary,,7pxIYxdkx2675ZGKSAPBAy,24tfAQTRqLfKw5bFjMhc4m,98621,,https://i.scdn.co/image/ab67616d00004851f8fcdb6f18e90b58f6fe842e
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,3,4xF4ZBGPZKxECeDFrqSAG4,snowfall,,0dgJbQ0bKPyUXco8hEXN7X,4NRsGHlWBTl4rdLcq8CKcH,124065,,https://i.scdn.co/image/ab67616d00004851ed50c8fe9503fd8d73d82f9f
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,4,28pUgp8Cifsnwrv5Mvltyz,nagashi,,6YJ4EgQzDfJnIHRbqIHAdD,5tfqUZ5RcSWcYn5mWYQ4PK,109948,,https://i.scdn.co/image/ab67616d0000485171f2d92aa95b03924c4b824a
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,5,00RLNHc2jkEjUoCUlFgPVT,welcome and goodbye,,0qZyvjwZauLmrobrpJmvib,0hZJDoAmB6xVegy0o1eAZd,140643,,https://i.scdn.co/image/ab67616d00004851ec5c5ec0da8942e4b03254f3
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,6,6JCkLyhLxufrb10cem9WA6,彩霞,,64mecceQewFCKwCK6JBW0o,1GoWJc6XFiHW1ewHcY1Xqm,134053,,https://i.scdn.co/image/ab67616d00004851f9f0edfe58bbb6e3c44e574f
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,7,1uvn7eP1I7mIKGvpsqDcoW,bipolar,,2LbjW13j6rNtFgYcPjR2ur,5MOmkgxIJLtmoapI60uK6A,132418,,https://i.scdn.co/image/ab67616d000048519b1c566781a9f621d5d2d0f0
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,8,2mlNgAeIBnL78ZriXgrRHz,Glimpse of Us,,3MZsBdqDrRTJihTHQrO6Dq,39VuC5rYQHAnR6xQwm1WDk,233453,,https://i.scdn.co/image/ab67616d00004851cdd1a8a427b3f81f4f4f4f7d
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,9,6rY5FAWxCdAGllYEOZMbjW,SLOW DANCING IN THE DARK,,3MZsBdqDrRTJihTHQrO6Dq,5mIImcsuqpiSXg8XvFr81I,209273,,https://i.scdn.co/image/ab67616d000048514cc52cd7a712842234e4fce2
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,10,1A7qPfbcyRVEdcZiwTFhZI,Memory Reboot,,4KRllJ2dEeoqvxOQLOgOsI,134MPeCAA7a1yRC1rRFQCx,209416,,https://i.scdn.co/image/ab67616d0000485142a71cca827a8d0abda07e49
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,11,1XTijOjVgekZjRXwgJ2VSE,Bhool,,6hIXwlI4wny3zYuB6cDBBk,4MIPkmbrYvZqLdzLwaQRF9,244800,,https://i.scdn.co/image/ab67616d0000485113ab28ad75ecb95ed5fbdb19
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,12,1oAwsWBovWRIp7qLMGPIet,Apocalypse,,1QAJqy2dA3ihHBFIHRphZj,5chTLnnxlxQVAgEv6YbEBe,290146,,https://i.scdn.co/image/ab67616d00004851dfed999f959177dfc4f33cdc
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,13,7mDTvYD2ieE4Q28XFziMfJ,Cry,,1QAJqy2dA3ihHBFIHRphZj,63yRRBtLX8eqbOLD6f0y9U,256799,,https://i.scdn.co/image/ab67616d000048518324db1ae37be249aed887e7
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,14,4XTgFBxBHN6var1BzAgE1m,Jhol,,3scNK8e4mqnP6Rb8a3lwZY,7grtFo2pj5wwRTM7c6NI9y,265817,,https://i.scdn.co/image/ab67616d00004851da7d1408f8e776063963572f
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,15,0SCLsDJtC7DmOwks1tsszt,Romantic Homicide,,5y8tKLUfMvliMe8IKamR32,3rrrTOHiXGzuW4FP7t0O1A,132630,,https://i.scdn.co/image/ab67616d0000485164fa1bda999f4fbd2b7c4bb7
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,16,7F2nEClWeQ3x5ycA5qtKOI,a million faces,,5pQD8yR8sjmxwgZfLnZzmT,49jPojLRuWp71LnK3Y3ClE,102068,,https://i.scdn.co/image/ab67616d0000485186e79d2fbb191165b06e5bd3
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,17,37s1WRi8s1rZysbjvBGrEd,Divine Failure,,3IhhgswUBInj1W5gEz92T6,2Xz9bocL8qWYmMnS4jyzFY,151111,,https://i.scdn.co/image/ab67616d00004851fae95a2438622b7d630808a7
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,18,4sh8w9hWn04EWoCAeIRdQm,Freaks but Slowed Muffled Echo,,4LMTEaUZGbmDx1xcW08hmE,0bDhcvA7GKReXml1bVUSUa,176041,,https://i.scdn.co/image/ab67616d00004851a59c5cc7bc3909696855b047
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,19,5e0b9LgOfi3aJSKXFcOWRe,Beanie,,1EmdfupUQDpXOcb4Nj2mBH,3sgTZuoyovg4bR5iTgQoo3,132160,,https://i.scdn.co/image/ab67616d000048519d181176cafa856a3c8b5537
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,20,3hB9lDLyAClYVZivMMl20N,Co2,,0tC995Rfn9k2l7nqgCZsV7,4WLh56ZjwINYBNhaxLvEhA,163653,,https://i.scdn.co/image/ab67616d00004851dc8799fc0000992578ec96e9
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,21,0JIMT9gzLIIz0esKLyjbKf,Telephones,,0U7iI0Dk4Ojvi17nZboNO4,3Ull45eHLzGXtElhKHFJ7C,212432,,https://i.scdn.co/image/ab67616d000048512eb4d117b70ea7ac2c24e316
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,22,69KUKhBqyGvtO1jtJwZEcv,Fainted,,3QZtwiUoyaXbl1JssMPIQ7,5TQu0bEFSLXXVqrGNIXyKM,249600,,https://i.scdn.co/image/ab67616d000048514812bcd7da9edf3ecc02d558
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,23,3GUSidbQwd7xuvU6AQorRh,Keep on Loving You,,1QAJqy2dA3ihHBFIHRphZj,3gbJSNFlAe2CjqIjMOeMw1,233000,,https://i.scdn.co/image/ab67616d000048515fb77915b586180b3b41ccbb
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,24,5LrN7yUQAzvthd4QujgPFr,Here With Me,,5y8tKLUfMvliMe8IKamR32,3rrrTOHiXGzuW4FP7t0O1A,242484,,https://i.scdn.co/image/ab67616d0000485164fa1bda999f4fbd2b7c4bb7
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,25,6RiiSy9GzSwiyDEJDiMuKe,Something About You,,3XxNRirzbjfLdDli06zMaB,0QB8JzlX70ame6G972aEF1,153312,,https://i.scdn.co/image/ab67616d0000485116f48ac1e989d7acc028e9cf
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,26,70tmdhbUPcVxIxCIpChscl,next to you,,0dgJbQ0bKPyUXco8hEXN7X,7dG0UKYNW0hOIr824ZvTYh,123750,,https://i.scdn.co/image/ab67616d000048518382cdaea05f24badf9f2394
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,27,5E02BgqYNN9VzafXrYP6Np,Heavenly,,1QAJqy2dA3ihHBFIHRphZj,63yRRBtLX8eqbOLD6f0y9U,286773,,https://i.scdn.co/image/ab67616d000048518324db1ae37be249aed887e7
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,28,0DTSnA1bcVI5niJzoyBPyZ,Past Won't Leave My Bed,,3MZsBdqDrRTJihTHQrO6Dq,5JJpyK4SILx6UXJBiT1twN,166106,,https://i.scdn.co/image/ab67616d000048516d1b6480d52882757919c972
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,29,2OrucC3HEPmZpkaQ05Nx0V,novocaine,,6hxcqtqpmf08pTDkffU5xx,1fm7CNqCCdnqOoxdb23VTs,195605,,https://i.scdn.co/image/ab67616d0000485114e21b4fc24f2b3cae15ef93
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,30,2TQve4B4jpyUqvxDHzNZAu,Kokuten (Sasuke's Epic Theme from Naruto),,6ibMMTrcvRnEjaxi432r6o,5fIIBXeO9GlqxfTWidHOUt,132751,,https://i.scdn.co/image/ab67616d00004851fe418023d524c674eff0f551
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,31,0qPoQiQIhgyMaP7X78hxri,Akhiyaan Gulaab,,3iGhlvzpXc0UHBQ7klAItX,0KvWbswDD0ksvFayBl6gUz,171147,,https://i.scdn.co/image/ab67616d00004851dfa8e0dab093f6a7c638c7fc
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,32,5rK4GDNiHYC3NUPV3ME4J4,Has To Be,,4g3JG556dlxAQVKpqTbedB,3qK9D70gyPRhGGgNsvutpy,115744,,https://i.scdn.co/image/ab67616d00004851abca1904706dfa3593d1bba3
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,33,4UKjQODokAfEMaTgvTHbVX,Sila,,5mWQT8CLTa4mAQAJdFjHb1,6YqbrXnmuh8lxNEFeHNOcA,248413,,https://i.scdn.co/image/ab67616d00004851c7c2d09c7495ae64abec40ed
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,34,0j3mqDTK4Z6lvrLzFCUUz6,Good Looking,,5GGJosGMs08YEmKTZJe1fL,78rO0EfpVs1RPfpxzF6kUz,214800,,https://i.scdn.co/image/ab67616d0000485143bff43a592efe047d2ab9ff
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,35,40iDbkPRNNpACrwoCuyRtk,Interlinked - Slowed,,4Bv8nfuBV3hv0yVXXgYozl,03HFE1r5ICujfATGcSkXCV,230000,,https://i.scdn.co/image/ab67616d000048513410c8d30628e23407f0f434
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,36,3hEfpBHxgieRLz4t3kLNEg,About You,,3mIj9lX2MWuHmhNCA7LSCW,0kvoCDiWdZ7eHPW7xvdg3z,326490,,https://i.scdn.co/image/ab67616d0000485100702474f8e0e2b6155d48e3
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,37,6mHTwIXqZtuQUF1fEkrhFB,Tum,,6hIXwlI4wny3zYuB6cDBBk,4INFMJi3SwIEWixQjlMNig,258750,,https://i.scdn.co/image/ab67616d000048512fd007511b40dc84fc38be17
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,38,6JB0h4leDJ4Akabtu42Epd,Tere Pyar Main,,6znPk9JRNmg6uyB6h8nJu3,1lCyYMOz15QK4vhcUxHxEW,302706,,https://i.scdn.co/image/ab67616d00004851b4f2f558c56dd71894df23f8
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,39,3VJpl4jrFSqY3Y6mAzqfux,Har Baar,,6hIXwlI4wny3zYuB6cDBBk,1oRAxwfxb55WuW7KjSx5uw,250285,,https://i.scdn.co/image/ab67616d0000485179787723876968786603bf4a
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,40,3p4hRhMcb6ch8OLtATMaLw,Cry,,1QAJqy2dA3ihHBFIHRphZj,4uQ5kFmXQdCxz3WvM4UUzy,256799,,https://i.scdn.co/image/ab67616d00004851fd275af89cec73d6287f9cbf
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,41,4t9vB7wIKWE5jIhjcztmmd,Iris,,06O23tLg0or676h8EEzH7W,3sy3jRg8KrsGYNAuHPQnqk,218384,,https://i.scdn.co/image/ab67616d00004851ed95a22523215ce950826862
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,42,4ppTAJUbNXELZcoUaL90wo,Try Me,,1Xyo4u8uXC1ZmMpatF05PJ,4qZBW3f2Q8y0k1A84d4iAO,221106,,https://i.scdn.co/image/ab67616d000048511f6a2a40bb692936879db730
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,43,5TTGoX70AFrTvuEtqHK37S,No. 1 Party Anthem,,7Ln80lUS6He07XvHI8qqHH,78bpIziExqiI9qztvNFlQu,243131,,https://i.scdn.co/image/ab67616d000048514ae1c4c5c45aabe565499163
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,44,75IQVo8hqI1iwVZyvkN2VT,Show Me How,,3zmfs9cQwzJl575W1ZYXeT,7mUYDBqNiddmKxuKrnBEKQ,215110,,https://i.scdn.co/image/ab67616d00004851deeb617204bc14f4ee87b057
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,45,29KwH2LEjfWEtiC2jCrLVw,Amore mio aiutami - Main Theme,,2WPn0emjr8XPmMOT0bBcPe,5ekkoKz391PScKKZRCmgDF,234026,,https://i.scdn.co/image/ab67616d0000485117c654a194f193221964ec1a
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,46,6MRD4fDXBbqa0xodmaFk8Q,Everybody Wants To Rule The World - Sped Up Version,,4bthk9UfsYUYdcFyqxmSUU,1OCUxmIIq0Q1Mj3AFATzsI,183634,,https://i.scdn.co/image/ab67616d00004851d3112f1961d496334b19544c
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,47,4QzZVJc6qPTtTkPem7qZRo,The Lamp Is Low,,5PkDpzWMZR7Id1vldhF8Qk,2KZIJx4RtZ1seAa6pa6ugl,170790,,https://i.scdn.co/image/ab67616d00004851bb61ea59e6648c11454b5bfe
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,48,612zd3tyOwz52c7c67orZx,safe again,,5np27CiKTBMaIEPqTCrqBF,554ghCNlV34hilih8ujx3T,142237,,https://i.scdn.co/image/ab67616d00004851ba61102f0dd71ece930f00ce
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,49,5ZP8LfM7TezqoxF9yp6VzX,Stop Waiting,,1QAJqy2dA3ihHBFIHRphZj,1altYQrIlTUBxLKPEkVxgh,362973,,https://i.scdn.co/image/ab67616d00004851f00e7eae8e4ed688e17fc118
+2026-09-26,2026-09-26T10:38:49Z,long_term,track,50,1hlbywc8Jhl1FFqJxAMabE,Ishq,,05etL4pzWd6TSv1x5WrlG3,013jUXOfDFXnDMBetTdsiH,224842,,https://i.scdn.co/image/ab67616d000048510de04fd2c7c3bdc0a1d765f5
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,1,3MZsBdqDrRTJihTHQrO6Dq,Joji,,,,,562912,https://i.scdn.co/image/ab6761610000f178b6d7836808e8b99fc8c7aadc
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,2,1Xyo4u8uXC1ZmMpatF05PJ,The Weeknd,,,,,14673869,https://i.scdn.co/image/ab6761610000f178c1719ac9e6a75c1c25835018
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,3,6hIXwlI4wny3zYuB6cDBBk,Murtaza Qizilbash,,,,,,https://i.scdn.co/image/ab6761610000f17811714d23f3f7d9129b3c6d7a
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,4,1QAJqy2dA3ihHBFIHRphZj,Cigarettes After Sex,,,,,900123,https://i.scdn.co/image/ab6761610000f1782e08fd554de35c3ef1db7fd9
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,5,05etL4pzWd6TSv1x5WrlG3,Faheem Abdullah,,,,,1526,https://i.scdn.co/image/ab6761610000f178c3342f506f238d63c9dee119
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,6,700c9Qz2z6HZKTumeliKAw,LONOWN,,,,,9933,https://i.scdn.co/image/ab6761610000f1788430afc9d75e1b6e8caa4b22
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,7,47zz7sob9NUcODy0BTDvKx,Sade,,,,,1451755,https://i.scdn.co/image/ab6761610000f17892883b0e094a36d2f43ad284
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,8,6znPk9JRNmg6uyB6h8nJu3,Kaavish,,,,,,https://i.scdn.co/image/ab6761610000f1780e8a26a184a7f6524863e300
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,9,5INjqkS1o8h1imAzPqGZBb,Tame Impala,,,,,1134261,https://i.scdn.co/image/ab6761610000f178e412a782245eb20d9626c601
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,10,1cGyguqPQY22oUd4fKglFS,pxlse.,,,,,134,https://i.scdn.co/image/ab6761610000f178d0384d2dff61809cf24ba4b7
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,11,77SW9BnxLY8rJ0RciFqkHh,The Neighbourhood,,,,,171,https://i.scdn.co/image/ab6761610000f178df0b5ac84376a0a4b2166816
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,12,3Sz7ZnJQBIHsXLUSo0OQtM,Mac DeMarco,,,,,559366,https://i.scdn.co/image/ab6761610000f178c9aca5b6d4c528caf75e8a1d
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,13,5y8tKLUfMvliMe8IKamR32,d4vd,,,,,142030,https://i.scdn.co/image/ab6761610000f1787dad3e7c38bc881e6d2ae432
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,14,0klU31gyC6EZqKgLvVANCy,tomcbumpz,,,,,1078,https://i.scdn.co/image/ab6761610000f17874448e8f5746a5362a2e1f7a
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,15,7Ln80lUS6He07XvHI8qqHH,Arctic Monkeys,,,,,4956340,https://i.scdn.co/image/ab6761610000f1787da39dea0a72f581535fb11f
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,16,5mWQT8CLTa4mAQAJdFjHb1,Abdul Hannan,,,,,849,https://i.scdn.co/image/ab6761610000f1788fa1c6d494293b6790b9b8dd
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,17,0wf0kncEWHLMGqYqXgZql8,Level Five,,,,,,https://i.scdn.co/image/ab6761610000f17830722ea8c7c8f0cbc976ec4c
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,18,1wRPtKGflJrBx9BmLsSwlU,Pritam,,,,,71109,https://i.scdn.co/image/ab6761610000f178cb6926f44f620555ba444fca
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,19,5cj0lLjcoR7YOSnhnX0Po5,Doja Cat,,,,,38,https://i.scdn.co/image/ab6761610000f1788a0644455ebfa7d3976f5101
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,20,4Z8W4fKeB5YxbusRsdQVPb,Radiohead,,,,,508,https://i.scdn.co/image/ab6761610000f178959527d2fabc9c64287e57b9
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,21,2jku7tDXc6XoB6MO2hFuqg,Tory Lanez,,,,,764818,https://i.scdn.co/image/ab6761610000f1780bb76de09defd5d14e735176
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,22,0Y6dVaC9DZtPNH4591M42W,TV Girl,,,,,445012,https://i.scdn.co/image/ab6761610000f178d80695211689a9c8c3fee3b0
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,23,4gdMJYnopf2nEUcanAwstx,Anuv Jain,,,,,4263,https://i.scdn.co/image/ab6761610000f178a837a6cb82dd949d5e1f9b53
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,24,2h93pZq0e7k5yf4dywlkpM,Frank Ocean,,,,,1260874,https://i.scdn.co/image/ab6761610000f178ee3123e593174208f9754fab
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,25,0hEurMDQu99nJRq8pTxO14,John Mayer,,,,,1037775,https://i.scdn.co/image/ab6761610000f178e926dd683e1700a6d65bd835
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,26,60jYUgQzKAtnJoXKGk1GNn,Habib Wahid,,,,,,https://i.scdn.co/image/ab6761610000f178f0a1d189da0f9be0977123fe
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,27,3DeHMjvYP73Pycy8va8RKY,Arnob,,,,,,https://i.scdn.co/image/ab6761610000f1787e509af8bbc3833a2b116f6f
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,28,7tYKF4w9nC0nq9CsPZTHyP,SZA,,,,,1328164,https://i.scdn.co/image/ab6761610000f178fd0a9fb6c252a3ba44079acf
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,29,06eRdiCBgFUhiuFjei0eH2,Warfaze,,,,,,https://i.scdn.co/image/ab6761610000f178d6be97a75da4376bc81fb715
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,30,17XXKfRBMCWvLrqGoNkJXm,Engelbert Humperdinck,,,,,46537,https://i.scdn.co/image/ab6761610000f1780f3aa6415854de11e7d9c532
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,31,37LGjqM0je1KNrLRD3MZ47,Indalo,,,,,,https://i.scdn.co/image/ab6761610000f178fd65a37d2566f3eb8055608d
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,32,7lzordPuZEXxwt9aoVZYmG,Billy Idol,,,,,604998,https://i.scdn.co/image/ab6761610000f17869408d3a9d82c2307dd8699d
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,33,59oBQlP5xoa5cfPkonNNnT,Nafeesisboujee,,,,,6933,https://i.scdn.co/image/ab6761610000f1789e518e2925918bb35e161f47
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,34,66CXWjxzNUsdJxJ2JdwvnR,Ariana Grande,,,,,13420271,https://i.scdn.co/image/ab6761610000f17868412f2d0177a9ebc265ff58
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,35,5c7JjKTazKNQubk2GjgbJT,Arekta Rock Band,,,,,,https://i.scdn.co/image/ab6761610000f17829d38e374c276700ea74f330
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,36,3mIj9lX2MWuHmhNCA7LSCW,The 1975,,,,,606647,https://i.scdn.co/image/ab6761610000f1780c6e752cbb1e6d1416970f5a
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,37,0qjWYusrckF9BpkvWaoKRO,Cozy Coffee Shop,,,,,,https://i.scdn.co/image/ab6761610000f1787be2b0db4df55c1463e41f39
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,38,00FQb4jTyendYWaN8pK0wa,Lana Del Rey,,,,,5801333,https://i.scdn.co/image/ab6761610000f178b99cacf8acd5378206767261
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,39,1AbJ2cmwK400LSvdvBL5Jc,Strawberry Guy,,,,,51189,https://i.scdn.co/image/ab6761610000f1787ac4cc120d86b3e14bc0a4cd
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,40,2YZyLoL8N0Wb9xBt1NhZWg,Kendrick Lamar,,,,,6167418,https://i.scdn.co/image/ab6761610000f17839ba6dcd4355c03de0b50918
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,41,4dpARuHxo51G3z768sgnrY,Adele,,,,,15467816,https://i.scdn.co/image/ab6761610000f17868f6e5892075d7f22615bd17
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,42,0xRXCcSX89eobfrshSVdyu,MEDUZA,,,,,,https://i.scdn.co/image/ab6761610000f1781b3b3325a43e81577b03b9c9
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,43,5ThqNILsplOvwjj9kx0Hnt,Artcell,,,,,,https://i.scdn.co/image/ab6761610000f178ea9671ec3844d514be0c15a2
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,44,4yvcSjfu4PC0CYQyLy4wSq,Glass Animals,,,,,321997,https://i.scdn.co/image/ab6761610000f178eb2cc96b0ed023c5e3675b6f
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,45,3AA28KZvwAUcZuOKwyblJQ,Gorillaz,,,,,3014766,https://i.scdn.co/image/ab6761610000f178dd5b57b40cf2aaeccd07835e
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,46,2LbjW13j6rNtFgYcPjR2ur,.diedlonely,,,,,4224,https://i.scdn.co/image/ab6761610000f178082bf78a2f0c1628a713804f
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,47,6MK5Z7OjpkcN6OFe6nh8pi,DJ EXE,,,,,958,https://i.scdn.co/image/ab6761610000f1784b746a0246026f8402979ed3
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,48,0dgJbQ0bKPyUXco8hEXN7X,Øneheart,,,,,28777,https://i.scdn.co/image/ab6761610000f178d4c269b485b26d528162212f
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,49,6yiZkjeldEjFFhIaXj3w77,Gordinho Bolado,,,,,,https://i.scdn.co/image/ab6761610000f17872ceb8a568dc09c2723ff40e
+2026-09-26,2026-09-26T10:38:49Z,medium_term,artist,50,78rUTD7y6Cy67W1RVzYs7t,PinkPantheress,,,,,237467,https://i.scdn.co/image/ab6761610000f1786bf10d74063b45938f5d8656
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,1,0X4YYZtZcvqNqYIpMd93IT,i was only temporary,,7pxIYxdkx2675ZGKSAPBAy,24tfAQTRqLfKw5bFjMhc4m,98621,,https://i.scdn.co/image/ab67616d00004851f8fcdb6f18e90b58f6fe842e
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,2,1uvn7eP1I7mIKGvpsqDcoW,bipolar,,2LbjW13j6rNtFgYcPjR2ur,5MOmkgxIJLtmoapI60uK6A,132418,,https://i.scdn.co/image/ab67616d000048519b1c566781a9f621d5d2d0f0
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,3,2mlNgAeIBnL78ZriXgrRHz,Glimpse of Us,,3MZsBdqDrRTJihTHQrO6Dq,39VuC5rYQHAnR6xQwm1WDk,233453,,https://i.scdn.co/image/ab67616d00004851cdd1a8a427b3f81f4f4f4f7d
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,4,2PpYJcgJN6PzozUv7rU669,stellar,,2LbjW13j6rNtFgYcPjR2ur,4gF0aKdd26DsLMbDcLdJdc,99672,,https://i.scdn.co/image/ab67616d0000485164cf51cfaf81d9b874c79cae
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,5,6rY5FAWxCdAGllYEOZMbjW,SLOW DANCING IN THE DARK,,3MZsBdqDrRTJihTHQrO6Dq,5mIImcsuqpiSXg8XvFr81I,209273,,https://i.scdn.co/image/ab67616d000048514cc52cd7a712842234e4fce2
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,6,3J44gxX4AcRApFyympWPIB,Past Won't Leave My Bed,,3MZsBdqDrRTJihTHQrO6Dq,7MLyEn1CPizpS8bjZ7zzrT,166106,,https://i.scdn.co/image/ab67616d0000485104316985c2c333c86874dad3
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,7,4UKjQODokAfEMaTgvTHbVX,Sila,,5mWQT8CLTa4mAQAJdFjHb1,6YqbrXnmuh8lxNEFeHNOcA,248413,,https://i.scdn.co/image/ab67616d00004851c7c2d09c7495ae64abec40ed
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,8,3VJpl4jrFSqY3Y6mAzqfux,Har Baar,,6hIXwlI4wny3zYuB6cDBBk,1oRAxwfxb55WuW7KjSx5uw,250285,,https://i.scdn.co/image/ab67616d0000485179787723876968786603bf4a
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,9,1XTijOjVgekZjRXwgJ2VSE,Bhool,,6hIXwlI4wny3zYuB6cDBBk,4MIPkmbrYvZqLdzLwaQRF9,244800,,https://i.scdn.co/image/ab67616d0000485113ab28ad75ecb95ed5fbdb19
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,10,2TQve4B4jpyUqvxDHzNZAu,Kokuten (Sasuke's Epic Theme from Naruto),,6ibMMTrcvRnEjaxi432r6o,5fIIBXeO9GlqxfTWidHOUt,132751,,https://i.scdn.co/image/ab67616d00004851fe418023d524c674eff0f551
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,11,3p4hRhMcb6ch8OLtATMaLw,Cry,,1QAJqy2dA3ihHBFIHRphZj,4uQ5kFmXQdCxz3WvM4UUzy,256799,,https://i.scdn.co/image/ab67616d00004851fd275af89cec73d6287f9cbf
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,12,1hlbywc8Jhl1FFqJxAMabE,Ishq,,05etL4pzWd6TSv1x5WrlG3,013jUXOfDFXnDMBetTdsiH,224842,,https://i.scdn.co/image/ab67616d000048510de04fd2c7c3bdc0a1d765f5
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,13,5rK4GDNiHYC3NUPV3ME4J4,Has To Be,,4g3JG556dlxAQVKpqTbedB,3qK9D70gyPRhGGgNsvutpy,115744,,https://i.scdn.co/image/ab67616d00004851abca1904706dfa3593d1bba3
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,14,65krtHkaYLPr0mEbjL61UP,Kiss of Life,,47zz7sob9NUcODy0BTDvKx,3uSWaQxJAdm5MWKQkQJNoK,251333,,https://i.scdn.co/image/ab67616d000048515e25e034e25258b356774c79
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,15,3iy2QuCtCzpWnR6tia39AB,hate that i made you love me,,66CXWjxzNUsdJxJ2JdwvnR,2k4FmEtXR0WiDW0Ac2QArT,197949,,https://i.scdn.co/image/ab67616d000048518baf677ee2d8dda6cc9fcbd7
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,16,0oUBuOO4g9P4lREqfqR5nq,A Man Without Love,,17XXKfRBMCWvLrqGoNkJXm,2zQM1HOK5OnDGF1SSWExnE,203133,,https://i.scdn.co/image/ab67616d0000485113f61b73b155d49c9ad671b9
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,17,4eFV1LfWlYCVJnPTuSo3db,LOVE YOU LESS,,3MZsBdqDrRTJihTHQrO6Dq,7MLyEn1CPizpS8bjZ7zzrT,201186,,https://i.scdn.co/image/ab67616d0000485104316985c2c333c86874dad3
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,18,06E5KyqnDTueEbdT22FFvM,School Rooftop,,72y6MZHIPEyS64ACSCtIq6,3ZoCHr39oKNBUHTykhkMpx,167967,,https://i.scdn.co/image/ab67616d000048519298bfe1cc471839341a7f5b
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,19,00WLowvlN5cjkYpQV6pjo4,Die For You,,3MZsBdqDrRTJihTHQrO6Dq,39VuC5rYQHAnR6xQwm1WDk,211666,,https://i.scdn.co/image/ab67616d00004851cdd1a8a427b3f81f4f4f4f7d
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,20,0FVuyC9RP5MACjp4lgU3qZ,I'm God,,5vSQUyT33qxr1xAX2Tkf3A,66eXLlqksAwNndmHaHWtCq,277710,,https://i.scdn.co/image/ab67616d00004851d57e3b601a8171f7e122b2ea
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,21,0H9rWqCXi7gv6kDO3N98ZU,Khwaab,,05etL4pzWd6TSv1x5WrlG3,013jUXOfDFXnDMBetTdsiH,325806,,https://i.scdn.co/image/ab67616d000048510de04fd2c7c3bdc0a1d765f5
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,22,0pUVeEgZuNyFzIMKp67RbS,Eyes Without A Face,,7lzordPuZEXxwt9aoVZYmG,2FZNWUmgRoP8uJZBaHJdfj,299240,,https://i.scdn.co/image/ab67616d00004851ea07dca8b4ca808c1e5b17fb
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,23,0JIMT9gzLIIz0esKLyjbKf,Telephones,,0U7iI0Dk4Ojvi17nZboNO4,3Ull45eHLzGXtElhKHFJ7C,212432,,https://i.scdn.co/image/ab67616d000048512eb4d117b70ea7ac2c24e316
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,24,7mrrszs7ZOPEsJhg0q8jvD,Tairay Naam,,6znPk9JRNmg6uyB6h8nJu3,6MXb1UT4rEqv1ZrUodbMUk,328421,,https://i.scdn.co/image/ab67616d00004851e5d83905b0470b3e3e69dfab
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,25,70YTBH8vOGJNMhy6186yFm,Heavenly,,1QAJqy2dA3ihHBFIHRphZj,4uQ5kFmXQdCxz3WvM4UUzy,286773,,https://i.scdn.co/image/ab67616d00004851fd275af89cec73d6287f9cbf
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,26,6CKoWCWAqEVWVjpeoJXyNH,Shape Of My Heart,,0Ty63ceoRnnJKVEYP0VQpk,5kV0KBXfELibs6qQJLmOtg,279226,,https://i.scdn.co/image/ab67616d00004851653b110d9560eb1656f4c583
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,27,0bxRSMz5WY1VuMmOhanE4b,Baptized In Fear,,1Xyo4u8uXC1ZmMpatF05PJ,6iyZdOoujtOwiThdAUI8TM,232176,,https://i.scdn.co/image/ab67616d00004851460b137f921b16041901104a
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,28,1GDJhAiO9tqjMuDWFad0IF,Woh,,6hIXwlI4wny3zYuB6cDBBk,2tbamcNG4xK0jKrd1lSzXX,237672,,https://i.scdn.co/image/ab67616d0000485162c8d061a3dcd44587f3cc26
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,29,2xql0pid3EUwW38AsywxhV,Reflections,,77SW9BnxLY8rJ0RciFqkHh,0ODLCdHBFVvKwJGeSfd1jy,244013,,https://i.scdn.co/image/ab67616d000048519b6ac98a52f62d5cb473da40
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,30,42D9aaKTLw47faFhRCQfHF,Blah Blah,,3MZsBdqDrRTJihTHQrO6Dq,5xiwCNC26RvgfwElNmIJoL,161653,,https://i.scdn.co/image/ab67616d00004851ba49265ab7b0d9a6fa01ddfa
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,31,3hxIUxnT27p5WcmjGUXNwx,Shut up My Moms Calling,,35WVTyRnKAoaGExqgktVyb,4qVzNqB4cskFInYfrC7P0S,164571,,https://i.scdn.co/image/ab67616d00004851350ab7a839c04bfd5225a9f5
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,32,7oNZfE9wnu7SP55LwNSiKG,Hum,,6hIXwlI4wny3zYuB6cDBBk,7idG3a5Nmotd02hA6ifD0f,275076,,https://i.scdn.co/image/ab67616d000048512d821a07ea6bb8a6bb55018e
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,33,7LvHieZe4yPYpDRF0OPCmk,Ekanto Golaap,,37LGjqM0je1KNrLRD3MZ47,16PdkicE350PBwzKQAHmkw,257661,,https://i.scdn.co/image/ab67616d0000485165a65cff37247ef1a20b89db
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,34,1gVN2TuTQh2g9LE1wi6FTY,Girei,,2ElQWsoSpwUhYFFdFuHqse,5FLwqfngn0X753dUDkF9tt,130421,,https://i.scdn.co/image/ab67616d00004851a1121c84d17bf05d62183be0
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,35,7npPPrZEDmeHMk6mxvIeFa,My Jinji,,7BqRcZsHYYQeqMAOp7e532,24eFuwfHPWbuRMrMevqe0Q,400560,,https://i.scdn.co/image/ab67616d00004851045dc0242bac7640516e9910
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,36,5Z8Dj3LtbyCMiwE86rhg2f,Marea (we’ve lost dancing),,4oLeXFyACqeem2VImYeBFe,6o86bV7TAt5x4exc2qLDqC,285375,,https://i.scdn.co/image/ab67616d00004851723d4df900fd02eff83579d9
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,37,2hsaWsa0VNx1ug3uotwMvP,Saika,,4sakRwIaBDdtw8qZ8NNwsc,6D02yHQQhXyJ02mVYZxFlL,150525,,https://i.scdn.co/image/ab67616d000048511aa3de78b07e1d4c0d696814
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,38,030OypEGdW6Nvo1KDWa0Bt,Catch a Feeling,,2Glf84Z4MUxfquLMdTjd1G,2QquxK1oqBz5jrF6uBV0Zc,127000,,https://i.scdn.co/image/ab67616d00004851458d12573d4fb196c696e319
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,39,7JEzAlwHhCD2M1cYE6BeqJ,Loving Machine,,0Y6dVaC9DZtPNH4591M42W,4oL7pMxnb04uuRI7ReXmuh,227000,,https://i.scdn.co/image/ab67616d0000485132f5fec7a879ed6ef28f0dfd
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,40,16zzrcKYGDkaGNeSjIMa6O,through - 2022 Remastered,,47mrO8UvhD1Qt6iAIy4fCO,6ZqKaHYpWb1TARqE3oUU2G,347636,,https://i.scdn.co/image/ab67616d000048518d6e3c9727f810a9310eb471
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,41,0WiMJIxYYEex2AqhRqzV3u,For the First Time,,3Sz7ZnJQBIHsXLUSo0OQtM,0NEyPH2WTU7NAPxebB7z4g,182306,,https://i.scdn.co/image/ab67616d000048513f7561fb0914fb1f5f101f0a
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,42,4Bsf8Pzli5MQv9zLF9KXqc,Unakkul Naane,,29aw5YCdIw2FEXYyAJZI8l,1MrwFWLghGgpbpJ0iekIhK,127850,,https://i.scdn.co/image/ab67616d00004851735b8b58e6950b175a823e46
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,43,40gvh6jP5qxMJuMmF9lG9A,Baby Came Home 2 / Valentines,,77SW9BnxLY8rJ0RciFqkHh,18iFxjZugvKhuNNMbLjZJF,390502,,https://i.scdn.co/image/ab67616d000048515260c62db020e5861a51556d
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,44,1uvyZBs4IZYRebHIB1747m,Purple Rain,,5a2EaR3hamoenG9rDuVn8j,2umoqwMrmjBBPeaqgYu6J9,521866,,https://i.scdn.co/image/ab67616d000048518a2ce3f148f57584269c3782
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,45,6JB0h4leDJ4Akabtu42Epd,Tere Pyar Main,,6znPk9JRNmg6uyB6h8nJu3,1lCyYMOz15QK4vhcUxHxEW,302706,,https://i.scdn.co/image/ab67616d00004851b4f2f558c56dd71894df23f8
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,46,4BGfzLrK6lgvKDjKSU7wrN,Sajde,,05etL4pzWd6TSv1x5WrlG3,013jUXOfDFXnDMBetTdsiH,460833,,https://i.scdn.co/image/ab67616d000048510de04fd2c7c3bdc0a1d765f5
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,47,5hjhaH0vwtpftiLtF3veZp,Ophelia,,78rUTD7y6Cy67W1RVzYs7t,2pOEFqvfxp5uUQ8vQEmVA0,155093,,https://i.scdn.co/image/ab67616d0000485115a9d5a02103c2d683c07fb4
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,48,3AWDeHLc88XogCaCnZQLVI,Cry For Me,,1Xyo4u8uXC1ZmMpatF05PJ,3OxfaVgvTxUTy7276t7SPU,224136,,https://i.scdn.co/image/ab67616d00004851de79f330bc297af3fae736da
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,49,1KIJclzEbNhSVw8tiHPWwE,Young,,0U7iI0Dk4Ojvi17nZboNO4,54lNPJ6xq2QXwG6jLEIf6C,189160,,https://i.scdn.co/image/ab67616d000048513fe10c957fc57e5dd7c1db24
+2026-09-26,2026-09-26T10:38:49Z,medium_term,track,50,2TUFKhKl4EZYAo3D9FXU5E,Pieces,,5oJvmyeWzyeahRtjup3Oys,3Ab4BR06hO8qx1NCZ1seog,195030,,https://i.scdn.co/image/ab67616d00004851f55ab25f05fb3c77b8aad359
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,1,1Xyo4u8uXC1ZmMpatF05PJ,The Weeknd,,,,,14673869,https://i.scdn.co/image/ab6761610000f178c1719ac9e6a75c1c25835018
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,2,6hIXwlI4wny3zYuB6cDBBk,Murtaza Qizilbash,,,,,,https://i.scdn.co/image/ab6761610000f17811714d23f3f7d9129b3c6d7a
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,3,1QAJqy2dA3ihHBFIHRphZj,Cigarettes After Sex,,,,,900123,https://i.scdn.co/image/ab6761610000f1782e08fd554de35c3ef1db7fd9
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,4,5INjqkS1o8h1imAzPqGZBb,Tame Impala,,,,,1134261,https://i.scdn.co/image/ab6761610000f178e412a782245eb20d9626c601
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,5,3MZsBdqDrRTJihTHQrO6Dq,Joji,,,,,562912,https://i.scdn.co/image/ab6761610000f178b6d7836808e8b99fc8c7aadc
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,6,47zz7sob9NUcODy0BTDvKx,Sade,,,,,1451755,https://i.scdn.co/image/ab6761610000f17892883b0e094a36d2f43ad284
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,7,6znPk9JRNmg6uyB6h8nJu3,Kaavish,,,,,,https://i.scdn.co/image/ab6761610000f1780e8a26a184a7f6524863e300
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,8,1wRPtKGflJrBx9BmLsSwlU,Pritam,,,,,71109,https://i.scdn.co/image/ab6761610000f178cb6926f44f620555ba444fca
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,9,77SW9BnxLY8rJ0RciFqkHh,The Neighbourhood,,,,,171,https://i.scdn.co/image/ab6761610000f178df0b5ac84376a0a4b2166816
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,10,0hEurMDQu99nJRq8pTxO14,John Mayer,,,,,1037775,https://i.scdn.co/image/ab6761610000f178e926dd683e1700a6d65bd835
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,11,5mWQT8CLTa4mAQAJdFjHb1,Abdul Hannan,,,,,849,https://i.scdn.co/image/ab6761610000f1788fa1c6d494293b6790b9b8dd
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,12,37LGjqM0je1KNrLRD3MZ47,Indalo,,,,,,https://i.scdn.co/image/ab6761610000f178fd65a37d2566f3eb8055608d
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,13,2jku7tDXc6XoB6MO2hFuqg,Tory Lanez,,,,,764818,https://i.scdn.co/image/ab6761610000f1780bb76de09defd5d14e735176
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,14,2h93pZq0e7k5yf4dywlkpM,Frank Ocean,,,,,1260874,https://i.scdn.co/image/ab6761610000f178ee3123e593174208f9754fab
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,15,00FQb4jTyendYWaN8pK0wa,Lana Del Rey,,,,,5801333,https://i.scdn.co/image/ab6761610000f178b99cacf8acd5378206767261
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,16,05etL4pzWd6TSv1x5WrlG3,Faheem Abdullah,,,,,1526,https://i.scdn.co/image/ab6761610000f178c3342f506f238d63c9dee119
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,17,4gdMJYnopf2nEUcanAwstx,Anuv Jain,,,,,4263,https://i.scdn.co/image/ab6761610000f178a837a6cb82dd949d5e1f9b53
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,18,6MK5Z7OjpkcN6OFe6nh8pi,DJ EXE,,,,,958,https://i.scdn.co/image/ab6761610000f1784b746a0246026f8402979ed3
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,19,7tYKF4w9nC0nq9CsPZTHyP,SZA,,,,,1328164,https://i.scdn.co/image/ab6761610000f178fd0a9fb6c252a3ba44079acf
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,20,0Y6dVaC9DZtPNH4591M42W,TV Girl,,,,,445012,https://i.scdn.co/image/ab6761610000f178d80695211689a9c8c3fee3b0
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,21,3Sz7ZnJQBIHsXLUSo0OQtM,Mac DeMarco,,,,,559366,https://i.scdn.co/image/ab6761610000f178c9aca5b6d4c528caf75e8a1d
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,22,6yiZkjeldEjFFhIaXj3w77,Gordinho Bolado,,,,,,https://i.scdn.co/image/ab6761610000f17872ceb8a568dc09c2723ff40e
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,23,2YZyLoL8N0Wb9xBt1NhZWg,Kendrick Lamar,,,,,6167418,https://i.scdn.co/image/ab6761610000f17839ba6dcd4355c03de0b50918
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,24,6XwwFnewNgWp81MYMK8zLq,Edward Maya,,,,,173241,https://i.scdn.co/image/ab6761610000f178c45b5b51508a9d2c15c250df
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,25,0WBg7b6KiPmfh7lI5vbFKC,Meghdol,,,,,,https://i.scdn.co/image/ab6761610000f1780f7bf4c03890e1099244a852
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,26,0wf0kncEWHLMGqYqXgZql8,Level Five,,,,,,https://i.scdn.co/image/ab6761610000f17830722ea8c7c8f0cbc976ec4c
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,27,0qjWYusrckF9BpkvWaoKRO,Cozy Coffee Shop,,,,,,https://i.scdn.co/image/ab6761610000f1787be2b0db4df55c1463e41f39
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,28,3DeHMjvYP73Pycy8va8RKY,Arnob,,,,,,https://i.scdn.co/image/ab6761610000f1787e509af8bbc3833a2b116f6f
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,29,4G9NDjRyZFDlJKMRL8hx3S,sombr,,,,,167013,https://i.scdn.co/image/ab6761610000f17878edaa6468cae153565c2c97
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,30,5cj0lLjcoR7YOSnhnX0Po5,Doja Cat,,,,,38,https://i.scdn.co/image/ab6761610000f1788a0644455ebfa7d3976f5101
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,31,7Ln80lUS6He07XvHI8qqHH,Arctic Monkeys,,,,,4956340,https://i.scdn.co/image/ab6761610000f1787da39dea0a72f581535fb11f
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,32,7fhlWsdi6oTTxj8d3uYIAn,Kaaktaal,,,,,,https://i.scdn.co/image/ab6761610000f178fc2aae5c20b0524f3af0b172
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,33,5io6IfbYy6t9IBtzYdOwN9,Balam,,,,,,https://i.scdn.co/image/ab6761610000f17862acf888049699c980551ee9
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,34,1AbJ2cmwK400LSvdvBL5Jc,Strawberry Guy,,,,,51189,https://i.scdn.co/image/ab6761610000f1787ac4cc120d86b3e14bc0a4cd
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,35,1yevH7mkPMXeSTnA9SwHvq,SEKIMANE,,,,,6966,https://i.scdn.co/image/ab6761610000f1782470a0eb5462d3f30d85b907
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,36,66CXWjxzNUsdJxJ2JdwvnR,Ariana Grande,,,,,13420271,https://i.scdn.co/image/ab6761610000f17868412f2d0177a9ebc265ff58
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,37,6IRouO5mvvfcyxtPDKMYFN,Foreigner,,,,,242955,https://i.scdn.co/image/ab6761610000f1788a23eb82ac13bfc05ccc3b5e
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,38,6LEG9Ld1aLImEFEVHdWNSB,AP Dhillon,,,,,28528,https://i.scdn.co/image/ab6761610000f178fb505b37709fa86cfd8f55b3
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,39,700c9Qz2z6HZKTumeliKAw,LONOWN,,,,,9933,https://i.scdn.co/image/ab6761610000f1788430afc9d75e1b6e8caa4b22
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,40,7CajNmpbOovFoOoasH2HaY,Calvin Harris,,,,,12321788,https://i.scdn.co/image/ab6761610000f1788ebba5e60113b48de8c11f6b
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,41,0dgJbQ0bKPyUXco8hEXN7X,Øneheart,,,,,28777,https://i.scdn.co/image/ab6761610000f178d4c269b485b26d528162212f
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,42,1mYsTxnqsietFxj1OgoGbG,A.R. Rahman,,,,,6381,https://i.scdn.co/image/ab6761610000f178b19af0ea736c6228d6eb539c
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,43,2oSONSC9zQ4UonDKnLqksx,Atif Aslam,,,,,221118,https://i.scdn.co/image/ab6761610000f178c40600e02356cc86f0debe84
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,44,3mIj9lX2MWuHmhNCA7LSCW,The 1975,,,,,606647,https://i.scdn.co/image/ab6761610000f1780c6e752cbb1e6d1416970f5a
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,45,3tEw3hDETkxsewEVCd93Os,Icons,,,,,,https://i.scdn.co/image/ab67616d00004851a735aa912fa5164c377d3828
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,46,3yY2gUcIsjMr8hjo51PoJ8,The Smiths,,,,,1503503,https://i.scdn.co/image/d3a2542f2811b5b01ee3483ec7c193f72a882ea1
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,47,465OXuCU8YZNmVG1leLwQ9,Shashwat Sachdev,,,,,440,https://i.scdn.co/image/ab6761610000f17854f120e72388f1c5c3aa3edd
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,48,4Gso3d4CscCijv0lmajZWs,Don Toliver,,,,,508365,https://i.scdn.co/image/ab6761610000f178c52b798deb89eb8414a51b7b
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,49,4gzpq5DPGxSnKTe4SA8HAU,Coldplay,,,,,18381342,https://i.scdn.co/image/ab6761610000f1781ba8fc5f5c73e7e9313cc6eb
+2026-09-26,2026-09-26T10:38:49Z,short_term,artist,50,5c7JjKTazKNQubk2GjgbJT,Arekta Rock Band,,,,,,https://i.scdn.co/image/ab6761610000f17829d38e374c276700ea74f330
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,1,0bxRSMz5WY1VuMmOhanE4b,Baptized In Fear,,1Xyo4u8uXC1ZmMpatF05PJ,6iyZdOoujtOwiThdAUI8TM,232176,,https://i.scdn.co/image/ab67616d00004851460b137f921b16041901104a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,2,3hxIUxnT27p5WcmjGUXNwx,Shut up My Moms Calling,,35WVTyRnKAoaGExqgktVyb,4qVzNqB4cskFInYfrC7P0S,164571,,https://i.scdn.co/image/ab67616d00004851350ab7a839c04bfd5225a9f5
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,3,7LvHieZe4yPYpDRF0OPCmk,Ekanto Golaap,,37LGjqM0je1KNrLRD3MZ47,16PdkicE350PBwzKQAHmkw,257661,,https://i.scdn.co/image/ab67616d0000485165a65cff37247ef1a20b89db
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,4,6CKoWCWAqEVWVjpeoJXyNH,Shape Of My Heart,,0Ty63ceoRnnJKVEYP0VQpk,5kV0KBXfELibs6qQJLmOtg,279226,,https://i.scdn.co/image/ab67616d00004851653b110d9560eb1656f4c583
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,5,4UKjQODokAfEMaTgvTHbVX,Sila,,5mWQT8CLTa4mAQAJdFjHb1,6YqbrXnmuh8lxNEFeHNOcA,248413,,https://i.scdn.co/image/ab67616d00004851c7c2d09c7495ae64abec40ed
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,6,3VJpl4jrFSqY3Y6mAzqfux,Har Baar,,6hIXwlI4wny3zYuB6cDBBk,1oRAxwfxb55WuW7KjSx5uw,250285,,https://i.scdn.co/image/ab67616d0000485179787723876968786603bf4a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,7,3gQSWGaCoaxONqXitmn7GX,Air,,12MvJYPfRXWwhUFJ7EtKHb,1zEv31yXhwbYowqsabXRJB,77844,,https://i.scdn.co/image/ab67616d00004851fd7c1a5c814a8d44950b6816
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,8,1i5oEx2vFczQ2sCY3c6Kn5,Love Hurts,,6fvN9GmMCVKb5LY0WsnjFP,5Zwyrn62m3Pyc0nvRa9CHF,233133,,https://i.scdn.co/image/ab67616d0000485185bc3b24dd834a6dfbb876da
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,9,5hc71nKsUgtwQ3z52KEKQk,Somebody Else,,3mIj9lX2MWuHmhNCA7LSCW,1JFmNyVPdBF1ECvv4fhpW4,347520,,https://i.scdn.co/image/ab67616d00004851d3de03550f715df1ea7e0c08
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,10,1uvyZBs4IZYRebHIB1747m,Purple Rain,,5a2EaR3hamoenG9rDuVn8j,2umoqwMrmjBBPeaqgYu6J9,521866,,https://i.scdn.co/image/ab67616d000048518a2ce3f148f57584269c3782
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,11,1Snko28yJOihcRVXs9dAo9,Chamber Of Reflection,,3Sz7ZnJQBIHsXLUSo0OQtM,2r63qjVnXyfTc2eJRSptxS,231723,,https://i.scdn.co/image/ab67616d000048518b221f2ccf777ae0d4b0db50
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,12,2v0AG62ZHtD3I4YmTb3WYM,Niagara Falls,,1Xyo4u8uXC1ZmMpatF05PJ,3OxfaVgvTxUTy7276t7SPU,277274,,https://i.scdn.co/image/ab67616d00004851de79f330bc297af3fae736da
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,13,1XTijOjVgekZjRXwgJ2VSE,Bhool,,6hIXwlI4wny3zYuB6cDBBk,4MIPkmbrYvZqLdzLwaQRF9,244800,,https://i.scdn.co/image/ab67616d0000485113ab28ad75ecb95ed5fbdb19
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,14,161dJFOgyuYcgKg0AzYuAh,Ela ké Leitada,,71NQK8ufY5t7SeiMAhPB9I,4Im21Qok3nccqN2OXrJYDw,156708,,https://i.scdn.co/image/ab67616d000048511398c63fa9c4935fe19a0aef
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,15,40gvh6jP5qxMJuMmF9lG9A,Baby Came Home 2 / Valentines,,77SW9BnxLY8rJ0RciFqkHh,18iFxjZugvKhuNNMbLjZJF,390502,,https://i.scdn.co/image/ab67616d000048515260c62db020e5861a51556d
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,16,65krtHkaYLPr0mEbjL61UP,Kiss of Life,,47zz7sob9NUcODy0BTDvKx,3uSWaQxJAdm5MWKQkQJNoK,251333,,https://i.scdn.co/image/ab67616d000048515e25e034e25258b356774c79
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,17,7oNZfE9wnu7SP55LwNSiKG,Hum,,6hIXwlI4wny3zYuB6cDBBk,7idG3a5Nmotd02hA6ifD0f,275076,,https://i.scdn.co/image/ab67616d000048512d821a07ea6bb8a6bb55018e
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,18,0stJVUUSrbEwyFHOp2dRu0,Open Hearts,,1Xyo4u8uXC1ZmMpatF05PJ,6iyZdOoujtOwiThdAUI8TM,234923,,https://i.scdn.co/image/ab67616d00004851460b137f921b16041901104a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,19,1uvn7eP1I7mIKGvpsqDcoW,bipolar,,2LbjW13j6rNtFgYcPjR2ur,5MOmkgxIJLtmoapI60uK6A,132418,,https://i.scdn.co/image/ab67616d000048519b1c566781a9f621d5d2d0f0
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,20,6JB0h4leDJ4Akabtu42Epd,Tere Pyar Main,,6znPk9JRNmg6uyB6h8nJu3,1lCyYMOz15QK4vhcUxHxEW,302706,,https://i.scdn.co/image/ab67616d00004851b4f2f558c56dd71894df23f8
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,21,1FzbOPWCZiNxnLjAhY1jAR,In And Out Of Love,,0SfsnGyD8FpIN4U4WCkBZ5,07UKYOTXfIdPwnL7iO0lJB,181680,,https://i.scdn.co/image/ab67616d0000485161dadc433336e3c332288c00
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,22,4YWKbpls9OcdXAsTRd7ERR,Naam Chilo Na,,3DeHMjvYP73Pycy8va8RKY,7s3LFL8muKHc6PEhZfhOhh,237479,,https://i.scdn.co/image/ab67616d0000485174974959fc5c1124b3fec666
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,23,1GDJhAiO9tqjMuDWFad0IF,Woh,,6hIXwlI4wny3zYuB6cDBBk,2tbamcNG4xK0jKrd1lSzXX,237672,,https://i.scdn.co/image/ab67616d0000485162c8d061a3dcd44587f3cc26
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,24,2Y04ZSRKADiBdKHLaF1RtG,Abar Dekha Holey - Karagarer Version,,7fhlWsdi6oTTxj8d3uYIAn,1wMFZJbHN2DdTqos4EnDMw,366360,,https://i.scdn.co/image/ab67616d00004851cf86918e3b553a3cdf013749
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,25,5LmvjYl6SZsea5QGdm4aN7,Nightdriver,,3qskfyIRwZtp6uIfj6OFcL,7EjeqIsIVy3DpV8LY5TJvE,276610,,https://i.scdn.co/image/ab67616d00004851b4b49009fd7f37ac351ab525
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,26,6rY5FAWxCdAGllYEOZMbjW,SLOW DANCING IN THE DARK,,3MZsBdqDrRTJihTHQrO6Dq,5mIImcsuqpiSXg8XvFr81I,209273,,https://i.scdn.co/image/ab67616d000048514cc52cd7a712842234e4fce2
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,27,2y8mkajKikV5S1PRCMQ5WL,KALYANI (with Shreya Ghoshal) - Remix,,5j2JTk8JqepIgv1zxYOuIi,7JIw6me0sSXfs4nGwNaTHw,269387,,https://i.scdn.co/image/ab67616d000048519aa819fdf84c78fc1976391d
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,28,0WiMJIxYYEex2AqhRqzV3u,For the First Time,,3Sz7ZnJQBIHsXLUSo0OQtM,0NEyPH2WTU7NAPxebB7z4g,182306,,https://i.scdn.co/image/ab67616d000048513f7561fb0914fb1f5f101f0a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,29,6ux2llhjAuhSLggEaBoaLY,i think i'm addicted,,28ntgpEkMU9Zm7F3gLDMhZ,6Kx70JcyksQYEnP69i8Idj,158520,,https://i.scdn.co/image/ab67616d00004851e9f7ba342913f09083c65ab2
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,30,0JIMT9gzLIIz0esKLyjbKf,Telephones,,0U7iI0Dk4Ojvi17nZboNO4,3Ull45eHLzGXtElhKHFJ7C,212432,,https://i.scdn.co/image/ab67616d000048512eb4d117b70ea7ac2c24e316
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,31,3AWDeHLc88XogCaCnZQLVI,Cry For Me,,1Xyo4u8uXC1ZmMpatF05PJ,3OxfaVgvTxUTy7276t7SPU,224136,,https://i.scdn.co/image/ab67616d00004851de79f330bc297af3fae736da
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,32,3jv9Mt5gKA8rwXoELAfKex,Beparwah,,6hIXwlI4wny3zYuB6cDBBk,2xMxW7Z8ij0xc41wExsXGE,193157,,https://i.scdn.co/image/ab67616d0000485136c0a11ac784a3429df3664b
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,33,4Fv6wNYUixnYkj3Dgfrls8,Tumblr Girls (feat. Christoph Andersson),,02kJSzxNuaWGqwubyUba0Z,6wDc63NhKy2PyXdbhkRmrl,255680,,https://i.scdn.co/image/ab67616d00004851bdfe4efd674482cf5ac88c99
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,34,6mHTwIXqZtuQUF1fEkrhFB,Tum,,6hIXwlI4wny3zYuB6cDBBk,4INFMJi3SwIEWixQjlMNig,258750,,https://i.scdn.co/image/ab67616d000048512fd007511b40dc84fc38be17
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,35,7bxaFZ1O3cHkgLKMsdC3xR,Loser,,5INjqkS1o8h1imAzPqGZBb,5WulAOx9ilWy1h8UGZ1gkI,223069,,https://i.scdn.co/image/ab67616d00004851208500450dcd0fd294d7bd3b
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,36,3iy2QuCtCzpWnR6tia39AB,hate that i made you love me,,66CXWjxzNUsdJxJ2JdwvnR,2k4FmEtXR0WiDW0Ac2QArT,197949,,https://i.scdn.co/image/ab67616d000048518baf677ee2d8dda6cc9fcbd7
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,37,6sKxXqDGkKROr3Z3Na32nv,Stereo Love (Radio Edit),,6XwwFnewNgWp81MYMK8zLq,1Xr0RdpL9S72ior2FCgH6y,184015,,https://i.scdn.co/image/ab67616d00004851b12c3bbec1fa848e0affdde9
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,38,0ZGfGStyu8s02fzpmmOF2l,Pyaar Mein,,6hIXwlI4wny3zYuB6cDBBk,73LzbMdjxsCA3ItV7KtHYo,216000,,https://i.scdn.co/image/ab67616d0000485138ab67020e01f7b0cd66eb2a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,39,5rK4GDNiHYC3NUPV3ME4J4,Has To Be,,4g3JG556dlxAQVKpqTbedB,3qK9D70gyPRhGGgNsvutpy,115744,,https://i.scdn.co/image/ab67616d00004851abca1904706dfa3593d1bba3
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,40,0xIuPDzJSnJywALez8dwKR,With You,,6LEG9Ld1aLImEFEVHdWNSB,30eM1PJ8qLZJeEykhcje0j,154554,,https://i.scdn.co/image/ab67616d0000485182549c22cd3c6e03351bd1c5
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,41,4cYllEeJVH7dWKwQxpbk42,The Abyss (feat. Lana Del Rey),,1Xyo4u8uXC1ZmMpatF05PJ,6iyZdOoujtOwiThdAUI8TM,282873,,https://i.scdn.co/image/ab67616d00004851460b137f921b16041901104a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,42,4oahRRZECfGud6eL7Lj7CO,Opening Night,,1Xyo4u8uXC1ZmMpatF05PJ,6iyZdOoujtOwiThdAUI8TM,96024,,https://i.scdn.co/image/ab67616d00004851460b137f921b16041901104a
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,43,70YTBH8vOGJNMhy6186yFm,Heavenly,,1QAJqy2dA3ihHBFIHRphZj,4uQ5kFmXQdCxz3WvM4UUzy,286773,,https://i.scdn.co/image/ab67616d00004851fd275af89cec73d6287f9cbf
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,44,5QO79kh1waicV47BqGRL3g,Save Your Tears,,1Xyo4u8uXC1ZmMpatF05PJ,4yP0hdKOZPNshxUOjY0cZj,215626,,https://i.scdn.co/image/ab67616d000048518863bc11d2aa12b54f5aeb36
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,45,13jmbPV8jLenzP0lz2o6Di,1996,,37LGjqM0je1KNrLRD3MZ47,61ddVojd4Jh119rekRgp7z,376677,,https://i.scdn.co/image/ab67616d000048512b1a6fa9449f4b2f6be1616f
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,46,0bOU1vG7BIgTRwqe1F44lR,Maya,,1zNTZaTb1hfkZCynCw6kUq,6hacmZUSczCdE8VJPRFZvq,244500,,https://i.scdn.co/image/ab67616d0000485136552af96099faf3cfb564bc
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,47,1hlbywc8Jhl1FFqJxAMabE,Ishq,,05etL4pzWd6TSv1x5WrlG3,013jUXOfDFXnDMBetTdsiH,224842,,https://i.scdn.co/image/ab67616d000048510de04fd2c7c3bdc0a1d765f5
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,48,00WLowvlN5cjkYpQV6pjo4,Die For You,,3MZsBdqDrRTJihTHQrO6Dq,39VuC5rYQHAnR6xQwm1WDk,211666,,https://i.scdn.co/image/ab67616d00004851cdd1a8a427b3f81f4f4f4f7d
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,49,5BKKKNwrebowaMoUdBaNby,Tu Aake Dekhle,,5NHm4TU5Twz7owibYxJfFU,5eF8So0MxcSwx5mWSG93QE,270000,,https://i.scdn.co/image/ab67616d0000485199bc4786696a0bb07e60e0ca
+2026-09-26,2026-09-26T10:38:49Z,short_term,track,50,5MCbGWnNLLjoHpbDO3BOgi,Gehra Hua,,465OXuCU8YZNmVG1leLwQ9,2e7HNQJ0BcMoqwsVDwDhK8,362400,,https://i.scdn.co/image/ab67616d000048517838ccbef3fb712228e23fc5
