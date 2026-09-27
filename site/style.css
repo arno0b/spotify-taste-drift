@@ -42,8 +42,18 @@ a { color: var(--accent); }
 .aside { border-left: 2px solid var(--accent); padding: .55rem .9rem; font-size: .84rem; color: var(--muted); margin: 0 0 2.5rem; }
 
 /* Figures sit on the page ground — no cards, no shadows. */
-figure { margin: 3rem 0 0; }
-.fignum { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+figure { margin: 3.5rem 0 0; }
+/* Figure titles are headings, not micro-labels. Uppercase at .66rem was too
+   quiet to anchor a figure and made the artwork rows read as floating. */
+.fignum {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: var(--accent);
+  margin-bottom: .85rem;
+}
 .cap { font-family: var(--serif); font-size: .86rem; line-height: 1.5; color: var(--muted); margin-top: .6rem; }
 .chart { overflow-x: auto; }
 /* Controls: the browser default select is a grey lozenge that fights the
@@ -151,11 +161,11 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
 
 /* --- Artwork rows: Spotify's own visual language --- */
 .rowhead {
-  font-size: .64rem; letter-spacing: .1em; text-transform: uppercase;
-  margin: 0 0 .7rem; font-weight: 500;
+  font-size: .72rem; letter-spacing: .09em; text-transform: uppercase;
+  margin: 0 0 .8rem; font-weight: 600;
 }
 .rowhead.up { color: var(--accent); }
-.rowhead.down { color: var(--warn); margin-top: 1.6rem; }
+.rowhead.down { color: var(--warn); margin-top: 2rem; }
 .faces { display: flex; flex-wrap: wrap; gap: 1rem 1.1rem; }
 .face { margin: 0; width: 4.1rem; text-align: center; }
 .face a { display: block; border-radius: 50%; }
@@ -194,7 +204,8 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
 .face .sub { display: block; color: var(--muted); font-size: .66rem; margin-top: .1rem; }
 .face.faded .sub { color: var(--faint); }
 
+.unlocks-block { margin: 3.5rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 .unlocks {
-  margin: 3rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line);
-  font-family: var(--serif); font-size: .88rem; color: var(--muted); line-height: 1.5;
+  margin: 0; font-family: var(--serif); font-size: .92rem;
+  color: var(--muted); line-height: 1.55;
 }
