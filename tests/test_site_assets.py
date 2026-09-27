@@ -55,3 +55,40 @@ def test_every_element_the_script_looks_up_exists_in_the_markup(page):
 
     missing = sorted(referenced - present)
     assert not missing, f"{page} is missing ids used by its script: {missing}"
+
+
+def test_only_the_rank_table_may_scroll_horizontally():
+    """The artwork and tag rows wrap, so overflow on them is a bug, not a fallback.
+
+    `.chart` wrapped every figure container. The songs row needs 36.7rem of the
+    37.5rem column, and a flex item will not shrink below its longest word, so
+    one long title pushed it over and overflow-x turned that into a scrollbar.
+    """
+    css = Path("site/style.css").read_text(encoding="utf-8")
+
+    chart_rule = re.search(r"^\.chart\s*\{([^}]*)\}", css, re.M)
+    assert chart_rule, ".chart rule missing"
+    assert "overflow" not in chart_rule.group(1), (
+        "overflow on .chart applies to the wrapping artwork and tag rows, which "
+        "can only produce a spurious scrollbar"
+    )
+
+    timeline_rule = re.search(r"^#timeline\s*\{([^}]*)\}", css, re.M)
+    assert timeline_rule, "#timeline needs its own overflow rule; the table can be wide"
+    assert "overflow-x" in timeline_rule.group(1)
+
+
+def test_faces_can_shrink_below_their_longest_word():
+    """min-width and break-word are both required; either alone still overflows."""
+    css = Path("site/style.css").read_text(encoding="utf-8")
+
+    face = re.search(r"^\.face\s*\{([^}]*)\}", css, re.M)
+    assert face and "min-width: 0" in face.group(1), (
+        "a flex item defaults to min-width:auto and refuses to shrink below its "
+        "longest word"
+    )
+
+    caption = re.search(r"^\.face figcaption\s*\{([^}]*)\}", css, re.M)
+    assert caption and "break-word" in caption.group(1), (
+        "a long unbreakable title would force the row wider than the column"
+    )

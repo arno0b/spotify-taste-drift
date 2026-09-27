@@ -55,7 +55,9 @@ figure { margin: 3.5rem 0 0; }
   margin-bottom: .85rem;
 }
 .cap { font-family: var(--serif); font-size: .86rem; line-height: 1.5; color: var(--muted); margin-top: .6rem; }
-.chart { overflow-x: auto; }
+.chart { min-width: 0; }
+/* The rank table is the only thing here that can exceed the column. */
+#timeline { overflow-x: auto; }
 /* Controls: the browser default select is a grey lozenge that fights the
    editorial type. Reset the appearance and draw our own. */
 .controls { display: flex; gap: 1.25rem; margin-bottom: .9rem; flex-wrap: wrap; }
@@ -167,7 +169,10 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
 .rowhead.up { color: var(--accent); }
 .rowhead.down { color: var(--warn); margin-top: 2rem; }
 .faces { display: flex; flex-wrap: wrap; gap: 1rem 1.1rem; }
-.face { margin: 0; width: 4.1rem; text-align: center; }
+.face {
+  margin: 0; text-align: center;
+  flex: 0 1 4.1rem; min-width: 0;
+}
 .face a { display: block; border-radius: 50%; }
 .face img {
   width: 3.6rem; height: 3.6rem; border-radius: 50%; object-fit: cover;
@@ -175,7 +180,10 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
   transition: transform .15s;
 }
 .face a:hover img { transform: scale(1.06); }
-.face figcaption { font-size: .72rem; line-height: 1.25; color: var(--fg); }
+.face figcaption {
+  font-size: .72rem; line-height: 1.25; color: var(--fg);
+  overflow-wrap: break-word; hyphens: auto;
+}
 /* Faded: the visual grammar of "no longer playing this". */
 .face.faded img { filter: grayscale(1); opacity: .45; }
 .face.faded figcaption { color: var(--muted); }
@@ -200,7 +208,7 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
 .face.square img, .face.square .no-art { border-radius: 3px; }
 .face.square a { border-radius: 3px; }
 /* Song titles need more room than an artist name, and carry a performer under. */
-.face.square { width: 5.2rem; }
+.face.square { flex-basis: 5.2rem; }
 .face .sub { display: block; color: var(--muted); font-size: .66rem; margin-top: .1rem; }
 .face.faded .sub { color: var(--faint); }
 
