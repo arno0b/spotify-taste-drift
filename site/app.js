@@ -1,5 +1,5 @@
 const $ = (id) => document.getElementById(id);
-const TOP_N = 10; // lines that get weight and a name label in Figure 1
+const TOP_N = 10; // rows shown by default in the rank table
 
 function tile(label, value) {
   return `<div class="tile"><div class="value">${value}</div><div class="label">${label}</div></div>`;
