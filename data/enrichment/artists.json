@@ -235,6 +235,19 @@
     "name": "MEDUZA",
     "status": "ok"
   },
+  "164Uj4eKjl6zTBKfJLFKKK": {
+    "deezer_fans": 143923,
+    "deezer_id": "14486481",
+    "fetched_at": "2026-09-27T11:12:47Z",
+    "genres": [
+      "alternative pop",
+      "indie pop",
+      "pop"
+    ],
+    "mbid": "f29e031f-c6b6-4d52-8edd-dc8e14378e74",
+    "name": "JVKE",
+    "status": "ok"
+  },
   "17XXKfRBMCWvLrqGoNkJXm": {
     "deezer_fans": 46537,
     "deezer_id": "2439",
@@ -723,6 +736,15 @@
     "mbid": "5b6ebfe0-f72b-4902-bba9-74c8af0f1af0",
     "name": "The 1975",
     "status": "ok"
+  },
+  "3tEw3hDETkxsewEVCd93Os": {
+    "deezer_fans": null,
+    "deezer_id": null,
+    "fetched_at": "2026-09-26T10:38:50Z",
+    "genres": [],
+    "mbid": null,
+    "name": "Icons",
+    "status": "not_found"
   },
   "3yKoHgjtyenCOIRaD2Gghu": {
     "deezer_fans": 10759,
