@@ -3,149 +3,7 @@
     "skipped_files": [],
     "snapshot_count": 14
   },
-  "divergence": [
-    {
-      "date": "2026-09-12",
-      "kind": "artist",
-      "overlap": 0.5
-    },
-    {
-      "date": "2026-09-12",
-      "kind": "track",
-      "overlap": 0.26
-    },
-    {
-      "date": "2026-09-13",
-      "kind": "artist",
-      "overlap": 0.5227272727272727
-    },
-    {
-      "date": "2026-09-13",
-      "kind": "track",
-      "overlap": 0.28
-    },
-    {
-      "date": "2026-09-14",
-      "kind": "artist",
-      "overlap": 0.5217391304347826
-    },
-    {
-      "date": "2026-09-14",
-      "kind": "track",
-      "overlap": 0.26
-    },
-    {
-      "date": "2026-09-15",
-      "kind": "artist",
-      "overlap": 0.5217391304347826
-    },
-    {
-      "date": "2026-09-15",
-      "kind": "track",
-      "overlap": 0.26
-    },
-    {
-      "date": "2026-09-16",
-      "kind": "artist",
-      "overlap": 0.5217391304347826
-    },
-    {
-      "date": "2026-09-16",
-      "kind": "track",
-      "overlap": 0.24
-    },
-    {
-      "date": "2026-09-17",
-      "kind": "artist",
-      "overlap": 0.52
-    },
-    {
-      "date": "2026-09-17",
-      "kind": "track",
-      "overlap": 0.28
-    },
-    {
-      "date": "2026-09-18",
-      "kind": "artist",
-      "overlap": 0.54
-    },
-    {
-      "date": "2026-09-18",
-      "kind": "track",
-      "overlap": 0.26
-    },
-    {
-      "date": "2026-09-19",
-      "kind": "artist",
-      "overlap": 0.54
-    },
-    {
-      "date": "2026-09-19",
-      "kind": "track",
-      "overlap": 0.24
-    },
-    {
-      "date": "2026-09-20",
-      "kind": "artist",
-      "overlap": 0.54
-    },
-    {
-      "date": "2026-09-20",
-      "kind": "track",
-      "overlap": 0.26
-    },
-    {
-      "date": "2026-09-21",
-      "kind": "artist",
-      "overlap": 0.54
-    },
-    {
-      "date": "2026-09-21",
-      "kind": "track",
-      "overlap": 0.24
-    },
-    {
-      "date": "2026-09-22",
-      "kind": "artist",
-      "overlap": 0.5714285714285714
-    },
-    {
-      "date": "2026-09-22",
-      "kind": "track",
-      "overlap": 0.24
-    },
-    {
-      "date": "2026-09-23",
-      "kind": "artist",
-      "overlap": 0.58
-    },
-    {
-      "date": "2026-09-23",
-      "kind": "track",
-      "overlap": 0.24
-    },
-    {
-      "date": "2026-09-24",
-      "kind": "artist",
-      "overlap": 0.56
-    },
-    {
-      "date": "2026-09-24",
-      "kind": "track",
-      "overlap": 0.24
-    },
-    {
-      "date": "2026-09-25",
-      "kind": "artist",
-      "overlap": 0.56
-    },
-    {
-      "date": "2026-09-25",
-      "kind": "track",
-      "overlap": 0.24
-    }
-  ],
-  "generated_at": "2026-09-25T01:30:52Z",
+  "generated_at": "2026-09-27T16:11:11Z",
   "genre_coverage": [
     {
       "date": "2026-09-25",
@@ -1177,140 +1035,160 @@
           "long": null,
           "name": "Indalo",
           "short": 12,
-          "spotify_id": "37LGjqM0je1KNrLRD3MZ47"
+          "spotify_id": "37LGjqM0je1KNrLRD3MZ47",
+          "subtitle": ""
         },
         {
           "gap": 42,
           "long": null,
           "name": "DJ EXE",
           "short": 18,
-          "spotify_id": "6MK5Z7OjpkcN6OFe6nh8pi"
+          "spotify_id": "6MK5Z7OjpkcN6OFe6nh8pi",
+          "subtitle": ""
         },
         {
           "gap": 39,
           "long": 49,
           "name": "John Mayer",
           "short": 10,
-          "spotify_id": "0hEurMDQu99nJRq8pTxO14"
+          "spotify_id": "0hEurMDQu99nJRq8pTxO14",
+          "subtitle": ""
         },
         {
           "gap": 39,
           "long": null,
           "name": "Gordinho Bolado",
           "short": 21,
-          "spotify_id": "6yiZkjeldEjFFhIaXj3w77"
+          "spotify_id": "6yiZkjeldEjFFhIaXj3w77",
+          "subtitle": ""
         },
         {
           "gap": 36,
           "long": null,
           "name": "Edward Maya",
           "short": 24,
-          "spotify_id": "6XwwFnewNgWp81MYMK8zLq"
+          "spotify_id": "6XwwFnewNgWp81MYMK8zLq",
+          "subtitle": ""
         },
         {
           "gap": 35,
           "long": null,
           "name": "Meghdol",
           "short": 25,
-          "spotify_id": "0WBg7b6KiPmfh7lI5vbFKC"
+          "spotify_id": "0WBg7b6KiPmfh7lI5vbFKC",
+          "subtitle": ""
         },
         {
           "gap": 32,
           "long": 46,
           "name": "Frank Ocean",
           "short": 14,
-          "spotify_id": "2h93pZq0e7k5yf4dywlkpM"
+          "spotify_id": "2h93pZq0e7k5yf4dywlkpM",
+          "subtitle": ""
         },
         {
           "gap": 31,
           "long": null,
           "name": "Cozy Coffee Shop",
           "short": 29,
-          "spotify_id": "0qjWYusrckF9BpkvWaoKRO"
+          "spotify_id": "0qjWYusrckF9BpkvWaoKRO",
+          "subtitle": ""
         },
         {
           "gap": 30,
           "long": null,
           "name": "sombr",
           "short": 30,
-          "spotify_id": "4G9NDjRyZFDlJKMRL8hx3S"
+          "spotify_id": "4G9NDjRyZFDlJKMRL8hx3S",
+          "subtitle": ""
         },
         {
           "gap": 29,
           "long": null,
           "name": "Kaaktaal",
           "short": 31,
-          "spotify_id": "7fhlWsdi6oTTxj8d3uYIAn"
+          "spotify_id": "7fhlWsdi6oTTxj8d3uYIAn",
+          "subtitle": ""
         },
         {
           "gap": 28,
           "long": null,
           "name": "Balam",
           "short": 32,
-          "spotify_id": "5io6IfbYy6t9IBtzYdOwN9"
+          "spotify_id": "5io6IfbYy6t9IBtzYdOwN9",
+          "subtitle": ""
         },
         {
           "gap": 27,
           "long": null,
           "name": "Strawberry Guy",
           "short": 33,
-          "spotify_id": "1AbJ2cmwK400LSvdvBL5Jc"
+          "spotify_id": "1AbJ2cmwK400LSvdvBL5Jc",
+          "subtitle": ""
         },
         {
           "gap": 26,
           "long": null,
           "name": "SEKIMANE",
           "short": 34,
-          "spotify_id": "1yevH7mkPMXeSTnA9SwHvq"
+          "spotify_id": "1yevH7mkPMXeSTnA9SwHvq",
+          "subtitle": ""
         },
         {
           "gap": 25,
           "long": null,
           "name": "Ariana Grande",
           "short": 35,
-          "spotify_id": "66CXWjxzNUsdJxJ2JdwvnR"
+          "spotify_id": "66CXWjxzNUsdJxJ2JdwvnR",
+          "subtitle": ""
         },
         {
           "gap": 24,
           "long": null,
           "name": "Foreigner",
           "short": 36,
-          "spotify_id": "6IRouO5mvvfcyxtPDKMYFN"
+          "spotify_id": "6IRouO5mvvfcyxtPDKMYFN",
+          "subtitle": ""
         },
         {
           "gap": 23,
           "long": null,
           "name": "AP Dhillon",
           "short": 37,
-          "spotify_id": "6LEG9Ld1aLImEFEVHdWNSB"
+          "spotify_id": "6LEG9Ld1aLImEFEVHdWNSB",
+          "subtitle": ""
         },
         {
           "gap": 21,
           "long": null,
           "name": "Calvin Harris",
           "short": 39,
-          "spotify_id": "7CajNmpbOovFoOoasH2HaY"
+          "spotify_id": "7CajNmpbOovFoOoasH2HaY",
+          "subtitle": ""
         },
         {
           "gap": 19,
           "long": null,
           "name": "Simply Red",
           "short": 41,
-          "spotify_id": "1fa0cOhromAZdq2xRA4vv8"
+          "spotify_id": "1fa0cOhromAZdq2xRA4vv8",
+          "subtitle": ""
         },
         {
           "gap": 17,
           "long": 30,
           "name": "Tory Lanez",
           "short": 13,
-          "spotify_id": "2jku7tDXc6XoB6MO2hFuqg"
+          "spotify_id": "2jku7tDXc6XoB6MO2hFuqg",
+          "subtitle": ""
         },
         {
           "gap": 17,
           "long": null,
           "name": "Atif Aslam",
           "short": 43,
-          "spotify_id": "2oSONSC9zQ4UonDKnLqksx"
+          "spotify_id": "2oSONSC9zQ4UonDKnLqksx",
+          "subtitle": ""
         }
       ],
       "counts": {
@@ -1323,102 +1201,122 @@
         {
           "long": 8,
           "name": "d4vd",
-          "spotify_id": "5y8tKLUfMvliMe8IKamR32"
+          "spotify_id": "5y8tKLUfMvliMe8IKamR32",
+          "subtitle": ""
         },
         {
           "long": 11,
           "name": "PinkPantheress",
-          "spotify_id": "78rUTD7y6Cy67W1RVzYs7t"
+          "spotify_id": "78rUTD7y6Cy67W1RVzYs7t",
+          "subtitle": ""
         },
         {
           "long": 21,
           "name": "Vansire",
-          "spotify_id": "6ft7JnxMyZhp7N52qzHymY"
+          "spotify_id": "6ft7JnxMyZhp7N52qzHymY",
+          "subtitle": ""
         },
         {
           "long": 23,
           "name": "VØJ",
-          "spotify_id": "4KRllJ2dEeoqvxOQLOgOsI"
+          "spotify_id": "4KRllJ2dEeoqvxOQLOgOsI",
+          "subtitle": ""
         },
         {
           "long": 24,
           "name": "Flawed Mangoes",
-          "spotify_id": "4MrQDA45Gd0llLrwFUzimG"
+          "spotify_id": "4MrQDA45Gd0llLrwFUzimG",
+          "subtitle": ""
         },
         {
           "long": 25,
           "name": "Home",
-          "spotify_id": "2exebQUDoIoT0dXA8BcN1P"
+          "spotify_id": "2exebQUDoIoT0dXA8BcN1P",
+          "subtitle": ""
         },
         {
           "long": 26,
           "name": "Pastel Ghost",
-          "spotify_id": "06O23tLg0or676h8EEzH7W"
+          "spotify_id": "06O23tLg0or676h8EEzH7W",
+          "subtitle": ""
         },
         {
           "long": 29,
           "name": "Men I Trust",
-          "spotify_id": "3zmfs9cQwzJl575W1ZYXeT"
+          "spotify_id": "3zmfs9cQwzJl575W1ZYXeT",
+          "subtitle": ""
         },
         {
           "long": 31,
           "name": "Idealism",
-          "spotify_id": "6YJ4EgQzDfJnIHRbqIHAdD"
+          "spotify_id": "6YJ4EgQzDfJnIHRbqIHAdD",
+          "subtitle": ""
         },
         {
           "long": 35,
           "name": "Engelbert Humperdinck",
-          "spotify_id": "17XXKfRBMCWvLrqGoNkJXm"
+          "spotify_id": "17XXKfRBMCWvLrqGoNkJXm",
+          "subtitle": ""
         },
         {
           "long": 36,
           "name": "ADTurnUp",
-          "spotify_id": "4RRmL81NhhouCKGo8I6GaU"
+          "spotify_id": "4RRmL81NhhouCKGo8I6GaU",
+          "subtitle": ""
         },
         {
           "long": 37,
           "name": "pxlse.",
-          "spotify_id": "1cGyguqPQY22oUd4fKglFS"
+          "spotify_id": "1cGyguqPQY22oUd4fKglFS",
+          "subtitle": ""
         },
         {
           "long": 38,
           "name": "Laufey",
-          "spotify_id": "7gW0r5CkdEUMm42w9XpyZO"
+          "spotify_id": "7gW0r5CkdEUMm42w9XpyZO",
+          "subtitle": ""
         },
         {
           "long": 39,
           "name": "The Marías",
-          "spotify_id": "2sSGPbdZJkaSE2AbcGOACx"
+          "spotify_id": "2sSGPbdZJkaSE2AbcGOACx",
+          "subtitle": ""
         },
         {
           "long": 40,
           "name": "Drake",
-          "spotify_id": "3TVXtAsR1Inumwj472S9r4"
+          "spotify_id": "3TVXtAsR1Inumwj472S9r4",
+          "subtitle": ""
         },
         {
           "long": 42,
           "name": "Kanye West",
-          "spotify_id": "5K4W6rqBFWDnAN6FQUkS6x"
+          "spotify_id": "5K4W6rqBFWDnAN6FQUkS6x",
+          "subtitle": ""
         },
         {
           "long": 43,
           "name": "tomcbumpz",
-          "spotify_id": "0klU31gyC6EZqKgLvVANCy"
+          "spotify_id": "0klU31gyC6EZqKgLvVANCy",
+          "subtitle": ""
         },
         {
           "long": 44,
           "name": "George Michael",
-          "spotify_id": "19ra5tSw0tWufvUp8GotLo"
+          "spotify_id": "19ra5tSw0tWufvUp8GotLo",
+          "subtitle": ""
         },
         {
           "long": 45,
           "name": "Mitraz",
-          "spotify_id": "3iGhlvzpXc0UHBQ7klAItX"
+          "spotify_id": "3iGhlvzpXc0UHBQ7klAItX",
+          "subtitle": ""
         },
         {
           "long": 47,
           "name": "Led Zeppelin",
-          "spotify_id": "36QJpDe2go2KgaRleHCDTp"
+          "spotify_id": "36QJpDe2go2KgaRleHCDTp",
+          "subtitle": ""
         }
       ],
       "kind": "artist"
@@ -1430,140 +1328,160 @@
           "long": null,
           "name": "Baptized In Fear",
           "short": 1,
-          "spotify_id": "0bxRSMz5WY1VuMmOhanE4b"
+          "spotify_id": "0bxRSMz5WY1VuMmOhanE4b",
+          "subtitle": "The Weeknd"
         },
         {
           "gap": 58,
           "long": null,
           "name": "Shut up My Moms Calling",
           "short": 2,
-          "spotify_id": "3hxIUxnT27p5WcmjGUXNwx"
+          "spotify_id": "3hxIUxnT27p5WcmjGUXNwx",
+          "subtitle": "Hotel Ugly"
         },
         {
           "gap": 57,
           "long": null,
           "name": "Ekanto Golaap",
           "short": 3,
-          "spotify_id": "7LvHieZe4yPYpDRF0OPCmk"
+          "spotify_id": "7LvHieZe4yPYpDRF0OPCmk",
+          "subtitle": "Indalo"
         },
         {
           "gap": 56,
           "long": null,
           "name": "Shape Of My Heart",
           "short": 4,
-          "spotify_id": "6CKoWCWAqEVWVjpeoJXyNH"
+          "spotify_id": "6CKoWCWAqEVWVjpeoJXyNH",
+          "subtitle": "Sting"
         },
         {
           "gap": 53,
           "long": null,
           "name": "Air",
           "short": 7,
-          "spotify_id": "3gQSWGaCoaxONqXitmn7GX"
+          "spotify_id": "3gQSWGaCoaxONqXitmn7GX",
+          "subtitle": "Blvk"
         },
         {
           "gap": 52,
           "long": null,
           "name": "Love Hurts",
           "short": 8,
-          "spotify_id": "1i5oEx2vFczQ2sCY3c6Kn5"
+          "spotify_id": "1i5oEx2vFczQ2sCY3c6Kn5",
+          "subtitle": "Nazareth"
         },
         {
           "gap": 51,
           "long": null,
           "name": "Somebody Else",
           "short": 9,
-          "spotify_id": "5hc71nKsUgtwQ3z52KEKQk"
+          "spotify_id": "5hc71nKsUgtwQ3z52KEKQk",
+          "subtitle": "The 1975"
         },
         {
           "gap": 50,
           "long": null,
           "name": "Purple Rain",
           "short": 10,
-          "spotify_id": "1uvyZBs4IZYRebHIB1747m"
+          "spotify_id": "1uvyZBs4IZYRebHIB1747m",
+          "subtitle": "Prince"
         },
         {
           "gap": 48,
           "long": null,
           "name": "Chamber Of Reflection",
           "short": 12,
-          "spotify_id": "1Snko28yJOihcRVXs9dAo9"
+          "spotify_id": "1Snko28yJOihcRVXs9dAo9",
+          "subtitle": "Mac DeMarco"
         },
         {
           "gap": 47,
           "long": null,
           "name": "Niagara Falls",
           "short": 13,
-          "spotify_id": "2v0AG62ZHtD3I4YmTb3WYM"
+          "spotify_id": "2v0AG62ZHtD3I4YmTb3WYM",
+          "subtitle": "The Weeknd"
         },
         {
           "gap": 46,
           "long": null,
           "name": "Ela ké Leitada",
           "short": 14,
-          "spotify_id": "161dJFOgyuYcgKg0AzYuAh"
+          "spotify_id": "161dJFOgyuYcgKg0AzYuAh",
+          "subtitle": "Prod.Nifour"
         },
         {
           "gap": 45,
           "long": null,
           "name": "Hum",
           "short": 15,
-          "spotify_id": "7oNZfE9wnu7SP55LwNSiKG"
+          "spotify_id": "7oNZfE9wnu7SP55LwNSiKG",
+          "subtitle": "Murtaza Qizilbash"
         },
         {
           "gap": 44,
           "long": null,
           "name": "Baby Came Home 2 / Valentines",
           "short": 16,
-          "spotify_id": "40gvh6jP5qxMJuMmF9lG9A"
+          "spotify_id": "40gvh6jP5qxMJuMmF9lG9A",
+          "subtitle": "The Neighbourhood"
         },
         {
           "gap": 43,
           "long": null,
           "name": "Open Hearts",
           "short": 17,
-          "spotify_id": "0stJVUUSrbEwyFHOp2dRu0"
+          "spotify_id": "0stJVUUSrbEwyFHOp2dRu0",
+          "subtitle": "The Weeknd"
         },
         {
           "gap": 42,
           "long": null,
           "name": "Kiss of Life",
           "short": 18,
-          "spotify_id": "65krtHkaYLPr0mEbjL61UP"
+          "spotify_id": "65krtHkaYLPr0mEbjL61UP",
+          "subtitle": "Sade"
         },
         {
           "gap": 40,
           "long": null,
           "name": "Woh",
           "short": 20,
-          "spotify_id": "1GDJhAiO9tqjMuDWFad0IF"
+          "spotify_id": "1GDJhAiO9tqjMuDWFad0IF",
+          "subtitle": "Murtaza Qizilbash"
         },
         {
           "gap": 38,
           "long": null,
           "name": "In And Out Of Love",
           "short": 22,
-          "spotify_id": "1FzbOPWCZiNxnLjAhY1jAR"
+          "spotify_id": "1FzbOPWCZiNxnLjAhY1jAR",
+          "subtitle": "Armin van Buuren"
         },
         {
           "gap": 37,
           "long": null,
           "name": "Naam Chilo Na",
           "short": 23,
-          "spotify_id": "4YWKbpls9OcdXAsTRd7ERR"
+          "spotify_id": "4YWKbpls9OcdXAsTRd7ERR",
+          "subtitle": "Arnob"
         },
         {
           "gap": 36,
           "long": null,
           "name": "Abar Dekha Holey - Karagarer Version",
           "short": 24,
-          "spotify_id": "2Y04ZSRKADiBdKHLaF1RtG"
+          "spotify_id": "2Y04ZSRKADiBdKHLaF1RtG",
+          "subtitle": "Kaaktaal"
         },
         {
           "gap": 35,
           "long": null,
           "name": "KALYANI (with Shreya Ghoshal) - Remix",
           "short": 25,
-          "spotify_id": "2y8mkajKikV5S1PRCMQ5WL"
+          "spotify_id": "2y8mkajKikV5S1PRCMQ5WL",
+          "subtitle": "ARJN"
         }
       ],
       "counts": {
@@ -1576,102 +1494,122 @@
         {
           "long": 2,
           "name": "i was only temporary",
-          "spotify_id": "0X4YYZtZcvqNqYIpMd93IT"
+          "spotify_id": "0X4YYZtZcvqNqYIpMd93IT",
+          "subtitle": "my head is empty"
         },
         {
           "long": 3,
           "name": "snowfall",
-          "spotify_id": "4xF4ZBGPZKxECeDFrqSAG4"
+          "spotify_id": "4xF4ZBGPZKxECeDFrqSAG4",
+          "subtitle": "Øneheart"
         },
         {
           "long": 4,
           "name": "nagashi",
-          "spotify_id": "28pUgp8Cifsnwrv5Mvltyz"
+          "spotify_id": "28pUgp8Cifsnwrv5Mvltyz",
+          "subtitle": "Idealism"
         },
         {
           "long": 5,
           "name": "welcome and goodbye",
-          "spotify_id": "00RLNHc2jkEjUoCUlFgPVT"
+          "spotify_id": "00RLNHc2jkEjUoCUlFgPVT",
+          "subtitle": "Dream, Ivory"
         },
         {
           "long": 6,
           "name": "彩霞",
-          "spotify_id": "6JCkLyhLxufrb10cem9WA6"
+          "spotify_id": "6JCkLyhLxufrb10cem9WA6",
+          "subtitle": "Yasuharu Takanashi"
         },
         {
           "long": 8,
           "name": "Glimpse of Us",
-          "spotify_id": "2mlNgAeIBnL78ZriXgrRHz"
+          "spotify_id": "2mlNgAeIBnL78ZriXgrRHz",
+          "subtitle": "Joji"
         },
         {
           "long": 10,
           "name": "Memory Reboot",
-          "spotify_id": "1A7qPfbcyRVEdcZiwTFhZI"
+          "spotify_id": "1A7qPfbcyRVEdcZiwTFhZI",
+          "subtitle": "VØJ"
         },
         {
           "long": 12,
           "name": "Apocalypse",
-          "spotify_id": "1oAwsWBovWRIp7qLMGPIet"
+          "spotify_id": "1oAwsWBovWRIp7qLMGPIet",
+          "subtitle": "Cigarettes After Sex"
         },
         {
           "long": 13,
           "name": "Cry",
-          "spotify_id": "7mDTvYD2ieE4Q28XFziMfJ"
+          "spotify_id": "7mDTvYD2ieE4Q28XFziMfJ",
+          "subtitle": "Cigarettes After Sex"
         },
         {
           "long": 14,
           "name": "Jhol",
-          "spotify_id": "4XTgFBxBHN6var1BzAgE1m"
+          "spotify_id": "4XTgFBxBHN6var1BzAgE1m",
+          "subtitle": "Maanu"
         },
         {
           "long": 15,
           "name": "Romantic Homicide",
-          "spotify_id": "0SCLsDJtC7DmOwks1tsszt"
+          "spotify_id": "0SCLsDJtC7DmOwks1tsszt",
+          "subtitle": "d4vd"
         },
         {
           "long": 16,
           "name": "a million faces",
-          "spotify_id": "7F2nEClWeQ3x5ycA5qtKOI"
+          "spotify_id": "7F2nEClWeQ3x5ycA5qtKOI",
+          "subtitle": "girlsweetvoiced"
         },
         {
           "long": 17,
           "name": "Divine Failure",
-          "spotify_id": "37s1WRi8s1rZysbjvBGrEd"
+          "spotify_id": "37s1WRi8s1rZysbjvBGrEd",
+          "subtitle": "Elsooyer"
         },
         {
           "long": 18,
           "name": "Freaks but Slowed Muffled Echo",
-          "spotify_id": "4sh8w9hWn04EWoCAeIRdQm"
+          "spotify_id": "4sh8w9hWn04EWoCAeIRdQm",
+          "subtitle": "Bondex"
         },
         {
           "long": 19,
           "name": "Beanie",
-          "spotify_id": "5e0b9LgOfi3aJSKXFcOWRe"
+          "spotify_id": "5e0b9LgOfi3aJSKXFcOWRe",
+          "subtitle": "Chezile"
         },
         {
           "long": 20,
           "name": "Co2",
-          "spotify_id": "3hB9lDLyAClYVZivMMl20N"
+          "spotify_id": "3hB9lDLyAClYVZivMMl20N",
+          "subtitle": "Prateek Kuhad"
         },
         {
           "long": 22,
           "name": "Fainted",
-          "spotify_id": "69KUKhBqyGvtO1jtJwZEcv"
+          "spotify_id": "69KUKhBqyGvtO1jtJwZEcv",
+          "subtitle": "Narvent"
         },
         {
           "long": 23,
           "name": "Keep on Loving You",
-          "spotify_id": "3GUSidbQwd7xuvU6AQorRh"
+          "spotify_id": "3GUSidbQwd7xuvU6AQorRh",
+          "subtitle": "Cigarettes After Sex"
         },
         {
           "long": 24,
           "name": "Here With Me",
-          "spotify_id": "5LrN7yUQAzvthd4QujgPFr"
+          "spotify_id": "5LrN7yUQAzvthd4QujgPFr",
+          "subtitle": "d4vd"
         },
         {
           "long": 25,
           "name": "Something About You",
-          "spotify_id": "6RiiSy9GzSwiyDEJDiMuKe"
+          "spotify_id": "6RiiSy9GzSwiyDEJDiMuKe",
+          "subtitle": "Eyedress"
         }
       ],
       "kind": "track"
@@ -22876,260 +22814,6 @@
       ]
     }
   },
-  "reach": [
-    {
-      "artists_measured": 46,
-      "date": "2026-09-12",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-12",
-      "median_fans": 445012,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 29,
-      "date": "2026-09-12",
-      "median_fans": 445012,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-13",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-13",
-      "median_fans": 445012,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 30,
-      "date": "2026-09-13",
-      "median_fans": 502189.0,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-14",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-14",
-      "median_fans": 445012,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 31,
-      "date": "2026-09-14",
-      "median_fans": 559366,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-15",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-15",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 31,
-      "date": "2026-09-15",
-      "median_fans": 559366,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-16",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-16",
-      "median_fans": 321997,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 31,
-      "date": "2026-09-16",
-      "median_fans": 559366,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-17",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-17",
-      "median_fans": 321997,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 33,
-      "date": "2026-09-17",
-      "median_fans": 559366,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-18",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-18",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 33,
-      "date": "2026-09-18",
-      "median_fans": 562912,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-19",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-19",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 33,
-      "date": "2026-09-19",
-      "median_fans": 562912,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-20",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-20",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 34,
-      "date": "2026-09-20",
-      "median_fans": 561139.0,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-21",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-21",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 35,
-      "date": "2026-09-21",
-      "median_fans": 562912,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-22",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-22",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-22",
-      "median_fans": 502189.0,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-23",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-23",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-23",
-      "median_fans": 445012,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-24",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-24",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-24",
-      "median_fans": 476688.5,
-      "time_range": "short_term"
-    },
-    {
-      "artists_measured": 46,
-      "date": "2026-09-25",
-      "median_fans": 144598.5,
-      "time_range": "long_term"
-    },
-    {
-      "artists_measured": 38,
-      "date": "2026-09-25",
-      "median_fans": 383504.5,
-      "time_range": "medium_term"
-    },
-    {
-      "artists_measured": 39,
-      "date": "2026-09-25",
-      "median_fans": 508365,
-      "time_range": "short_term"
-    }
-  ],
   "snapshot_dates": [
     "2026-09-12",
     "2026-09-13",

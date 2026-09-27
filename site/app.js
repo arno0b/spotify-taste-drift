@@ -20,6 +20,12 @@ function arrivalDate(units, unitDays) {
   return when.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" });
 }
 
+function longDate(iso) {
+  return new Date(iso + "T00:00:00Z").toLocaleDateString(undefined, {
+    day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+  });
+}
+
 function pct(x) {
   return `${Math.round(x * 100)}%`;
 }
@@ -56,8 +62,9 @@ function render(data) {
   writeLede(data);
 
   const dates = data.snapshot_dates;
+  // "16 daily snapshots" is a fact about the pipeline, not about the reader.
   $("byline").textContent = dates.length
-    ? `${plural(dates.length, "daily snapshot")} · ${dates[0]} to ${dates[dates.length - 1]}`
+    ? `Tracking daily since ${longDate(dates[0])}.`
     : "No snapshots yet.";
 
   const skipped = data.data_quality.skipped_files;
@@ -71,17 +78,16 @@ function render(data) {
 
   drawVerdict(data.headline);
 
+  drawHorizon("track", "tracks", data.horizon, data.images);
+  drawHorizon("artist", "horizon", data.horizon, data.images);
+  drawGenreShift(data.genre_shift, data.genre_coverage);
+
   drawMovers(data);
   for (const control of ["kind", "range", "count"]) {
     $(control).onchange = () => drawMovers(data);
   }
 
-  drawHorizon(data.horizon, data.images);
-  drawGenreShift(data.genre_shift, data.genre_coverage);
-  drawDivergence(data.divergence.filter((d) => d.kind === "artist"));
-  drawReach(data.reach);
-  drawSurvival(data.survival);
-  drawHalfLife(data.half_life);
+  drawUnlocks(data.survival, data.half_life);
 }
 
 // Hand-rolled rather than 50 Plot instances: a sparkline is a polyline, and
@@ -226,47 +232,67 @@ function drawMovers(data) {
 
 const FACES = 6;
 
-function face(entry, images, faded) {
+function face(entry, images, faded, kind) {
   const src = images[entry.spotify_id];
+  // Album covers are square; artist portraits read better as circles.
+  const shape = kind === "track" ? " square" : "";
   const art = src
     ? `<img src="${src}" alt="" loading="lazy" width="58" height="58">`
     : `<span class="no-art" aria-hidden="true"></span>`;
-  const link = `https://open.spotify.com/artist/${entry.spotify_id}`;
+  const link = `https://open.spotify.com/${kind}/${entry.spotify_id}`;
+  const sub = entry.subtitle ? `<span class="sub">${entry.subtitle}</span>` : "";
   return (
-    `<figure class="face${faded ? " faded" : ""}">` +
+    `<figure class="face${shape}${faded ? " faded" : ""}">` +
     `<a href="${link}" target="_blank" rel="noopener">${art}</a>` +
-    `<figcaption>${entry.name}</figcaption></figure>`
+    `<figcaption>${entry.name}${sub}</figcaption></figure>`
   );
 }
 
-function drawHorizon(horizon, images) {
-  const node = $("horizon");
-  const caption = $("horizon-cap");
-  const artist = (horizon || []).filter((h) => h.kind === "artist").pop();
-  if (!artist) {
+const HORIZON_COPY = {
+  artist: {
+    inHead: "Taking over",
+    outHead: "Slipping away",
+    caption:
+      "Artists you are playing heavily in the last four weeks that were nowhere " +
+      "near your top fifty over the year. The faded ones are the reverse — " +
+      "regulars from the year that you have stopped playing.",
+  },
+  track: {
+    inHead: "On heavy rotation",
+    outHead: "Worn out",
+    caption:
+      "Songs big in your last four weeks that were not among your most played " +
+      "over the year. The faded ones you played all year and have now put down.",
+  },
+};
+
+function drawHorizon(kind, nodeId, horizon, images) {
+  const node = $(nodeId);
+  const caption = $(nodeId + "-cap");
+  const block = (horizon || []).filter((h) => h.kind === kind).pop();
+  const copy = HORIZON_COPY[kind];
+  if (!block) {
     caption.textContent = "";
     return awaiting(node, "Needs a snapshot with both the four-week and yearly lists.");
   }
 
   const pics = images || {};
-  const rise = artist.ascending.slice(0, FACES);
-  const fall = artist.fading.slice(0, FACES);
+  const rise = block.ascending.slice(0, FACES);
+  const fall = block.fading.slice(0, FACES);
 
   // Artwork rather than ranks: Spotify's own visual language. A listener
-  // recognises a face far faster than they read "#12 now vs absent last year".
+  // recognises a cover or a face far faster than a rank against an absence.
   node.innerHTML =
-    `<p class="rowhead up">Taking over</p>` +
-    `<div class="faces">${rise.map((e) => face(e, pics, false)).join("") ||
+    `<p class="rowhead up">${copy.inHead}</p>` +
+    `<div class="faces">${rise.map((e) => face(e, pics, false, kind)).join("") ||
       `<p class="pending">Nothing climbing.</p>`}</div>` +
-    `<p class="rowhead down">Slipping away</p>` +
-    `<div class="faces">${fall.map((e) => face(e, pics, true)).join("") ||
+    `<p class="rowhead down">${copy.outHead}</p>` +
+    `<div class="faces">${fall.map((e) => face(e, pics, true, kind)).join("") ||
       `<p class="pending">Nothing fading.</p>`}</div>`;
 
-  const c = artist.counts;
+  const c = block.counts;
   caption.textContent =
-    `Artists taking over are big in your last four weeks but were nowhere near your ` +
-    `top fifty over the year. The faded ones are the reverse — yearly regulars you ` +
-    `have stopped playing. ${c.short_only} have arrived, ${c.long_only} have gone, ` +
+    `${copy.caption} ${c.short_only} have arrived, ${c.long_only} have gone, ` +
     `and ${c.both} have stayed throughout.`;
 }
 
@@ -303,99 +329,25 @@ function drawGenreShift(shift, coverage) {
     (cov ? ` Genres could be identified for ${cov.resolved} of your ${cov.total} artists.` : "");
 }
 
-function drawReach(rows) {
-  const node = $("reach");
-  const caption = $("reach-cap");
-  const shortTerm = (rows || []).filter((r) => r.time_range === "short_term");
-  if (!shortTerm.length) {
-    caption.textContent = "";
-    return awaiting(node, "No reach data yet — run tools/enrich_artists.py.");
-  }
-
-  const latest = shortTerm[shortTerm.length - 1];
-  caption.textContent =
-    `Median Deezer fan count of the artists in the last four weeks — a stand-in ` +
-    `for Spotify's withdrawn popularity score. Median, not mean, because fan ` +
-    `counts span five orders of magnitude. Based on ${latest.artists_measured} artists.`;
-
-  node.replaceChildren(
-    Plot.plot({
-      height: 200,
-      style: { background: "transparent" },
-      // Log scale: fan counts run from hundreds to tens of millions.
-      y: { type: "log", label: "median fans", grid: true },
-      x: { label: null, type: "utc" },
-      marks: [
-        Plot.line(shortTerm, {
-          x: (d) => new Date(d.date), y: "median_fans",
-          stroke: "var(--accent)", strokeWidth: 1.8,
-        }),
-        Plot.dot(shortTerm, {
-          x: (d) => new Date(d.date), y: "median_fans", r: 2.5, fill: "var(--accent)",
-        }),
-      ],
-    })
-  );
-}
-
-function drawDivergence(rows) {
-  const node = $("divergence");
-  if (!rows.length) return awaiting(node, "Needs at least one snapshot.");
-
-  node.replaceChildren(
-    Plot.plot({
-      height: 200,
-      style: { background: "transparent" },
-      y: { domain: [0, 1], label: "overlap" },
-      x: { label: null, type: "utc" },
-      marks: [
-        Plot.ruleY([0], { stroke: "var(--line)" }),
-        // The dot matters: with a single snapshot a line mark renders nothing.
-        Plot.line(rows, { x: (d) => new Date(d.date), y: "overlap", stroke: "var(--accent)", strokeWidth: 1.8 }),
-        Plot.dot(rows, { x: (d) => new Date(d.date), y: "overlap", r: 2.5, fill: "var(--accent)" }),
-      ],
-    })
-  );
-}
-
-function drawSurvival(survival) {
-  const node = $("survival");
-  if (!survival.available) {
+// Two empty framed figures promising November was a lot of IOU for a page with
+// four working ones. One sentence carries the same promise.
+function drawUnlocks(survival, halfLife) {
+  const waiting = [];
+  if (survival && !survival.available) {
     const weeks = survival.weeks_needed - survival.weeks_have;
-    return awaiting(
-      node,
-      `Needs ${plural(weeks, "more week")} of history. First appears ${arrivalDate(weeks, 7)}.`
-    );
+    waiting.push(`how long new artists last in your rotation (${plural(weeks, "week")} away)`);
   }
-  node.replaceChildren(
-    Plot.plot({
-      height: 220,
-      style: { background: "transparent" },
-      y: { domain: [0, 1], label: "still in top 50", percent: true },
-      x: { label: "weeks since first appearance" },
-      marks: [Plot.line(survival.curve, { x: "week", y: "fraction", stroke: "var(--accent)", strokeWidth: 1.8 })],
-    })
-  );
-}
-
-function drawHalfLife(halfLife) {
-  const node = $("halflife");
-  if (!halfLife.available) {
+  if (halfLife && !halfLife.available) {
     const spells = halfLife.spells_needed - halfLife.spells_have;
-    return awaiting(
-      node,
-      `Needs ${plural(spells, "more completed spell")} before this can be measured. ` +
-      `A spell is an artist entering the top fifty and later leaving it.`
-    );
+    waiting.push(`how quickly your rotation turns over (needs ${spells} more artists to come and go)`);
   }
-  node.innerHTML = `<p class="lede" style="font-size:1.3rem">${plural(halfLife.median_days, "day")}</p>`;
-  $("halflife-cap").textContent =
-    `How long a typical artist survives in the top fifty, across ` +
-    `${plural(halfLife.spells_have, "completed spell")}.`;
+  $("unlocks").textContent = waiting.length
+    ? `Still gathering history for two longer-term measures: ${waiting.join(", and ")}.`
+    : "";
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { render, drawMovers, writeLede, sparkline }; // for the node smoke test
+  module.exports = { render, drawMovers, writeLede, sparkline, longDate }; // for the node smoke test
 } else {
   fetch("data.json")
     .then((response) => {

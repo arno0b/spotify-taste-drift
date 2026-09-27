@@ -11,7 +11,7 @@
     <p class="kicker">Taste Drift</p>
     <hr class="rule-thick">
 
-    <h1 class="lede" id="lede">Reading the data…</h1>
+    <h1 class="lede" id="lede">Reading the data&hellip;</h1>
     <p class="byline" id="byline"></p>
 
     <div id="quality" class="banner" hidden></div>
@@ -19,12 +19,34 @@
     <section class="tiles" id="headline"></section>
 
     <p class="aside">
-      Curious about your own? <a href="try/">Run it on your account</a> —
+      Curious about your own? <a href="try/">Run it on your account</a> &mdash;
       it works entirely in your browser and sends nothing anywhere.
     </p>
 
+    <!-- Songs first: the lede's sharpest claim is about tracks, and a listener
+         thinks in songs at least as much as in artists. -->
     <figure>
-      <figcaption class="fignum">Figure 1 · Rank movement</figcaption>
+      <figcaption class="fignum">Figure 1 &middot; Songs on the way in and out</figcaption>
+      <div id="tracks" class="chart"></div>
+      <figcaption class="cap" id="tracks-cap"></figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 2 &middot; Artists on the way in and out</figcaption>
+      <div id="horizon" class="chart"></div>
+      <figcaption class="cap" id="horizon-cap"></figcaption>
+    </figure>
+
+    <figure>
+      <figcaption class="fignum">Figure 3 &middot; Your sound</figcaption>
+      <div id="genres" class="chart"></div>
+      <figcaption class="cap" id="genres-cap"></figcaption>
+    </figure>
+
+    <!-- Demoted to last: reference rather than insight. Most weeks it reports
+         that your favourites are still your favourites. -->
+    <figure>
+      <figcaption class="fignum">Figure 4 &middot; Where everything sits</figcaption>
       <div class="controls">
         <label>Kind
           <select id="kind"><option value="artist">Artists</option><option value="track">Tracks</option></select>
@@ -47,44 +69,7 @@
       <figcaption class="cap" id="timeline-cap"></figcaption>
     </figure>
 
-    <figure>
-      <figcaption class="fignum">Figure 2 · Taking over, slipping away</figcaption>
-      <div id="horizon" class="chart"></div>
-      <figcaption class="cap" id="horizon-cap"></figcaption>
-    </figure>
-
-    <figure>
-      <figcaption class="fignum">Figure 3 · Your sound</figcaption>
-      <div id="genres" class="chart"></div>
-      <figcaption class="cap" id="genres-cap"></figcaption>
-    </figure>
-
-    <figure>
-      <figcaption class="fignum">Figure 4 · Short versus long</figcaption>
-      <div id="divergence" class="chart"></div>
-      <figcaption class="cap">
-        How much of the last four weeks was already in the long-term rotation.
-        1.0 means settled; lower means exploring.
-      </figcaption>
-    </figure>
-
-    <figure>
-      <figcaption class="fignum">Figure 5 · Reach</figcaption>
-      <div id="reach" class="chart"></div>
-      <figcaption class="cap" id="reach-cap"></figcaption>
-    </figure>
-
-    <figure>
-      <figcaption class="fignum">Figure 6 · New artist survival</figcaption>
-      <div id="survival" class="chart"></div>
-      <figcaption class="cap">Of the artists here at the start, how many are still here.</figcaption>
-    </figure>
-
-    <figure>
-      <figcaption class="fignum">Figure 7 · Rotation half-life</figcaption>
-      <div id="halflife" class="chart"></div>
-      <figcaption class="cap" id="halflife-cap">How long a typical artist survives in the top fifty.</figcaption>
-    </figure>
+    <p class="unlocks" id="unlocks"></p>
 
     <footer class="colophon">
       <p>
@@ -94,10 +79,8 @@
         nothing here existed before capture started.
       </p>
       <p>
-        Spotify withdrew genres and popularity from these endpoints, so genre
-        and reach come from
-        <a href="https://musicbrainz.org">MusicBrainz</a> and
-        <a href="https://www.deezer.com">Deezer</a> instead, matched by exact
+        Spotify withdrew genres from these endpoints, so genre comes from
+        <a href="https://musicbrainz.org">MusicBrainz</a> instead, matched by exact
         identity rather than by artist name.
       </p>
     </footer>

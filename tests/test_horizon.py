@@ -262,3 +262,28 @@ def test_an_entry_with_no_artwork_is_simply_absent_from_the_map():
     horizon = [{"ascending": [{"spotify_id": "a"}], "fading": []}]
 
     assert images_of(rows, horizon) == {}
+
+
+def test_tracks_carry_the_performer_as_a_subtitle():
+    # A song title alone is not recognisable; Spotify never shows one without
+    # its artist.
+    rows = [
+        dict(row("2026-09-27", "t1", 1, kind="track"), primary_artist_name="Sade"),
+        dict(row("2026-09-27", "t1", 9, kind="track", time_range="long_term"),
+             primary_artist_name="Sade"),
+    ]
+
+    entry = horizon_shift(rows)[0]["ascending"][0]
+
+    assert entry["subtitle"] == "Sade"
+
+
+def test_artists_have_an_empty_subtitle_rather_than_a_missing_key():
+    rows = [
+        row("2026-09-27", "a1", 1),
+        row("2026-09-27", "a1", 9, time_range="long_term"),
+    ]
+
+    entry = horizon_shift(rows)[0]["ascending"][0]
+
+    assert entry["subtitle"] == ""

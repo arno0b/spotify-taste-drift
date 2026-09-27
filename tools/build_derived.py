@@ -26,6 +26,7 @@ SNAPSHOT_COLUMNS = [
     "name",
     "popularity",
     "primary_artist_id",
+    "primary_artist_name",
     "album_id",
     "duration_ms",
     "deezer_fans",
@@ -125,6 +126,7 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=No
         "name": item.get("name", ""),
         "popularity": item.get("popularity", ""),
         "primary_artist_id": "",
+        "primary_artist_name": "",
         "album_id": "",
         "duration_ms": "",
         # Deezer fan count, reached via MusicBrainz. Spotify's own popularity
@@ -139,6 +141,10 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=No
     if kind == "track":
         artists = item.get("artists") or [{}]
         row["primary_artist_id"] = artists[0].get("id", "")
+        # A song title alone is ambiguous; Spotify always shows it with the
+        # artist. The name is right there in the payload, so keep it rather
+        # than trying to resolve the id against the top-artist lists later.
+        row["primary_artist_name"] = artists[0].get("name", "")
         row["album_id"] = (item.get("album") or {}).get("id", "")
         row["duration_ms"] = item.get("duration_ms", "")
     return row

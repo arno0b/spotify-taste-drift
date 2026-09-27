@@ -185,3 +185,16 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
   text-decoration: line-through; text-decoration-thickness: 1px;
 }
 .pending { color: var(--muted); font-style: italic; font-size: .85rem; margin: 0; }
+
+/* Album covers are square; artist portraits are circles. Same grid. */
+.face.square img, .face.square .no-art { border-radius: 3px; }
+.face.square a { border-radius: 3px; }
+/* Song titles need more room than an artist name, and carry a performer under. */
+.face.square { width: 5.2rem; }
+.face .sub { display: block; color: var(--muted); font-size: .66rem; margin-top: .1rem; }
+.face.faded .sub { color: var(--faint); }
+
+.unlocks {
+  margin: 3rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line);
+  font-family: var(--serif); font-size: .88rem; color: var(--muted); line-height: 1.5;
+}

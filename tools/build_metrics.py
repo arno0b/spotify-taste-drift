@@ -277,12 +277,16 @@ def horizon_shift(snapshot_rows):
     months of accumulated snapshots before they say anything.
     """
     ranks = defaultdict(lambda: defaultdict(dict))  # (date, kind) -> id -> {range: rank}
-    names = {}
+    names, subtitles = {}, {}
     for row in snapshot_rows:
         if row["time_range"] not in ("short_term", "long_term"):
             continue
         ranks[(row["snapshot_date"], row["kind"])][row["spotify_id"]][row["time_range"]] = row["rank"]
         names[row["spotify_id"]] = row["name"]
+        # Tracks get the performer as a subtitle. "Baptized In Fear" means
+        # nothing on its own; with the artist under it, it is recognisable.
+        if row.get("primary_artist_name"):
+            subtitles[row["spotify_id"]] = row["primary_artist_name"]
 
     results = []
     for (date, kind), entries in ranks.items():
@@ -298,6 +302,7 @@ def horizon_shift(snapshot_rows):
                 {
                     "spotify_id": i,
                     "name": names[i],
+                    "subtitle": subtitles.get(i, ""),
                     "short": rank,
                     "long": long.get(i),
                     "gap": long.get(i, ABSENT_RANK) - rank,
@@ -308,7 +313,7 @@ def horizon_shift(snapshot_rows):
         )
         fading = sorted(
             (
-                {"spotify_id": i, "name": names[i], "long": rank}
+                {"spotify_id": i, "name": names[i], "subtitle": subtitles.get(i, ""), "long": rank}
                 for i, rank in long.items()
                 if i not in short
             ),
@@ -550,7 +555,10 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
         # against yesterday, where the churn is mostly entries jittering around
         # rank 50. `events` is still computed here because the weekly arrived
         # and left counts in the verdict are derived from it.
-        "divergence": divergences,
+        # divergence and reach are no longer shipped. Both rendered as charts of
+        # near-flat lines, and reach expressed a Spotify listener's taste in
+        # Deezer fan counts — a competitor's metric, three words of jargon deep.
+        # divergence is still computed: the lede and the verdict come from it.
         # genre_mix is not shipped: it fed the stacked-area chart, which was
         # replaced by the genre-shift table. It is still computed here because
         # genre_shift is derived from it.
@@ -558,7 +566,6 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
         "genre_shift": _latest_only(genre_shift(genre_mix(genre_rows, snapshot_rows))),
         "horizon": horizon,
         "images": images_of(snapshot_rows, horizon),
-        "reach": reach(snapshot_rows),
         "survival": new_artist_survival(snapshot_rows),
         "half_life": rotation_half_life(snapshot_rows),
     }
