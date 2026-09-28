@@ -42,6 +42,13 @@ MB_MIN_INTERVAL = 1.15
 MB_MAX_RETRIES = 3
 RETRY_AFTER_DAYS = 30
 
+# Bumped whenever the lookup itself improves, so existing entries are re-fetched
+# rather than left carrying results from a worse version. Same principle as
+# rebuilding the derived layer from raw: fix the logic, replay everything.
+#   1 -> first Deezer link wins
+#   2 -> the Deezer profile with the largest catalogue wins (see _pick_deezer)
+LOOKUP_VERSION = 2
+
 
 def artist_ids_from_raw(raw_root):
     """{spotify_id: name} for every artist ever captured."""
@@ -64,6 +71,8 @@ def artist_ids_from_raw(raw_root):
 
 def _is_stale(entry, now_iso, retry_after_days):
     """Misses are retried eventually — MusicBrainz is community-edited and grows."""
+    if entry.get("lookup_version", 1) < LOOKUP_VERSION:
+        return True  # produced by a version of the lookup we no longer trust
     if entry.get("status") == "ok":
         return False
     fetched = entry.get("fetched_at")
@@ -117,6 +126,7 @@ def enrich(
                 continue
             result[spotify_id] = {
                 "name": name, "status": "error", "reason": str(error)[:200],
+                "lookup_version": LOOKUP_VERSION,
                 "genres": [], "mbid": None, "deezer_id": None, "deezer_fans": None,
                 "fetched_at": now_iso,
             }
@@ -125,12 +135,14 @@ def enrich(
         if found is None:
             result[spotify_id] = {
                 "name": name, "status": "not_found",
+                "lookup_version": LOOKUP_VERSION,
                 "genres": [], "mbid": None, "deezer_id": None, "deezer_fans": None,
                 "fetched_at": now_iso,
             }
         else:
             result[spotify_id] = {
                 "name": name, "status": "ok",
+                "lookup_version": LOOKUP_VERSION,
                 "genres": found.get("genres", []),
                 "mbid": found.get("mbid"),
                 "deezer_id": found.get("deezer_id"),
@@ -205,19 +217,12 @@ def make_lookup(session=None, sleep=None):
         if not genres:
             genres = [t["name"] for t in data.get("tags", []) if t.get("count", 0) > 0]
 
-        deezer_id, deezer_fans = None, None
-        for relation in data.get("relations", []):
-            url = (relation.get("url") or {}).get("resource", "")
-            if "deezer.com/artist/" in url:
-                deezer_id = url.rstrip("/").split("/")[-1]
-                break
-        if deezer_id:
-            try:
-                fans = http.get(f"{DEEZER_ROOT}/artist/{deezer_id}", timeout=30)
-                if fans.status_code == 200:
-                    deezer_fans = fans.json().get("nb_fan")
-            except Exception:  # noqa: BLE001 - reach is optional, genres are not
-                pass
+        candidates = [
+            (relation.get("url") or {}).get("resource", "").rstrip("/").split("/")[-1]
+            for relation in data.get("relations", [])
+            if "deezer.com/artist/" in ((relation.get("url") or {}).get("resource", ""))
+        ]
+        deezer_id, deezer_fans = _pick_deezer(candidates, http)
 
         return {
             "mbid": mbids[0],
@@ -227,6 +232,33 @@ def make_lookup(session=None, sleep=None):
         }
 
     return lookup
+
+
+def _pick_deezer(candidate_ids, http):
+    """Choose the real Deezer profile from however many MusicBrainz has linked.
+
+    MusicBrainz sometimes holds two Deezer links for one artist: a near-empty
+    stub and the genuine profile. Taking the first gave Doja Cat 38 followers
+    instead of 2,505,502 and Radiohead 507. The profile with the catalogue is
+    the real one, so rank by album count and use followers only to break ties.
+    """
+    best = (None, None)
+    best_key = (-1, -1)
+    for candidate in dict.fromkeys(candidate_ids):  # de-duplicate, keep order
+        if not candidate:
+            continue
+        try:
+            response = http.get(f"{DEEZER_ROOT}/artist/{candidate}", timeout=30)
+        except Exception:  # noqa: BLE001 - reach is optional, genres are not
+            continue
+        if response.status_code != 200:
+            continue
+        payload = response.json()
+        key = (payload.get("nb_album") or 0, payload.get("nb_fan") or 0)
+        if key > best_key:
+            best_key = key
+            best = (candidate, payload.get("nb_fan"))
+    return best
 
 
 def load_cache(path=CACHE_PATH):

@@ -127,3 +127,83 @@ def test_progress_is_checkpointed_so_an_interrupted_run_is_not_wasted():
     assert len(saved) == 2                  # after the 2nd and 4th lookups
     assert len(saved[0]) == 2
     assert len(saved[1]) == 4
+
+
+# --- choosing between duplicate Deezer profiles --------------------------------
+
+class FakeHttp:
+    """Deezer responses keyed by artist id."""
+
+    def __init__(self, profiles):
+        self.profiles = profiles
+        self.asked = []
+
+    def get(self, url, timeout=None):
+        artist_id = url.rstrip("/").split("/")[-1]
+        self.asked.append(artist_id)
+        payload = self.profiles.get(artist_id)
+
+        class R:
+            status_code = 200 if payload else 404
+
+            @staticmethod
+            def json():
+                return payload or {}
+
+        return R()
+
+
+def test_the_profile_with_the_catalogue_wins_not_the_first_one_listed():
+    # MusicBrainz held a stub before the real profile, which gave Doja Cat 38
+    # followers instead of 2,505,502.
+    from tools.enrich_artists import _pick_deezer
+
+    http = FakeHttp({
+        "stub": {"nb_album": 0, "nb_fan": 38},
+        "real": {"nb_album": 57, "nb_fan": 2505502},
+    })
+
+    assert _pick_deezer(["stub", "real"], http) == ("real", 2505502)
+
+
+def test_order_does_not_matter():
+    from tools.enrich_artists import _pick_deezer
+
+    http = FakeHttp({
+        "stub": {"nb_album": 1, "nb_fan": 171},
+        "real": {"nb_album": 25, "nb_fan": 1670094},
+    })
+
+    assert _pick_deezer(["real", "stub"], http)[0] == "real"
+
+
+def test_a_single_genuinely_small_artist_is_kept():
+    from tools.enrich_artists import _pick_deezer
+
+    http = FakeHttp({"only": {"nb_album": 35, "nb_fan": 14751}})
+
+    assert _pick_deezer(["only"], http) == ("only", 14751)
+
+
+def test_followers_break_a_tie_on_catalogue_size():
+    from tools.enrich_artists import _pick_deezer
+
+    http = FakeHttp({"a": {"nb_album": 5, "nb_fan": 10}, "b": {"nb_album": 5, "nb_fan": 900}})
+
+    assert _pick_deezer(["a", "b"], http)[0] == "b"
+
+
+def test_no_candidates_yields_no_reach_rather_than_an_error():
+    from tools.enrich_artists import _pick_deezer
+
+    assert _pick_deezer([], FakeHttp({})) == (None, None)
+
+
+def test_entries_from_an_older_lookup_version_are_refetched():
+    # Improving the lookup must replay over existing entries, the same way the
+    # derived layer is rebuilt from raw.
+    cache = {"a1": {"status": "ok", "genres": ["rock"], "fetched_at": NOW, "lookup_version": 1}}
+
+    result = enrich({"a1": "First"}, cache, ok_lookup, now_iso=NOW)
+
+    assert result["a1"]["genres"] == ["dream pop", "shoegaze"]

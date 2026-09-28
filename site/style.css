@@ -217,3 +217,29 @@ code { font-size: .92em; background: color-mix(in srgb, var(--line) 45%, transpa
   margin: 0; font-family: var(--serif); font-size: .92rem;
   color: var(--muted); line-height: 1.55;
 }
+
+/* --- Playing the record --- */
+.run { display: flex; gap: 1.1rem; align-items: flex-start; }
+.run-art { flex: 0 0 auto; border-radius: 3px; display: block; }
+.run-art img { width: 6rem; height: 6rem; border-radius: 3px; object-fit: cover; display: block; background: var(--line); transition: transform .15s; }
+.run-art:hover img { transform: scale(1.03); }
+.run-body { min-width: 0; }
+.run-lede { font-family: var(--serif); font-size: 1.02rem; line-height: 1.45; margin: 0 0 .45rem; }
+.run-lede strong { font-weight: 600; }
+.run-tracks { font-size: .8rem; color: var(--muted); margin: 0; line-height: 1.5; overflow-wrap: break-word; }
+.run-others { font-size: .8rem; color: var(--muted); margin: 1rem 0 0; }
+.no-art.big { width: 6rem; height: 6rem; border-radius: 3px; }
+
+/* --- How new is your music --- */
+.era-lede { font-family: var(--serif); font-size: 1.02rem; line-height: 1.45; margin: 0 0 1.2rem; }
+.era-chart { display: flex; align-items: flex-end; gap: .5rem; height: 5rem; }
+.era-bar { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; text-align: center; }
+.era-bar span {
+  display: block; background: var(--accent); border-radius: 2px 2px 0 0;
+  /* A single-song decade still needs to be visible. */
+  min-height: 3px;
+}
+.era-bar em {
+  font-style: normal; font-size: .62rem; letter-spacing: .06em; color: var(--muted);
+  margin-top: .4rem;
+}

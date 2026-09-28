@@ -82,6 +82,9 @@ function render(data) {
   drawHorizon("artist", "horizon", data.horizon, data.images);
   drawGenreShift(data.genre_shift, data.genre_coverage);
 
+  drawRuns(data.album_runs);
+  drawEra(data.release_profile);
+
   drawMovers(data);
   for (const control of ["kind", "range", "count"]) {
     $(control).onchange = () => drawMovers(data);
@@ -146,6 +149,86 @@ function drawVerdict(head) {
     `<div class="gauge-ends"><span>Comfort zone</span><span>Exploring</span></div>` +
     `<p class="gauge-sub">` +
     `${head.entries_7d} arrived and ${head.exits_7d} left in the last week.</p>`;
+}
+
+// A listener working through a record looks nothing like one picking singles,
+// and it is the mechanism behind the lede: the artists persist because the
+// albums do.
+function drawRuns(runs) {
+  const node = $("runs");
+  const caption = $("runs-cap");
+  const list = (runs || []).filter((r) => r.name);
+  if (!list.length) {
+    caption.textContent = "";
+    return awaiting(node, "No album is contributing more than one of your recent songs.");
+  }
+
+  const top = list[0];
+  const art = top.image
+    ? `<img src="${top.image}" alt="" loading="lazy" width="96" height="96">`
+    : `<span class="no-art big" aria-hidden="true"></span>`;
+  const titles = top.tracks.map((t) => t.name).join(" · ");
+  const others = list.slice(1, 4);
+
+  node.innerHTML =
+    `<div class="run">` +
+    `<a class="run-art" href="https://open.spotify.com/album/${top.album_id}" target="_blank" rel="noopener">${art}</a>` +
+    `<div class="run-body">` +
+    `<p class="run-lede">${plural(top.count, "song")} in your last four weeks ` +
+    `come from one record &mdash; <strong>${top.name}</strong>${top.artist ? ` by ${top.artist}` : ""}.</p>` +
+    `<p class="run-tracks">${titles}</p>` +
+    `</div></div>` +
+    (others.length
+      ? `<p class="run-others">Also more than one song deep: ` +
+        others.map((r) => `${r.name} (${r.count})`).join(", ") + `.</p>`
+      : "");
+
+  caption.textContent =
+    `Albums giving you more than one of your fifty most-played songs right now. ` +
+    `Working through a record rather than picking singles is why your artists ` +
+    `stay put while the songs turn over.`;
+}
+
+// Drift is usually assumed to run older. Worth measuring rather than assuming.
+function drawEra(profile) {
+  const node = $("era");
+  const caption = $("era-cap");
+  const rows = profile || [];
+  const now = rows.find((r) => r.time_range === "short_term");
+  const year = rows.find((r) => r.time_range === "long_term");
+  if (!now) {
+    caption.textContent = "";
+    return awaiting(node, "No release dates captured yet.");
+  }
+
+  const max = Math.max(...now.decades.map((d) => d.count), 1);
+  const bars = now.decades
+    .map(
+      (d) =>
+        `<div class="era-bar" title="${plural(d.count, "song")} from the ${d.decade}s">` +
+        `<span style="height:${Math.round((d.count / max) * 100)}%"></span>` +
+        `<em>${String(d.decade).slice(2)}s</em></div>`
+    )
+    .join("");
+
+  const direction =
+    year && now.recent_share - year.recent_share > 0.05
+      ? `That is up from ${pct(year.recent_share)} across your whole year, so you are ` +
+        `getting more current, not less.`
+      : year && year.recent_share - now.recent_share > 0.05
+      ? `Across your whole year it is ${pct(year.recent_share)}, so you have been ` +
+        `reaching further back lately.`
+      : "";
+
+  node.innerHTML =
+    `<p class="era-lede">${pct(now.recent_share)} of what you are playing came out ` +
+    `in ${now.recent_since} or later. ${direction}</p>` +
+    `<div class="era-chart">${bars}</div>`;
+
+  caption.textContent =
+    `Release decade of your fifty most-played songs right now, oldest to newest — ` +
+    `${now.oldest} to ${now.newest}. Median year ${now.median_year}. ` +
+    `Based on the ${now.measured} with a release date.`;
 }
 
 function drawMovers(data) {
@@ -323,10 +406,23 @@ function drawGenreShift(shift, coverage) {
       `<p class="pending">Nothing fading.</p>`}</div>`;
 
   const cov = (coverage || []).filter((c) => c.time_range === "short_term").pop();
+  // The gap is not random: the unidentified artists are overwhelmingly regional
+  // ones, so this figure skews toward Western music. Naming a few of them is the
+  // only honest way to present it.
+  let gap = "";
+  if (cov) {
+    gap = ` Genres could be identified for ${cov.resolved} of your ${cov.total} artists.`;
+    const missing = cov.unidentified || [];
+    if (missing.length) {
+      gap +=
+        ` The rest — including ${missing.slice(0, 3).join(", ")} — are not catalogued ` +
+        `in MusicBrainz, which under-represents regional artists, so this figure ` +
+        `leans toward the Western half of your listening.`;
+    }
+  }
   caption.textContent =
     `Genres that have grown in your last four weeks compared with your last year, and ` +
-    `the ones that have receded. Hover a tag for the actual shares.` +
-    (cov ? ` Genres could be identified for ${cov.resolved} of your ${cov.total} artists.` : "");
+    `the ones that have receded. Hover a tag for the actual shares.` + gap;
 }
 
 // Two empty framed figures promising November was a lot of IOU for a page with

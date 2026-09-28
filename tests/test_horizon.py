@@ -287,3 +287,143 @@ def test_artists_have_an_empty_subtitle_rather_than_a_missing_key():
     entry = horizon_shift(rows)[0]["ascending"][0]
 
     assert entry["subtitle"] == ""
+
+
+# --- album runs -------------------------------------------------------------
+
+def trk(date, id_, rank, album_id, album_name, artist, year, time_range="short_term"):
+    r = row(date, id_, rank, kind="track", time_range=time_range)
+    r.update(album_id=album_id, album_name=album_name, primary_artist_name=artist,
+             release_year=year)
+    return r
+
+
+def test_an_album_contributing_several_tracks_is_reported_as_a_run():
+    from tools.build_metrics import album_runs
+
+    rows = [
+        trk("2026-09-28", "t1", 3, "al1", "Hurry Up Tomorrow", "The Weeknd", 2025),
+        trk("2026-09-28", "t2", 7, "al1", "Hurry Up Tomorrow", "The Weeknd", 2025),
+        trk("2026-09-28", "t3", 9, "al2", "Something Else", "Someone", 2020),
+    ]
+
+    runs = album_runs(rows)
+
+    assert len(runs) == 1
+    assert runs[0]["name"] == "Hurry Up Tomorrow"
+    assert runs[0]["count"] == 2
+    assert runs[0]["best_rank"] == 3  # its highest-placed track
+
+
+def test_runs_are_ordered_by_how_many_tracks_they_contribute():
+    from tools.build_metrics import album_runs
+
+    rows = [trk("2026-09-28", f"a{i}", i + 1, "big", "Big", "X", 2025) for i in range(4)]
+    rows += [trk("2026-09-28", f"b{i}", 20 + i, "small", "Small", "Y", 2025) for i in range(2)]
+
+    assert [r["name"] for r in album_runs(rows)] == ["Big", "Small"]
+
+
+def test_only_the_latest_snapshot_and_only_the_recent_window_count():
+    from tools.build_metrics import album_runs
+
+    rows = [
+        trk("2026-09-27", "old1", 1, "al1", "Yesterday", "X", 2025),
+        trk("2026-09-27", "old2", 2, "al1", "Yesterday", "X", 2025),
+        trk("2026-09-28", "y1", 1, "al2", "Yearly", "X", 2025, time_range="long_term"),
+        trk("2026-09-28", "y2", 2, "al2", "Yearly", "X", 2025, time_range="long_term"),
+        trk("2026-09-28", "n1", 1, "al3", "Now", "X", 2025),
+        trk("2026-09-28", "n2", 2, "al3", "Now", "X", 2025),
+    ]
+
+    assert [r["name"] for r in album_runs(rows)] == ["Now"]
+
+
+# --- release profile --------------------------------------------------------
+
+def test_release_profile_measures_how_current_the_music_is():
+    from tools.build_metrics import release_profile
+
+    rows = [
+        trk("2026-09-28", "t1", 1, "a", "A", "X", 2026),
+        trk("2026-09-28", "t2", 2, "b", "B", "X", 2025),
+        trk("2026-09-28", "t3", 3, "c", "C", "X", 1971),
+        trk("2026-09-28", "t4", 4, "d", "D", "X", 2010),
+    ]
+
+    p = release_profile(rows)[0]
+
+    assert p["median_year"] == 2017  # median of 1971, 2010, 2025, 2026
+    assert p["recent_share"] == 0.5  # 2025 and 2026 of four
+    assert p["oldest"] == 1971 and p["newest"] == 2026
+
+
+def test_release_profile_buckets_by_decade_for_the_spread():
+    from tools.build_metrics import release_profile
+
+    rows = [
+        trk("2026-09-28", "t1", 1, "a", "A", "X", 1971),
+        trk("2026-09-28", "t2", 2, "b", "B", "X", 1978),
+        trk("2026-09-28", "t3", 3, "c", "C", "X", 2025),
+    ]
+
+    decades = {d["decade"]: d["count"] for d in release_profile(rows)[0]["decades"]}
+
+    assert decades == {1970: 2, 2020: 1}
+
+
+def test_tracks_with_no_release_year_are_excluded_not_counted_as_zero():
+    from tools.build_metrics import release_profile
+
+    rows = [
+        trk("2026-09-28", "t1", 1, "a", "A", "X", 2025),
+        trk("2026-09-28", "t2", 2, "b", "B", "X", None),
+    ]
+
+    assert release_profile(rows)[0]["measured"] == 1
+
+
+def test_coverage_names_the_artists_it_could_not_identify():
+    # The gap skews regional, so the figure has to be able to say who is missing.
+    from tools.build_metrics import genre_coverage
+
+    snapshot_rows = [row("2026-09-28", "known", 1), row("2026-09-28", "unknown", 2)]
+    snapshot_rows[1]["name"] = "Meghdol"
+    genre_rows = [{"snapshot_date": "2026-09-28", "time_range": "short_term",
+                   "artist_id": "known", "genre": "rock"}]
+
+    cov = genre_coverage(genre_rows, snapshot_rows)[0]
+
+    assert cov["unidentified"] == ["Meghdol"]
+
+
+def test_deluxe_and_standard_editions_count_as_one_record():
+    # Spotify issues separate album ids per edition, which split one album run
+    # in two: "Hurry Up Tomorrow" was reported as 4 and 2 instead of 6.
+    from tools.build_metrics import album_runs
+
+    rows = [
+        trk("2026-09-28", "t1", 2, "std", "Hurry Up Tomorrow", "The Weeknd", 2025),
+        trk("2026-09-28", "t2", 5, "std", "Hurry Up Tomorrow", "The Weeknd", 2025),
+        trk("2026-09-28", "t3", 8, "deluxe", "Hurry Up Tomorrow", "The Weeknd", 2025),
+    ]
+
+    runs = album_runs(rows)
+
+    assert len(runs) == 1
+    assert runs[0]["count"] == 3
+    # Links to the edition holding the highest-placed track.
+    assert runs[0]["album_id"] == "std"
+
+
+def test_two_albums_sharing_a_title_but_not_an_artist_stay_separate():
+    from tools.build_metrics import album_runs
+
+    rows = [
+        trk("2026-09-28", "a1", 1, "x1", "Greatest Hits", "Artist One", 2020),
+        trk("2026-09-28", "a2", 2, "x1", "Greatest Hits", "Artist One", 2020),
+        trk("2026-09-28", "b1", 3, "y1", "Greatest Hits", "Artist Two", 2021),
+        trk("2026-09-28", "b2", 4, "y1", "Greatest Hits", "Artist Two", 2021),
+    ]
+
+    assert len(album_runs(rows)) == 2

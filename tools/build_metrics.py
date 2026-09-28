@@ -42,6 +42,8 @@ def load_rows(derived_root):
         row["popularity"] = int(row["popularity"]) if row["popularity"] != "" else None
         fans = row.get("deezer_fans", "")
         row["deezer_fans"] = int(fans) if fans not in ("", None) else None
+        year = row.get("release_year", "")
+        row["release_year"] = int(year) if str(year).isdigit() else None
     return snapshot_rows, _read_csv(derived_root / "artist_genres.csv")
 
 
@@ -202,7 +204,9 @@ def genre_coverage(genre_rows, snapshot_rows):
     for row in genre_rows:
         resolved[(row["snapshot_date"], row["time_range"])].add(row["artist_id"])
 
-    totals = defaultdict(lambda: {"weight": 0.0, "resolved_weight": 0.0, "n": 0, "resolved_n": 0})
+    totals = defaultdict(
+        lambda: {"weight": 0.0, "resolved_weight": 0.0, "n": 0, "resolved_n": 0, "missing": []}
+    )
     for row in snapshot_rows:
         if row["kind"] != "artist":
             continue
@@ -214,6 +218,8 @@ def genre_coverage(genre_rows, snapshot_rows):
         if row["spotify_id"] in resolved[key]:
             bucket["resolved_weight"] += weight
             bucket["resolved_n"] += 1
+        else:
+            bucket["missing"].append(row["name"])
 
     results = [
         {
@@ -222,6 +228,11 @@ def genre_coverage(genre_rows, snapshot_rows):
             "share": bucket["resolved_weight"] / bucket["weight"] if bucket["weight"] else 0.0,
             "resolved": bucket["resolved_n"],
             "total": bucket["n"],
+            # Named, because the gap is not random: the unidentified artists are
+            # overwhelmingly regional ones MusicBrainz does not catalogue, so
+            # the genre figure quietly skews toward Western music. Saying which
+            # artists are missing is the only honest way to present it.
+            "unidentified": bucket["missing"][:4],
         }
         for (date, time_range), bucket in totals.items()
     ]
@@ -363,6 +374,103 @@ def genre_shift(genre_mix_rows):
                 }
             )
     results.sort(key=lambda r: (r["date"], -abs(r["delta"]), r["genre"]))
+    return results
+
+
+ALBUM_RUN_MIN = 2
+RECENT_YEARS = 2
+
+
+def album_runs(snapshot_rows):
+    """Albums contributing more than one track to the current four weeks.
+
+    A listener working through a record looks different from one picking
+    singles, and it is the mechanism behind "keep the artists, change the
+    songs": six of fifty recent tracks came off one album.
+    """
+    latest = max((r["snapshot_date"] for r in snapshot_rows), default=None)
+    if not latest:
+        return []
+
+    albums = defaultdict(
+        lambda: {"tracks": [], "artist": "", "name": "", "image": "",
+                 "album_id": "", "best": 10**6}
+    )
+    for row in snapshot_rows:
+        if (row["kind"] != "track" or row["time_range"] != "short_term"
+                or row["snapshot_date"] != latest or not row.get("album_id")):
+            continue
+        # Keyed on title and artist, not album_id: Spotify issues separate ids
+        # for standard and deluxe editions of the same record, which split one
+        # album run into two and undercounted "Hurry Up Tomorrow" as 4 and 2
+        # rather than 6.
+        entry = albums[(row.get("album_name", "").casefold(),
+                        row.get("primary_artist_name", "").casefold())]
+        entry["name"] = row.get("album_name", "")
+        entry["artist"] = row.get("primary_artist_name", "")
+        # For a track, image_url is already the album cover.
+        entry["image"] = entry.get("image") or row.get("image_url", "")
+        if not entry["album_id"] or row["rank"] < entry["best"]:
+            entry["album_id"] = row["album_id"]
+            entry["best"] = row["rank"]
+        entry["tracks"].append({"name": row["name"], "rank": row["rank"]})
+
+    results = []
+    for entry in albums.values():
+        if len(entry["tracks"]) < ALBUM_RUN_MIN:
+            continue
+        entry["tracks"].sort(key=lambda t: t["rank"])
+        results.append({
+            # The edition holding the highest-placed track is the one to link to.
+            "album_id": entry["album_id"],
+            "name": entry["name"],
+            "artist": entry["artist"],
+            "image": entry["image"],
+            "count": len(entry["tracks"]),
+            "tracks": entry["tracks"],
+            "best_rank": entry["tracks"][0]["rank"],
+        })
+    results.sort(key=lambda a: (-a["count"], a["best_rank"]))
+    return results
+
+
+def release_profile(snapshot_rows):
+    """How current the music is, per time range, for the latest snapshot.
+
+    Drift is usually assumed to run older. Measuring it is the only way to know:
+    this listener's recent tracks are markedly newer than their yearly ones.
+    """
+    latest = max((r["snapshot_date"] for r in snapshot_rows), default=None)
+    if not latest:
+        return []
+
+    years = defaultdict(list)
+    for row in snapshot_rows:
+        if (row["kind"] == "track" and row["snapshot_date"] == latest
+                and row.get("release_year")):
+            years[row["time_range"]].append(row["release_year"])
+
+    newest_year = max((y for v in years.values() for y in v), default=None)
+    results = []
+    for time_range, values in years.items():
+        if not values:
+            continue
+        cutoff = newest_year - RECENT_YEARS + 1
+        decades = defaultdict(int)
+        for year in values:
+            decades[(year // 10) * 10] += 1
+        results.append({
+            "date": latest,
+            "time_range": time_range,
+            "median_year": int(statistics.median(values)),
+            "recent_share": sum(1 for y in values if y >= cutoff) / len(values),
+            "recent_since": cutoff,
+            "oldest": min(values),
+            "newest": max(values),
+            "measured": len(values),
+            "decades": [{"decade": d, "count": n} for d, n in sorted(decades.items())],
+        })
+    results.sort(key=lambda r: r["time_range"])
     return results
 
 
@@ -564,6 +672,8 @@ def build(snapshot_rows, genre_rows, skipped, generated_at):
         # genre_shift is derived from it.
         "genre_coverage": _latest_only(genre_coverage(genre_rows, snapshot_rows)),
         "genre_shift": _latest_only(genre_shift(genre_mix(genre_rows, snapshot_rows))),
+        "album_runs": album_runs(snapshot_rows),
+        "release_profile": release_profile(snapshot_rows),
         "horizon": horizon,
         "images": images_of(snapshot_rows, horizon),
         "survival": new_artist_survival(snapshot_rows),

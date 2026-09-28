@@ -28,6 +28,8 @@ SNAPSHOT_COLUMNS = [
     "primary_artist_id",
     "primary_artist_name",
     "album_id",
+    "album_name",
+    "release_year",
     "duration_ms",
     "deezer_fans",
     "image_url",
@@ -128,6 +130,8 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=No
         "primary_artist_id": "",
         "primary_artist_name": "",
         "album_id": "",
+        "album_name": "",
+        "release_year": "",
         "duration_ms": "",
         # Deezer fan count, reached via MusicBrainz. Spotify's own popularity
         # field is gone, and this is a same-shaped substitute from elsewhere.
@@ -145,7 +149,13 @@ def _item_row(item, rank, kind, time_range, snapshot_date, captured_at, entry=No
         # artist. The name is right there in the payload, so keep it rather
         # than trying to resolve the id against the top-artist lists later.
         row["primary_artist_name"] = artists[0].get("name", "")
-        row["album_id"] = (item.get("album") or {}).get("id", "")
+        album = item.get("album") or {}
+        row["album_id"] = album.get("id", "")
+        # Album name makes an album run nameable; the year says how current the
+        # music is. Both sit in the payload and were being discarded.
+        row["album_name"] = album.get("name", "")
+        released = album.get("release_date") or ""
+        row["release_year"] = int(released[:4]) if released[:4].isdigit() else ""
         row["duration_ms"] = item.get("duration_ms", "")
     return row
 

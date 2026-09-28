@@ -196,3 +196,44 @@ def test_write_csvs_produces_stable_sorted_output(tmp_path):
         rows = list(csv.DictReader(handle))
     assert [r["rank"] for r in rows] == ["1", "2"]
     assert (derived / "artist_genres.csv").exists()
+
+
+def test_album_name_and_release_year_come_through_for_tracks(tmp_path):
+    day = tmp_path / "2026-09-28"
+    day.mkdir(parents=True)
+    (day / "top_tracks_short_term.json").write_text(json.dumps({"items": [{
+        "id": "t1", "name": "Song", "duration_ms": 1,
+        "artists": [{"id": "a1", "name": "The Weeknd"}],
+        "album": {"id": "al1", "name": "Hurry Up Tomorrow", "release_date": "2025-01-31"},
+    }]}))
+    (day / "meta.json").write_text(json.dumps({"captured_at": "2026-09-28T06:00:00Z"}))
+
+    row = build_rows(tmp_path)[0][0]
+
+    assert row["album_name"] == "Hurry Up Tomorrow"
+    assert row["release_year"] == 2025
+
+
+def test_a_year_only_release_date_still_parses(tmp_path):
+    # Spotify's release_date_precision can be "year", giving just "1971".
+    day = tmp_path / "2026-09-28"
+    day.mkdir(parents=True)
+    (day / "top_tracks_short_term.json").write_text(json.dumps({"items": [{
+        "id": "t1", "name": "Song", "artists": [{"id": "a1", "name": "Sting"}],
+        "album": {"id": "al1", "name": "Old Record", "release_date": "1971"},
+    }]}))
+    (day / "meta.json").write_text(json.dumps({"captured_at": "2026-09-28T06:00:00Z"}))
+
+    assert build_rows(tmp_path)[0][0]["release_year"] == 1971
+
+
+def test_a_missing_release_date_is_empty_not_zero(tmp_path):
+    day = tmp_path / "2026-09-28"
+    day.mkdir(parents=True)
+    (day / "top_tracks_short_term.json").write_text(json.dumps({"items": [{
+        "id": "t1", "name": "Song", "artists": [{"id": "a1", "name": "X"}],
+        "album": {"id": "al1", "name": "No Date"},
+    }]}))
+    (day / "meta.json").write_text(json.dumps({"captured_at": "2026-09-28T06:00:00Z"}))
+
+    assert build_rows(tmp_path)[0][0]["release_year"] == ""

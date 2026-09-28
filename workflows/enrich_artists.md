@@ -22,6 +22,37 @@ Spotify artist ID
   -> Deezer /artist/<deezer_id>                                      (nb_fan -> reach)
 ```
 
+## Choosing between duplicate Deezer profiles
+
+MusicBrainz sometimes links **two** Deezer profiles for one artist: a near-empty
+stub and the genuine one. Taking the first match gave:
+
+| Artist | First link | Real profile |
+|---|---|---|
+| Doja Cat | 38 fans, 0 albums | 2,505,502 fans, 57 albums |
+| Radiohead | 508 fans | 4,096,578 fans |
+| The Neighbourhood | 171 fans, 1 album | 1,670,094 fans, 25 albums |
+| A.R. Rahman | 6,381 fans | 284,174 fans |
+
+`_pick_deezer` now ranks candidates by album count and uses followers only to
+break ties: the profile with the catalogue is the real one. Four of 74 artists
+were affected, about 5%.
+
+Note the A.R. Rahman case. This was originally read as Deezer under-representing
+South Asian artists. Some of that is real, but the stub bug was the larger
+factor — worth remembering before attributing a suspicious number to coverage.
+
+## Lookup versioning
+
+Entries carry `lookup_version`. `_is_stale` treats anything below the current
+`LOOKUP_VERSION` as stale, so improving the lookup automatically re-fetches
+every existing entry rather than leaving old results in place. Same principle as
+rebuilding the derived layer from raw: fix the logic, replay everything.
+
+Bump it whenever the lookup changes in a way that could produce a better answer.
+A full replay of ~100 artists takes about five minutes at the MusicBrainz rate
+limit.
+
 ## Identity matching — do not use artist names
 
 Name matching was tried and **rejected**. It returns wrong artists that look

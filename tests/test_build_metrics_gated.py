@@ -106,6 +106,8 @@ def test_build_emits_every_key_the_dashboard_reads():
         "genre_coverage",
         "genre_shift",
         "horizon",
+        "album_runs",
+        "release_profile",
         "survival",
         "half_life",
     }
