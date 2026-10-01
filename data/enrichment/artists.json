@@ -1517,6 +1517,18 @@
     "name": "Arctic Monkeys",
     "status": "ok"
   },
+  "7b6Ui7JVaBDEfZB9k6nHL0": {
+    "deezer_fans": 1700,
+    "deezer_id": "9597678",
+    "fetched_at": "2026-10-01T12:15:29Z",
+    "genres": [
+      "rock"
+    ],
+    "lookup_version": 2,
+    "mbid": "93e6118e-7fa8-49f6-9e02-699a1ebce105",
+    "name": "The Local Train",
+    "status": "ok"
+  },
   "7fhlWsdi6oTTxj8d3uYIAn": {
     "deezer_fans": null,
     "deezer_id": null,
