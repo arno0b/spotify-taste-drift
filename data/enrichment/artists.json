@@ -202,6 +202,19 @@
     "name": "John Mayer",
     "status": "ok"
   },
+  "0iEtIxbK0KxaSlF7G42ZOp": {
+    "deezer_fans": 759645,
+    "deezer_id": "4968870",
+    "fetched_at": "2026-10-12T14:10:21Z",
+    "genres": [
+      "hip hop",
+      "trap"
+    ],
+    "lookup_version": 2,
+    "mbid": "59db3d82-86ea-451f-881f-dffc8ec387c9",
+    "name": "Metro Boomin",
+    "status": "ok"
+  },
   "0klU31gyC6EZqKgLvVANCy": {
     "deezer_fans": 1093,
     "deezer_id": "13603653",
@@ -768,6 +781,18 @@
     "name": "Instupendo",
     "status": "ok"
   },
+  "3ebS2RuCq8QeLyndUDmgB5": {
+    "deezer_fans": 10891,
+    "deezer_id": "8896874",
+    "fetched_at": "2026-10-12T14:10:21Z",
+    "genres": [
+      "pop rap"
+    ],
+    "lookup_version": 2,
+    "mbid": "ad5b82cc-e892-4eaa-993a-243a87a1d68e",
+    "name": "WizTheMc",
+    "status": "ok"
+  },
   "3fMbdgg4jU18AjLCKBhRSm": {
     "deezer_fans": 13154442,
     "deezer_id": "259",
@@ -897,6 +922,20 @@
     "lookup_version": 2,
     "mbid": "25ab7547-a4d2-480b-b028-c7f3497bc858",
     "name": "Men I Trust",
+    "status": "ok"
+  },
+  "3zoceu8YD9dVjL4jaleJLg": {
+    "deezer_fans": null,
+    "deezer_id": null,
+    "fetched_at": "2026-10-12T14:10:21Z",
+    "genres": [
+      "bangla",
+      "bangladeshi",
+      "fusion"
+    ],
+    "lookup_version": 2,
+    "mbid": "80e075d0-0b73-45f9-a152-e844ccc50a82",
+    "name": "Shironamhin",
     "status": "ok"
   },
   "462hgoSSVau039BHOvX1sk": {
