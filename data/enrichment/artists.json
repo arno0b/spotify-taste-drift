@@ -1060,6 +1060,16 @@
     "name": "Tove Lo",
     "status": "ok"
   },
+  "4OUraoZcwg1SsMHFjuaajw": {
+    "deezer_fans": null,
+    "deezer_id": null,
+    "fetched_at": "2026-10-18T10:13:46Z",
+    "genres": [],
+    "lookup_version": 2,
+    "mbid": "03aa0ef8-54fe-4ac7-bb50-25c60a6cad83",
+    "name": "Tanveer Evan",
+    "status": "ok"
+  },
   "4RRmL81NhhouCKGo8I6GaU": {
     "deezer_fans": 3039,
     "deezer_id": "134244852",
@@ -1182,6 +1192,24 @@
     "name": "Glass Animals",
     "status": "ok"
   },
+  "56ZTgzPBDge0OvCGgMO3OY": {
+    "deezer_fans": 298698,
+    "deezer_id": "75055",
+    "fetched_at": "2026-10-18T10:13:46Z",
+    "genres": [
+      "dream pop",
+      "indie pop",
+      "indie rock",
+      "lo-fi",
+      "pop",
+      "shoegaze",
+      "slowcore"
+    ],
+    "lookup_version": 2,
+    "mbid": "d5cc67b8-1cc4-453b-96e8-44487acdebea",
+    "name": "Beach House",
+    "status": "ok"
+  },
   "572qv57FCJcsiZcx5BXIVG": {
     "deezer_fans": null,
     "deezer_id": null,
@@ -1301,6 +1329,16 @@
     "lookup_version": 2,
     "mbid": "66a142ea-7656-4eb2-94f7-22f8e28208ac",
     "name": "Balam",
+    "status": "ok"
+  },
+  "5jJrJU7VVmxQQLcLAmmxXc": {
+    "deezer_fans": 4180,
+    "deezer_id": "223843195",
+    "fetched_at": "2026-10-18T10:13:46Z",
+    "genres": [],
+    "lookup_version": 2,
+    "mbid": "d2042bf0-8911-4fd5-9939-52cdd7c073a0",
+    "name": "Sai Abhyankkar",
     "status": "ok"
   },
   "5mWQT8CLTa4mAQAJdFjHb1": {
