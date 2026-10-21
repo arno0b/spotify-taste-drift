@@ -483,6 +483,18 @@
     "name": "SEKIMANE",
     "status": "ok"
   },
+  "29aw5YCdIw2FEXYyAJZI8l": {
+    "deezer_fans": 20746,
+    "deezer_id": "362663",
+    "fetched_at": "2026-10-21T11:00:36Z",
+    "genres": [
+      "filmi"
+    ],
+    "lookup_version": 2,
+    "mbid": "ecdd5aa9-b760-47d4-9541-3c3d04da433b",
+    "name": "Harris Jayaraj",
+    "status": "ok"
+  },
   "2ElQWsoSpwUhYFFdFuHqse": {
     "deezer_fans": null,
     "deezer_id": null,
