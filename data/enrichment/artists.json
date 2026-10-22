@@ -483,6 +483,44 @@
     "name": "SEKIMANE",
     "status": "ok"
   },
+  "21mKp7DqtSNHhCAU2ugvUw": {
+    "deezer_fans": 149333,
+    "deezer_id": "4707030",
+    "fetched_at": "2026-10-22T10:59:20Z",
+    "genres": [
+      "chillwave",
+      "electronic",
+      "future bass",
+      "indietronica",
+      "progressive house"
+    ],
+    "lookup_version": 2,
+    "mbid": "2e222fce-02ae-4221-b1c6-3c3242b423b6",
+    "name": "ODESZA",
+    "status": "ok"
+  },
+  "23fqKkggKUBHNkbKtXEls4": {
+    "deezer_fans": 2397044,
+    "deezer_id": "4768753",
+    "fetched_at": "2026-10-22T10:59:20Z",
+    "genres": [
+      "club",
+      "dance",
+      "deep house",
+      "downtempo",
+      "edm",
+      "electronic",
+      "electronica",
+      "house",
+      "pop",
+      "progressive house",
+      "tropical house"
+    ],
+    "lookup_version": 2,
+    "mbid": "ba0e7638-0cd6-4ff4-8987-c3e224d22c23",
+    "name": "Kygo",
+    "status": "ok"
+  },
   "29aw5YCdIw2FEXYyAJZI8l": {
     "deezer_fans": 20746,
     "deezer_id": "362663",
@@ -1231,6 +1269,35 @@
     "mbid": null,
     "name": "Recall",
     "status": "not_found"
+  },
+  "57vWImR43h4CaDao012Ofp": {
+    "deezer_fans": 283716,
+    "deezer_id": "65574",
+    "fetched_at": "2026-10-22T10:59:20Z",
+    "genres": [
+      "alternative r&b",
+      "avant-garde",
+      "bedroom pop",
+      "contemporary r&b",
+      "dance",
+      "disco",
+      "free jazz",
+      "future bass",
+      "hard bop",
+      "house",
+      "jazz",
+      "neo soul",
+      "pop",
+      "psychedelic soul",
+      "r&b",
+      "rock",
+      "tech house",
+      "trap"
+    ],
+    "lookup_version": 2,
+    "mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+    "name": "Steve Lacy",
+    "status": "ok"
   },
   "59oBQlP5xoa5cfPkonNNnT": {
     "deezer_fans": 7091,
