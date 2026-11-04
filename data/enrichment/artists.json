@@ -1829,5 +1829,18 @@
     "mbid": "272989c8-5535-492d-a25c-9f58803e027f",
     "name": "SZA",
     "status": "ok"
+  },
+  "7uIbLdzzSEqnX0Pkrb56cR": {
+    "deezer_fans": 112200,
+    "deezer_id": "1511979",
+    "fetched_at": "2026-11-04T13:39:01Z",
+    "genres": [
+      "bhangra",
+      "hip hop"
+    ],
+    "lookup_version": 2,
+    "mbid": "0dc9c4bc-8bcc-42f1-9033-bec41160377f",
+    "name": "Yo Yo Honey Singh",
+    "status": "ok"
   }
 }
