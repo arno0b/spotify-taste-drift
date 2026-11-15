@@ -1791,6 +1791,20 @@
     "name": "The Local Train",
     "status": "ok"
   },
+  "7cYEt1pqMgXJdq00hAwVpT": {
+    "deezer_fans": 602962,
+    "deezer_id": "5868765",
+    "fetched_at": "2026-11-15T13:18:24Z",
+    "genres": [
+      "alternative pop",
+      "electropop",
+      "pop rap"
+    ],
+    "lookup_version": 2,
+    "mbid": "ecab255c-3af3-4154-87ec-2685041ce297",
+    "name": "Chase Atlantic",
+    "status": "ok"
+  },
   "7fhlWsdi6oTTxj8d3uYIAn": {
     "deezer_fans": null,
     "deezer_id": null,
