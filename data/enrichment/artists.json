@@ -1553,6 +1553,18 @@
     "name": "DJ EXE",
     "status": "ok"
   },
+  "6QoCrBHsojKnOrsGNfRcTN": {
+    "deezer_fans": 4167,
+    "deezer_id": "49725782",
+    "fetched_at": "2026-11-19T15:04:03Z",
+    "genres": [
+      "soul"
+    ],
+    "lookup_version": 2,
+    "mbid": "2c8c0732-7b2d-4271-978b-f893467816b8",
+    "name": "Talwiinder",
+    "status": "ok"
+  },
   "6XwwFnewNgWp81MYMK8zLq": {
     "deezer_fans": 173516,
     "deezer_id": "293767",
