@@ -1246,6 +1246,18 @@
     "name": "Coldplay",
     "status": "ok"
   },
+  "4tGnFjmjmMdZZh7NxWjNaw": {
+    "deezer_fans": 1368,
+    "deezer_id": "11290050",
+    "fetched_at": "2026-11-20T14:45:42Z",
+    "genres": [
+      "breakcore"
+    ],
+    "lookup_version": 2,
+    "mbid": "99e26981-8090-413b-889e-34192a44e2a2",
+    "name": "wiv",
+    "status": "ok"
+  },
   "4yvcSjfu4PC0CYQyLy4wSq": {
     "deezer_fans": 322867,
     "deezer_id": "2489131",
