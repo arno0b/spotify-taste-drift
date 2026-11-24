@@ -3,18 +3,18 @@
     {
       "album_id": "6iyZdOoujtOwiThdAUI8TM",
       "artist": "The Weeknd",
-      "best_rank": 28,
+      "best_rank": 27,
       "count": 3,
       "image": "https://i.scdn.co/image/ab67616d00004851460b137f921b16041901104a",
       "name": "Hurry Up Tomorrow",
       "tracks": [
         {
           "name": "Baptized In Fear",
-          "rank": 28
+          "rank": 27
         },
         {
           "name": "Cry For Me",
-          "rank": 32
+          "rank": 35
         },
         {
           "name": "São Paulo (feat. Anitta)",
@@ -36,39 +36,39 @@
         },
         {
           "name": "En nuit",
-          "rank": 41
+          "rank": 40
         }
       ]
     },
     {
       "album_id": "0NEyPH2WTU7NAPxebB7z4g",
       "artist": "Mac DeMarco",
-      "best_rank": 12,
+      "best_rank": 13,
       "count": 2,
       "image": "https://i.scdn.co/image/ab67616d000048513f7561fb0914fb1f5f101f0a",
       "name": "This Old Dog",
       "tracks": [
         {
           "name": "For the First Time",
-          "rank": 12
+          "rank": 13
         },
         {
           "name": "Moonlight on the River",
-          "rank": 20
+          "rank": 22
         }
       ]
     }
   ],
   "data_quality": {
     "skipped_files": [],
-    "snapshot_count": 73
+    "snapshot_count": 74
   },
-  "generated_at": "2026-11-23T17:06:53Z",
+  "generated_at": "2026-11-24T16:51:24Z",
   "genre_coverage": [
     {
-      "date": "2026-11-23",
-      "resolved": 41,
-      "share": 0.8681424999210539,
+      "date": "2026-11-24",
+      "resolved": 40,
+      "share": 0.863205026445067,
       "time_range": "long_term",
       "total": 50,
       "unidentified": [
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "resolved": 36,
       "share": 0.7752656400182207,
       "time_range": "medium_term",
@@ -92,967 +92,953 @@
       ]
     },
     {
-      "date": "2026-11-23",
-      "resolved": 20,
-      "share": 0.8377335502282757,
+      "date": "2026-11-24",
+      "resolved": 19,
+      "share": 0.8271929933443959,
       "time_range": "short_term",
-      "total": 28,
+      "total": 27,
       "unidentified": [
         "Murtaza Qizilbash",
+        "GLM-RST",
         "Videoclub",
-        "AP Dhillon",
-        "GLM-RST"
+        "AP Dhillon"
       ]
     }
   ],
   "genre_shift": [
     {
-      "date": "2026-11-23",
-      "delta": 0.05065974792327871,
+      "date": "2026-11-24",
+      "delta": 0.05177614288566515,
       "genre": "breakcore",
       "long_share": null,
-      "short_share": 0.05065974792327871
+      "short_share": 0.05177614288566515
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.03846631533127547,
+      "date": "2026-11-24",
+      "delta": -0.040550653967474655,
       "genre": "dream pop",
-      "long_share": 0.049848310643908225,
-      "short_share": 0.01138199531263275
+      "long_share": 0.05016622336052676,
+      "short_share": 0.0096155693930521
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.03437349987456068,
-      "genre": "soul",
-      "long_share": 0.0067875453131032645,
-      "short_share": 0.04116104518766395
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.03355253216117558,
+      "date": "2026-11-24",
+      "delta": -0.03371710978690144,
       "genre": "ambient",
-      "long_share": 0.04115149434966739,
-      "short_share": 0.007598962188491807
+      "long_share": 0.041483531219751214,
+      "short_share": 0.007766421432849773
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.02966069023252702,
+      "date": "2026-11-24",
+      "delta": 0.03342890980399207,
+      "genre": "soul",
+      "long_share": 0.006841423551525272,
+      "short_share": 0.040270333355517336
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.030451437677301327,
       "genre": "experimental",
-      "long_share": 0.005105803440311311,
-      "short_share": 0.03476649367283833
+      "long_share": 0.0051446605565934654,
+      "short_share": 0.03559609823389479
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.029032062087611013,
+      "date": "2026-11-24",
+      "delta": 0.029749206611161684,
       "genre": "folk pop",
-      "long_share": 0.0047411031945747886,
-      "short_share": 0.0337731652821858
+      "long_share": 0.004768221979281748,
+      "short_share": 0.03451742859044343
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.029032062087611013,
+      "date": "2026-11-24",
+      "delta": 0.029749206611161684,
       "genre": "jangle pop",
-      "long_share": 0.0047411031945747886,
-      "short_share": 0.0337731652821858
+      "long_share": 0.004768221979281748,
+      "short_share": 0.03451742859044343
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.029032062087611013,
+      "date": "2026-11-24",
+      "delta": 0.029749206611161684,
       "genre": "post-punk",
-      "long_share": 0.0047411031945747886,
-      "short_share": 0.0337731652821858
+      "long_share": 0.004768221979281748,
+      "short_share": 0.03451742859044343
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.027763583738969092,
+      "date": "2026-11-24",
+      "delta": 0.026467395225726317,
       "genre": "psychedelic pop",
-      "long_share": 0.009792614667357657,
-      "short_share": 0.03755619840632675
+      "long_share": 0.009899181324919447,
+      "short_share": 0.03636657655064576
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.024895829706632316,
+      "date": "2026-11-24",
+      "delta": -0.024914238440535134,
       "genre": "slowcore",
-      "long_share": 0.03249479189512412,
-      "short_share": 0.007598962188491807
+      "long_share": 0.03268065987338491,
+      "short_share": 0.007766421432849773
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.02440348437488802,
+      "date": "2026-11-24",
+      "delta": -0.02441907692730203,
       "genre": "shoegaze",
-      "long_share": 0.032002446563379826,
-      "short_share": 0.007598962188491807
+      "long_share": 0.032185498360151804,
+      "short_share": 0.007766421432849773
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.02377485622997201,
+      "date": "2026-11-24",
+      "delta": -0.023716845861162385,
       "genre": "ambient pop",
-      "long_share": 0.03236714680911634,
-      "short_share": 0.00859229057914433
+      "long_share": 0.032561936937463516,
+      "short_share": 0.008845091076301131
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.01833698354194419,
-      "genre": "hip hop",
-      "long_share": 0.016583033658477787,
-      "short_share": 0.034920017200421975
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.01801463804798842,
+      "date": "2026-11-24",
+      "delta": 0.018771198037244776,
       "genre": "filmi",
-      "long_share": 0.025408003029107618,
-      "short_share": 0.043422641077096036
+      "long_share": 0.02560835300761107,
+      "short_share": 0.044379551044855844
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0168865826410929,
+      "date": "2026-11-24",
+      "delta": 0.01830194683440075,
+      "genre": "hip hop",
+      "long_share": 0.016811835499424485,
+      "short_share": 0.035113782333825234
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.017258714295221717,
       "genre": "bhangra",
       "long_share": null,
-      "short_share": 0.0168865826410929
+      "short_share": 0.017258714295221717
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.014423369661611,
+      "date": "2026-11-24",
+      "delta": 0.013188288712589334,
       "genre": "lo-fi",
-      "long_share": 0.021159072332120478,
-      "short_share": 0.03558244199373148
+      "long_share": 0.0213291398778541,
+      "short_share": 0.03451742859044343
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.01249306181572578,
+      "date": "2026-11-24",
+      "delta": -0.010919589561493026,
       "genre": "chillwave",
-      "long_share": 0.01249306181572578,
+      "long_share": 0.010919589561493026,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.00978948536125054,
-      "genre": "electronic",
-      "long_share": 0.025206769757836586,
-      "short_share": 0.015417284396586045
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.009429467660046447,
-      "genre": "bedroom pop",
-      "long_share": 0.006196103939666143,
-      "short_share": 0.01562557159971259
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.009232220947981087,
+      "date": "2026-11-24",
+      "delta": -0.009301283920039828,
       "genre": "downtempo",
-      "long_share": 0.009232220947981087,
+      "long_share": 0.009301283920039828,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.008690315731263581,
+      "date": "2026-11-24",
+      "delta": 0.009163418329367713,
+      "genre": "bedroom pop",
+      "long_share": 0.006369424536331834,
+      "short_share": 0.015532842865699547
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.008774015653080173,
+      "genre": "electronic",
+      "long_share": 0.023717185780359643,
+      "short_share": 0.01494317012727947
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.008755460333019077,
       "genre": "pop",
-      "long_share": 0.08275910992789849,
-      "short_share": 0.07406879419663491
+      "long_share": 0.08345917009897065,
+      "short_share": 0.07470370976595157
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.008686466218272413,
+      "date": "2026-11-24",
+      "delta": -0.008751206153875311,
       "genre": "singer-songwriter",
-      "long_share": 0.008686466218272413,
+      "long_share": 0.008751206153875311,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.008121909206485787,
-      "genre": "trap",
-      "long_share": 0.009911525352843283,
-      "short_share": 0.01803343455932907
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.00810029283045953,
-      "genre": "house",
-      "long_share": 0.00810029283045953,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.007680587175211157,
-      "genre": "boom bap",
-      "long_share": 0.007680587175211157,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.007680587175211157,
-      "genre": "instrumental",
-      "long_share": 0.007680587175211157,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.007529987426677605,
-      "genre": "indian pop",
-      "long_share": 0.007529987426677605,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.007467237531455291,
-      "genre": "phonk",
-      "long_share": 0.007467237531455291,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.007467237531455291,
-      "genre": "wave",
-      "long_share": 0.007467237531455291,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.007216270807974701,
+      "date": "2026-11-24",
+      "delta": -0.00866636953064926,
       "genre": "contemporary r&b",
-      "long_share": 0.03589330668597354,
-      "short_share": 0.02867703587799884
+      "long_share": 0.03617758196077055,
+      "short_share": 0.027511212430121286
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.006324419225821651,
-      "genre": "alternative r&b",
-      "long_share": 0.04430517408559796,
-      "short_share": 0.05062959331141961
+      "date": "2026-11-24",
+      "delta": -0.008154445555227714,
+      "genre": "house",
+      "long_share": 0.008154445555227714,
+      "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.005689323833489746,
+      "date": "2026-11-24",
+      "delta": 0.007769156716399191,
+      "genre": "trap",
+      "long_share": 0.010085911322204327,
+      "short_share": 0.017855068038603518
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.00774077490863853,
+      "genre": "boom bap",
+      "long_share": 0.00774077490863853,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.00774077490863853,
+      "genre": "instrumental",
+      "long_share": 0.00774077490863853,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.007573058437682777,
+      "genre": "indian pop",
+      "long_share": 0.007573058437682777,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0075099496173687535,
+      "genre": "phonk",
+      "long_share": 0.0075099496173687535,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0075099496173687535,
+      "genre": "wave",
+      "long_share": 0.0075099496173687535,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.005721866375138098,
       "genre": "chillout",
-      "long_share": 0.005689323833489746,
+      "long_share": 0.005721866375138098,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.005689323833489746,
+      "date": "2026-11-24",
+      "delta": -0.005721866375138098,
       "genre": "drift phonk",
-      "long_share": 0.005689323833489746,
+      "long_share": 0.005721866375138098,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.005689323833489746,
+      "date": "2026-11-24",
+      "delta": -0.005721866375138098,
       "genre": "hardwave",
-      "long_share": 0.005689323833489746,
+      "long_share": 0.005721866375138098,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0050079118322237555,
+      "date": "2026-11-24",
+      "delta": 0.005382105516422139,
       "genre": "art pop",
-      "long_share": 0.012871999199521672,
-      "short_share": 0.017879911031745428
+      "long_share": 0.012955278422250936,
+      "short_share": 0.018337383938673076
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.004938649161015405,
+      "date": "2026-11-24",
+      "delta": -0.004966897895085154,
       "genre": "synthwave",
-      "long_share": 0.004938649161015405,
+      "long_share": 0.004966897895085154,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.00424721648869868,
-      "genre": "synth-pop",
-      "long_share": 0.025046618268236183,
-      "short_share": 0.029293834756934863
+      "date": "2026-11-24",
+      "delta": 0.0046503755959936,
+      "genre": "alternative r&b",
+      "long_share": 0.04462182442375507,
+      "short_share": 0.04927220001974867
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.004175121348785393,
+      "date": "2026-11-24",
+      "delta": 0.00447454431720338,
       "genre": "trip hop",
-      "long_share": 0.012711461292307508,
-      "short_share": 0.0168865826410929
+      "long_share": 0.012784169978018336,
+      "short_share": 0.017258714295221717
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.003459723952797819,
-      "genre": "dark ambient",
-      "long_share": 0.003459723952797819,
-      "short_share": null
+      "date": "2026-11-24",
+      "delta": 0.0043606542036229365,
+      "genre": "synth-pop",
+      "long_share": 0.023561479995432195,
+      "short_share": 0.02792213419905513
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0034242082166166914,
+      "date": "2026-11-24",
+      "delta": 0.00379806217376975,
       "genre": "hypnagogic pop",
-      "long_share": 0.018287112321931327,
-      "short_share": 0.021711320538548018
+      "long_share": 0.018391713348658172,
+      "short_share": 0.022189775522427922
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0032453470491743703,
+      "date": "2026-11-24",
+      "delta": 0.003599619527210531,
       "genre": "electropop",
-      "long_share": 0.00037320637391696586,
-      "short_share": 0.0036185534230913363
+      "long_share": 0.0003831606947637119,
+      "short_share": 0.003982780221974243
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.003177673161324182,
+      "date": "2026-11-24",
+      "delta": -0.0035761664844613113,
+      "genre": "dark ambient",
+      "long_share": 0.0035761664844613113,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.003445677586205405,
       "genre": "indie pop",
-      "long_share": 0.05103536176723473,
-      "short_share": 0.047857688605910546
+      "long_share": 0.05137783410611663,
+      "short_share": 0.04793215651991122
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.002771365263234665,
-      "genre": "jazz",
-      "long_share": 0.002771365263234665,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.0027291099331250446,
-      "genre": "ballad",
-      "long_share": 0.014157472707967857,
-      "short_share": 0.0168865826410929
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0026668705469483182,
-      "genre": "easy listening",
-      "long_share": 0.0026668705469483182,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.002461726658721525,
-      "genre": "bubblegum pop",
-      "long_share": 0.002461726658721525,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.002461726658721525,
-      "genre": "drum and bass",
-      "long_share": 0.002461726658721525,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.002461726658721525,
-      "genre": "future garage",
-      "long_share": 0.002461726658721525,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.002461726658721525,
-      "genre": "jungle",
-      "long_share": 0.002461726658721525,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.002461726658721525,
-      "genre": "uk garage",
-      "long_share": 0.002461726658721525,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0023685372645347795,
-      "genre": "dance",
-      "long_share": 0.0023685372645347795,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0021334964375586546,
-      "genre": "classical",
-      "long_share": 0.0021334964375586546,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0021334964375586546,
-      "genre": "world fusion",
-      "long_share": 0.0021334964375586546,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.0020558244400345764,
-      "genre": "pop rap",
-      "long_share": 0.002731800088978576,
-      "short_share": 0.004787624529013153
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0020116048940980735,
-      "genre": "pop rock",
-      "long_share": 0.0020116048940980735,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.00200132956486738,
-      "genre": "rock",
-      "long_share": 0.01081376989772426,
-      "short_share": 0.00881244033285688
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001882408414251893,
-      "genre": "smooth jazz",
-      "long_share": 0.001882408414251893,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001882408414251893,
-      "genre": "smooth soul",
-      "long_share": 0.001882408414251893,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001882408414251893,
-      "genre": "sophisti-pop",
-      "long_share": 0.001882408414251893,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.0017993281840346645,
-      "genre": "dancehall",
-      "long_share": 0.002000152910211239,
-      "short_share": 0.0037994810942459036
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0017779136979655455,
-      "genre": "phonk house",
-      "long_share": 0.0017779136979655455,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0017545085546440435,
-      "genre": "future bass",
-      "long_share": 0.0017545085546440435,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001651739177464765,
-      "genre": "dreamwave",
-      "long_share": 0.001651739177464765,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001651739177464765,
-      "genre": "witch house",
-      "long_share": 0.001651739177464765,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0015827768286766444,
-      "genre": "hardcore hip hop",
-      "long_share": 0.0015827768286766444,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0015516337727699307,
-      "genre": "jazz pop",
-      "long_share": 0.0015516337727699307,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0015516337727699307,
-      "genre": "quiet storm",
-      "long_share": 0.0015516337727699307,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001509697238917917,
-      "genre": "psychedelic rock",
-      "long_share": 0.0034834536515131916,
-      "short_share": 0.0019737564125952745
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001461486721911532,
-      "genre": "instrumental hip hop",
-      "long_share": 0.018348069363004434,
-      "short_share": 0.0168865826410929
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.001461486721911532,
-      "genre": "lo-fi hip hop",
-      "long_share": 0.018348069363004434,
-      "short_share": 0.0168865826410929
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0014055438352779124,
+      "date": "2026-11-24",
+      "delta": -0.0031597021458960664,
       "genre": "hip hop soul",
-      "long_share": 0.004571778080482832,
-      "short_share": 0.0031662342452049193
+      "long_share": 0.004597928337164543,
+      "short_share": 0.0014382261912684764
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0014055438352779124,
+      "date": "2026-11-24",
+      "delta": -0.0031597021458960664,
       "genre": "neo soul",
-      "long_share": 0.004571778080482832,
-      "short_share": 0.0031662342452049193
+      "long_share": 0.004597928337164543,
+      "short_share": 0.0014382261912684764
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0013474714342475715,
-      "genre": "piano rock",
-      "long_share": 0.0013474714342475715,
+      "date": "2026-11-24",
+      "delta": 0.0029258210241421556,
+      "genre": "ballad",
+      "long_share": 0.014332893271079561,
+      "short_share": 0.017258714295221717
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0027951379167510376,
+      "genre": "jazz",
+      "long_share": 0.0027951379167510376,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0012621632228997386,
-      "genre": "conscious hip hop",
-      "long_share": 0.0012621632228997386,
+      "date": "2026-11-24",
+      "delta": -0.002768645020228112,
+      "genre": "easy listening",
+      "long_share": 0.002768645020228112,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0012069507305782511,
-      "genre": "neo-psychedelia",
-      "long_share": 0.0031807071431735256,
-      "short_share": 0.0019737564125952745
+      "date": "2026-11-24",
+      "delta": 0.0024801107223407746,
+      "genre": "pop rap",
+      "long_share": 0.002797073071775097,
+      "short_share": 0.0052771837941158715
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0011488057740700447,
-      "genre": "baroque pop",
-      "long_share": 0.0011488057740700447,
+      "date": "2026-11-24",
+      "delta": -0.0024758075661655233,
+      "genre": "bubblegum pop",
+      "long_share": 0.0024758075661655233,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.001021882364452853,
-      "genre": "post-grunge",
-      "long_share": 0.0011405171321214873,
-      "short_share": 0.0021623994965743404
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0009642617384272474,
-      "genre": "alternative rock",
-      "long_share": 0.009776702071284128,
-      "short_share": 0.00881244033285688
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.0009103713350518917,
-      "genre": "alternative hip hop",
-      "long_share": 0.002889109759194012,
-      "short_share": 0.0037994810942459036
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0008889568489827727,
-      "genre": "disco",
-      "long_share": 0.0008889568489827727,
+      "date": "2026-11-24",
+      "delta": -0.0024758075661655233,
+      "genre": "drum and bass",
+      "long_share": 0.0024758075661655233,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0008889568489827727,
-      "genre": "gangsta rap",
-      "long_share": 0.0008889568489827727,
+      "date": "2026-11-24",
+      "delta": -0.0024758075661655233,
+      "genre": "future garage",
+      "long_share": 0.0024758075661655233,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0008889568489827727,
-      "genre": "jazz rap",
-      "long_share": 0.0008889568489827727,
+      "date": "2026-11-24",
+      "delta": -0.0024758075661655233,
+      "genre": "jungle",
+      "long_share": 0.0024758075661655233,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0008780813130643666,
-      "genre": "blues rock",
-      "long_share": 0.0008780813130643666,
+      "date": "2026-11-24",
+      "delta": -0.0024758075661655233,
+      "genre": "uk garage",
+      "long_share": 0.0024758075661655233,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0008780813130643666,
-      "genre": "folk rock",
-      "long_share": 0.0008780813130643666,
+      "date": "2026-11-24",
+      "delta": -0.002390005769560316,
+      "genre": "dance",
+      "long_share": 0.002390005769560316,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0008257041501128447,
-      "genre": "country",
-      "long_share": 0.0008257041501128447,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.0007335642220202959,
-      "genre": "psychedelic soul",
-      "long_share": 0.0010757124895253722,
-      "short_share": 0.0018092767115456682
-    },
-    {
-      "date": "2026-11-23",
-      "delta": 0.0007224444227974317,
+      "date": "2026-11-24",
+      "delta": 0.002256133552593853,
       "genre": "indie rock",
-      "long_share": 0.04829305227481524,
-      "short_share": 0.049015496697612675
+      "long_share": 0.04860384057097105,
+      "short_share": 0.050859974123564904
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0007188432893315698,
-      "genre": "britpop",
-      "long_share": 0.0017121716799840935,
-      "short_share": 0.0009933283906525237
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0007188432893315698,
-      "genre": "post-britpop",
-      "long_share": 0.0017121716799840935,
-      "short_share": 0.0009933283906525237
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0006938199796938715,
-      "genre": "southern hip hop",
-      "long_share": 0.0006938199796938715,
+      "date": "2026-11-24",
+      "delta": -0.002200717836591576,
+      "genre": "classical",
+      "long_share": 0.002200717836591576,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0006644814326255064,
-      "genre": "alternative pop",
-      "long_share": 0.00295407199046583,
-      "short_share": 0.0036185534230913363
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0006641334598505018,
-      "genre": "blue-eyed soul",
-      "long_share": 0.0006641334598505018,
+      "date": "2026-11-24",
+      "delta": -0.002200717836591576,
+      "genre": "world fusion",
+      "long_share": 0.002200717836591576,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0006641334598505018,
-      "genre": "soft rock",
-      "long_share": 0.0006641334598505018,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0006564604423257399,
-      "genre": "garage rock",
-      "long_share": 0.0006564604423257399,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0006564604423257399,
-      "genre": "garage rock revival",
-      "long_share": 0.0006564604423257399,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0006564604423257399,
-      "genre": "post-punk revival",
-      "long_share": 0.0006564604423257399,
-      "short_share": null
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.000645449903255893,
+      "date": "2026-11-24",
+      "delta": -0.0020579639815660467,
       "genre": "r&b",
-      "long_share": 0.029322485781254733,
-      "short_share": 0.02867703587799884
+      "long_share": 0.029569176411687333,
+      "short_share": 0.027511212430121286
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0006317069164132084,
+      "date": "2026-11-24",
+      "delta": -0.0020381650812816106,
+      "genre": "pop rock",
+      "long_share": 0.0020381650812816106,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.00190109629563571,
+      "genre": "smooth jazz",
+      "long_share": 0.00190109629563571,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.00190109629563571,
+      "genre": "smooth soul",
+      "long_share": 0.00190109629563571,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.00190109629563571,
+      "genre": "sophisti-pop",
+      "long_share": 0.00190109629563571,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.001871617068915399,
+      "genre": "dancehall",
+      "long_share": 0.0020115936475094878,
+      "short_share": 0.0038832107164248867
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0017880832422306557,
+      "genre": "phonk house",
+      "long_share": 0.0017880832422306557,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0017723638291121443,
+      "genre": "future bass",
+      "long_share": 0.0017723638291121443,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0016720005783441953,
+      "genre": "psychedelic rock",
+      "long_share": 0.003521148538546522,
+      "short_share": 0.0018491479602023267
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0016092749180075902,
+      "genre": "hardcore hip hop",
+      "long_share": 0.0016092749180075902,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0015605090114012995,
+      "genre": "jazz pop",
+      "long_share": 0.0015605090114012995,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0015605090114012995,
+      "genre": "quiet storm",
+      "long_share": 0.0015605090114012995,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0013551788783221811,
+      "genre": "piano rock",
+      "long_share": 0.0013551788783221811,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.001349752609414714,
+      "genre": "neo-psychedelia",
+      "long_share": 0.0031989005696170408,
+      "short_share": 0.0018491479602023267
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0012772023158790398,
+      "genre": "conscious hip hop",
+      "long_share": 0.0012772023158790398,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.001210560066800745,
+      "genre": "instrumental hip hop",
+      "long_share": 0.01846927436202246,
+      "short_share": 0.017258714295221717
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.001210560066800745,
+      "genre": "lo-fi hip hop",
+      "long_share": 0.01846927436202246,
+      "short_share": 0.017258714295221717
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.001191997179277474,
+      "genre": "post-grunge",
+      "long_share": 0.001181076036315512,
+      "short_share": 0.002373073215592986
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0011553768642105775,
+      "genre": "baroque pop",
+      "long_share": 0.0011553768642105775,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.001114649293858071,
+      "genre": "psychedelic soul",
+      "long_share": 0.001114649293858071,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0010581743094878557,
+      "genre": "rock",
+      "long_share": 0.010928701981901184,
+      "short_share": 0.009870527672413329
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.0010118111425756146,
+      "genre": "alternative pop",
+      "long_share": 0.0029709690793986283,
+      "short_share": 0.003982780221974243
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.000981667323369819,
       "genre": "dance-pop",
-      "long_share": 0.02107961362213481,
-      "short_share": 0.021711320538548018
+      "long_share": 0.021208108199058103,
+      "short_share": 0.022189775522427922
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0006286281449160015,
+      "date": "2026-11-24",
+      "delta": 0.0009775754478000714,
+      "genre": "alternative hip hop",
+      "long_share": 0.0029056352686248153,
+      "short_share": 0.0038832107164248867
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0009021467162928765,
+      "genre": "blues rock",
+      "long_share": 0.0009021467162928765,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0009021467162928765,
+      "genre": "folk rock",
+      "long_share": 0.0009021467162928765,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0008940416211153278,
+      "genre": "disco",
+      "long_share": 0.0008940416211153278,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0008940416211153278,
+      "genre": "gangsta rap",
+      "long_share": 0.0008940416211153278,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0008940416211153278,
+      "genre": "jazz rap",
+      "long_share": 0.0008940416211153278,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0008375604319581239,
+      "genre": "country",
+      "long_share": 0.0008375604319581239,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0007152332968922623,
+      "genre": "southern hip hop",
+      "long_share": 0.0007152332968922623,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": 0.0007022310661396403,
       "genre": "crossover prog",
-      "long_share": 0.00036470024573652214,
-      "short_share": 0.0009933283906525237
+      "long_share": 0.000376438577311717,
+      "short_share": 0.0010786696434513573
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0006286281449160015,
+      "date": "2026-11-24",
+      "delta": 0.0007022310661396403,
       "genre": "electronic rock",
-      "long_share": 0.00036470024573652214,
-      "short_share": 0.0009933283906525237
+      "long_share": 0.000376438577311717,
+      "short_share": 0.0010786696434513573
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0006286281449160015,
+      "date": "2026-11-24",
+      "delta": 0.0007022310661396403,
       "genre": "experimental rock",
-      "long_share": 0.00036470024573652214,
-      "short_share": 0.0009933283906525237
+      "long_share": 0.000376438577311717,
+      "short_share": 0.0010786696434513573
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.0006286281449160015,
+      "date": "2026-11-24",
+      "delta": 0.0007022310661396403,
       "genre": "idm",
-      "long_share": 0.00036470024573652214,
-      "short_share": 0.0009933283906525237
+      "long_share": 0.000376438577311717,
+      "short_share": 0.0010786696434513573
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005447224946958268,
+      "date": "2026-11-24",
+      "delta": -0.0006829862029594298,
+      "genre": "blue-eyed soul",
+      "long_share": 0.0006829862029594298,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0006829862029594298,
+      "genre": "soft rock",
+      "long_share": 0.0006829862029594298,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0006602153509774729,
+      "genre": "garage rock",
+      "long_share": 0.0006602153509774729,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0006602153509774729,
+      "genre": "garage rock revival",
+      "long_share": 0.0006602153509774729,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0006602153509774729,
+      "genre": "post-punk revival",
+      "long_share": 0.0006602153509774729,
+      "short_share": null
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0006529478121825407,
+      "genre": "britpop",
+      "long_share": 0.001731617455633898,
+      "short_share": 0.0010786696434513573
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0006529478121825407,
+      "genre": "post-britpop",
+      "long_share": 0.001731617455633898,
+      "short_share": 0.0010786696434513573
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0005597477975678574,
       "genre": "arena rock",
-      "long_share": 0.0005447224946958268,
+      "long_share": 0.0005597477975678574,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005447224946958268,
+      "date": "2026-11-24",
+      "delta": -0.0005597477975678574,
       "genre": "classic rock",
-      "long_share": 0.0005447224946958268,
+      "long_share": 0.0005597477975678574,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005447224946958268,
+      "date": "2026-11-24",
+      "delta": -0.0005597477975678574,
       "genre": "hard rock",
-      "long_share": 0.0005447224946958268,
+      "long_share": 0.0005597477975678574,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005447224946958268,
+      "date": "2026-11-24",
+      "delta": -0.0005597477975678574,
       "genre": "heavy metal",
-      "long_share": 0.0005447224946958268,
+      "long_share": 0.0005597477975678574,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005447224946958268,
+      "date": "2026-11-24",
+      "delta": -0.0005597477975678574,
       "genre": "progressive rock",
-      "long_share": 0.0005447224946958268,
+      "long_share": 0.0005597477975678574,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005447224946958268,
+      "date": "2026-11-24",
+      "delta": -0.0005597477975678574,
       "genre": "rock and roll",
-      "long_share": 0.0005447224946958268,
+      "long_share": 0.0005597477975678574,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0005201776291540432,
-      "genre": "electronica",
-      "long_share": 0.001513506019806567,
-      "short_share": 0.0009933283906525237
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.0004957026294459218,
-      "genre": "west coast hip hop",
-      "long_share": 0.0016647737353677383,
-      "short_share": 0.0011690711059218165
-    },
-    {
-      "date": "2026-11-23",
-      "delta": -0.000492345331744305,
+      "date": "2026-11-24",
+      "delta": -0.0004951615132331047,
       "genre": "edm",
-      "long_share": 0.000492345331744305,
+      "long_share": 0.0004951615132331047,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.000492345331744305,
+      "date": "2026-11-24",
+      "delta": -0.0004951615132331047,
       "genre": "melodic house",
-      "long_share": 0.000492345331744305,
+      "long_share": 0.0004951615132331047,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.000492345331744305,
+      "date": "2026-11-24",
+      "delta": -0.0004951615132331047,
       "genre": "melodic techno",
-      "long_share": 0.000492345331744305,
+      "long_share": 0.0004951615132331047,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.00039325421953685115,
+      "date": "2026-11-24",
+      "delta": 0.0004897661131378336,
       "genre": "grunge",
-      "long_share": 0.0007758168863849653,
-      "short_share": 0.0011690711059218165
+      "long_share": 0.0008046374590037951,
+      "short_share": 0.0012944035721416287
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.00039325421953685115,
+      "date": "2026-11-24",
+      "delta": 0.0004897661131378336,
       "genre": "power pop",
-      "long_share": 0.0007758168863849653,
-      "short_share": 0.0011690711059218165
+      "long_share": 0.0008046374590037951,
+      "short_share": 0.0012944035721416287
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.00037320637391696586,
+      "date": "2026-11-24",
+      "delta": -0.0004531457980709371,
+      "genre": "electronica",
+      "long_share": 0.0015318154415222944,
+      "short_share": 0.0010786696434513573
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0004042755079774942,
+      "genre": "west coast hip hop",
+      "long_share": 0.001698679080119123,
+      "short_share": 0.0012944035721416287
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -0.0003831606947637119,
       "genre": "chipmunk soul",
-      "long_share": 0.00037320637391696586,
+      "long_share": 0.0003831606947637119,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.00037320637391696586,
+      "date": "2026-11-24",
+      "delta": -0.0003831606947637119,
       "genre": "christian hip hop",
-      "long_share": 0.00037320637391696586,
+      "long_share": 0.0003831606947637119,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.00037320637391696586,
+      "date": "2026-11-24",
+      "delta": -0.0003831606947637119,
       "genre": "deep house",
-      "long_share": 0.00037320637391696586,
+      "long_share": 0.0003831606947637119,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.00037320637391696586,
+      "date": "2026-11-24",
+      "delta": -0.0003831606947637119,
       "genre": "experimental hip hop",
-      "long_share": 0.00037320637391696586,
+      "long_share": 0.0003831606947637119,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0003333588183685398,
+      "date": "2026-11-24",
+      "delta": -0.0003423989187250192,
       "genre": "acoustic rock",
-      "long_share": 0.0003333588183685398,
+      "long_share": 0.0003423989187250192,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0003333588183685398,
+      "date": "2026-11-24",
+      "delta": -0.0003423989187250192,
       "genre": "americana",
-      "long_share": 0.0003333588183685398,
+      "long_share": 0.0003423989187250192,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0003333588183685398,
+      "date": "2026-11-24",
+      "delta": -0.0003423989187250192,
       "genre": "blues",
-      "long_share": 0.0003333588183685398,
+      "long_share": 0.0003423989187250192,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0003333588183685398,
+      "date": "2026-11-24",
+      "delta": -0.0003423989187250192,
       "genre": "country rock",
-      "long_share": 0.0003333588183685398,
+      "long_share": 0.0003423989187250192,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.000330774641481962,
+      "date": "2026-11-24",
+      "delta": -0.0003405872842344106,
       "genre": "dance-rock",
-      "long_share": 0.000330774641481962,
+      "long_share": 0.0003405872842344106,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.000330774641481962,
+      "date": "2026-11-24",
+      "delta": -0.0003405872842344106,
       "genre": "funk",
-      "long_share": 0.000330774641481962,
+      "long_share": 0.0003405872842344106,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.000330774641481962,
+      "date": "2026-11-24",
+      "delta": -0.0003405872842344106,
       "genre": "pop soul",
-      "long_share": 0.000330774641481962,
+      "long_share": 0.0003405872842344106,
       "short_share": null
     },
     {
-      "date": "2026-11-23",
-      "delta": -0.0002246086516761751,
+      "date": "2026-11-24",
+      "delta": -0.0003095541612270817,
       "genre": "indietronica",
-      "long_share": 0.0031916934549239737,
-      "short_share": 0.0029670848032477986
+      "long_share": 0.0032373717648807657,
+      "short_share": 0.002927817603653684
     },
     {
-      "date": "2026-11-23",
-      "delta": 0.00013628281317169658,
+      "date": "2026-11-24",
+      "delta": 0.0002070695529065356,
       "genre": "chamber pop",
-      "long_share": 0.0008570455774808271,
-      "short_share": 0.0009933283906525237
+      "long_share": 0.0008716000905448217,
+      "short_share": 0.0010786696434513573
     },
     {
-      "date": "2026-11-23",
-      "delta": -5.81449565082064e-05,
+      "date": "2026-11-24",
+      "delta": -0.00019437574520413678,
       "genre": "alternative dance",
-      "long_share": 0.002031901369103481,
-      "short_share": 0.0019737564125952745
+      "long_share": 0.0020435237054064635,
+      "short_share": 0.0018491479602023267
     },
     {
-      "date": "2026-11-23",
-      "delta": -5.81449565082064e-05,
+      "date": "2026-11-24",
+      "delta": -0.00019437574520413678,
       "genre": "leftfield",
-      "long_share": 0.002031901369103481,
-      "short_share": 0.0019737564125952745
+      "long_share": 0.0020435237054064635,
+      "short_share": 0.0018491479602023267
     },
     {
-      "date": "2026-11-23",
-      "delta": -5.81449565082064e-05,
+      "date": "2026-11-24",
+      "delta": -0.00019437574520413678,
       "genre": "psychedelic",
-      "long_share": 0.002031901369103481,
-      "short_share": 0.0019737564125952745
+      "long_share": 0.0020435237054064635,
+      "short_share": 0.0018491479602023267
     },
     {
-      "date": "2026-11-23",
-      "delta": -5.81449565082064e-05,
+      "date": "2026-11-24",
+      "delta": -0.00019437574520413678,
       "genre": "space rock",
-      "long_share": 0.002031901369103481,
-      "short_share": 0.0019737564125952745
+      "long_share": 0.0020435237054064635,
+      "short_share": 0.0018491479602023267
     },
     {
-      "date": "2026-11-23",
-      "delta": -2.7832297409738534e-05,
+      "date": "2026-11-24",
+      "delta": 4.2015715162167615e-05,
       "genre": "art rock",
-      "long_share": 0.0010211606880622622,
-      "short_share": 0.0009933283906525237
+      "long_share": 0.0010366539282891897,
+      "short_share": 0.0010786696434513573
+    },
+    {
+      "date": "2026-11-24",
+      "delta": -3.264998686894685e-06,
+      "genre": "alternative rock",
+      "long_share": 0.009873792671100223,
+      "short_share": 0.009870527672413329
     }
   ],
   "half_life": {
     "available": true,
-    "median_days": 16,
-    "spells_have": 75,
+    "median_days": 16.5,
+    "spells_have": 76,
     "spells_needed": 10
   },
   "headline": {
-    "divergence_artists": 0.6071428571428571,
-    "divergence_tracks": 0.08,
+    "divergence_artists": 0.6296296296296297,
+    "divergence_tracks": 0.1,
     "entries_7d": 12,
     "exits_7d": 13,
     "phase": {
       "name": "settled",
-      "overlap": 0.6071428571428571,
-      "position": 39,
+      "overlap": 0.6296296296296297,
+      "position": 37,
       "sentence": "Mostly old favourites with a few new arrivals — your taste is holding steady."
     }
   },
@@ -1084,6 +1070,14 @@
           "subtitle": ""
         },
         {
+          "gap": 47,
+          "long": null,
+          "name": "GLM-RST",
+          "short": 13,
+          "spotify_id": "7pehDkTumHs6SoSs7ySICp",
+          "subtitle": ""
+        },
+        {
           "gap": 46,
           "long": null,
           "name": "Videoclub",
@@ -1092,64 +1086,56 @@
           "subtitle": ""
         },
         {
-          "gap": 45,
+          "gap": 40,
           "long": null,
+          "name": "Chezile",
+          "short": 20,
+          "spotify_id": "1EmdfupUQDpXOcb4Nj2mBH",
+          "subtitle": ""
+        },
+        {
+          "gap": 39,
+          "long": null,
+          "name": ".diedlonely",
+          "short": 21,
+          "spotify_id": "2LbjW13j6rNtFgYcPjR2ur",
+          "subtitle": ""
+        },
+        {
+          "gap": 38,
+          "long": null,
+          "name": "Shashwat Sachdev",
+          "short": 22,
+          "spotify_id": "465OXuCU8YZNmVG1leLwQ9",
+          "subtitle": ""
+        },
+        {
+          "gap": 37,
+          "long": null,
+          "name": "Don Toliver",
+          "short": 23,
+          "spotify_id": "4Gso3d4CscCijv0lmajZWs",
+          "subtitle": ""
+        },
+        {
+          "gap": 35,
+          "long": 50,
           "name": "AP Dhillon",
           "short": 15,
           "spotify_id": "6LEG9Ld1aLImEFEVHdWNSB",
           "subtitle": ""
         },
         {
-          "gap": 44,
-          "long": null,
-          "name": "GLM-RST",
-          "short": 16,
-          "spotify_id": "7pehDkTumHs6SoSs7ySICp",
-          "subtitle": ""
-        },
-        {
-          "gap": 40,
-          "long": null,
-          "name": "Don Toliver",
-          "short": 20,
-          "spotify_id": "4Gso3d4CscCijv0lmajZWs",
-          "subtitle": ""
-        },
-        {
-          "gap": 38,
-          "long": null,
-          "name": "Chezile",
-          "short": 22,
-          "spotify_id": "1EmdfupUQDpXOcb4Nj2mBH",
-          "subtitle": ""
-        },
-        {
-          "gap": 37,
-          "long": null,
-          "name": ".diedlonely",
-          "short": 23,
-          "spotify_id": "2LbjW13j6rNtFgYcPjR2ur",
-          "subtitle": ""
-        },
-        {
-          "gap": 35,
-          "long": null,
-          "name": "Shashwat Sachdev",
-          "short": 25,
-          "spotify_id": "465OXuCU8YZNmVG1leLwQ9",
-          "subtitle": ""
-        },
-        {
-          "gap": 32,
+          "gap": 34,
           "long": null,
           "name": "Chase Atlantic",
-          "short": 28,
+          "short": 26,
           "spotify_id": "7cYEt1pqMgXJdq00hAwVpT",
           "subtitle": ""
         },
         {
-          "gap": 25,
-          "long": 44,
+          "gap": 24,
+          "long": 43,
           "name": "Metro Boomin",
           "short": 19,
           "spotify_id": "0iEtIxbK0KxaSlF7G42ZOp",
@@ -1157,25 +1143,17 @@
         },
         {
           "gap": 22,
-          "long": 39,
+          "long": 38,
           "name": "Radiohead",
-          "short": 17,
+          "short": 16,
           "spotify_id": "4Z8W4fKeB5YxbusRsdQVPb",
           "subtitle": ""
         },
         {
-          "gap": 10,
-          "long": 34,
-          "name": "The Marías",
-          "short": 24,
-          "spotify_id": "2sSGPbdZJkaSE2AbcGOACx",
-          "subtitle": ""
-        },
-        {
-          "gap": 7,
-          "long": 33,
+          "gap": 8,
+          "long": 32,
           "name": "Doja Cat",
-          "short": 26,
+          "short": 24,
           "spotify_id": "5cj0lLjcoR7YOSnhnX0Po5",
           "subtitle": ""
         },
@@ -1204,10 +1182,10 @@
           "subtitle": ""
         },
         {
-          "gap": 3,
+          "gap": 4,
           "long": 21,
           "name": "Abdul Hannan",
-          "short": 18,
+          "short": 17,
           "spotify_id": "5mWQT8CLTa4mAQAJdFjHb1",
           "subtitle": ""
         },
@@ -1218,14 +1196,22 @@
           "short": 3,
           "spotify_id": "3MZsBdqDrRTJihTHQrO6Dq",
           "subtitle": ""
+        },
+        {
+          "gap": 1,
+          "long": 5,
+          "name": "Murtaza Qizilbash",
+          "short": 4,
+          "spotify_id": "6hIXwlI4wny3zYuB6cDBBk",
+          "subtitle": ""
         }
       ],
       "counts": {
         "both": 17,
         "long_only": 33,
-        "short_only": 11
+        "short_only": 10
       },
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "fading": [
         {
           "long": 3,
@@ -1331,18 +1317,18 @@
         },
         {
           "long": 31,
-          "name": "Pastel Ghost",
-          "spotify_id": "06O23tLg0or676h8EEzH7W",
-          "subtitle": ""
-        },
-        {
-          "long": 32,
           "name": "Engelbert Humperdinck",
           "spotify_id": "17XXKfRBMCWvLrqGoNkJXm",
           "subtitle": ""
         },
         {
-          "long": 35,
+          "long": 33,
+          "name": "The Marías",
+          "spotify_id": "2sSGPbdZJkaSE2AbcGOACx",
+          "subtitle": ""
+        },
+        {
+          "long": 34,
           "name": "Warfaze",
           "spotify_id": "06eRdiCBgFUhiuFjei0eH2",
           "subtitle": ""
@@ -1371,26 +1357,26 @@
         {
           "gap": 57,
           "long": null,
-          "name": "Blah Blah",
+          "name": "i love u. - slowed + reverb",
           "short": 3,
-          "spotify_id": "42D9aaKTLw47faFhRCQfHF",
-          "subtitle": "Joji"
+          "spotify_id": "1gCpf5jhAqegPJeXG0BCn5",
+          "subtitle": "wiv"
         },
         {
           "gap": 56,
           "long": null,
-          "name": "Last Christmas - Single Version",
+          "name": "Blah Blah",
           "short": 4,
-          "spotify_id": "5Qicor4jFNgZQxSf6UxEzw",
-          "subtitle": "Wham!"
+          "spotify_id": "42D9aaKTLw47faFhRCQfHF",
+          "subtitle": "Joji"
         },
         {
           "gap": 55,
           "long": null,
-          "name": "i love u. - slowed + reverb",
+          "name": "Last Christmas - Single Version",
           "short": 5,
-          "spotify_id": "1gCpf5jhAqegPJeXG0BCn5",
-          "subtitle": "wiv"
+          "spotify_id": "5Qicor4jFNgZQxSf6UxEzw",
+          "subtitle": "Wham!"
         },
         {
           "gap": 54,
@@ -1419,58 +1405,58 @@
         {
           "gap": 51,
           "long": null,
-          "name": "Snooze",
-          "short": 9,
-          "spotify_id": "4iZ4pt7kvcaH6Yo8UoZ4s2",
-          "subtitle": "SZA"
-        },
-        {
-          "gap": 50,
-          "long": null,
           "name": "Sadqay",
-          "short": 10,
+          "short": 9,
           "spotify_id": "2lX53kXvYnvpV8Vqfe4S7s",
           "subtitle": "Aashir Wajahat"
         },
         {
+          "gap": 50,
+          "long": null,
+          "name": "Snooze",
+          "short": 10,
+          "spotify_id": "4iZ4pt7kvcaH6Yo8UoZ4s2",
+          "subtitle": "SZA"
+        },
+        {
           "gap": 49,
           "long": null,
-          "name": "Chamber Of Reflection",
+          "name": "1-800-273-8255",
           "short": 11,
-          "spotify_id": "1Snko28yJOihcRVXs9dAo9",
-          "subtitle": "Mac DeMarco"
+          "spotify_id": "5tz69p7tJuGPeMGwNTxYuV",
+          "subtitle": "Logic"
         },
         {
           "gap": 48,
           "long": null,
-          "name": "For the First Time",
+          "name": "Chamber Of Reflection",
           "short": 12,
-          "spotify_id": "0WiMJIxYYEex2AqhRqzV3u",
+          "spotify_id": "1Snko28yJOihcRVXs9dAo9",
           "subtitle": "Mac DeMarco"
         },
         {
           "gap": 47,
           "long": null,
-          "name": "House Of Balloons / Glass Table Girls",
+          "name": "For the First Time",
           "short": 13,
-          "spotify_id": "2r7BPog74oaTG5shNYiUnV",
-          "subtitle": "The Weeknd"
+          "spotify_id": "0WiMJIxYYEex2AqhRqzV3u",
+          "subtitle": "Mac DeMarco"
         },
         {
           "gap": 46,
           "long": null,
-          "name": "1-800-273-8255",
+          "name": "My Kind of Woman",
           "short": 14,
-          "spotify_id": "5tz69p7tJuGPeMGwNTxYuV",
-          "subtitle": "Logic"
+          "spotify_id": "38tfi9dtBQQ5Wyt7EL0G3z",
+          "subtitle": "Mac DeMarco"
         },
         {
           "gap": 45,
           "long": null,
-          "name": "My Kind of Woman",
+          "name": "House Of Balloons / Glass Table Girls",
           "short": 15,
-          "spotify_id": "38tfi9dtBQQ5Wyt7EL0G3z",
-          "subtitle": "Mac DeMarco"
+          "spotify_id": "2r7BPog74oaTG5shNYiUnV",
+          "subtitle": "The Weeknd"
         },
         {
           "gap": 44,
@@ -1483,42 +1469,42 @@
         {
           "gap": 42,
           "long": null,
-          "name": "Borrowed Love (feat. Swae Lee & WizKid)",
+          "name": "Con Calma",
           "short": 18,
-          "spotify_id": "0NA5xAtDra50d0Lfs2uvoh",
-          "subtitle": "Metro Boomin"
+          "spotify_id": "5w9c2J52mkdntKOmRLeM2m",
+          "subtitle": "Daddy Yankee"
         },
         {
           "gap": 40,
           "long": null,
-          "name": "Moonlight on the River",
+          "name": "Ballad of a Badman",
           "short": 20,
-          "spotify_id": "2OXn0rzeFW9h2BUViGlW3A",
-          "subtitle": "Mac DeMarco"
+          "spotify_id": "2PLOCIYlFr8XxNsz0Lgs4l",
+          "subtitle": "Tory Lanez"
         },
         {
           "gap": 39,
           "long": null,
-          "name": "KALYANI (with Shreya Ghoshal) - Remix",
+          "name": "Hurts Me",
           "short": 21,
-          "spotify_id": "2y8mkajKikV5S1PRCMQ5WL",
-          "subtitle": "ARJN"
+          "spotify_id": "0RBw4ODUQPO4cuAOZtBGga",
+          "subtitle": "Tory Lanez"
         },
         {
           "gap": 38,
           "long": null,
-          "name": "Con Calma",
+          "name": "Moonlight on the River",
           "short": 22,
-          "spotify_id": "5w9c2J52mkdntKOmRLeM2m",
-          "subtitle": "Daddy Yankee"
+          "spotify_id": "2OXn0rzeFW9h2BUViGlW3A",
+          "subtitle": "Mac DeMarco"
         }
       ],
       "counts": {
-        "both": 4,
-        "long_only": 46,
-        "short_only": 46
+        "both": 5,
+        "long_only": 45,
+        "short_only": 45
       },
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "fading": [
         {
           "long": 1,
@@ -1588,24 +1574,18 @@
         },
         {
           "long": 14,
-          "name": "Jhol",
-          "spotify_id": "4XTgFBxBHN6var1BzAgE1m",
-          "subtitle": "Maanu"
-        },
-        {
-          "long": 15,
           "name": "Romantic Homicide",
           "spotify_id": "0SCLsDJtC7DmOwks1tsszt",
           "subtitle": "d4vd"
         },
         {
-          "long": 16,
+          "long": 15,
           "name": "a million faces",
           "spotify_id": "7F2nEClWeQ3x5ycA5qtKOI",
           "subtitle": "girlsweetvoiced"
         },
         {
-          "long": 17,
+          "long": 16,
           "name": "Divine Failure",
           "spotify_id": "37s1WRi8s1rZysbjvBGrEd",
           "subtitle": "Elsooyer"
@@ -1618,27 +1598,33 @@
         },
         {
           "long": 19,
-          "name": "Beanie",
-          "spotify_id": "5e0b9LgOfi3aJSKXFcOWRe",
-          "subtitle": "Chezile"
-        },
-        {
-          "long": 20,
-          "name": "Co2",
-          "spotify_id": "3hB9lDLyAClYVZivMMl20N",
-          "subtitle": "Prateek Kuhad"
-        },
-        {
-          "long": 21,
           "name": "Telephones",
           "spotify_id": "0JIMT9gzLIIz0esKLyjbKf",
           "subtitle": "Vacations"
         },
         {
-          "long": 22,
+          "long": 20,
           "name": "Keep on Loving You",
           "spotify_id": "3GUSidbQwd7xuvU6AQorRh",
           "subtitle": "Cigarettes After Sex"
+        },
+        {
+          "long": 21,
+          "name": "next to you",
+          "spotify_id": "70tmdhbUPcVxIxCIpChscl",
+          "subtitle": "Øneheart"
+        },
+        {
+          "long": 22,
+          "name": "Heavenly",
+          "spotify_id": "5E02BgqYNN9VzafXrYP6Np",
+          "subtitle": "Cigarettes After Sex"
+        },
+        {
+          "long": 23,
+          "name": "Fainted",
+          "spotify_id": "69KUKhBqyGvtO1jtJwZEcv",
+          "subtitle": "Narvent"
         }
       ],
       "kind": "track"
@@ -1647,10 +1633,9 @@
   "images": {
     "00FQb4jTyendYWaN8pK0wa": "https://i.scdn.co/image/ab6761610000f178b99cacf8acd5378206767261",
     "00RLNHc2jkEjUoCUlFgPVT": "https://i.scdn.co/image/ab67616d00004851ec5c5ec0da8942e4b03254f3",
-    "06O23tLg0or676h8EEzH7W": "https://i.scdn.co/image/ab6761610000f1788a20e785e4bdc296ebd54d68",
     "06eRdiCBgFUhiuFjei0eH2": "https://i.scdn.co/image/ab6761610000f178d6be97a75da4376bc81fb715",
     "0JIMT9gzLIIz0esKLyjbKf": "https://i.scdn.co/image/ab67616d000048512eb4d117b70ea7ac2c24e316",
-    "0NA5xAtDra50d0Lfs2uvoh": "https://i.scdn.co/image/ab67616d000048512887f8c05b5a9f1cb105be29",
+    "0RBw4ODUQPO4cuAOZtBGga": "https://i.scdn.co/image/ab67616d000048511dba361996f5b70c1df2b4ee",
     "0SCLsDJtC7DmOwks1tsszt": "https://i.scdn.co/image/ab67616d0000485164fa1bda999f4fbd2b7c4bb7",
     "0WiMJIxYYEex2AqhRqzV3u": "https://i.scdn.co/image/ab67616d000048513f7561fb0914fb1f5f101f0a",
     "0X4YYZtZcvqNqYIpMd93IT": "https://i.scdn.co/image/ab67616d00004851f8fcdb6f18e90b58f6fe842e",
@@ -1670,6 +1655,7 @@
     "28pUgp8Cifsnwrv5Mvltyz": "https://i.scdn.co/image/ab67616d0000485171f2d92aa95b03924c4b824a",
     "2LbjW13j6rNtFgYcPjR2ur": "https://i.scdn.co/image/ab6761610000f178082bf78a2f0c1628a713804f",
     "2OXn0rzeFW9h2BUViGlW3A": "https://i.scdn.co/image/ab67616d000048513f7561fb0914fb1f5f101f0a",
+    "2PLOCIYlFr8XxNsz0Lgs4l": "https://i.scdn.co/image/ab67616d000048510c5f23cbf0b1ab7e37d0dc67",
     "2PpYJcgJN6PzozUv7rU669": "https://i.scdn.co/image/ab67616d0000485164cf51cfaf81d9b874c79cae",
     "2YZyLoL8N0Wb9xBt1NhZWg": "https://i.scdn.co/image/ab6761610000f17839ba6dcd4355c03de0b50918",
     "2exebQUDoIoT0dXA8BcN1P": "https://i.scdn.co/image/ab6761610000f1789c1eb9531e1176c4a3a25925",
@@ -1679,7 +1665,6 @@
     "2qpacEyFxmbxCpIEqZkqvC": "https://i.scdn.co/image/ab67616d000048511192eb9f894b18f0de2682f1",
     "2r7BPog74oaTG5shNYiUnV": "https://i.scdn.co/image/ab67616d00004851274b406a7e18acebcf743079",
     "2sSGPbdZJkaSE2AbcGOACx": "https://i.scdn.co/image/ab6761610000f178af586afa2b397f1288683a76",
-    "2y8mkajKikV5S1PRCMQ5WL": "https://i.scdn.co/image/ab67616d000048519aa819fdf84c78fc1976391d",
     "37s1WRi8s1rZysbjvBGrEd": "https://i.scdn.co/image/ab67616d00004851fae95a2438622b7d630808a7",
     "38tfi9dtBQQ5Wyt7EL0G3z": "https://i.scdn.co/image/ab67616d00004851ecfde7feaa212a1b60a197a1",
     "3DeHMjvYP73Pycy8va8RKY": "https://i.scdn.co/image/ab6761610000f1787e509af8bbc3833a2b116f6f",
@@ -1687,7 +1672,6 @@
     "3J31Ng3dKKJ6sEHDtV9hSp": "https://i.scdn.co/image/ab67616d0000485163bb237154c47c65da7f63c2",
     "3MZsBdqDrRTJihTHQrO6Dq": "https://i.scdn.co/image/ab6761610000f178b6d7836808e8b99fc8c7aadc",
     "3Sz7ZnJQBIHsXLUSo0OQtM": "https://i.scdn.co/image/ab6761610000f178c9aca5b6d4c528caf75e8a1d",
-    "3hB9lDLyAClYVZivMMl20N": "https://i.scdn.co/image/ab67616d00004851dc8799fc0000992578ec96e9",
     "3rp4f58JlRHkk8hpdLCer1": "https://i.scdn.co/image/ab6761610000f1783d43e8bcb7eb7ad1dae465d9",
     "42D9aaKTLw47faFhRCQfHF": "https://i.scdn.co/image/ab67616d00004851ba49265ab7b0d9a6fa01ddfa",
     "465OXuCU8YZNmVG1leLwQ9": "https://i.scdn.co/image/ab6761610000f17854f120e72388f1c5c3aa3edd",
@@ -1695,7 +1679,6 @@
     "4Gso3d4CscCijv0lmajZWs": "https://i.scdn.co/image/ab6761610000f17895ef459a84c75fbdc20a070c",
     "4KRllJ2dEeoqvxOQLOgOsI": "https://i.scdn.co/image/ab6761610000f178560279a9a9ca93d0873677fe",
     "4MrQDA45Gd0llLrwFUzimG": "https://i.scdn.co/image/ab6761610000f178a45802804ddc7b4702d911a8",
-    "4XTgFBxBHN6var1BzAgE1m": "https://i.scdn.co/image/ab67616d00004851da7d1408f8e776063963572f",
     "4Z8W4fKeB5YxbusRsdQVPb": "https://i.scdn.co/image/ab6761610000f178959527d2fabc9c64287e57b9",
     "4gdMJYnopf2nEUcanAwstx": "https://i.scdn.co/image/ab6761610000f178a837a6cb82dd949d5e1f9b53",
     "4gzpq5DPGxSnKTe4SA8HAU": "https://i.scdn.co/image/ab6761610000f1781ba8fc5f5c73e7e9313cc6eb",
@@ -1703,19 +1686,22 @@
     "4sh8w9hWn04EWoCAeIRdQm": "https://i.scdn.co/image/ab67616d00004851a59c5cc7bc3909696855b047",
     "4tGnFjmjmMdZZh7NxWjNaw": "https://i.scdn.co/image/ab6761610000f178a896a79593dbd1031d0c7333",
     "4xF4ZBGPZKxECeDFrqSAG4": "https://i.scdn.co/image/ab67616d00004851ed50c8fe9503fd8d73d82f9f",
+    "5E02BgqYNN9VzafXrYP6Np": "https://i.scdn.co/image/ab67616d000048518324db1ae37be249aed887e7",
     "5MCbGWnNLLjoHpbDO3BOgi": "https://i.scdn.co/image/ab67616d000048517838ccbef3fb712228e23fc5",
     "5Qicor4jFNgZQxSf6UxEzw": "https://i.scdn.co/image/ab67616d0000485154988a68e74654d97c2098bb",
     "5cj0lLjcoR7YOSnhnX0Po5": "https://i.scdn.co/image/ab6761610000f1788a0644455ebfa7d3976f5101",
-    "5e0b9LgOfi3aJSKXFcOWRe": "https://i.scdn.co/image/ab67616d000048519d181176cafa856a3c8b5537",
     "5mWQT8CLTa4mAQAJdFjHb1": "https://i.scdn.co/image/ab6761610000f178c3ce177d07e32e2c8306d833",
     "5tz69p7tJuGPeMGwNTxYuV": "https://i.scdn.co/image/ab67616d00004851cfdf40cf325b609a52457805",
     "5w9c2J52mkdntKOmRLeM2m": "https://i.scdn.co/image/ab67616d00004851896ffcd42561c44fea2bae7b",
     "5y8tKLUfMvliMe8IKamR32": "https://i.scdn.co/image/ab6761610000f1787dad3e7c38bc881e6d2ae432",
+    "69KUKhBqyGvtO1jtJwZEcv": "https://i.scdn.co/image/ab67616d000048514812bcd7da9edf3ecc02d558",
     "6JCkLyhLxufrb10cem9WA6": "https://i.scdn.co/image/ab67616d00004851f9f0edfe58bbb6e3c44e574f",
     "6LEG9Ld1aLImEFEVHdWNSB": "https://i.scdn.co/image/ab6761610000f178fb505b37709fa86cfd8f55b3",
     "6QoCrBHsojKnOrsGNfRcTN": "https://i.scdn.co/image/ab6761610000f1781b5240f39de9ee81b0348a70",
     "6ft7JnxMyZhp7N52qzHymY": "https://i.scdn.co/image/ab6761610000f178f44b9228f7c27e00783d1c8d",
+    "6hIXwlI4wny3zYuB6cDBBk": "https://i.scdn.co/image/ab6761610000f17811714d23f3f7d9129b3c6d7a",
     "6znPk9JRNmg6uyB6h8nJu3": "https://i.scdn.co/image/ab6761610000f1780e8a26a184a7f6524863e300",
+    "70tmdhbUPcVxIxCIpChscl": "https://i.scdn.co/image/ab67616d000048518382cdaea05f24badf9f2394",
     "78rUTD7y6Cy67W1RVzYs7t": "https://i.scdn.co/image/ab6761610000f1786bf10d74063b45938f5d8656",
     "7EAMXbLcL0qXmciM5SwMh2": "https://i.scdn.co/image/ab67616d0000485180a3f8161e8b731baa4d33fa",
     "7F2nEClWeQ3x5ycA5qtKOI": "https://i.scdn.co/image/ab67616d0000485186e79d2fbb191165b06e5bd3",
@@ -1766,6 +1752,7 @@
     "0qPoQiQIhgyMaP7X78hxri": "Akhiyaan Gulaab",
     "0qjWYusrckF9BpkvWaoKRO": "Cozy Coffee Shop",
     "0stJVUUSrbEwyFHOp2dRu0": "Open Hearts",
+    "0vB4Vd6PtkJSEnWsmqATnZ": "Nothing's Gonna Change My Love for You",
     "0wf0kncEWHLMGqYqXgZql8": "Level Five",
     "0xIuPDzJSnJywALez8dwKR": "With You",
     "0xRXCcSX89eobfrshSVdyu": "MEDUZA",
@@ -1773,6 +1760,7 @@
     "161dJFOgyuYcgKg0AzYuAh": "Ela ké Leitada",
     "164Uj4eKjl6zTBKfJLFKKK": "JVKE",
     "16zzrcKYGDkaGNeSjIMa6O": "through - 2022 Remastered",
+    "179mePAKYtgiS1uOYmd17P": "magic - slowed & reverb with rain",
     "17L0mSvHatVjgTgBxfmyjf": "Freaking Out the Neighborhood",
     "17XXKfRBMCWvLrqGoNkJXm": "Engelbert Humperdinck",
     "19ra5tSw0tWufvUp8GotLo": "George Michael",
@@ -1997,6 +1985,7 @@
     "7Ln80lUS6He07XvHI8qqHH": "Arctic Monkeys",
     "7LvHieZe4yPYpDRF0OPCmk": "Ekanto Golaap",
     "7b6Ui7JVaBDEfZB9k6nHL0": "The Local Train",
+    "7b9FXvaDafdfqKuoq9ai5Q": "Last of a Dying Breed",
     "7bxaFZ1O3cHkgLKMsdC3xR": "Loser",
     "7cYEt1pqMgXJdq00hAwVpT": "Chase Atlantic",
     "7drgfsb1o3LPQQc5tHZW8O": "Khoye Jawa Chaad",
@@ -2016,256 +2005,6 @@
     "artist": {
       "long_term": [
         {
-          "date": "2026-09-25",
-          "id": "1QAJqy2dA3ihHBFIHRphZj",
-          "rank": 1
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0dgJbQ0bKPyUXco8hEXN7X",
-          "rank": 2
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
-          "rank": 3
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3MZsBdqDrRTJihTHQrO6Dq",
-          "rank": 4
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6hIXwlI4wny3zYuB6cDBBk",
-          "rank": 5
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7tYKF4w9nC0nq9CsPZTHyP",
-          "rank": 6
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6znPk9JRNmg6uyB6h8nJu3",
-          "rank": 7
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5y8tKLUfMvliMe8IKamR32",
-          "rank": 8
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5INjqkS1o8h1imAzPqGZBb",
-          "rank": 9
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1wRPtKGflJrBx9BmLsSwlU",
-          "rank": 10
-        },
-        {
-          "date": "2026-09-25",
-          "id": "78rUTD7y6Cy67W1RVzYs7t",
-          "rank": 11
-        },
-        {
-          "date": "2026-09-25",
-          "id": "77SW9BnxLY8rJ0RciFqkHh",
-          "rank": 12
-        },
-        {
-          "date": "2026-09-25",
-          "id": "47zz7sob9NUcODy0BTDvKx",
-          "rank": 13
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4gdMJYnopf2nEUcanAwstx",
-          "rank": 14
-        },
-        {
-          "date": "2026-09-25",
-          "id": "00FQb4jTyendYWaN8pK0wa",
-          "rank": 15
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
-          "rank": 16
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5mWQT8CLTa4mAQAJdFjHb1",
-          "rank": 17
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
-          "rank": 18
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4gzpq5DPGxSnKTe4SA8HAU",
-          "rank": 19
-        },
-        {
-          "date": "2026-09-25",
-          "id": "05etL4pzWd6TSv1x5WrlG3",
-          "rank": 20
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6ft7JnxMyZhp7N52qzHymY",
-          "rank": 21
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0Y6dVaC9DZtPNH4591M42W",
-          "rank": 22
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4KRllJ2dEeoqvxOQLOgOsI",
-          "rank": 23
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4MrQDA45Gd0llLrwFUzimG",
-          "rank": 24
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2exebQUDoIoT0dXA8BcN1P",
-          "rank": 25
-        },
-        {
-          "date": "2026-09-25",
-          "id": "06O23tLg0or676h8EEzH7W",
-          "rank": 26
-        },
-        {
-          "date": "2026-09-25",
-          "id": "700c9Qz2z6HZKTumeliKAw",
-          "rank": 27
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7Ln80lUS6He07XvHI8qqHH",
-          "rank": 28
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3zmfs9cQwzJl575W1ZYXeT",
-          "rank": 29
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2jku7tDXc6XoB6MO2hFuqg",
-          "rank": 30
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6YJ4EgQzDfJnIHRbqIHAdD",
-          "rank": 31
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0wf0kncEWHLMGqYqXgZql8",
-          "rank": 32
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3DeHMjvYP73Pycy8va8RKY",
-          "rank": 33
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5cj0lLjcoR7YOSnhnX0Po5",
-          "rank": 34
-        },
-        {
-          "date": "2026-09-25",
-          "id": "17XXKfRBMCWvLrqGoNkJXm",
-          "rank": 35
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4RRmL81NhhouCKGo8I6GaU",
-          "rank": 36
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1cGyguqPQY22oUd4fKglFS",
-          "rank": 37
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7gW0r5CkdEUMm42w9XpyZO",
-          "rank": 38
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2sSGPbdZJkaSE2AbcGOACx",
-          "rank": 39
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3TVXtAsR1Inumwj472S9r4",
-          "rank": 40
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1mYsTxnqsietFxj1OgoGbG",
-          "rank": 41
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5K4W6rqBFWDnAN6FQUkS6x",
-          "rank": 42
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0klU31gyC6EZqKgLvVANCy",
-          "rank": 43
-        },
-        {
-          "date": "2026-09-25",
-          "id": "19ra5tSw0tWufvUp8GotLo",
-          "rank": 44
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3iGhlvzpXc0UHBQ7klAItX",
-          "rank": 45
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2h93pZq0e7k5yf4dywlkpM",
-          "rank": 46
-        },
-        {
-          "date": "2026-09-25",
-          "id": "36QJpDe2go2KgaRleHCDTp",
-          "rank": 47
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4yvcSjfu4PC0CYQyLy4wSq",
-          "rank": 48
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0hEurMDQu99nJRq8pTxO14",
-          "rank": 49
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3yKoHgjtyenCOIRaD2Gghu",
-          "rank": 50
-        },
-        {
           "date": "2026-09-26",
           "id": "1QAJqy2dA3ihHBFIHRphZj",
           "rank": 1
@@ -17013,261 +16752,261 @@
         {
           "date": "2026-11-23",
           "id": "1AbJ2cmwK400LSvdvBL5Jc",
+          "rank": 50
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1QAJqy2dA3ihHBFIHRphZj",
+          "rank": 1
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+          "rank": 2
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0dgJbQ0bKPyUXco8hEXN7X",
+          "rank": 3
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3MZsBdqDrRTJihTHQrO6Dq",
+          "rank": 4
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6hIXwlI4wny3zYuB6cDBBk",
+          "rank": 5
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+          "rank": 6
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7tYKF4w9nC0nq9CsPZTHyP",
+          "rank": 7
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6znPk9JRNmg6uyB6h8nJu3",
+          "rank": 8
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5INjqkS1o8h1imAzPqGZBb",
+          "rank": 9
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5y8tKLUfMvliMe8IKamR32",
+          "rank": 10
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1wRPtKGflJrBx9BmLsSwlU",
+          "rank": 11
+        },
+        {
+          "date": "2026-11-24",
+          "id": "77SW9BnxLY8rJ0RciFqkHh",
+          "rank": 12
+        },
+        {
+          "date": "2026-11-24",
+          "id": "78rUTD7y6Cy67W1RVzYs7t",
+          "rank": 13
+        },
+        {
+          "date": "2026-11-24",
+          "id": "05etL4pzWd6TSv1x5WrlG3",
+          "rank": 14
+        },
+        {
+          "date": "2026-11-24",
+          "id": "47zz7sob9NUcODy0BTDvKx",
+          "rank": 15
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2jku7tDXc6XoB6MO2hFuqg",
+          "rank": 16
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4gdMJYnopf2nEUcanAwstx",
+          "rank": 17
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
+          "rank": 18
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4gzpq5DPGxSnKTe4SA8HAU",
+          "rank": 19
+        },
+        {
+          "date": "2026-11-24",
+          "id": "00FQb4jTyendYWaN8pK0wa",
+          "rank": 20
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5mWQT8CLTa4mAQAJdFjHb1",
+          "rank": 21
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6ft7JnxMyZhp7N52qzHymY",
+          "rank": 22
+        },
+        {
+          "date": "2026-11-24",
+          "id": "700c9Qz2z6HZKTumeliKAw",
+          "rank": 23
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4KRllJ2dEeoqvxOQLOgOsI",
+          "rank": 24
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4MrQDA45Gd0llLrwFUzimG",
+          "rank": 25
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7Ln80lUS6He07XvHI8qqHH",
+          "rank": 26
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2exebQUDoIoT0dXA8BcN1P",
+          "rank": 27
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0wf0kncEWHLMGqYqXgZql8",
+          "rank": 28
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0Y6dVaC9DZtPNH4591M42W",
+          "rank": 29
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3DeHMjvYP73Pycy8va8RKY",
+          "rank": 30
+        },
+        {
+          "date": "2026-11-24",
+          "id": "17XXKfRBMCWvLrqGoNkJXm",
+          "rank": 31
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5cj0lLjcoR7YOSnhnX0Po5",
+          "rank": 32
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2sSGPbdZJkaSE2AbcGOACx",
+          "rank": 33
+        },
+        {
+          "date": "2026-11-24",
+          "id": "06eRdiCBgFUhiuFjei0eH2",
+          "rank": 34
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4RRmL81NhhouCKGo8I6GaU",
+          "rank": 35
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1cGyguqPQY22oUd4fKglFS",
+          "rank": 36
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2h93pZq0e7k5yf4dywlkpM",
+          "rank": 37
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4Z8W4fKeB5YxbusRsdQVPb",
+          "rank": 38
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1mYsTxnqsietFxj1OgoGbG",
+          "rank": 39
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3TVXtAsR1Inumwj472S9r4",
+          "rank": 40
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3iGhlvzpXc0UHBQ7klAItX",
+          "rank": 41
+        },
+        {
+          "date": "2026-11-24",
+          "id": "19ra5tSw0tWufvUp8GotLo",
+          "rank": 42
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0iEtIxbK0KxaSlF7G42ZOp",
+          "rank": 43
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0klU31gyC6EZqKgLvVANCy",
+          "rank": 44
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4yvcSjfu4PC0CYQyLy4wSq",
+          "rank": 45
+        },
+        {
+          "date": "2026-11-24",
+          "id": "36QJpDe2go2KgaRleHCDTp",
+          "rank": 46
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0hEurMDQu99nJRq8pTxO14",
+          "rank": 47
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5K4W6rqBFWDnAN6FQUkS6x",
+          "rank": 48
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1AbJ2cmwK400LSvdvBL5Jc",
+          "rank": 49
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6LEG9Ld1aLImEFEVHdWNSB",
           "rank": 50
         }
       ],
       "medium_term": [
         {
-          "date": "2026-09-25",
-          "id": "3MZsBdqDrRTJihTHQrO6Dq",
-          "rank": 1
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
-          "rank": 2
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6hIXwlI4wny3zYuB6cDBBk",
-          "rank": 3
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1QAJqy2dA3ihHBFIHRphZj",
-          "rank": 4
-        },
-        {
-          "date": "2026-09-25",
-          "id": "05etL4pzWd6TSv1x5WrlG3",
-          "rank": 5
-        },
-        {
-          "date": "2026-09-25",
-          "id": "700c9Qz2z6HZKTumeliKAw",
-          "rank": 6
-        },
-        {
-          "date": "2026-09-25",
-          "id": "47zz7sob9NUcODy0BTDvKx",
-          "rank": 7
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6znPk9JRNmg6uyB6h8nJu3",
-          "rank": 8
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5INjqkS1o8h1imAzPqGZBb",
-          "rank": 9
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1cGyguqPQY22oUd4fKglFS",
-          "rank": 10
-        },
-        {
-          "date": "2026-09-25",
-          "id": "77SW9BnxLY8rJ0RciFqkHh",
-          "rank": 11
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
-          "rank": 12
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5y8tKLUfMvliMe8IKamR32",
-          "rank": 13
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0klU31gyC6EZqKgLvVANCy",
-          "rank": 14
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7Ln80lUS6He07XvHI8qqHH",
-          "rank": 15
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5mWQT8CLTa4mAQAJdFjHb1",
-          "rank": 16
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1wRPtKGflJrBx9BmLsSwlU",
-          "rank": 17
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5cj0lLjcoR7YOSnhnX0Po5",
-          "rank": 18
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0wf0kncEWHLMGqYqXgZql8",
-          "rank": 19
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4Z8W4fKeB5YxbusRsdQVPb",
-          "rank": 20
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2jku7tDXc6XoB6MO2hFuqg",
-          "rank": 21
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0Y6dVaC9DZtPNH4591M42W",
-          "rank": 22
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4gdMJYnopf2nEUcanAwstx",
-          "rank": 23
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2h93pZq0e7k5yf4dywlkpM",
-          "rank": 24
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0hEurMDQu99nJRq8pTxO14",
-          "rank": 25
-        },
-        {
-          "date": "2026-09-25",
-          "id": "60jYUgQzKAtnJoXKGk1GNn",
-          "rank": 26
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7tYKF4w9nC0nq9CsPZTHyP",
-          "rank": 27
-        },
-        {
-          "date": "2026-09-25",
-          "id": "06eRdiCBgFUhiuFjei0eH2",
-          "rank": 28
-        },
-        {
-          "date": "2026-09-25",
-          "id": "17XXKfRBMCWvLrqGoNkJXm",
-          "rank": 29
-        },
-        {
-          "date": "2026-09-25",
-          "id": "37LGjqM0je1KNrLRD3MZ47",
-          "rank": 30
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7lzordPuZEXxwt9aoVZYmG",
-          "rank": 31
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3DeHMjvYP73Pycy8va8RKY",
-          "rank": 32
-        },
-        {
-          "date": "2026-09-25",
-          "id": "59oBQlP5xoa5cfPkonNNnT",
-          "rank": 33
-        },
-        {
-          "date": "2026-09-25",
-          "id": "66CXWjxzNUsdJxJ2JdwvnR",
-          "rank": 34
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5c7JjKTazKNQubk2GjgbJT",
-          "rank": 35
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3mIj9lX2MWuHmhNCA7LSCW",
-          "rank": 36
-        },
-        {
-          "date": "2026-09-25",
-          "id": "00FQb4jTyendYWaN8pK0wa",
-          "rank": 37
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1AbJ2cmwK400LSvdvBL5Jc",
-          "rank": 38
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
-          "rank": 39
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0qjWYusrckF9BpkvWaoKRO",
-          "rank": 40
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4dpARuHxo51G3z768sgnrY",
-          "rank": 41
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0xRXCcSX89eobfrshSVdyu",
-          "rank": 42
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5ThqNILsplOvwjj9kx0Hnt",
-          "rank": 43
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4yvcSjfu4PC0CYQyLy4wSq",
-          "rank": 44
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3AA28KZvwAUcZuOKwyblJQ",
-          "rank": 45
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2LbjW13j6rNtFgYcPjR2ur",
-          "rank": 46
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6MK5Z7OjpkcN6OFe6nh8pi",
-          "rank": 47
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0dgJbQ0bKPyUXco8hEXN7X",
-          "rank": 48
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6yiZkjeldEjFFhIaXj3w77",
-          "rank": 49
-        },
-        {
-          "date": "2026-09-25",
-          "id": "78rUTD7y6Cy67W1RVzYs7t",
-          "rank": 50
-        },
-        {
           "date": "2026-09-26",
           "id": "3MZsBdqDrRTJihTHQrO6Dq",
           "rank": 1
@@ -32014,262 +31753,262 @@
         },
         {
           "date": "2026-11-23",
+          "id": "2sSGPbdZJkaSE2AbcGOACx",
+          "rank": 50
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+          "rank": 1
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3MZsBdqDrRTJihTHQrO6Dq",
+          "rank": 2
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6hIXwlI4wny3zYuB6cDBBk",
+          "rank": 3
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+          "rank": 4
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1QAJqy2dA3ihHBFIHRphZj",
+          "rank": 5
+        },
+        {
+          "date": "2026-11-24",
+          "id": "05etL4pzWd6TSv1x5WrlG3",
+          "rank": 6
+        },
+        {
+          "date": "2026-11-24",
+          "id": "77SW9BnxLY8rJ0RciFqkHh",
+          "rank": 7
+        },
+        {
+          "date": "2026-11-24",
+          "id": "47zz7sob9NUcODy0BTDvKx",
+          "rank": 8
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2jku7tDXc6XoB6MO2hFuqg",
+          "rank": 9
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5INjqkS1o8h1imAzPqGZBb",
+          "rank": 10
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6znPk9JRNmg6uyB6h8nJu3",
+          "rank": 11
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1cGyguqPQY22oUd4fKglFS",
+          "rank": 12
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4Z8W4fKeB5YxbusRsdQVPb",
+          "rank": 13
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0wf0kncEWHLMGqYqXgZql8",
+          "rank": 14
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1wRPtKGflJrBx9BmLsSwlU",
+          "rank": 15
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0klU31gyC6EZqKgLvVANCy",
+          "rank": 16
+        },
+        {
+          "date": "2026-11-24",
+          "id": "37LGjqM0je1KNrLRD3MZ47",
+          "rank": 17
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7Ln80lUS6He07XvHI8qqHH",
+          "rank": 18
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0Y6dVaC9DZtPNH4591M42W",
+          "rank": 19
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5cj0lLjcoR7YOSnhnX0Po5",
+          "rank": 20
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5mWQT8CLTa4mAQAJdFjHb1",
+          "rank": 21
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2h93pZq0e7k5yf4dywlkpM",
+          "rank": 22
+        },
+        {
+          "date": "2026-11-24",
+          "id": "700c9Qz2z6HZKTumeliKAw",
+          "rank": 23
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6LEG9Ld1aLImEFEVHdWNSB",
+          "rank": 24
+        },
+        {
+          "date": "2026-11-24",
+          "id": "06eRdiCBgFUhiuFjei0eH2",
+          "rank": 25
+        },
+        {
+          "date": "2026-11-24",
+          "id": "17XXKfRBMCWvLrqGoNkJXm",
+          "rank": 26
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3DeHMjvYP73Pycy8va8RKY",
+          "rank": 27
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7tYKF4w9nC0nq9CsPZTHyP",
+          "rank": 28
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0hEurMDQu99nJRq8pTxO14",
+          "rank": 29
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4tGnFjmjmMdZZh7NxWjNaw",
+          "rank": 30
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7fhlWsdi6oTTxj8d3uYIAn",
+          "rank": 31
+        },
+        {
+          "date": "2026-11-24",
+          "id": "00FQb4jTyendYWaN8pK0wa",
+          "rank": 32
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
+          "rank": 33
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7uIbLdzzSEqnX0Pkrb56cR",
+          "rank": 34
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0iEtIxbK0KxaSlF7G42ZOp",
+          "rank": 35
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3zoceu8YD9dVjL4jaleJLg",
+          "rank": 36
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7lzordPuZEXxwt9aoVZYmG",
+          "rank": 37
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3mIj9lX2MWuHmhNCA7LSCW",
+          "rank": 38
+        },
+        {
+          "date": "2026-11-24",
+          "id": "59oBQlP5xoa5cfPkonNNnT",
+          "rank": 39
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7b6Ui7JVaBDEfZB9k6nHL0",
+          "rank": 40
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2tIP7SsRs7vjIcLrU85W8J",
+          "rank": 41
+        },
+        {
+          "date": "2026-11-24",
+          "id": "66CXWjxzNUsdJxJ2JdwvnR",
+          "rank": 42
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4gdMJYnopf2nEUcanAwstx",
+          "rank": 43
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5c7JjKTazKNQubk2GjgbJT",
+          "rank": 44
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6QoCrBHsojKnOrsGNfRcTN",
+          "rank": 45
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0qjWYusrckF9BpkvWaoKRO",
+          "rank": 46
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6MK5Z7OjpkcN6OFe6nh8pi",
+          "rank": 47
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1AbJ2cmwK400LSvdvBL5Jc",
+          "rank": 48
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4dpARuHxo51G3z768sgnrY",
+          "rank": 49
+        },
+        {
+          "date": "2026-11-24",
           "id": "2sSGPbdZJkaSE2AbcGOACx",
           "rank": 50
         }
       ],
       "short_term": [
         {
-          "date": "2026-09-25",
-          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
-          "rank": 1
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6hIXwlI4wny3zYuB6cDBBk",
-          "rank": 2
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5INjqkS1o8h1imAzPqGZBb",
-          "rank": 3
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1QAJqy2dA3ihHBFIHRphZj",
-          "rank": 4
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3MZsBdqDrRTJihTHQrO6Dq",
-          "rank": 5
-        },
-        {
-          "date": "2026-09-25",
-          "id": "47zz7sob9NUcODy0BTDvKx",
-          "rank": 6
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6znPk9JRNmg6uyB6h8nJu3",
-          "rank": 7
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1wRPtKGflJrBx9BmLsSwlU",
-          "rank": 8
-        },
-        {
-          "date": "2026-09-25",
-          "id": "77SW9BnxLY8rJ0RciFqkHh",
-          "rank": 9
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0hEurMDQu99nJRq8pTxO14",
-          "rank": 10
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5mWQT8CLTa4mAQAJdFjHb1",
-          "rank": 11
-        },
-        {
-          "date": "2026-09-25",
-          "id": "37LGjqM0je1KNrLRD3MZ47",
-          "rank": 12
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2jku7tDXc6XoB6MO2hFuqg",
-          "rank": 13
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2h93pZq0e7k5yf4dywlkpM",
-          "rank": 14
-        },
-        {
-          "date": "2026-09-25",
-          "id": "00FQb4jTyendYWaN8pK0wa",
-          "rank": 15
-        },
-        {
-          "date": "2026-09-25",
-          "id": "05etL4pzWd6TSv1x5WrlG3",
-          "rank": 16
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4gdMJYnopf2nEUcanAwstx",
-          "rank": 17
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6MK5Z7OjpkcN6OFe6nh8pi",
-          "rank": 18
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7tYKF4w9nC0nq9CsPZTHyP",
-          "rank": 19
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
-          "rank": 20
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6yiZkjeldEjFFhIaXj3w77",
-          "rank": 21
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2YZyLoL8N0Wb9xBt1NhZWg",
-          "rank": 22
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0Y6dVaC9DZtPNH4591M42W",
-          "rank": 23
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6XwwFnewNgWp81MYMK8zLq",
-          "rank": 24
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0WBg7b6KiPmfh7lI5vbFKC",
-          "rank": 25
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0wf0kncEWHLMGqYqXgZql8",
-          "rank": 26
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5cj0lLjcoR7YOSnhnX0Po5",
-          "rank": 27
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7Ln80lUS6He07XvHI8qqHH",
-          "rank": 28
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0qjWYusrckF9BpkvWaoKRO",
-          "rank": 29
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4G9NDjRyZFDlJKMRL8hx3S",
-          "rank": 30
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7fhlWsdi6oTTxj8d3uYIAn",
-          "rank": 31
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5io6IfbYy6t9IBtzYdOwN9",
-          "rank": 32
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1AbJ2cmwK400LSvdvBL5Jc",
-          "rank": 33
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1yevH7mkPMXeSTnA9SwHvq",
-          "rank": 34
-        },
-        {
-          "date": "2026-09-25",
-          "id": "66CXWjxzNUsdJxJ2JdwvnR",
-          "rank": 35
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6IRouO5mvvfcyxtPDKMYFN",
-          "rank": 36
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6LEG9Ld1aLImEFEVHdWNSB",
-          "rank": 37
-        },
-        {
-          "date": "2026-09-25",
-          "id": "700c9Qz2z6HZKTumeliKAw",
-          "rank": 38
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7CajNmpbOovFoOoasH2HaY",
-          "rank": 39
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0dgJbQ0bKPyUXco8hEXN7X",
-          "rank": 40
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1fa0cOhromAZdq2xRA4vv8",
-          "rank": 41
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1mYsTxnqsietFxj1OgoGbG",
-          "rank": 42
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2oSONSC9zQ4UonDKnLqksx",
-          "rank": 43
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3DeHMjvYP73Pycy8va8RKY",
-          "rank": 44
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3mIj9lX2MWuHmhNCA7LSCW",
-          "rank": 45
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3yY2gUcIsjMr8hjo51PoJ8",
-          "rank": 46
-        },
-        {
-          "date": "2026-09-25",
-          "id": "465OXuCU8YZNmVG1leLwQ9",
-          "rank": 47
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4Gso3d4CscCijv0lmajZWs",
-          "rank": 48
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4gzpq5DPGxSnKTe4SA8HAU",
-          "rank": 49
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5c7JjKTazKNQubk2GjgbJT",
-          "rank": 50
-        },
-        {
           "date": "2026-09-26",
           "id": "1Xyo4u8uXC1ZmMpatF05PJ",
           "rank": 1
@@ -44888,262 +44627,147 @@
           "date": "2026-11-23",
           "id": "7cYEt1pqMgXJdq00hAwVpT",
           "rank": 28
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+          "rank": 1
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+          "rank": 2
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3MZsBdqDrRTJihTHQrO6Dq",
+          "rank": 3
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6hIXwlI4wny3zYuB6cDBBk",
+          "rank": 4
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1QAJqy2dA3ihHBFIHRphZj",
+          "rank": 5
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4tGnFjmjmMdZZh7NxWjNaw",
+          "rank": 6
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1wRPtKGflJrBx9BmLsSwlU",
+          "rank": 7
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6QoCrBHsojKnOrsGNfRcTN",
+          "rank": 8
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7uIbLdzzSEqnX0Pkrb56cR",
+          "rank": 9
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2jku7tDXc6XoB6MO2hFuqg",
+          "rank": 10
+        },
+        {
+          "date": "2026-11-24",
+          "id": "77SW9BnxLY8rJ0RciFqkHh",
+          "rank": 11
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5INjqkS1o8h1imAzPqGZBb",
+          "rank": 12
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7pehDkTumHs6SoSs7ySICp",
+          "rank": 13
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3rp4f58JlRHkk8hpdLCer1",
+          "rank": 14
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6LEG9Ld1aLImEFEVHdWNSB",
+          "rank": 15
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4Z8W4fKeB5YxbusRsdQVPb",
+          "rank": 16
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5mWQT8CLTa4mAQAJdFjHb1",
+          "rank": 17
+        },
+        {
+          "date": "2026-11-24",
+          "id": "05etL4pzWd6TSv1x5WrlG3",
+          "rank": 18
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0iEtIxbK0KxaSlF7G42ZOp",
+          "rank": 19
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1EmdfupUQDpXOcb4Nj2mBH",
+          "rank": 20
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2LbjW13j6rNtFgYcPjR2ur",
+          "rank": 21
+        },
+        {
+          "date": "2026-11-24",
+          "id": "465OXuCU8YZNmVG1leLwQ9",
+          "rank": 22
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4Gso3d4CscCijv0lmajZWs",
+          "rank": 23
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5cj0lLjcoR7YOSnhnX0Po5",
+          "rank": 24
+        },
+        {
+          "date": "2026-11-24",
+          "id": "700c9Qz2z6HZKTumeliKAw",
+          "rank": 25
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7cYEt1pqMgXJdq00hAwVpT",
+          "rank": 26
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7tYKF4w9nC0nq9CsPZTHyP",
+          "rank": 27
         }
       ]
     },
     "track": {
       "long_term": [
         {
-          "date": "2026-09-25",
-          "id": "2PpYJcgJN6PzozUv7rU669",
-          "rank": 1
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0X4YYZtZcvqNqYIpMd93IT",
-          "rank": 2
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4xF4ZBGPZKxECeDFrqSAG4",
-          "rank": 3
-        },
-        {
-          "date": "2026-09-25",
-          "id": "28pUgp8Cifsnwrv5Mvltyz",
-          "rank": 4
-        },
-        {
-          "date": "2026-09-25",
-          "id": "00RLNHc2jkEjUoCUlFgPVT",
-          "rank": 5
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6JCkLyhLxufrb10cem9WA6",
-          "rank": 6
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1uvn7eP1I7mIKGvpsqDcoW",
-          "rank": 7
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2mlNgAeIBnL78ZriXgrRHz",
-          "rank": 8
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6rY5FAWxCdAGllYEOZMbjW",
-          "rank": 9
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1A7qPfbcyRVEdcZiwTFhZI",
-          "rank": 10
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1XTijOjVgekZjRXwgJ2VSE",
-          "rank": 11
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1oAwsWBovWRIp7qLMGPIet",
-          "rank": 12
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7mDTvYD2ieE4Q28XFziMfJ",
-          "rank": 13
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4XTgFBxBHN6var1BzAgE1m",
-          "rank": 14
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0SCLsDJtC7DmOwks1tsszt",
-          "rank": 15
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7F2nEClWeQ3x5ycA5qtKOI",
-          "rank": 16
-        },
-        {
-          "date": "2026-09-25",
-          "id": "37s1WRi8s1rZysbjvBGrEd",
-          "rank": 17
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4sh8w9hWn04EWoCAeIRdQm",
-          "rank": 18
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5e0b9LgOfi3aJSKXFcOWRe",
-          "rank": 19
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3hB9lDLyAClYVZivMMl20N",
-          "rank": 20
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0JIMT9gzLIIz0esKLyjbKf",
-          "rank": 21
-        },
-        {
-          "date": "2026-09-25",
-          "id": "69KUKhBqyGvtO1jtJwZEcv",
-          "rank": 22
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3GUSidbQwd7xuvU6AQorRh",
-          "rank": 23
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5LrN7yUQAzvthd4QujgPFr",
-          "rank": 24
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6RiiSy9GzSwiyDEJDiMuKe",
-          "rank": 25
-        },
-        {
-          "date": "2026-09-25",
-          "id": "70tmdhbUPcVxIxCIpChscl",
-          "rank": 26
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5E02BgqYNN9VzafXrYP6Np",
-          "rank": 27
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0DTSnA1bcVI5niJzoyBPyZ",
-          "rank": 28
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2OrucC3HEPmZpkaQ05Nx0V",
-          "rank": 29
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2TQve4B4jpyUqvxDHzNZAu",
-          "rank": 30
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0qPoQiQIhgyMaP7X78hxri",
-          "rank": 31
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5rK4GDNiHYC3NUPV3ME4J4",
-          "rank": 32
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4UKjQODokAfEMaTgvTHbVX",
-          "rank": 33
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0j3mqDTK4Z6lvrLzFCUUz6",
-          "rank": 34
-        },
-        {
-          "date": "2026-09-25",
-          "id": "40iDbkPRNNpACrwoCuyRtk",
-          "rank": 35
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3hEfpBHxgieRLz4t3kLNEg",
-          "rank": 36
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6mHTwIXqZtuQUF1fEkrhFB",
-          "rank": 37
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6JB0h4leDJ4Akabtu42Epd",
-          "rank": 38
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3VJpl4jrFSqY3Y6mAzqfux",
-          "rank": 39
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3p4hRhMcb6ch8OLtATMaLw",
-          "rank": 40
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4t9vB7wIKWE5jIhjcztmmd",
-          "rank": 41
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4ppTAJUbNXELZcoUaL90wo",
-          "rank": 42
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5TTGoX70AFrTvuEtqHK37S",
-          "rank": 43
-        },
-        {
-          "date": "2026-09-25",
-          "id": "75IQVo8hqI1iwVZyvkN2VT",
-          "rank": 44
-        },
-        {
-          "date": "2026-09-25",
-          "id": "29KwH2LEjfWEtiC2jCrLVw",
-          "rank": 45
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6MRD4fDXBbqa0xodmaFk8Q",
-          "rank": 46
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4QzZVJc6qPTtTkPem7qZRo",
-          "rank": 47
-        },
-        {
-          "date": "2026-09-25",
-          "id": "612zd3tyOwz52c7c67orZx",
-          "rank": 48
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5ZP8LfM7TezqoxF9yp6VzX",
-          "rank": 49
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1hlbywc8Jhl1FFqJxAMabE",
-          "rank": 50
-        },
-        {
           "date": "2026-09-26",
           "id": "2PpYJcgJN6PzozUv7rU669",
           "rank": 1
@@ -59891,260 +59515,260 @@
         {
           "date": "2026-11-23",
           "id": "0FVuyC9RP5MACjp4lgU3qZ",
+          "rank": 50
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0X4YYZtZcvqNqYIpMd93IT",
+          "rank": 1
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2PpYJcgJN6PzozUv7rU669",
+          "rank": 2
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4xF4ZBGPZKxECeDFrqSAG4",
+          "rank": 3
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1uvn7eP1I7mIKGvpsqDcoW",
+          "rank": 4
+        },
+        {
+          "date": "2026-11-24",
+          "id": "28pUgp8Cifsnwrv5Mvltyz",
+          "rank": 5
+        },
+        {
+          "date": "2026-11-24",
+          "id": "00RLNHc2jkEjUoCUlFgPVT",
+          "rank": 6
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2mlNgAeIBnL78ZriXgrRHz",
+          "rank": 7
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6rY5FAWxCdAGllYEOZMbjW",
+          "rank": 8
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1XTijOjVgekZjRXwgJ2VSE",
+          "rank": 9
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1A7qPfbcyRVEdcZiwTFhZI",
+          "rank": 10
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6JCkLyhLxufrb10cem9WA6",
+          "rank": 11
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1oAwsWBovWRIp7qLMGPIet",
+          "rank": 12
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7mDTvYD2ieE4Q28XFziMfJ",
+          "rank": 13
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0SCLsDJtC7DmOwks1tsszt",
+          "rank": 14
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7F2nEClWeQ3x5ycA5qtKOI",
+          "rank": 15
+        },
+        {
+          "date": "2026-11-24",
+          "id": "37s1WRi8s1rZysbjvBGrEd",
+          "rank": 16
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4XTgFBxBHN6var1BzAgE1m",
+          "rank": 17
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4sh8w9hWn04EWoCAeIRdQm",
+          "rank": 18
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0JIMT9gzLIIz0esKLyjbKf",
+          "rank": 19
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3GUSidbQwd7xuvU6AQorRh",
+          "rank": 20
+        },
+        {
+          "date": "2026-11-24",
+          "id": "70tmdhbUPcVxIxCIpChscl",
+          "rank": 21
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5E02BgqYNN9VzafXrYP6Np",
+          "rank": 22
+        },
+        {
+          "date": "2026-11-24",
+          "id": "69KUKhBqyGvtO1jtJwZEcv",
+          "rank": 23
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0DTSnA1bcVI5niJzoyBPyZ",
+          "rank": 24
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3VJpl4jrFSqY3Y6mAzqfux",
+          "rank": 25
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4UKjQODokAfEMaTgvTHbVX",
+          "rank": 26
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2TQve4B4jpyUqvxDHzNZAu",
+          "rank": 27
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6mHTwIXqZtuQUF1fEkrhFB",
+          "rank": 28
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6JB0h4leDJ4Akabtu42Epd",
+          "rank": 29
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5rK4GDNiHYC3NUPV3ME4J4",
+          "rank": 30
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2OrucC3HEPmZpkaQ05Nx0V",
+          "rank": 31
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0qPoQiQIhgyMaP7X78hxri",
+          "rank": 32
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3hEfpBHxgieRLz4t3kLNEg",
+          "rank": 33
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0j3mqDTK4Z6lvrLzFCUUz6",
+          "rank": 34
+        },
+        {
+          "date": "2026-11-24",
+          "id": "40iDbkPRNNpACrwoCuyRtk",
+          "rank": 35
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4ppTAJUbNXELZcoUaL90wo",
+          "rank": 36
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1hlbywc8Jhl1FFqJxAMabE",
+          "rank": 37
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5TTGoX70AFrTvuEtqHK37S",
+          "rank": 38
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7oNZfE9wnu7SP55LwNSiKG",
+          "rank": 39
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6MRD4fDXBbqa0xodmaFk8Q",
+          "rank": 40
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4QzZVJc6qPTtTkPem7qZRo",
+          "rank": 41
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5ZP8LfM7TezqoxF9yp6VzX",
+          "rank": 42
+        },
+        {
+          "date": "2026-11-24",
+          "id": "65krtHkaYLPr0mEbjL61UP",
+          "rank": 43
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0NLm9bQG7ikL5k9x9TtYT7",
+          "rank": 44
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1xK59OXxi2TAAAbmZK0kBL",
+          "rank": 45
+        },
+        {
+          "date": "2026-11-24",
+          "id": "29KwH2LEjfWEtiC2jCrLVw",
+          "rank": 46
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0oUBuOO4g9P4lREqfqR5nq",
+          "rank": 47
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0FVuyC9RP5MACjp4lgU3qZ",
+          "rank": 48
+        },
+        {
+          "date": "2026-11-24",
+          "id": "179mePAKYtgiS1uOYmd17P",
+          "rank": 49
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0vB4Vd6PtkJSEnWsmqATnZ",
           "rank": 50
         }
       ],
       "medium_term": [
-        {
-          "date": "2026-09-25",
-          "id": "0X4YYZtZcvqNqYIpMd93IT",
-          "rank": 1
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1uvn7eP1I7mIKGvpsqDcoW",
-          "rank": 2
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2mlNgAeIBnL78ZriXgrRHz",
-          "rank": 3
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2PpYJcgJN6PzozUv7rU669",
-          "rank": 4
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6rY5FAWxCdAGllYEOZMbjW",
-          "rank": 5
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3J44gxX4AcRApFyympWPIB",
-          "rank": 6
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4UKjQODokAfEMaTgvTHbVX",
-          "rank": 7
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3VJpl4jrFSqY3Y6mAzqfux",
-          "rank": 8
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1XTijOjVgekZjRXwgJ2VSE",
-          "rank": 9
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2TQve4B4jpyUqvxDHzNZAu",
-          "rank": 10
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3p4hRhMcb6ch8OLtATMaLw",
-          "rank": 11
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1hlbywc8Jhl1FFqJxAMabE",
-          "rank": 12
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5rK4GDNiHYC3NUPV3ME4J4",
-          "rank": 13
-        },
-        {
-          "date": "2026-09-25",
-          "id": "65krtHkaYLPr0mEbjL61UP",
-          "rank": 14
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3iy2QuCtCzpWnR6tia39AB",
-          "rank": 15
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0oUBuOO4g9P4lREqfqR5nq",
-          "rank": 16
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4eFV1LfWlYCVJnPTuSo3db",
-          "rank": 17
-        },
-        {
-          "date": "2026-09-25",
-          "id": "06E5KyqnDTueEbdT22FFvM",
-          "rank": 18
-        },
-        {
-          "date": "2026-09-25",
-          "id": "00WLowvlN5cjkYpQV6pjo4",
-          "rank": 19
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0FVuyC9RP5MACjp4lgU3qZ",
-          "rank": 20
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0H9rWqCXi7gv6kDO3N98ZU",
-          "rank": 21
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0pUVeEgZuNyFzIMKp67RbS",
-          "rank": 22
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0JIMT9gzLIIz0esKLyjbKf",
-          "rank": 23
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7mrrszs7ZOPEsJhg0q8jvD",
-          "rank": 24
-        },
-        {
-          "date": "2026-09-25",
-          "id": "70YTBH8vOGJNMhy6186yFm",
-          "rank": 25
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6CKoWCWAqEVWVjpeoJXyNH",
-          "rank": 26
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0bxRSMz5WY1VuMmOhanE4b",
-          "rank": 27
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1GDJhAiO9tqjMuDWFad0IF",
-          "rank": 28
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2xql0pid3EUwW38AsywxhV",
-          "rank": 29
-        },
-        {
-          "date": "2026-09-25",
-          "id": "42D9aaKTLw47faFhRCQfHF",
-          "rank": 30
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3hxIUxnT27p5WcmjGUXNwx",
-          "rank": 31
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7oNZfE9wnu7SP55LwNSiKG",
-          "rank": 32
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7LvHieZe4yPYpDRF0OPCmk",
-          "rank": 33
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1gVN2TuTQh2g9LE1wi6FTY",
-          "rank": 34
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7npPPrZEDmeHMk6mxvIeFa",
-          "rank": 35
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5Z8Dj3LtbyCMiwE86rhg2f",
-          "rank": 36
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2hsaWsa0VNx1ug3uotwMvP",
-          "rank": 37
-        },
-        {
-          "date": "2026-09-25",
-          "id": "030OypEGdW6Nvo1KDWa0Bt",
-          "rank": 38
-        },
-        {
-          "date": "2026-09-25",
-          "id": "7JEzAlwHhCD2M1cYE6BeqJ",
-          "rank": 39
-        },
-        {
-          "date": "2026-09-25",
-          "id": "16zzrcKYGDkaGNeSjIMa6O",
-          "rank": 40
-        },
-        {
-          "date": "2026-09-25",
-          "id": "0WiMJIxYYEex2AqhRqzV3u",
-          "rank": 41
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4Bsf8Pzli5MQv9zLF9KXqc",
-          "rank": 42
-        },
-        {
-          "date": "2026-09-25",
-          "id": "40gvh6jP5qxMJuMmF9lG9A",
-          "rank": 43
-        },
-        {
-          "date": "2026-09-25",
-          "id": "6JB0h4leDJ4Akabtu42Epd",
-          "rank": 44
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1uvyZBs4IZYRebHIB1747m",
-          "rank": 45
-        },
-        {
-          "date": "2026-09-25",
-          "id": "4BGfzLrK6lgvKDjKSU7wrN",
-          "rank": 46
-        },
-        {
-          "date": "2026-09-25",
-          "id": "5hjhaH0vwtpftiLtF3veZp",
-          "rank": 47
-        },
-        {
-          "date": "2026-09-25",
-          "id": "3AWDeHLc88XogCaCnZQLVI",
-          "rank": 48
-        },
-        {
-          "date": "2026-09-25",
-          "id": "1KIJclzEbNhSVw8tiHPWwE",
-          "rank": 49
-        },
-        {
-          "date": "2026-09-25",
-          "id": "2TUFKhKl4EZYAo3D9FXU5E",
-          "rank": 50
-        },
         {
           "date": "2026-09-26",
           "id": "0X4YYZtZcvqNqYIpMd93IT",
@@ -74894,259 +74518,259 @@
           "date": "2026-11-23",
           "id": "25KybV9BOUlvcnv7nN3Pyo",
           "rank": 50
-        }
-      ],
-      "short_term": [
+        },
         {
-          "date": "2026-09-25",
-          "id": "0bxRSMz5WY1VuMmOhanE4b",
+          "date": "2026-11-24",
+          "id": "51GkYB1wOQvmC8nfuhencv",
           "rank": 1
         },
         {
-          "date": "2026-09-25",
-          "id": "3hxIUxnT27p5WcmjGUXNwx",
+          "date": "2026-11-24",
+          "id": "1uvn7eP1I7mIKGvpsqDcoW",
           "rank": 2
         },
         {
-          "date": "2026-09-25",
-          "id": "7LvHieZe4yPYpDRF0OPCmk",
+          "date": "2026-11-24",
+          "id": "2mlNgAeIBnL78ZriXgrRHz",
           "rank": 3
         },
         {
-          "date": "2026-09-25",
-          "id": "6CKoWCWAqEVWVjpeoJXyNH",
+          "date": "2026-11-24",
+          "id": "3VJpl4jrFSqY3Y6mAzqfux",
           "rank": 4
         },
         {
-          "date": "2026-09-25",
-          "id": "3VJpl4jrFSqY3Y6mAzqfux",
+          "date": "2026-11-24",
+          "id": "4UKjQODokAfEMaTgvTHbVX",
           "rank": 5
         },
         {
-          "date": "2026-09-25",
-          "id": "4UKjQODokAfEMaTgvTHbVX",
+          "date": "2026-11-24",
+          "id": "1hlbywc8Jhl1FFqJxAMabE",
           "rank": 6
         },
         {
-          "date": "2026-09-25",
-          "id": "3gQSWGaCoaxONqXitmn7GX",
+          "date": "2026-11-24",
+          "id": "7mDTvYD2ieE4Q28XFziMfJ",
           "rank": 7
         },
         {
-          "date": "2026-09-25",
-          "id": "1i5oEx2vFczQ2sCY3c6Kn5",
+          "date": "2026-11-24",
+          "id": "1XTijOjVgekZjRXwgJ2VSE",
           "rank": 8
         },
         {
-          "date": "2026-09-25",
-          "id": "5hc71nKsUgtwQ3z52KEKQk",
+          "date": "2026-11-24",
+          "id": "5rK4GDNiHYC3NUPV3ME4J4",
           "rank": 9
         },
         {
-          "date": "2026-09-25",
-          "id": "1uvyZBs4IZYRebHIB1747m",
+          "date": "2026-11-24",
+          "id": "7LPGJhkRDEW6KopWhD8DbX",
           "rank": 10
         },
         {
-          "date": "2026-09-25",
-          "id": "1XTijOjVgekZjRXwgJ2VSE",
+          "date": "2026-11-24",
+          "id": "42D9aaKTLw47faFhRCQfHF",
           "rank": 11
         },
         {
-          "date": "2026-09-25",
-          "id": "1Snko28yJOihcRVXs9dAo9",
+          "date": "2026-11-24",
+          "id": "3iy2QuCtCzpWnR6tia39AB",
           "rank": 12
         },
         {
-          "date": "2026-09-25",
-          "id": "2v0AG62ZHtD3I4YmTb3WYM",
+          "date": "2026-11-24",
+          "id": "0oUBuOO4g9P4lREqfqR5nq",
           "rank": 13
         },
         {
-          "date": "2026-09-25",
-          "id": "161dJFOgyuYcgKg0AzYuAh",
+          "date": "2026-11-24",
+          "id": "7LvHieZe4yPYpDRF0OPCmk",
           "rank": 14
         },
         {
-          "date": "2026-09-25",
-          "id": "7oNZfE9wnu7SP55LwNSiKG",
+          "date": "2026-11-24",
+          "id": "5MCbGWnNLLjoHpbDO3BOgi",
           "rank": 15
         },
         {
-          "date": "2026-09-25",
-          "id": "40gvh6jP5qxMJuMmF9lG9A",
+          "date": "2026-11-24",
+          "id": "6CKoWCWAqEVWVjpeoJXyNH",
           "rank": 16
         },
         {
-          "date": "2026-09-25",
-          "id": "0stJVUUSrbEwyFHOp2dRu0",
+          "date": "2026-11-24",
+          "id": "4LxDdYU3x9tyDxy3CghqdC",
           "rank": 17
         },
         {
-          "date": "2026-09-25",
-          "id": "65krtHkaYLPr0mEbjL61UP",
+          "date": "2026-11-24",
+          "id": "06E5KyqnDTueEbdT22FFvM",
           "rank": 18
         },
         {
-          "date": "2026-09-25",
-          "id": "1uvn7eP1I7mIKGvpsqDcoW",
+          "date": "2026-11-24",
+          "id": "3J44gxX4AcRApFyympWPIB",
           "rank": 19
         },
         {
-          "date": "2026-09-25",
-          "id": "1GDJhAiO9tqjMuDWFad0IF",
+          "date": "2026-11-24",
+          "id": "0bxRSMz5WY1VuMmOhanE4b",
           "rank": 20
         },
         {
-          "date": "2026-09-25",
-          "id": "6JB0h4leDJ4Akabtu42Epd",
+          "date": "2026-11-24",
+          "id": "0FVuyC9RP5MACjp4lgU3qZ",
           "rank": 21
         },
         {
-          "date": "2026-09-25",
-          "id": "1FzbOPWCZiNxnLjAhY1jAR",
+          "date": "2026-11-24",
+          "id": "3hxIUxnT27p5WcmjGUXNwx",
           "rank": 22
         },
         {
-          "date": "2026-09-25",
-          "id": "4YWKbpls9OcdXAsTRd7ERR",
+          "date": "2026-11-24",
+          "id": "6rY5FAWxCdAGllYEOZMbjW",
           "rank": 23
         },
         {
-          "date": "2026-09-25",
-          "id": "2Y04ZSRKADiBdKHLaF1RtG",
+          "date": "2026-11-24",
+          "id": "2xql0pid3EUwW38AsywxhV",
           "rank": 24
         },
         {
-          "date": "2026-09-25",
-          "id": "2y8mkajKikV5S1PRCMQ5WL",
+          "date": "2026-11-24",
+          "id": "1GDJhAiO9tqjMuDWFad0IF",
           "rank": 25
         },
         {
-          "date": "2026-09-25",
-          "id": "70YTBH8vOGJNMhy6186yFm",
+          "date": "2026-11-24",
+          "id": "0WiMJIxYYEex2AqhRqzV3u",
           "rank": 26
         },
         {
-          "date": "2026-09-25",
-          "id": "0ZGfGStyu8s02fzpmmOF2l",
+          "date": "2026-11-24",
+          "id": "4Bsf8Pzli5MQv9zLF9KXqc",
           "rank": 27
         },
         {
-          "date": "2026-09-25",
-          "id": "6rY5FAWxCdAGllYEOZMbjW",
+          "date": "2026-11-24",
+          "id": "7oNZfE9wnu7SP55LwNSiKG",
           "rank": 28
         },
         {
-          "date": "2026-09-25",
-          "id": "6ux2llhjAuhSLggEaBoaLY",
+          "date": "2026-11-24",
+          "id": "70YTBH8vOGJNMhy6186yFm",
           "rank": 29
         },
         {
-          "date": "2026-09-25",
-          "id": "0WiMJIxYYEex2AqhRqzV3u",
+          "date": "2026-11-24",
+          "id": "0H9rWqCXi7gv6kDO3N98ZU",
           "rank": 30
         },
         {
-          "date": "2026-09-25",
-          "id": "3AWDeHLc88XogCaCnZQLVI",
+          "date": "2026-11-24",
+          "id": "1uvyZBs4IZYRebHIB1747m",
           "rank": 31
         },
         {
-          "date": "2026-09-25",
-          "id": "3jv9Mt5gKA8rwXoELAfKex",
+          "date": "2026-11-24",
+          "id": "2TQve4B4jpyUqvxDHzNZAu",
           "rank": 32
         },
         {
-          "date": "2026-09-25",
-          "id": "0JIMT9gzLIIz0esKLyjbKf",
+          "date": "2026-11-24",
+          "id": "1Snko28yJOihcRVXs9dAo9",
           "rank": 33
         },
         {
-          "date": "2026-09-25",
-          "id": "2PpYJcgJN6PzozUv7rU669",
+          "date": "2026-11-24",
+          "id": "5hc71nKsUgtwQ3z52KEKQk",
           "rank": 34
         },
         {
-          "date": "2026-09-25",
-          "id": "6mHTwIXqZtuQUF1fEkrhFB",
+          "date": "2026-11-24",
+          "id": "40gvh6jP5qxMJuMmF9lG9A",
           "rank": 35
         },
         {
-          "date": "2026-09-25",
-          "id": "4Fv6wNYUixnYkj3Dgfrls8",
+          "date": "2026-11-24",
+          "id": "3AWDeHLc88XogCaCnZQLVI",
           "rank": 36
         },
         {
-          "date": "2026-09-25",
-          "id": "5rK4GDNiHYC3NUPV3ME4J4",
+          "date": "2026-11-24",
+          "id": "5Z8Dj3LtbyCMiwE86rhg2f",
           "rank": 37
         },
         {
-          "date": "2026-09-25",
-          "id": "7bxaFZ1O3cHkgLKMsdC3xR",
+          "date": "2026-11-24",
+          "id": "7npPPrZEDmeHMk6mxvIeFa",
           "rank": 38
         },
         {
-          "date": "2026-09-25",
-          "id": "3iy2QuCtCzpWnR6tia39AB",
+          "date": "2026-11-24",
+          "id": "0NA5xAtDra50d0Lfs2uvoh",
           "rank": 39
         },
         {
-          "date": "2026-09-25",
-          "id": "6sKxXqDGkKROr3Z3Na32nv",
+          "date": "2026-11-24",
+          "id": "4iZ4pt7kvcaH6Yo8UoZ4s2",
           "rank": 40
         },
         {
-          "date": "2026-09-25",
-          "id": "0bOU1vG7BIgTRwqe1F44lR",
+          "date": "2026-11-24",
+          "id": "0ZGfGStyu8s02fzpmmOF2l",
           "rank": 41
         },
         {
-          "date": "2026-09-25",
-          "id": "0xIuPDzJSnJywALez8dwKR",
+          "date": "2026-11-24",
+          "id": "16zzrcKYGDkaGNeSjIMa6O",
           "rank": 42
         },
         {
-          "date": "2026-09-25",
-          "id": "4cYllEeJVH7dWKwQxpbk42",
+          "date": "2026-11-24",
+          "id": "7JEzAlwHhCD2M1cYE6BeqJ",
           "rank": 43
         },
         {
-          "date": "2026-09-25",
-          "id": "4oahRRZECfGud6eL7Lj7CO",
+          "date": "2026-11-24",
+          "id": "3J31Ng3dKKJ6sEHDtV9hSp",
           "rank": 44
         },
         {
-          "date": "2026-09-25",
-          "id": "4ppTAJUbNXELZcoUaL90wo",
+          "date": "2026-11-24",
+          "id": "2PpYJcgJN6PzozUv7rU669",
           "rank": 45
         },
         {
-          "date": "2026-09-25",
-          "id": "5QO79kh1waicV47BqGRL3g",
+          "date": "2026-11-24",
+          "id": "6JB0h4leDJ4Akabtu42Epd",
           "rank": 46
         },
         {
-          "date": "2026-09-25",
-          "id": "7CL1T9G9yTPz0LtVMBUHbm",
+          "date": "2026-11-24",
+          "id": "4qW3BbQAwZsrnu8a3ZRdyT",
           "rank": 47
         },
         {
-          "date": "2026-09-25",
-          "id": "5hM5arv9KDbCHS0k9uqwjr",
+          "date": "2026-11-24",
+          "id": "25KybV9BOUlvcnv7nN3Pyo",
           "rank": 48
         },
         {
-          "date": "2026-09-25",
-          "id": "1hlbywc8Jhl1FFqJxAMabE",
+          "date": "2026-11-24",
+          "id": "2y8mkajKikV5S1PRCMQ5WL",
           "rank": 49
         },
         {
-          "date": "2026-09-25",
-          "id": "00WLowvlN5cjkYpQV6pjo4",
+          "date": "2026-11-24",
+          "id": "5hjhaH0vwtpftiLtF3veZp",
           "rank": 50
-        },
+        }
+      ],
+      "short_term": [
         {
           "date": "2026-09-26",
           "id": "0bxRSMz5WY1VuMmOhanE4b",
@@ -89896,17 +89520,271 @@
           "date": "2026-11-23",
           "id": "0MTdYgTZ25sLCO6kVnDoje",
           "rank": 50
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7LPGJhkRDEW6KopWhD8DbX",
+          "rank": 1
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5MCbGWnNLLjoHpbDO3BOgi",
+          "rank": 2
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1gCpf5jhAqegPJeXG0BCn5",
+          "rank": 3
+        },
+        {
+          "date": "2026-11-24",
+          "id": "42D9aaKTLw47faFhRCQfHF",
+          "rank": 4
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5Qicor4jFNgZQxSf6UxEzw",
+          "rank": 5
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2qpacEyFxmbxCpIEqZkqvC",
+          "rank": 6
+        },
+        {
+          "date": "2026-11-24",
+          "id": "25KybV9BOUlvcnv7nN3Pyo",
+          "rank": 7
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3J31Ng3dKKJ6sEHDtV9hSp",
+          "rank": 8
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2lX53kXvYnvpV8Vqfe4S7s",
+          "rank": 9
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4iZ4pt7kvcaH6Yo8UoZ4s2",
+          "rank": 10
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5tz69p7tJuGPeMGwNTxYuV",
+          "rank": 11
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1Snko28yJOihcRVXs9dAo9",
+          "rank": 12
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0WiMJIxYYEex2AqhRqzV3u",
+          "rank": 13
+        },
+        {
+          "date": "2026-11-24",
+          "id": "38tfi9dtBQQ5Wyt7EL0G3z",
+          "rank": 14
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2r7BPog74oaTG5shNYiUnV",
+          "rank": 15
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7EAMXbLcL0qXmciM5SwMh2",
+          "rank": 16
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7oNZfE9wnu7SP55LwNSiKG",
+          "rank": 17
+        },
+        {
+          "date": "2026-11-24",
+          "id": "5w9c2J52mkdntKOmRLeM2m",
+          "rank": 18
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6rY5FAWxCdAGllYEOZMbjW",
+          "rank": 19
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2PLOCIYlFr8XxNsz0Lgs4l",
+          "rank": 20
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0RBw4ODUQPO4cuAOZtBGga",
+          "rank": 21
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2OXn0rzeFW9h2BUViGlW3A",
+          "rank": 22
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2y8mkajKikV5S1PRCMQ5WL",
+          "rank": 23
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6dOtVTDdiauQNBQEDOtlAB",
+          "rank": 24
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2K87XMYnUMqLcX3zvtAF4G",
+          "rank": 25
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3VJpl4jrFSqY3Y6mAzqfux",
+          "rank": 26
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0bxRSMz5WY1VuMmOhanE4b",
+          "rank": 27
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0pqGjnvS5HX3PpvMaepx3Q",
+          "rank": 28
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0NA5xAtDra50d0Lfs2uvoh",
+          "rank": 29
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1XTijOjVgekZjRXwgJ2VSE",
+          "rank": 30
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4D8eFUu6Hvulrq6CGqGaLR",
+          "rank": 31
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4XTgFBxBHN6var1BzAgE1m",
+          "rank": 32
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6CKoWCWAqEVWVjpeoJXyNH",
+          "rank": 33
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7b9FXvaDafdfqKuoq9ai5Q",
+          "rank": 34
+        },
+        {
+          "date": "2026-11-24",
+          "id": "3AWDeHLc88XogCaCnZQLVI",
+          "rank": 35
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4FlmLicAKdzGxLwy04Wcs7",
+          "rank": 36
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7Csa4PStpuYIfUqNMKQ4V8",
+          "rank": 37
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4Fv6wNYUixnYkj3Dgfrls8",
+          "rank": 38
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0xIuPDzJSnJywALez8dwKR",
+          "rank": 39
+        },
+        {
+          "date": "2026-11-24",
+          "id": "2TnfUjv4rwqskSHCj4NY7b",
+          "rank": 40
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0mOmaf2ZmkCyE5D8HBq52S",
+          "rank": 41
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1uvyZBs4IZYRebHIB1747m",
+          "rank": 42
+        },
+        {
+          "date": "2026-11-24",
+          "id": "40gvh6jP5qxMJuMmF9lG9A",
+          "rank": 43
+        },
+        {
+          "date": "2026-11-24",
+          "id": "6xWIuPEnPIODp4dCRsAd5I",
+          "rank": 44
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7AsG1F1eMWd17RYan8M3Wm",
+          "rank": 45
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7DY756WOLyOz2Xnhw4EFiC",
+          "rank": 46
+        },
+        {
+          "date": "2026-11-24",
+          "id": "4xbN7giFhdGbSQTPyG178F",
+          "rank": 47
+        },
+        {
+          "date": "2026-11-24",
+          "id": "7m4CgL81VVIHaaiSxyH922",
+          "rank": 48
+        },
+        {
+          "date": "2026-11-24",
+          "id": "1gk3FhAV07q9Jg77UxnVjX",
+          "rank": 49
+        },
+        {
+          "date": "2026-11-24",
+          "id": "0MTdYgTZ25sLCO6kVnDoje",
+          "rank": 50
         }
       ]
     }
   },
   "release_profile": [
     {
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "decades": [
         {
-          "count": 2,
+          "count": 3,
           "decade": 1960
+        },
+        {
+          "count": 1,
+          "decade": 1980
         },
         {
           "count": 1,
@@ -89921,20 +89799,20 @@
           "decade": 2010
         },
         {
-          "count": 35,
+          "count": 33,
           "decade": 2020
         }
       ],
       "measured": 50,
       "median_year": 2022,
       "newest": 2026,
-      "oldest": 1969,
+      "oldest": 1968,
       "recent_share": 0.14,
       "recent_since": 2025,
       "time_range": "long_term"
     },
     {
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "decades": [
         {
           "count": 1,
@@ -89970,7 +89848,7 @@
       "time_range": "medium_term"
     },
     {
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "decades": [
         {
           "count": 1,
@@ -89985,19 +89863,19 @@
           "decade": 2000
         },
         {
-          "count": 21,
+          "count": 20,
           "decade": 2010
         },
         {
-          "count": 26,
+          "count": 27,
           "decade": 2020
         }
       ],
       "measured": 50,
-      "median_year": 2020,
+      "median_year": 2021,
       "newest": 2026,
       "oldest": 1984,
-      "recent_share": 0.28,
+      "recent_share": 0.3,
       "recent_since": 2025,
       "time_range": "short_term"
     }
@@ -90075,7 +89953,8 @@
     "2026-11-20",
     "2026-11-21",
     "2026-11-22",
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
   ],
   "survival": {
     "available": true,
@@ -90362,6 +90241,10 @@
       },
       {
         "fraction": 0.3181818181818182,
+        "week": 10
+      },
+      {
+        "fraction": 0.3409090909090909,
         "week": 10
       },
       {
